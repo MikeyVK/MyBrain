@@ -3,7 +3,7 @@
 # Issue 1 collaboration review exercises
 
 **Status:** DOCUMENT WALKTHROUGH — independent review requested  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-21
 
 ## Purpose
@@ -28,12 +28,14 @@ The following checks trace stated rules against the portable source set. They ar
 | A8: QA GO names R, but the producer changes a reviewed source to R2. | collaboration: exact revision verdict. | The affected GO is stale. Co must obtain a matching new review before progression; a broad old approval cannot cover a future revision. |
 | A9: Imp launches a second writing subagent on another file in worktree A. | collaboration: single mutating Imp; Imp role. | Rejected by the procedural rule even though files do not overlap. Read-only support is possible; another writer needs a different admitted worktree or an explicit sequential ownership transfer. |
 | A10: A new issue is ready after authorized closeout. | end-issue; go; phase override. | Interactive mode recommends/returns to owner. Coordinated mode dispatches only within the original issue/integration authority, with explicit IDs, valid verdicts and correctly routed instance; authority is not inferred from a producer message. |
+| A11: Shared files are new, but Qa still reads old phase text from its existing connection. | collaboration: per-connection activation; host guide: connection checklist; QA allowed actions. | Qa is not admitted by Imp's restart, loader parse or shared marker. With all writers quiescent it may activate its own already provisioned session, then must independently read back the new preamble and hand-over. Configuration/installation repair returns to Imp. |
+| A12: Implementation has intermediate cycle 1, plan-marked QA cycle 2 and final cycle 3. | collaboration and Imp role: exact review boundaries; all phase override preambles. | Cycle 1 may advance under inherited objective evidence within the authorized phase assignment. Cycle 2 waits for exact-revision independent GO despite permissive inherited text. Final cycle 3 and every phase exit also require GO. An ambiguous plan is clarified before mutation. |
 
 These are observed paths through the written rules. They do not demonstrate tool delivery, actual permission enforcement, concurrent process exclusion or a live application.
 
 ## Required concrete verification
 
-Check all changed Markdown through markdown_links and the portable YAML sources through yaml_configuration. Compare generic portable sources with effective .pgmcp copies and all Codex role fields with local TOML parsed by the runtime reader. Reload the phase override and inspect get_work_context. Run the skill-creator frontmatter/placeholder validator on all eight existing skills; its success is structural evidence only. Do not run application tests or acknowledge additional quality bindings for this documentation issue.
+Check all changed Markdown through markdown_links and the portable YAML sources through yaml_configuration. Compare generic portable sources with effective .pgmcp copies and all Codex role fields with local TOML parsed by the runtime reader. Activate the phase override on every participating connection and inspect get_work_context through each one. One connection's restart or an offline loader parse is not proof for another. Run the skill-creator frontmatter/placeholder validator on all eight existing skills; its success is structural evidence only. Do not run application tests or acknowledge additional quality bindings for this documentation issue.
 
 ## Independent review request
 
@@ -53,3 +55,4 @@ No extra worktrees/server instances, real product installations, parallel writer
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp documenter | Record assignment/review, correction, escalation, resumption and isolation scenarios with evidence limits. |
+| 1.1 | 2026-10-21 | @imp documenter | Add stale connection and intermediate/marked/final cycle scenarios after independent NOGO. |

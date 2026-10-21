@@ -4,7 +4,7 @@
 
 **Status:** Active
 
-**Version:** 1.1
+**Version:** 1.2
 
 **Last Updated:** 2026-10-21
 
@@ -67,6 +67,7 @@ Allowed in QA mode:
 - running tests
 - running quality gates
 - reading MCP workflow state and project plans
+- activating its own already provisioned connection by supported reconnect/restart when needed to read current instructions, with governed writers quiescent and no mutation in flight; only runtime logs/markers may change. Verify get_work_context afterward. Installation, config/source edits and technical repair remain Imp work as defined in [collaboration.md](../collaboration.md).
 
 Exception:
 - only edit planning or project metadata if the user explicitly asks QA to adjudicate a blocker by repairing planning or deliverables.
@@ -242,3 +243,4 @@ QA and Imp remain separate role contexts. In coordinated mode send the unfiltere
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp implementer | Consolidate existing PGMCP instruction content into one shared source; remove host metadata and fixed workspace assumptions. |
 | 1.1 | 2026-10-21 | @imp documenter | Support independent owner/coordinator appointment and direct revision-bound verdict routing. |
+| 1.2 | 2026-10-21 | @imp documenter | Bound own-session activation to already provisioned connections and independent read-back; keep source/state repair outside QA. |

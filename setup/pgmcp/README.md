@@ -3,7 +3,7 @@
 # PGMCP collaboration sources and Codex deployment
 
 **Status:** MAINTAINED — independent review pending  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-21
 
 ## Purpose
@@ -19,7 +19,7 @@ agents/ contains the versioned generic source bundle; each admitted worktree dep
 | Portable reviewed source | Effective/deployed consumer | Activation and verification |
 | --- | --- | --- |
 | [agents/agents.md](agents/agents.md), [collaboration.md](agents/collaboration.md), roles/ and workflows/ | Same relative paths under each worktree's .pgmcp/agents/. | Reconcile intended source differences, preserve local additions, reload role instructions; compare exact text. |
-| [contracts.yaml](contracts.yaml) | That worktree's .pgmcp/config/contracts.yaml override. | Preserve config/defaults; restart its dedicated instance, then get_work_context first and inspect the phase instructions. |
+| [contracts.yaml](contracts.yaml) | That worktree's .pgmcp/config/contracts.yaml override. | Preserve config/defaults; activate every participating connection separately, then get_work_context on each and inspect the phase instructions and hand-over Context block. A restart/loader result elsewhere is insufficient. |
 | [codex-roles.yaml](codex-roles.yaml) | Local .codex/agents/pgmcp-co.toml, pgmcp-imp.toml and pgmcp-qa.toml. | Render the three name/description/developer_instructions records as valid TOML, preserve unrelated owner fields and refresh existing role chats. Parse with the runtime TOML reader and compare supplied fields with the manifest. |
 | Workspace .agents/skills and AGENTS.md | Skill/general instruction entrypoints. | References load the effective generic source; role contexts read it before work. |
 | [Quality setup](../quality/README.md) | Worktree-local quality overrides and native prerequisites. | Provision deliberately and demonstrate real native execution; healthy startup is insufficient. |
@@ -59,6 +59,16 @@ A reviewer directly appointed by the owner is independent even when Imp delivers
 
 Sandbox/approval settings and MCP access are inherited for custom subagents. Read-only QA instructions are a behavioral boundary, not an OS sandbox. If technical isolation or a server-enforced verdict gate is required, establish it separately; this instruction issue does not implement it.
 
+## Connection activation checklist
+
+Imp deploys reviewed files and performs configuration/provisioning repairs. Co enumerates every role connection that will participate in this assignment, including separate processes using the same worktree/server-data root. Restarting one child through restart_server only refreshes that child's connection; the shared .restart_marker is not a broadcast activation mechanism.
+
+For each participating connection, quiesce governed writers and confirm no tool is in flight. Use that connection's supported restart/reconnect route; perform full proxy/client relaunch only where the packaged bootstrap requires it. If the host exposes session activation solely to its owning role, that role may refresh its already provisioned session without changing configuration, source, branch or workflow state. QA may do this bounded activation; installation/repair stays with Imp.
+
+Then call get_work_context through that exact connection and compare the actual issue/branch/phase plus the deployed coordination preamble, explicit cycle-review rules and Context hand-over fields. Read-back of current results is required; a restart acknowledgement, exact file parity, shared marker, new PID elsewhere or standalone loader parse does not establish admission. Record the connection-local observation and source revision locally; any stale or unverified participant remains blocked. A chat not involved in this assignment is not implicitly activated or certified and must pass this checklist before later use.
+
+For the current documentation review, Imp's connection and the existing Qa connection are participating. The first review observed that only Imp's activation had been demonstrated. Herreview must independently read back the updated instructions on Qa's own refreshed connection; no earlier result from Imp can substitute. Co's existing idle connection is not claimed activated by this issue.
+
 ## Mutation scheduling and role refresh
 
 Co records one mutating Imp holder for each worktree and authorizes only one active writer, including descendants. Installation, fixes and source/state edits count. Co's lifecycle mutation interval is exclusive with that Imp interval. Independent worktrees can each have one writer; serialize shared integration/ref operations.
@@ -89,3 +99,4 @@ Acceptance of this documentation does not itself prove unattended product delive
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp documenter | Document portable sources, dedicated-instance deployment, Codex interaction mapping and verification limits. |
+| 1.1 | 2026-10-21 | @imp documenter | Require per-participant connection activation/read-back and distinguish narrow own-session refresh from Imp-only setup/repair. |

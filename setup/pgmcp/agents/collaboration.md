@@ -3,7 +3,7 @@
 # PGMCP coordinated collaboration
 
 **Status:** ACTIVE POLICY — independent review pending  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-21
 
 ## Purpose
@@ -60,7 +60,7 @@ At a phase boundary, Imp commits the intended review snapshot, stops changing it
 
 QA returns findings first and a verdict containing assignment, issue, branch, exact reviewed commit SHA, phase/cycle, governing criteria, checks/outcomes, findings/open work and GO or NOGO. Refusal or missing evidence is not GO. Co records the unfiltered verdict and its source; copying a producer's claim is not a verdict.
 
-GO permits only the named next boundary/action inside the mandate. Any change to the reviewed revision or governing requirements invalidates the affected verdict. After NOGO, route corrections to the responsible producer, preserve criteria, commit a new revision and request review again. Co owns scheduling and scope; the authorized branch owner performs PGMCP transitions. For cycle-based work, review the cycle boundary required by the plan before advancing.
+GO permits only the named next boundary/action inside the mandate. Any change to the reviewed revision or governing requirements invalidates the affected verdict. After NOGO, route corrections to the responsible producer, preserve criteria, commit a new revision and request review again. Co owns scheduling and scope; the authorized branch owner performs PGMCP transitions. Independent QA is required before every workflow phase exit, the final implementation-cycle exit, and each additional intermediate cycle exit explicitly marked QA-required in approved Planning. Such a marked exit overrides an inherited instruction to transition on producer evidence alone. An unmarked intermediate cycle may advance under the existing objective evidence and tool gates within Co's authorized phase assignment; this is not independent approval. A plan may add stricter review boundaries but cannot remove phase/final-cycle review. Resolve an ambiguous boundary with Co before mutation, without self-issuing GO.
 
 A phase instruction to "stop with a hand-over" remains a mutation boundary. In interactive mode return to the owner. In coordinated mode deliver the hand-over and wait for the independent result; Co then dispatches the next authorized phase or issue without human relay. A mandate never turns a hand-over itself into approval.
 
@@ -69,6 +69,8 @@ A phase instruction to "stop with a hand-over" remains a mutation boundary. In i
 Every worktree has its own dedicated PGMCP server instance and worktree-bound server-data root. Bind mutable workflow state, caches, logs and locks to that root; do not route multiple worktrees through a shared fixed-root server. A shared immutable harness installation is acceptable only if no worktree mutates it during use; mutable application environments/resources must be isolated or explicitly coordinated.
 
 Before admitting a worktree, Imp provisions its environment/server assets under Co's bounded setup assignment. Co verifies the actual connection, resolved workspace/server roots, branch/issue identity, applicable instructions and native tool execution. No real issue state is fabricated for bootstrap. Co then performs authorized lifecycle entry on that instance, including explicit parent and initialize_project, before Imp starts issue implementation.
+
+Every participating role connection must demonstrate the current effective phase instructions and hand-over context after deployment; one connection's restart or a separate configuration-loader process does not prove another connection refreshed. Co records which connections are admitted; stale or unverified connections cannot execute the new policy. Imp owns provisioning/configuration repairs. Where the host exposes refresh only to the owning role context, that context may perform supported reconnection or restart of its already provisioned connection as session activation, while all governed writers are quiescent and no tool is in flight. This narrow operation may affect runtime logs/markers but must not change source, configuration, branch or workflow state. QA still performs no installation or technical repair; it independently reads back the resulting context and reports failure to Co/Imp.
 
 Host-created worktrees may begin in detached HEAD. Do not initialize/implement a real issue until Co has created/selected the admitted issue branch and verified the explicit parent through the dedicated instance. Ignored .pgmcp/.venv/.codex assets are not assumed to exist or to be portable simply because tracked files were checked out.
 
@@ -101,3 +103,4 @@ When persistent chat tools are absent or unauthorized, use authorized bounded ro
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp documenter | Define coordinated mandates, authority, handoff contracts, independent QA and isolated parallel work. |
+| 1.1 | 2026-10-21 | @imp documenter | Address independent NOGO: require activation proof per participating connection and define exact independent cycle-review boundaries. |

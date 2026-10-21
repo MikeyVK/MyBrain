@@ -4,7 +4,7 @@
 
 **Status:** Active
 
-**Version:** 1.1
+**Version:** 1.2
 
 **Last Updated:** 2026-10-21
 
@@ -189,13 +189,13 @@ Link all changed files while useful. For large diffs, link primary review entry 
 and tests, group the remainder, and identify the branch diff as the complete inventory.
 Never claim PASS, GO, approval, or readiness as fact.
 
-## Two-chat model
+## Coordinated production and review
 
 Implementation via `@imp`, review via `@qa`.
 Coordination directives from `@co` are authoritative inputs for scope and priority.
 Independent QA may be directly owner-appointed or appointed by Co under explicit owner delegation as defined in [collaboration.md](../collaboration.md). An owner-appointed QA can accept Imp's request without becoming preflight. Imp-created preflight remains findings-only.
 
-In coordinated mode send the hand-over through authorized channels, remain quiescent during same-worktree review, repair under the mutation assignment after NOGO, and present a new committed revision. Await matching valid GO before a phase/cycle transition; Co schedules the next authorized task. Interactive mode returns the hand-over to the owner.
+In coordinated mode send the hand-over through authorized channels, remain quiescent during same-worktree review, repair under the mutation assignment after NOGO, and present a new committed revision. Await matching valid GO before every phase exit, the final implementation-cycle exit and any intermediate cycle exit explicitly marked QA-required in approved Planning. An unmarked intermediate cycle may advance on its inherited objective evidence within Co's authorized phase assignment; this is producer progression, not independent GO. Co schedules reviewed phase/issue progression. Interactive mode returns the hand-over to the owner.
 
 ## Version History
 
@@ -203,3 +203,4 @@ In coordinated mode send the hand-over through authorized channels, remain quies
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp implementer | Consolidate existing PGMCP instruction content into one shared source; remove host metadata and fixed workspace assumptions. |
 | 1.1 | 2026-10-21 | @imp documenter | Receive assignments, provision environments and respect single-writer review boundaries. |
+| 1.2 | 2026-10-21 | @imp documenter | Resolve QA cycle-boundary finding: phase/final-cycle/plan-marked exits require independent GO; ordinary intermediate cycles retain native evidence rules. |
