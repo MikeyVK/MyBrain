@@ -1,0 +1,9 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Portable source for .pgmcp/config/fixes.yaml. No automated fixes are authorized by this policy. Unresolved choices deliberately refuse use.
+
+"fixes":
+  "python_format":
+    "configuration_choice": null
+  "python_lint":
+    "configuration_choice": null

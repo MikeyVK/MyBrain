@@ -1,0 +1,17 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Native prerequisites for the current documentation/configuration policy. Install requirements-pgmcp.lock.txt first; application dependencies remain undecided.
+
+"pgmcp_version": "4.0.0"
+"python_requirements":
+- "check-jsonschema==0.38.2"
+- "orjson==3.13.0"
+- "ruamel.yaml==0.18.16"
+- "jsonschema==4.26.0"
+- "regress==2026.9.1"
+"lychee":
+  "version": "0.24.2"
+  "release": "https://github.com/lycheeverse/lychee/releases/tag/lychee-v0.24.2"
+  "windows_x86_64":
+    "archive_url": "https://github.com/lycheeverse/lychee/releases/download/lychee-v0.24.2/lychee-x86_64-pc-windows-msvc.zip"
+    "sha256": "32975d1493ee1a975d6bb41e4fb56fe419cb442ded628bb772ba2e614acfacad"

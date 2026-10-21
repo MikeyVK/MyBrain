@@ -16,6 +16,7 @@ application stack, hosting and model processing remain research questions.
 | [Working agreements](#working-agreements) | Naming, source handling and publication boundaries. |
 | [Git conventions](#git-conventions) | Issues, branches, commits and reviews. |
 | [Agent instructions](AGENTS.md) | Shared PGMCP protocol, roles and workflow entrypoints. |
+| [Quality policy](#quality-policy) | Required documentation/configuration evidence and explicit deferrals. |
 | [Workspace setup](#workspace-setup) | The development harness and local environment. |
 
 ## Research baseline
@@ -42,7 +43,7 @@ screened edition only. Review each future edition independently.
 | `docs/development/issue<number>/` | Public-safe phase deliverables for real issues. |
 | `docs/architecture/decisions/` | Architectural decision records when decisions are made. |
 | `.agents/skills/` | Versioned references to shared PGMCP roles and procedures. |
-| `setup/` | Future portable setup sources; machine-specific records are ignored. |
+| `setup/` | Portable quality setup sources; machine-specific records are ignored. |
 | `requirements-pgmcp.lock.txt` | Development-harness dependencies, not application dependencies. |
 | `.pgmcp/`, `.codex/`, `.runtime/`, `.venv/` | Local server data, machine configuration, Python runtime and environment. |
 
@@ -120,8 +121,38 @@ Local private-history backups must never be pushed, attached or mirrored.
 - Remote branch protection must be verified after repository visibility or plan changes.
   These written agreements do not themselves configure GitHub protection.
 
-Native checks, tests and fixes remain deferred by the owner's explicit choice.
-Deferred checks, clean Git status and healthy MCP startup are not quality approval.
+## Quality policy
+
+The owner approved the documentation/configuration quality policy in issue #2 on
+2026-10-21. [Quality setup](setup/quality/README.md) documents the reviewed native
+bindings, pins, deployment and verification. Local .pgmcp/config overrides deploy
+those sources; packaged defaults remain unchanged.
+
+| Surface | Required evidence |
+| --- | --- |
+| Maintained Markdown | Native offline local-link and heading-fragment validation. External URLs are excluded. |
+| Changed YAML configuration | Native mapping-root validation plus actual consumer admission after configuration reload. |
+| Changed JSON Schema | Separate native Draft 2020-12 envelope and metaschema validation. |
+| Application checks and tests | Deferred until the application stack, source/test roots and quality rules are approved. |
+| Automated fixes and native Commitlint | Deferred until a specific policy is approved; retain PGMCP commit conventions. |
+
+Use explicit file-family targets during implementation. Normal scaffolding and
+guarded editing use enforce; report is a diagnostic/setup exception and can persist
+failed or unvalidated content. In Validation, run the repository_review profile on
+the branch once after final implementation changes, plus the workflow-required
+configured-scope test request. Tests are currently inactive: no active tests is no
+passing test evidence. Required applicable checks must execute and pass before
+acceptance. An unavailable or unexecuted required check remains a blocker.
+
+Only branch scope applies the per-check target include/exclude policies; other scopes
+must select appropriate file families explicitly. Exclusions cover server data,
+machine settings, environments, dependencies, downloads, local records and generated
+or disposable output. They do not prevent link resolution to referenced files.
+
+Native checks, tests and fixes have separate evidence. An acknowledged binding,
+successful tool envelope, empty selection, clean Git status or healthy MCP startup
+does not establish quality readiness. Future policy changes require an explicit
+owner decision, reviewed portable sources and fresh evidence for affected boundaries.
 
 ## Workspace setup
 

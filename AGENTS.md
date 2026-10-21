@@ -30,10 +30,10 @@ Workflow entrypoints are `$pgmcp-start`, `$pgmcp-go`, `$pgmcp-create-issue`,
 procedure from `.pgmcp/agents/workflows/` and preserves its authorization,
 argument requirements, modes and stop conditions.
 
-The owner selected server, Git/GitHub and role setup first. Native checks,
-tests and fixes remain intentionally unconfigured until the project technology
-and quality policy are chosen. Do not acknowledge unresolved bindings or
-interpret healthy startup as quality readiness.
+Follow the [repository quality policy](README.md#quality-policy) for required
+documentation/configuration checks, deployment sources and evidence. Application
+checks/tests and automated fixes remain deferred. Do not acknowledge unresolved
+bindings or interpret healthy startup as quality readiness.
 
 Workspace bootstrap is distinct from issue lifecycle work. Use the packaged
 bootstrap for setup and connection verification; never fabricate an issue or

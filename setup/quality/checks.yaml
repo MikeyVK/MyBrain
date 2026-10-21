@@ -1,0 +1,93 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Portable source for .pgmcp/config/checks.yaml. Owner-approved in issue 2 on 2026-10-21. See README.md in this directory. Packaged defaults remain unchanged.
+
+"checks":
+  "markdown_links":
+    "configuration_choice": "configured_arguments"
+    "default_args":
+    - "--offline"
+    - "--cache=false"
+    - "--include-fragments"
+  "yaml_configuration":
+    "configuration_choice": "configured_arguments"
+    "default_args":
+    - "--schemafile"
+    - ".pgmcp/config/check_schemas/yaml_configuration.schema.json"
+    - "--force-filetype"
+    - "yaml"
+    - "--output-format"
+    - "JSON"
+  "json_schema_shape":
+    "configuration_choice": "configured_arguments"
+    "default_args":
+    - "--schemafile"
+    - ".pgmcp/config/check_schemas/json_schema_source.schema.json"
+    - "--force-filetype"
+    - "json"
+    - "--output-format"
+    - "JSON"
+  "json_schema_metaschema":
+    "configuration_choice": "configured_arguments"
+    "default_args":
+    - "--check-metaschema"
+    - "--force-filetype"
+    - "json"
+    - "--output-format"
+    - "JSON"
+"profiles":
+  "repository_review":
+    "checks":
+    - "markdown_links"
+    - "yaml_configuration"
+    - "json_schema_shape"
+    - "json_schema_metaschema"
+"run_checks":
+  "default_profile": "repository_review"
+"configured_targets":
+  "markdown_sources":
+    "include":
+    - "**/*.md"
+    "exclude":
+    - ".pgmcp/**"
+    - ".codex/**"
+    - ".runtime/**"
+    - ".venv/**"
+    - "**/node_modules/**"
+    - "setup/local/**"
+    - "setup/downloads/**"
+    - "tmp/**"
+    - "temp/**"
+    - "build/**"
+    - "dist/**"
+  "yaml_sources":
+    "include":
+    - "**/*.yaml"
+    - "**/*.yml"
+    "exclude":
+    - ".pgmcp/**"
+    - ".codex/**"
+    - ".runtime/**"
+    - ".venv/**"
+    - "**/node_modules/**"
+    - "setup/local/**"
+    - "setup/downloads/**"
+    - "tmp/**"
+    - "temp/**"
+    - "build/**"
+    - "dist/**"
+  "json_schema_sources":
+    "include":
+    - "**/*.schema.json"
+    "exclude":
+    - ".pgmcp/**"
+    - ".codex/**"
+    - ".runtime/**"
+    - ".venv/**"
+    - "**/node_modules/**"
+    - "setup/local/**"
+    - "setup/downloads/**"
+    - "tmp/**"
+    - "temp/**"
+    - "build/**"
+    - "dist/**"

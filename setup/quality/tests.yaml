@@ -1,0 +1,8 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Portable source for .pgmcp/config/tests.yaml. Tests are deferred until application stack, test roots and policy are approved; inactive is not passing.
+
+"tests":
+  "python_tests":
+    "active": false
+    "configuration_choice": null
