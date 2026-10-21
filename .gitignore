@@ -1,0 +1,60 @@
+# Workspace-local Python runtime and environment
+/.runtime/
+/.venv/
+
+# PGMCP generated assets, local configuration, caches, logs and recovery data
+/.pgmcp/*
+# Branch-local workflow evidence is deliberately versioned on real issue branches.
+!/.pgmcp/state.json
+!/.pgmcp/deliverables.json
+# Machine-specific Codex registration and local role deployment
+/.codex/
+
+# Downloaded packages and machine-generated installation evidence
+/setup/downloads/
+/setup/package-docs/
+/setup/local/
+/setup/pip-install-report.json
+/setup/installation.json
+/setup/verification.json
+/setup/codex-config.proposed.toml
+
+# Real credentials and local operational data; keep reviewed examples trackable
+.env
+.env.*
+!.env.example
+/secrets/
+/data/local/
+/data/private/
+/data/raw/
+/backups/
+/logs/
+/tmp/
+/temp/
+
+# Generated build and analysis output
+/build/
+/dist/
+/coverage/
+/htmlcov/
+.coverage
+.coverage.*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Public research uses an explicit publication directory; raw evidence stays local.
+/docs/research/*
+!/docs/research/public/
+
+# Machine-specific installation narratives and verification records stay local.
+/setup/initialisatieplan.txt
+/setup/deployment-status.txt
