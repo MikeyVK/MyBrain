@@ -1,0 +1,25 @@
+{
+  "schema_version": "2.0.0",
+  "branch": "chore/2-configure-quality-tooling",
+  "parent_branch": "main",
+  "issue_number": 2,
+  "workflow_name": "chore",
+  "current_phase": "research",
+  "current_cycle": null,
+  "last_cycle": null,
+  "cycle_history": [],
+  "required_phases": [
+    "research",
+    "implementation",
+    "validation",
+    "documentation",
+    "ready"
+  ],
+  "execution_mode": "interactive",
+  "skip_reason": null,
+  "issue_title": "Configure PGMCP quality tooling and verification policy",
+  "created_at": "2026-10-21T21:00:14.426737+00:00",
+  "transitions": [],
+  "reconstructed": false,
+  "current_sub_phase": null
+}
