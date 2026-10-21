@@ -3,7 +3,7 @@
 # Issue 1 research notes: coordinator-led autonomous collaboration
 
 **Status:** RESEARCH NOTES — worktree constraints approved; remaining operating policy proposed  
-**Version:** 1.2  
+**Version:** 1.3  
 **Last Updated:** 2026-10-21
 
 ## Purpose
@@ -12,7 +12,7 @@ Test the manual-handover hypothesis against current PGMCP sources, all exposed P
 
 ## Scope In
 
-Current role protocols, nine skill entrypoints and their five shared procedures, phase instructions, deployment/consumer consistency, Codex orchestration capabilities, independent review policy and sustained-session requirements.
+Current role protocols, eight skill entrypoints and their five shared procedures, phase instructions, deployment/consumer consistency, Codex orchestration capabilities, independent review policy and sustained-session requirements.
 
 ## Scope Out
 
@@ -37,7 +37,9 @@ The owner explicitly decided that every worktree must have its own PGMCP server 
 - Different worktrees may each run their own mutating Imp concurrently. Shared integration operations remain coordinated by Co.
 - Before work, verify the tuple worktree, branch, issue and server instance. On mismatch or unknown mutation ownership, stop that worktree's mutations and reconcile through Co.
 
-## Current model: decisive evidence
+## Baseline model: decisive evidence
+
+This section records inspection before instruction implementation, at baseline commit 0cea546. The linked source paths identify the originals; their active contents are reconciled by the subsequent documentation work. The skill inventory is eight entrypoints (three roles plus five procedures); the earlier count of nine was an inventory typo, not an additional missing skill.
 
 | Finding | Source | Consequence |
 | --- | --- | --- |
@@ -59,7 +61,7 @@ The owner explicitly decided that every worktree must have its own PGMCP server 
 | pgmcp-start-issue | Co owns real branch creation, checkout, initialization and plan verification; hands initialized child branch to Imp. | Deliver assignment directly and verify recipient workspace/state before work. |
 | pgmcp-end-issue | Explicitly authorized merge, parent update, reachability and cleanup; advisory next issue. | Continue the next authorized issue after proven closeout, with merge/closure authority supplied by the original scoped mandate. |
 
-All nine entrypoints and all five underlying procedures were read. Skills are invocation surfaces, not nine independent operating policies.
+All eight entrypoints and all five underlying procedures were read. Skills are invocation surfaces, not eight independent operating policies.
 
 ## Codex mechanisms actually available here
 
@@ -120,7 +122,7 @@ Suggested default interpretation of working product is a locally startable, test
 
 ## Documentation and deployment blast radius
 
-The coherent change surface comprises the general protocol, all three role sources, all nine skill entrypoints, the five procedures, affected workflow phase instructions/hand-over contracts, the workspace AGENTS/README references, and the Codex capability/deployment mapping. Preserve one generic policy and a separate host mechanism mapping. Keep a versioned public-safe distribution of reviewed source changes and an explicit source-to-effective-.pgmcp-to-skill/.codex reconciliation process; both .pgmcp and .codex operational trees are currently ignored except branch-local lifecycle facts. Do not leave the intended change only in ignored local files or modify installed package assets. Any runtime config delta belongs in reviewed workspace overrides, not silent edits to packaged defaults.
+The coherent change surface comprises the general protocol, all three role sources, all eight skill entrypoints, the five procedures, affected workflow phase instructions/hand-over contracts, the workspace AGENTS/README references, and the Codex capability/deployment mapping. Preserve one generic policy and a separate host mechanism mapping. Keep a versioned public-safe distribution of reviewed source changes and an explicit source-to-effective-.pgmcp-to-skill/.codex reconciliation process; both .pgmcp and .codex operational trees are currently ignored except branch-local lifecycle facts. Do not leave the intended change only in ignored local files or modify installed package assets. Any runtime config delta belongs in reviewed workspace overrides, not silent edits to packaged defaults.
 
 ## Required review exercises and present evidence limits
 
@@ -142,3 +144,4 @@ Later document review must exercise normal assignment/review, QA NOGO/correction
 | 1.0 | 2026-10-21 | @imp planner | Record current three-agent evidence, skill inventory, Codex capability boundaries and proposed autonomous mandate. |
 | 1.1 | 2026-10-21 | @imp planner | Apply owner clarification: Co delegates installation to Imp; parallel worktrees are supported design intent with correctly bound PGMCP contexts. |
 | 1.2 | 2026-10-21 | @imp planner | Record owner-approved dedicated server per worktree and single active mutating Imp per worktree, including delegated implementation workers. |
+| 1.3 | 2026-10-21 | @imp documenter | Label pre-implementation evidence as baseline and correct eight-skill inventory; preserve prior findings as historical context. |

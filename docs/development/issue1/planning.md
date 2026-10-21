@@ -3,7 +3,7 @@
 # Issue 1 documentation plan
 
 **Status:** PLAN — owner-directed documentation execution  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-21
 
 ## Purpose
@@ -72,7 +72,7 @@ Explicit owner mandate, independent QA identity, revision-bound verdicts, dedica
 
 ##### P2.1
 
-Three roles, five procedures, nine skills and complete affected phase instruction overrides reference the shared collaboration policy.
+Three roles, five procedures, eight skills and complete affected phase instruction overrides reference the shared collaboration policy.
 
 **Owner:** Imp
 
@@ -158,3 +158,4 @@ Markdown/YAML checks appropriate to changed files pass; QA examines direct sourc
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp planner | Plan source, role, skill, phase and Codex deployment reconciliation and independent review. |
+| 1.1 | 2026-10-21 | @imp documenter | Correct the inventory count to eight existing skills; planned target set and scope are unchanged. |
