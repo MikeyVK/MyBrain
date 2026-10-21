@@ -3,7 +3,7 @@
 # Issue 1 research notes: coordinator-led autonomous collaboration
 
 **Status:** RESEARCH NOTES — proposed operating policy for owner review  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-21
 
 ## Purpose
@@ -60,7 +60,7 @@ All nine entrypoints and all five underlying procedures were read. Skills are in
 | Workspace isolation | Managed Git worktree tools and host worktree support. | Worktrees isolate repository checkouts, but ignored environment/server assets and the actual MCP binding must also target the correct checkout. |
 | Sustained work | Parent orchestration loop, durable status/decision artifacts and goal-style continuation. | Runtime permissions, capacity, availability and approvals still apply; a prompt does not grant broader access or guarantee uninterrupted operation. |
 
-The current local MCP registration binds a fixed workspace and server-data root. Consequently, this installation cannot be assumed to provide per-worktree PGMCP state just because another chat uses another directory. Treat serial issue execution in the shared checkout as the default until correct worktree-bound MCP provisioning has been demonstrated. Do not publish machine-specific launcher paths.
+Parallel issue work is a valid target within one logical project/workspace when each issue has its own Git worktree and branch. Worktrees isolate checked-out files and the current branch while sharing repository history. Each PGMCP execution context must bind to the intended worktree and its branch-local state/configuration. Separate worktree-bound server instances are one straightforward configuration approach; a shared fixed-root connection does not route automatically based on another chat's current directory. The current local MCP registration is fixed-root, so correct worktree provisioning still needs demonstration. Serialize mutations within the same checkout and shared integration actions, rather than serializing all work across different worktrees. Do not publish machine-specific launcher paths.
 
 The three local .codex/agents/pgmcp-*.toml consumers still contain the stale assertion that quality tools are intentionally unconfigured. Their relative portable skill entrypoints now reference the updated quality policy, so deployment drift already exists. Those local consumers need reconciliation, not publication of machine-specific copies.
 
@@ -72,7 +72,7 @@ This is a proposal, not newly activated policy.
 
 | Role | Owns | Cannot substitute for |
 | --- | --- | --- |
-| Co | Owner mandate, interpretation of the idea, explicit assumptions, issue graph, assignment routing, scheduling, status and authorized lifecycle coordination. | QA's independent verdict or Imp's implementation evidence. |
+| Co | Owner mandate, interpretation of the idea, explicit assumptions, issue graph, assignment routing, scheduling, status and authorized lifecycle coordination. Delegates installation and environment provisioning to Imp. | QA's independent verdict, Imp's implementation evidence or hands-on installation/build work. |
 | Imp | Research/design/planning/production work on its assigned initialized issue branch, local environment setup, meaningful tests, repairs, evidence and reproducibility. | Its own independent approval. |
 | QA | Independent review of each required phase boundary against the owner mandate, authoritative phase contract and exact reviewed revision; explicit GO/NOGO with reasons. | Product-owner decisions outside the delegated envelope or production repairs. |
 
@@ -90,7 +90,7 @@ flowchart LR
 
 Co appoints the QA authority under the owner's explicit mandate. Independence depends on separate role context, no authorship of the reviewed work, unchanged acceptance criteria, direct evidence and unfiltered verdict reporting; it does not require the human to launch every review. For Co-produced epic documentation, QA still reviews independently of that producer. Imp-delegated preflight stays findings-only. Neither Co nor Imp may rewrite a NOGO into a GO or change scope merely to obtain approval.
 
-A verdict identifies mandate, assignment, issue, branch, reviewed commit SHA, phase/cycle, applicable contract, evidence, findings and GO/NOGO. It expires for affected work when the revision or governing requirements change. Co schedules the next phase only after the matching valid GO and explicit scope checks. The role owning the branch performs its permitted PGMCP mutation; Co serializes scheduling rather than all agents concurrently mutating Git/state.
+A verdict identifies mandate, assignment, issue, branch, reviewed commit SHA, phase/cycle, applicable contract, evidence, findings and GO/NOGO. It expires for affected work when the revision or governing requirements change. Co schedules the next phase only after the matching valid GO and explicit scope checks. The role owning the branch performs its permitted PGMCP mutation; Co permits parallel execution in separate verified worktrees and serializes mutations within each checkout plus shared integration operations. A QA review on an Imp worktree requires the reviewed revision to remain stable; alternatively QA can inspect a separate checkout of the exact committed revision.
 
 Persistent chats are useful for the continuing Co/Imp/QA responsibilities. Bounded subagents are useful for research questions, implementation modules with separate file ownership, and review support. A Co-owned sibling QA role can be the designated independent authority if the revised mandate/protocol explicitly grants that authority. A subagent spawned by Imp as preflight does not gain that authority merely by being called QA.
 
@@ -100,7 +100,7 @@ A short future prompt can refer to a reusable autonomous-product mandate. That m
 
 1. Discovery and product interpretation: Co turns the vague idea into explicit assumptions, target users, intended outcomes, non-goals and measurable completion criteria. Agents can choose within the delegated envelope, retain rationale and revise assumptions from evidence. They must not silently claim that inferred preferences were explicitly stated by the owner.
 2. Decision authority: specify whether Co may select application technology, approve strategy within boundaries, classify/create issues and choose implementation order. This replaces recurring routine owner gates with delegated decisions and independent QA checks.
-3. Workspace execution: permit installation of necessary application dependencies and development tools into workspace-local environments, running local services, builds, migrations on synthetic/local data, meaningful tests and local demonstrations. Record pins and reproduction steps. Installing application software in this future mandate does not authorize altering the host globally.
+3. Workspace execution: Co delegates installation and environment provisioning to Imp. Imp installs necessary application dependencies and development tools into workspace-local environments and runs local services, builds, migrations on synthetic/local data, meaningful tests and demonstrations. Imp records pins and reproduction steps; Co tracks prerequisites and results. Separate mutable dependencies, generated output, service ports and local databases for concurrent worktrees, or explicitly coordinate a shared resource. Installing application software in this future mandate does not authorize altering the host globally.
 4. Integration authority: name allowed repository/branches and whether Co may push, create PRs, merge and close issues after matching QA GO. These are separate from local installation permission. Issue 1 can define scoped authority without granting blanket publication or merge rights.
 5. Autonomy and recovery: use message-based assignments and return paths, durable checkpoint/status records, explicit file ownership, one Git/PGMCP mutation owner per checkout, bounded retries and progress-based replanning. Resume by reading actual current state and the last valid verdict; do not trust stale chat memory after interruption or compaction.
 6. Completion and limits: product acceptance requires a clean reproducible setup, a running application, representative end-to-end journeys, configured relevant quality checks and explicit QA acceptance at the product boundary. Specify a practical resource/retry envelope and how to report an unrecoverable or externally blocked task. No unconditional promise that every vague idea is solvable without any outside input is supportable.
@@ -129,3 +129,4 @@ Later document review must exercise normal assignment/review, QA NOGO/correction
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp planner | Record current three-agent evidence, skill inventory, Codex capability boundaries and proposed autonomous mandate. |
+| 1.1 | 2026-10-21 | @imp planner | Apply owner clarification: Co delegates installation to Imp; parallel worktrees are supported design intent with correctly bound PGMCP contexts. |
