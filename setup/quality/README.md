@@ -2,8 +2,8 @@
 
 # MyBrain quality tooling setup
 
-**Status:** MAINTAINED — owner-approved policy; implementation review pending  
-**Version:** 1.0  
+**Status:** MAINTAINED — owner-approved policy  
+**Version:** 1.1  
 **Last Updated:** 2026-10-21
 
 ## Purpose
@@ -101,6 +101,7 @@ Do not label an unused binding configuration_choice=not_applicable to suppress a
 ## Related Documents
 
 - [Approved Research](<../../docs/development/issue2/research.md>)
+- [Initial setup validation](<../../docs/development/issue2/validation.md>)
 - [Repository agreements](<../../README.md#working-agreements>)
 
 ## Version History
@@ -108,3 +109,4 @@ Do not label an unused binding configuration_choice=not_applicable to suppress a
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp implementer | Document pinned native setup, workspace override deployment, selection limits and revisit triggers for issue 2. |
+| 1.1 | 2026-10-21 | @imp documenter | Reconcile maintained status and link the initial setup validation record. |
