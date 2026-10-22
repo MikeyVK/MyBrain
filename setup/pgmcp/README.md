@@ -3,8 +3,8 @@
 # PGMCP collaboration sources and Codex deployment
 
 **Status:** MAINTAINED — independent review pending  
-**Version:** 1.1  
-**Last Updated:** 2026-10-21
+**Version:** 1.2  
+**Last Updated:** 2026-10-22
 
 ## Purpose
 
@@ -34,11 +34,13 @@ For initial absent deployment files, use scaffold_artifact where supported and s
 
 For every worktree, Imp provisions the selected supported harness environment, package server assets, generic source bundle, reviewed config overrides, template suite and applicable native dependencies. Follow the packaged bootstrap without inventing an issue for setup. Co commissions and verifies this work.
 
+Register distinct host-visible MCP connection names for admitted worktrees, for example pgmcp-wt-a and pgmcp-wt-b. Assignments, replies and activation checks name the exact selected binding. The logical operations shown in shared protocols (such as get_work_context) run through that named connection. Names distinguish routes; resolved roots and actual context still prove the binding.
+
 Each connection launches its own proxy/server instance with its actual CWD and PGMCP_WORKSPACE_ROOT bound to that worktree, and PGMCP_SERVER_PROJECT_DIR bound to its own .pgmcp. PGMCP_CONFIG_ROOT and PGMCP_TEMPLATE_ROOT, if set, must resolve to that worktree's reviewed resources. Logs, mutable state and locks remain worktree-bound. Resolve adapter executables from the intended environment via actual connection PATH. Do not copy the parent checkout's absolute roots into a child registration.
 
 Connection selection must be demonstrable to each role task. Custom subagents inherit parent MCP servers/settings; their role file cannot install a separate MCP connection. Thus an Imp subagent under a parent bound only to checkout A must not be told to mutate checkout B through that inherited connection. Use a verified worktree-bound persistent task/session, or a host-exposed explicitly routed dedicated connection. If the host cannot supply the correct connection, that worktree is blocked until provisioning is corrected.
 
-Before admission, record the local-only worktree↔server↔role-task mapping, inspect resolved roots, run git_status/get_work_context as appropriate and execute a positive native check on a synthetic file that exists only in that worktree. Verify a sibling-only relative fixture is absent/refused through this instance. Co compares the actual branch/issue identity before lifecycle entry. A second process ID alone is not isolation proof. No live multi-worktree admission trial has been performed by issue 1.
+Before admission, derive the worktree-to-named-binding and role-task identity from the actual host configuration, worktree inventory and authorized assignment. Do not introduce a second Co register. Inspect resolved roots, run git_status/get_work_context as appropriate and execute a positive native check on a synthetic file that exists only in that worktree. Verify a sibling-only relative fixture is absent/refused through this instance. Co compares the actual branch/issue identity before lifecycle entry. A second process ID alone is not isolation proof. No live multi-worktree admission trial has been performed by issue 1.
 
 Host-managed worktrees can start detached. Co must establish the admitted real issue branch with explicit parent using that worktree's instance before initialize_project and issue implementation. A technical setup assignment to Imp is distinct from this lifecycle work. Do not share a live writer during Co's branch/init interval.
 
@@ -65,13 +67,25 @@ Imp deploys reviewed files and performs configuration/provisioning repairs. Co e
 
 For each participating connection, quiesce governed writers and confirm no tool is in flight. Use that connection's supported restart/reconnect route; perform full proxy/client relaunch only where the packaged bootstrap requires it. If the host exposes session activation solely to its owning role, that role may refresh its already provisioned session without changing configuration, source, branch or workflow state. QA may do this bounded activation; installation/repair stays with Imp.
 
-Then call get_work_context through that exact connection and compare the actual issue/branch/phase plus the deployed coordination preamble, explicit cycle-review rules and Context hand-over fields. Read-back of current results is required; a restart acknowledgement, exact file parity, shared marker, new PID elsewhere or standalone loader parse does not establish admission. Record the connection-local observation and source revision locally; any stale or unverified participant remains blocked. A chat not involved in this assignment is not implicitly activated or certified and must pass this checklist before later use.
+Then call get_work_context through that exact connection and compare the actual issue/branch/phase plus the deployed coordination preamble, explicit cycle-review rules and Context hand-over fields. Read-back of current results is required; a restart acknowledgement, exact file parity, shared marker, new PID elsewhere or standalone loader parse does not establish admission. Keep the connection-local observation and source revision in the existing authorized activation reply/tool results; any stale or unverified participant remains blocked. A chat not involved in this assignment is not implicitly activated or certified and must pass this checklist before later use.
 
 For the current documentation review, Imp's connection and the existing Qa connection are participating. The first review observed that only Imp's activation had been demonstrated. Herreview must independently read back the updated instructions on Qa's own refreshed connection; no earlier result from Imp can substitute. Co's existing idle connection is not claimed activated by this issue.
 
+## Git-derived progress and worktree review pairs
+
+Co reconstructs durable progress from actual Git worktrees/refs, resolved commit SHAs, committed .pgmcp/state.json, stored deliverables where present, planning, decisions and verification artifacts. Read state/artifacts from the same resolved SHA. Use the correct named connection's get_work_context and git_status to detect provisional uncommitted state; do not fabricate schema fields or duplicate those facts into a Co status file. A displayed overview is disposable.
+
+Use wait_threads with host/cursor and bounded waits for live role-task events/status; use read_thread for targeted diagnosis, original assignments and independent verdicts. Git alone does not prove a command stopped or a writer released ownership. Co remains an active coordination turn; an ended turn needs an authorized incoming message or explicitly configured scheduling to resume. This issue does not install a permanent supervisor.
+
+Every worktree may have its own Imp and independently appointed QA chat. Both use the worktree's verified named binding; each connection must activate the current instructions. QA-A may review frozen revision A while Imp-B continues in its independently admitted worktree. If QA uses a separate review checkout, provision that checkout's own named binding as well.
+
+The original independent QA-chat GO/NOGO for the exact reviewed revision satisfies the existing procedural phase-review boundary. Co and Imp consult that original reply and use the PGMCP transitions only as permitted by the phase instructions. No separate verdict register, post-review recording commit or server-enforced QA gate is required; phase values and producer summaries do not stand in for the original verdict. Existing native evidence, authority and revision matching remain required.
+
+The current documentation review still uses the established single-worktree pgmcp connection. No extra worktrees or new named bindings have been provisioned here. During the later parallel admission trial, deploy/reconcile distinct binding names and independently verify every participant before concurrent execution.
+
 ## Mutation scheduling and role refresh
 
-Co records one mutating Imp holder for each worktree and authorizes only one active writer, including descendants. Installation, fixes and source/state edits count. Co's lifecycle mutation interval is exclusive with that Imp interval. Independent worktrees can each have one writer; serialize shared integration/ref operations.
+Co explicitly assigns one mutating Imp per worktree through the existing authorized channel and verifies that assignment against live tool/task state. No separate ownership register is required. Co authorizes only one active writer, including descendants. Installation, fixes and source/state edits count. Co's lifecycle mutation interval is exclusive with that Imp interval. Independent worktrees can each have one writer; serialize shared integration/ref operations.
 
 Before reassignment, stop/await the earlier worker and confirm no mutation is in flight. An interrupted or silent task is not proof that its command stopped. QA on the producer worktree requires a stable committed revision; read-only support can be concurrent where evidence/resources remain stable.
 
@@ -100,3 +114,4 @@ Acceptance of this documentation does not itself prove unattended product delive
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp documenter | Document portable sources, dedicated-instance deployment, Codex interaction mapping and verification limits. |
 | 1.1 | 2026-10-21 | @imp documenter | Require per-participant connection activation/read-back and distinguish narrow own-session refresh from Imp-only setup/repair. |
+| 1.2 | 2026-10-22 | @imp documenter | Document named worktree bindings, per-worktree QA pairs, Git-derived monitoring and existing procedural chat verdicts. |

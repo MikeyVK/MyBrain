@@ -3,8 +3,8 @@
 # Issue 1 collaboration review exercises
 
 **Status:** DOCUMENT WALKTHROUGH — independent review requested  
-**Version:** 1.1  
-**Last Updated:** 2026-10-21
+**Version:** 1.2  
+**Last Updated:** 2026-10-22
 
 ## Purpose
 
@@ -30,6 +30,10 @@ The following checks trace stated rules against the portable source set. They ar
 | A10: A new issue is ready after authorized closeout. | end-issue; go; phase override. | Interactive mode recommends/returns to owner. Coordinated mode dispatches only within the original issue/integration authority, with explicit IDs, valid verdicts and correctly routed instance; authority is not inferred from a producer message. |
 | A11: Shared files are new, but Qa still reads old phase text from its existing connection. | collaboration: per-connection activation; host guide: connection checklist; QA allowed actions. | Qa is not admitted by Imp's restart, loader parse or shared marker. With all writers quiescent it may activate its own already provisioned session, then must independently read back the new preamble and hand-over. Configuration/installation repair returns to Imp. |
 | A12: Implementation has intermediate cycle 1, plan-marked QA cycle 2 and final cycle 3. | collaboration and Imp role: exact review boundaries; all phase override preambles. | Cycle 1 may advance under inherited objective evidence within the authorized phase assignment. Cycle 2 waits for exact-revision independent GO despite permissive inherited text. Final cycle 3 and every phase exit also require GO. An ambiguous plan is clarified before mutation. |
+| A13: Worktrees A and B have distinct named bindings, but A's binding resolves to B's roots. | collaboration: named bindings; host guide: admission. | The readable name is insufficient; actual roots/branch/issue mismatch blocks A before mutation. The assignment names the exact binding, not an ambiguous generic default. |
+| A14: QA-A independently reviews committed revision A while Imp-B is running in B. | collaboration and QA role: independent worktree pairs. | Only A's producer is quiescent; B may continue with its own sole Imp and verified binding. Each QA context retains original independent appointment and reviews the assigned exact revision. |
+| A15: Co resumes without a custom status/register file. | collaboration: Git-derived continuation; Co role; host guide. | Reconstruct the disposable overview from resolved branch SHAs, committed state/planning/evidence and live task/tool status. Recover authority/assignment/original QA from their existing sources; absence of a Co register alone does not block continuation. |
+| A16: QA has returned exact-revision GO in its own chat; Git has no verdict field. | collaboration: original verdict; Imp/QA roles and phase preamble. | The independently authorized original reply satisfies the review requirement. Normal evidence and phase rules still apply, but an extra registry or recording commit is not a prerequisite. A producer summary or phase value alone remains insufficient. |
 
 These are observed paths through the written rules. They do not demonstrate tool delivery, actual permission enforcement, concurrent process exclusion or a live application.
 
@@ -56,3 +60,4 @@ No extra worktrees/server instances, real product installations, parallel writer
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp documenter | Record assignment/review, correction, escalation, resumption and isolation scenarios with evidence limits. |
 | 1.1 | 2026-10-21 | @imp documenter | Add stale connection and intermediate/marked/final cycle scenarios after independent NOGO. |
+| 1.2 | 2026-10-22 | @imp documenter | Add owner-agreed named binding, worktree QA pair, Git reconstruction and original-chat-verdict walkthroughs. |

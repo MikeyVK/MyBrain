@@ -132,9 +132,14 @@ revision-bound GO/NOGO to the authorized participants; producer preflight remain
 findings-only. One context keeps one role.
 
 Every worktree requires its own PGMCP server instance and correctly bound
-connection. At most one mutating Imp, including delegated implementation workers,
-may be active per worktree. Co manages assignment/release and serializes shared
+connection with a distinct name for each admitted worktree. Each worktree may
+have its own independent QA context. At most one mutating Imp, including delegated
+implementation workers, may be active per worktree. Co manages assignment/release and serializes shared
 integration actions. Different admitted worktrees can run their own Imp in parallel.
+Co reconstructs durable progress from Git and existing workflow/planning evidence;
+overviews are disposable. Live agent/tool status governs safe handoff. The original
+independent QA-chat verdict suffices at required review boundaries; no additional
+Co progress register, verdict store or technical QA gate is required.
 
 The [portable deployment map](setup/pgmcp/README.md) identifies reviewed generic
 sources, the PGMCP 4.0.0 phase-instruction override and local Codex role consumers.

@@ -3,8 +3,8 @@
 # Issue 1 instruction verification
 
 **Status:** DOCUMENTATION EVIDENCE — independent QA requested  
-**Version:** 1.1  
-**Last Updated:** 2026-10-21
+**Version:** 1.2  
+**Last Updated:** 2026-10-22
 
 ## Purpose
 
@@ -41,6 +41,12 @@ Independent review I1-DOC-QA-1 returned NOGO for commit fbd19220cd4bfddbf7f02a55
 
 The deployment guide and shared/QA protocols now require independent read-back on every participating connection and permit only bounded own-session activation on already provisioned config; provisioning and technical repair remain Imp work. The activation claim above is limited to the actual observed connection. The collaboration policy, Imp role and all phase preambles now consistently require independent QA at every phase exit, final implementation-cycle exit and additional intermediate exits explicitly marked QA-required in approved Planning. Unmarked intermediate cycles retain inherited objective evidence/tool gates within the authorized assignment; an ambiguous boundary blocks mutation. Native gates are unchanged. Exercises A11/A12 cover both corrections. Correction verification: run_checks(scope='targets', checks=['markdown_links']) passed on the six changed portable/evidence Markdown files (collaboration, Imp/QA roles, deployment README, exercises and this report); yaml_configuration passed on setup/pgmcp/contracts.yaml. All ten generic source copies and the contract override again matched exactly, all 39 preambles contained the same explicit cycle-review rule, and the override still contained only the two permitted instruction fields per phase. After restarting Imp's own connection, get_work_context returned the new review-boundary text and Context hand-over in documentation. No activation of Qa or Co is inferred. A new committed revision and independent read-back on Qa are required for herreview; no corrected GO is asserted here.
 
+## Owner refinements after the reviewed commit
+
+The owner authorized four refinements after I1-DOC-QA-2: distinctive host-visible server binding names per admitted worktree; an independently appointed QA context for each worktree where useful; Git/workflow artifacts as the durable progress source without a duplicate Co register; and original independent QA-chat verdicts as sufficient procedural phase-review evidence without an additional registry or technical gate. Existing owner appointment, required native evidence, exact-revision matching, single-writer rules and phase/cycle boundaries remain intact.
+
+The shared collaboration/role sources, deployment guide, root entrypoints, three role skills, portable Codex role metadata and phase preambles are reconciled. Exercises A13-A16 cover the refinements as document walkthroughs. This remains instruction/deployment documentation: no additional worktrees, actual named MCP connections, permanent monitor or technical lock is installed by these changes. The existing single-worktree pgmcp binding remains in use for this review. Renewed verification passed: markdown_links on the 12 changed Markdown sources/entrypoints/evidence documents; yaml_configuration on contracts.yaml and codex-roles.yaml; exact equality of all ten generic source/deployed copies and the phase override; parsing and exact field equality of the three local TOML consumers; and quick_validate.py on the three changed role skills. Structural comparison with the previous committed override confirmed all 39 original phase bodies and hand-over templates were preserved and every preamble carried the same owner refinements. After restarting Imp's own connection, get_work_context returned the new named-binding/Git-progress/original-verdict clauses and Context hand-over. This activation observation covers Imp only; Qa must independently activate/read back its connection during herreview. TOML writes again used report mode with native validation not_executed; the separate TOML parse/parity check is structural evidence. Independent exact-revision herreview remains required; the prior GO for 7a7570b02656caf98185374eccd953cf4cdfe95d is not claimed for this later revision.
+
 ## Review identity and frozen snapshot
 
 The owner requested the existing MyBrain Qa chat and had already appointed it independently for substantive phase-boundary GO/NOGO. The review request will name the final committed branch/revision and the original owner authorization. During same-worktree review, Imp will stop mutations and inspect the returned verdict. Any required correction creates a new committed revision for renewed QA. No producer GO, independent approval or phase progression is claimed here.
@@ -57,3 +63,4 @@ The owner requested the existing MyBrain Qa chat and had already appointed it in
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-21 | @imp documenter | Record exact verification selections, deployment parity and remaining operational limits. |
 | 1.1 | 2026-10-21 | @imp documenter | Preserve independent NOGO, narrow observed activation scope and describe both corrections for renewed verification. |
+| 1.2 | 2026-10-22 | @imp documenter | Record owner-authorized refinements and scope of renewed verification without extending the previous commit-bound GO. |

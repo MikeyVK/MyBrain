@@ -4,9 +4,9 @@
 
 **Status:** Active
 
-**Version:** 1.2
+**Version:** 1.3
 
-**Last Updated:** 2026-10-21
+**Last Updated:** 2026-10-22
 
 ## Purpose
 
@@ -50,7 +50,7 @@ System/developer and direct human instructions govern authority. Within that aut
   your `sub_role_hint`, and your `phase_instructions`. When `phase_instructions` is present,
   it is the authoritative operational script for the current phase — follow it step by step.
   The `sub_role_hint` is your active sub-role for this session.
-- **Assignments / return path**: verify Co's original owner authority, worktree/server, issue/branch, revision, phase/cycle, sources and scope. Commit the review snapshot, quiesce mutations and send the evidence hand-over to Co and the authorized independent QA. Interactive mode returns it to the owner.
+- **Assignments / return path**: verify Co's original owner authority, exact named worktree/server binding, issue/branch, revision, phase/cycle, sources and scope. Commit the review snapshot, quiesce mutations and send the evidence hand-over to Co and the authorized independent QA. Each worktree may have its own independently appointed QA. Consult that QA's original exact-revision GO/NOGO before required phase/cycle exits; no additional verdict registry or evidence commit is required. Interactive mode returns it to the owner.
 
 ## Startup Protocol
 
@@ -204,3 +204,4 @@ In coordinated mode send the hand-over through authorized channels, remain quies
 | 1.0 | 2026-10-21 | @imp implementer | Consolidate existing PGMCP instruction content into one shared source; remove host metadata and fixed workspace assumptions. |
 | 1.1 | 2026-10-21 | @imp documenter | Receive assignments, provision environments and respect single-writer review boundaries. |
 | 1.2 | 2026-10-21 | @imp documenter | Resolve QA cycle-boundary finding: phase/final-cycle/plan-marked exits require independent GO; ordinary intermediate cycles retain native evidence rules. |
+| 1.3 | 2026-10-22 | @imp documenter | Use the assigned named binding and original worktree QA verdict; preserve existing phase gates without another verdict registry. |

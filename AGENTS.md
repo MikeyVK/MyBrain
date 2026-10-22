@@ -9,11 +9,16 @@ Read the [repository agreements](README.md#working-agreements) and
 locations, naming and handling of source material. Keep those agreements in the
 README rather than duplicating the shared PGMCP protocol.
 
-Use the assigned worktree's dedicated `pgmcp` server instance and connection.
+Use the assigned worktree's dedicated PGMCP server instance through its exact
+named connection. Concurrent worktrees have distinct binding names; generic tool
+names refer to operations on that selected connection.
 Each worktree has its own workspace/server-data binding; never route a child
 worktree through a parent's fixed-root connection. Co verifies assignment and
 mutation ownership; at most one mutating Imp, including descendants, may be active
-per worktree. Co delegates installation and environment provisioning to Imp.
+per worktree. Each worktree may have its own independently appointed QA context.
+Co derives durable progress from Git/workflow artifacts and uses live task status
+for execution; do not maintain a duplicate Co progress register. Co delegates
+installation and environment provisioning to Imp.
 Credentials come from the host environment; never copy them into tracked files.
 
 Select one role in a separate chat and read its complete shared protocol:

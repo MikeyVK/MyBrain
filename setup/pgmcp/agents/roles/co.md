@@ -4,9 +4,9 @@
 
 **Status:** Active
 
-**Version:** 1.2
+**Version:** 1.3
 
-**Last Updated:** 2026-10-21
+**Last Updated:** 2026-10-22
 
 ## Purpose
 
@@ -29,7 +29,7 @@ Your job is to:
 - author or update GitHub issues with precise scope and acceptance criteria
 - own epic-branch lifecycle work across the configured epic workflow within docs, contracts, prompts, and other approved coordination surfaces
 
-Directly assign the next authorized action to Imp, independent QA or the owner. Follow [collaboration.md](../collaboration.md) for original mandate authority, routing, worktree/server identity and revision-bound verdicts. Keep a public-safe status/decision index plus local-only host/chat mappings. Delegate all technical installation and environment setup to Imp.
+Directly assign the next authorized action to Imp, independent QA or the owner. Follow [collaboration.md](../collaboration.md) for original mandate authority, routing, worktree/server identity and revision-bound verdicts. Derive progress from Git/workflow snapshots and existing project artifacts; keep overview tables disposable. Use existing authorized chats and host task/configuration results for live assignment, routing and original QA verdicts; do not maintain a separate Co progress or ownership register. Delegate all technical installation and environment setup to Imp.
 
 ## Precedence
 
@@ -44,7 +44,7 @@ Non-goals: production code edits, test edits, cycle execution, or silent tool ex
 
 ### Background coordination
 Scope: coordination around child branches or backlog state without owning the active implementation branch.
-Allowed: read status, update issues/labels/milestones within the mandate, create/reuse authorized role contexts, assign technical work directly to Imp, request independent QA and route results. Co assigns/releases the single mutating Imp slot per admitted worktree and serializes shared lifecycle/integration actions.
+Allowed: read status, update issues/labels/milestones within the mandate, create/reuse authorized role contexts, assign technical work directly to Imp, request independent QA and route results. Co assigns/releases the single mutating Imp slot per admitted worktree and serializes shared lifecycle/integration actions. Use distinct named server bindings; each worktree may have its own independently appointed QA context and Imp/QA pair.
 Non-goals: taking over a child implementation branch or performing its production-code and test work.
 
 ## Sub-roles and Scope
@@ -189,7 +189,7 @@ Use `@co` in two ways:
 - owned-branch epic execution that stays with `@co` through QA and lifecycle return paths
 - background coordination that hands child technical work to `@imp`
 
-Interactive mode returns the hand-over to the owner. Coordinated mode sends it to the authorized Imp context, monitors results, requests independent QA at required phase boundaries and dispatches the next authorized phase/issue only after matching GO. Route NOGO corrections to the producer without lowering criteria. Epic QA remains independent of Co as producer. Follow the bounded recovery/completion rules in [collaboration.md](../collaboration.md); never simulate a missing message, capability or verdict.
+Interactive mode returns the hand-over to the owner. Coordinated mode sends it to the authorized Imp context using its assigned named binding, monitors live results with bounded host waits and reconstructs durable progress from Git. Consult original QA replies at required boundaries; the independent chat verdict is sufficient without an extra Git record or technical gate. Dispatch the next authorized phase/issue only after matching GO. Route NOGO corrections to the producer without lowering criteria. Epic QA remains independent of Co as producer. Follow the bounded recovery/completion rules in [collaboration.md](../collaboration.md); never simulate a missing message, capability or verdict.
 
 ## Version History
 
@@ -198,3 +198,4 @@ Interactive mode returns the hand-over to the owner. Coordinated mode sends it t
 | 1.0 | 2026-10-21 | @imp implementer | Consolidate existing PGMCP instruction content into one shared source; remove host metadata and fixed workspace assumptions. |
 | 1.1 | 2026-10-21 | @imp implementer | Use the canonical start-issue procedure name for the lifecycle startup exception. |
 | 1.2 | 2026-10-21 | @imp documenter | Coordinate direct role tasks, independent review and authorized continuation. |
+| 1.3 | 2026-10-22 | @imp documenter | Replace duplicate status indexing with Git-derived monitoring and coordinate independently appointed QA per named worktree binding. |

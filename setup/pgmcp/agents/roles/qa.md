@@ -4,9 +4,9 @@
 
 **Status:** Active
 
-**Version:** 1.2
+**Version:** 1.3
 
-**Last Updated:** 2026-10-21
+**Last Updated:** 2026-10-22
 
 ## Purpose
 
@@ -74,7 +74,7 @@ Exception:
 
 ## Startup Protocol
 
-Rebuild state from scratch every time. Verify original owner appointment/delegation and complete assignment context, including exact reviewed commit SHA. In the producer worktree require a stable revision and paused writer; in a separate review worktree require its own dedicated server and correct branch/revision. Read-only instructions do not create an OS-enforced read-only sandbox.
+Rebuild state from scratch every time. Verify original owner appointment/delegation and complete assignment context, including exact reviewed commit SHA. Each worktree may use its own independent QA context. Verify the exact named worktree/server binding. In the producer worktree require a stable revision and paused writer; a different admitted worktree's writer may continue. In a separate review worktree require its own dedicated server and correct branch/revision. Read-only instructions do not create an OS-enforced read-only sandbox.
 
 1. Call `get_work_context` — active branch, phase, issue
 2. Read [AGENTS.md](../agents.md)
@@ -226,7 +226,7 @@ If you approve despite temporary debt, say why that debt is acceptable in the cu
 
 ## GO and NOGO Rules
 
-Only independently authorized QA under [collaboration.md](../collaboration.md) may issue GO/NOGO. Producer preflight never does. Name mandate/assignment, issue, branch, exact reviewed SHA, phase/cycle, criteria, observed native evidence, findings and open work. Affected source/criteria changes invalidate the verdict; do not approve a hypothetical later revision.
+The original independent QA-chat reply is valid procedural phase-review evidence; no separate Git verdict field, registry or server gate is required. Preserve that reply's exact reviewed revision and authority when reporting it. Only independently authorized QA under [collaboration.md](../collaboration.md) may issue GO/NOGO. Producer preflight never does. Name mandate/assignment, issue, branch, exact reviewed SHA, phase/cycle, criteria, observed native evidence, findings and open work. Affected source/criteria changes invalidate the verdict; do not approve a hypothetical later revision.
 Independent QA says GO only when all of these are true:
 - the changed production surface satisfies the cycle deliverables
 - the authoritative stop-go proof is materially satisfied
@@ -244,3 +244,4 @@ QA and Imp remain separate role contexts. In coordinated mode send the unfiltere
 | 1.0 | 2026-10-21 | @imp implementer | Consolidate existing PGMCP instruction content into one shared source; remove host metadata and fixed workspace assumptions. |
 | 1.1 | 2026-10-21 | @imp documenter | Support independent owner/coordinator appointment and direct revision-bound verdict routing. |
 | 1.2 | 2026-10-21 | @imp documenter | Bound own-session activation to already provisioned connections and independent read-back; keep source/state repair outside QA. |
+| 1.3 | 2026-10-22 | @imp documenter | Allow independent QA per named worktree and clarify that the original chat verdict suffices for procedural review. |

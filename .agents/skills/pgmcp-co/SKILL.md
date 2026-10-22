@@ -14,3 +14,8 @@ the single mutating Imp limit. Independent QA is owner-appointed or appointed
 by Co under explicit owner delegation; Imp-created preflight is findings-only.
 A directly owner-appointed QA remains independent when Imp sends the request. Apply the [repository quality policy](../../../README.md#quality-policy);
 application checks/tests and automated fixes remain deferred.
+
+Use the exact assigned named worktree binding; separate admitted worktrees have
+separate binding names and may each have an independent Imp/QA pair.
+Derive durable progress from Git and existing workflow artifacts; use live host
+status and original QA replies without a duplicate Co progress/verdict register.

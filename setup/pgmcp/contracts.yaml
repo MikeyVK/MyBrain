@@ -29,6 +29,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -119,6 +125,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -213,6 +225,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -313,6 +331,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -406,6 +430,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -495,6 +525,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -576,6 +612,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -673,6 +715,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -767,6 +815,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -861,6 +915,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -960,6 +1020,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1054,6 +1120,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1143,6 +1215,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1222,6 +1300,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1319,6 +1403,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1411,6 +1501,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1496,6 +1592,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1575,6 +1677,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1672,6 +1780,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1765,6 +1879,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1858,6 +1978,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -1956,6 +2082,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2045,6 +2177,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2132,6 +2270,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2211,6 +2355,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2308,6 +2458,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2396,6 +2552,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2481,6 +2643,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2578,6 +2746,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2642,6 +2816,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2715,6 +2895,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2788,6 +2974,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2853,6 +3045,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -2950,6 +3148,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -3039,6 +3243,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -3123,6 +3333,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -3211,6 +3427,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -3271,6 +3493,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
@@ -3349,6 +3577,12 @@
             Use one dedicated PGMCP server per worktree and at most one active mutating
             Imp (including descendants) per worktree. Co delegates installation to Imp,
             verifies mutation ownership and serializes shared lifecycle/integration.
+            Use the exact assigned named worktree/server binding; distinct worktrees
+            have distinct binding names and may each have independent QA.
+            Co derives durable progress from Git/workflow artifacts, using live task
+            status and original assignments/QA replies without a duplicate Co register.
+            The original independently authorized QA-chat verdict satisfies review;
+            no extra verdict register, recording commit or technical QA gate is needed.
             These are procedural controls and do not expand host/tool permissions or
             claim a server-enforced independent-verdict lock.
             
