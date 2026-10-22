@@ -3,7 +3,7 @@
 # Research: lossless private email ingestion trial
 
 **Status:** DRAFT — research complete for independent review; no phase approval claimed  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-22
 
 ## Purpose
@@ -72,7 +72,7 @@ Database uniqueness and conflict handling can support repeat import, but do not 
 | Production code, schema and public API | None exists for ingestion; no deployed consumer or data migration has been identified. New trial interfaces remain a Design concern. |
 | Existing private runtime | Preserve the provisioned engine, empty database and fixed selection. No replacement, reinitialization or other database/service change. |
 | Configuration and helpers | Existing PGMCP and quality bindings remain supported contracts. Future application/runtime configuration must not contain tracked credentials or private paths. |
-| Tests | No application suite or bindings are approved. Meaningful synthetic checks for byte integrity, deduplication, MIME completeness and correction protection will require an explicit proportionate test admission before implementation; private acceptance checks report aggregates only. |
+| Tests and operational verification | Application-test bindings remain deferred. Introducing new synthetic application-test bindings would require a separate policy decision; this trial does not introduce them. The owner-requested bounded operator/smoke checks for raw-byte integrity, read-back and repeat-import deduplication are already authorized under the current policy. MIME completeness, failure/resume and correction-protection evidence remain required. Report private acceptance checks as aggregates, never as passing native application tests. |
 | Documentation | New public-safe issue deliverables; maintained repository agreements remain authoritative. No private evidence enters docs, state, deliverables, commits or attachments. |
 | Agents, templates and enforcement | Existing role separation, native tools and phase reviews apply; no protocol/template/enforcement change is needed. |
 | Downstream consumers | The owner reviews an aggregate trial report and retrieves a private archive. Search, future processors and UI must not become required dependencies of source recovery. |
@@ -82,7 +82,7 @@ Database uniqueness and conflict handling can support repeat import, but do not 
 - Can the connector-to-private-storage path prove untruncated raw acquisition and MIME/attachment reconciliation for every selected message? Any omission must be surfaced rather than reconstructed.
 - Which of the two viable raw-storage routes gives the smallest auditable recovery boundary for this sample? Design must decide without committing the product's future large-file architecture.
 - What exact identity, correction-protection and failure/resume contracts provide meaningful verification? Design and Planning must define them before implementation.
-- Application tests remain deferred by repository policy. Co must obtain the necessary bounded test admission/quality decision before application implementation; a disabled suite is not passing evidence.
+- Application-test bindings remain deferred by repository policy; a separate decision is needed only if new bindings are introduced. The already authorized bounded operator/smoke verification may establish the trial's byte integrity, archive read-back, deduplication, negative/failure coverage and correction protection without changing that policy. Where the workflow requests run_tests(scope="configured"), invoke it and report its actual inactive/neutral outcome; neither that outcome nor operator checks are passing native application-test evidence.
 
 ## References
 
@@ -159,3 +159,4 @@ Repository inventory contains research, issue documentation, quality/PGMCP sourc
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-22 | @imp researcher | Document source-fidelity evidence, storage options, approved scope/compatibility strategy and unresolved Design/quality questions for issue #5. |
+| 1.1 | 2026-10-22 | @imp researcher | Clarify existing authorization for bounded operator verification while retaining deferred application-test bindings and all integrity requirements. |
