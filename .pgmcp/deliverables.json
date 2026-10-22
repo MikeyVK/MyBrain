@@ -16,7 +16,84 @@
       ],
       "skip_reason": null,
       "parent_branch": "main",
-      "created_at": "2026-10-22T09:05:14.809219+00:00"
+      "created_at": "2026-10-22T09:05:14.809219+00:00",
+      "planning_deliverables": {
+        "cycles": {
+          "total": 1,
+          "cycles": [
+            {
+              "cycle_id": "C_1",
+              "cycle_number": 1,
+              "cycle_name": "Bounded raw-email operator trial",
+              "deliverables": [
+                {
+                  "deliverable_name": "Preserve fixed raw sample",
+                  "description": "D_1.1: Using the exact private manifest and existing dedicated PostgreSQL database, preserve complete received raw bytes and provider observations for the eight selected messages; retain private acquisition receipts and produce aggregate framing/selection/storage-readback evidence. No replacement database or wider mailbox reads.",
+                  "deliverable_id": "D_1.1"
+                },
+                {
+                  "deliverable_name": "Reconcile full-source completeness",
+                  "description": "D_1.2: Verify three observed provider threads, strict raw decoding and all MIME/inline/attachment inventory outcomes; preserve any genuinely required separately exposed original through admitted tools. Classify all truncation, defects, missing/unsupported parts and external linked targets truthfully.",
+                  "deliverable_id": "D_1.2"
+                },
+                {
+                  "deliverable_name": "Trace derivations and repeated import",
+                  "description": "D_1.3: Store version/run-linked MIME inventory, extracted text, reply relationships and provisional source-linked context; demonstrate unchanged real source/version counts on identical reimport and interpretation-only reprocessing, with proposals distinct from accepted corrections.",
+                  "deliverable_id": "D_1.3"
+                },
+                {
+                  "deliverable_name": "Prove negative cases and archive-only recovery",
+                  "description": "D_1.4: Demonstrate byte-for-byte recovery without connector acquisition, frame/selection rejection, missing-content classification, source-conflict preservation, interrupted-run resume and test-labelled correction protection; exclude separately counted synthetic records from real sample totals.",
+                  "deliverable_id": "D_1.4"
+                },
+                {
+                  "deliverable_name": "Publish screened operator evidence",
+                  "description": "D_1.5: Record exact public-safe operator invocation scopes, aggregate outcomes and limits in the implementation evidence document; preserve private receipts/diagnostics/exports outside repository; finish with dedicated instance stopped, all commands quiescent and independent final-cycle review requested.",
+                  "validates": {
+                    "type": "file_exists",
+                    "file": "docs/development/issue5/implementation-evidence.md"
+                  },
+                  "deliverable_id": "D_1.5"
+                }
+              ],
+              "exit_criteria": "All D_1.1\u2013D_1.5 obligations have factual evidence: exactly eight real messages across three observed threads; untruncated received source and reconciled embedded originals; storage/export byte equality; unchanged real source/version counts after repeat import and reprocessing; traceable provisional derivations; demonstrated negative/failure/resume/correction protection; synthetic totals separate. Public evidence is screened, required narrow Markdown gates pass, private archive retained and dedicated server/clients/pipe stopped. Final C_1 exit and Implementation phase exit require independent exact-revision GO; producer results alone are not GO. Any incomplete source blocks a full-import statement and successful cycle exit."
+            }
+          ]
+        },
+        "phases": {
+          "validation": {
+            "deliverables": [
+              {
+                "deliverable_name": "Verify bounded acceptance evidence",
+                "description": "Verify all fixed-sample and negative-case operator evidence, retain the aggregate acceptance report and truthful limitations without repeating fresh unchanged checks; request independent exact-revision QA at the phase boundary.",
+                "validates": {
+                  "type": "file_exists",
+                  "file": "docs/development/issue5/validation.md"
+                },
+                "deliverable_id": "D_1"
+              },
+              {
+                "deliverable_name": "Report native repository gates",
+                "description": "Run repository_review once on branch after final implementation changes and run_tests(scope=configured) as required in Validation; report actual inactive/no_active_tests neutrality, never a passing app-test claim. Required applicable checks must pass; unavailable checks remain blockers.",
+                "deliverable_id": "D_2"
+              }
+            ]
+          },
+          "documentation": {
+            "deliverables": [
+              {
+                "deliverable_name": "Document trial outcome and private retrieval boundary",
+                "description": "Document achieved versus incomplete outcomes, portable operator reproduction/retrieval contracts and scope limits; retain engine/aggregate evidence without private source locations or identifiers, and distinguish operation checks from deferred application tests.",
+                "validates": {
+                  "type": "file_exists",
+                  "file": "docs/development/issue5/documentation.md"
+                },
+                "deliverable_id": "D_1"
+              }
+            ]
+          }
+        }
+      }
     }
   }
 }
