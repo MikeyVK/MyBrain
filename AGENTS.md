@@ -9,8 +9,16 @@ Read the [repository agreements](README.md#working-agreements) and
 locations, naming and handling of source material. Keep those agreements in the
 README rather than duplicating the shared PGMCP protocol.
 
-Use the workspace-local `pgmcp` MCP connection. Its environment is `.venv`, its
-workspace is this repository and its server-data root is `.pgmcp`.
+Use the assigned worktree's dedicated PGMCP server instance through its exact
+named connection. Concurrent worktrees have distinct binding names; generic tool
+names refer to operations on that selected connection.
+Each worktree has its own workspace/server-data binding; never route a child
+worktree through a parent's fixed-root connection. Co verifies assignment and
+mutation ownership; at most one mutating Imp, including descendants, may be active
+per worktree. Each worktree may have its own independently appointed QA context.
+Co derives durable progress from Git/workflow artifacts and uses live task status
+for execution; do not maintain a duplicate Co progress register. Co delegates
+installation and environment provisioning to Imp.
 Credentials come from the host environment; never copy them into tracked files.
 
 Select one role in a separate chat and read its complete shared protocol:
@@ -20,10 +28,18 @@ Select one role in a separate chat and read its complete shared protocol:
 - `$pgmcp-qa`: [.pgmcp/agents/roles/qa.md](.pgmcp/agents/roles/qa.md).
 
 The matching custom agents are `pgmcp-co`, `pgmcp-imp` and `pgmcp-qa`.
-A producer-delegated QA review returns findings only. Independent GO/NOGO
-requires a separately invoked QA chat; do not switch producer and QA roles
-inside one chat. The QA protocol is read-only; do not assume a custom-agent
-file changes the parent session's filesystem permissions.
+Read the [shared collaboration policy](.pgmcp/agents/collaboration.md) for
+interactive/coordinated authority, direct routing, revision-bound verdicts and
+resumption. Independent QA is directly owner-appointed or appointed by Co under
+explicit original owner delegation; an owner-appointed QA remains independent when
+Imp delivers the request. Imp-created preflight is findings-only. Keep producer
+and independent reviewer in separate role contexts. Read-only instructions do not
+change inherited sandbox permissions.
+
+The [portable source/deployment map](setup/pgmcp/README.md) versions the generic
+sources and phase override; effective `.pgmcp` and local `.codex` consumers must be
+reconciled before activation. Host-specific launch paths and live chat mappings
+remain local-only. Repository files cannot expand host/tool authorization.
 
 Workflow entrypoints are `$pgmcp-start`, `$pgmcp-go`, `$pgmcp-create-issue`,
 `$pgmcp-start-issue` and `$pgmcp-end-issue`. Each reads its complete shared

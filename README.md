@@ -16,6 +16,7 @@ application stack, hosting and model processing remain research questions.
 | [Working agreements](#working-agreements) | Naming, source handling and publication boundaries. |
 | [Git conventions](#git-conventions) | Issues, branches, commits and reviews. |
 | [Agent instructions](AGENTS.md) | Shared PGMCP protocol, roles and workflow entrypoints. |
+| [Agent collaboration](#agent-collaboration) | Mandated Co/Imp/QA interaction and isolated parallel worktrees. |
 | [Quality policy](#quality-policy) | Required documentation/configuration evidence and explicit deferrals. |
 | [Workspace setup](#workspace-setup) | The development harness and local environment. |
 
@@ -43,7 +44,7 @@ screened edition only. Review each future edition independently.
 | `docs/development/issue<number>/` | Public-safe phase deliverables for real issues. |
 | `docs/architecture/decisions/` | Architectural decision records when decisions are made. |
 | `.agents/skills/` | Versioned references to shared PGMCP roles and procedures. |
-| `setup/` | Portable quality setup sources; machine-specific records are ignored. |
+| `setup/` | Portable quality and PGMCP collaboration sources; machine-specific records are ignored. |
 | `requirements-pgmcp.lock.txt` | Development-harness dependencies, not application dependencies. |
 | `.pgmcp/`, `.codex/`, `.runtime/`, `.venv/` | Local server data, machine configuration, Python runtime and environment. |
 
@@ -120,6 +121,39 @@ Local private-history backups must never be pushed, attached or mirrored.
   replacement until verified; do not retain copies of source material the owner asked to remove.
 - Remote branch protection must be verified after repository visibility or plan changes.
   These written agreements do not themselves configure GitHub protection.
+
+## Agent collaboration
+
+[Shared collaboration policy](setup/pgmcp/agents/collaboration.md) defines
+interactive operation and owner-mandated coordinated execution. Co coordinates
+the issue graph and role assignments, delegates technical installation/work to
+Imp, and requests independent QA at required phase boundaries. QA returns
+revision-bound GO/NOGO to the authorized participants; producer preflight remains
+findings-only. One context keeps one role.
+
+Every worktree requires its own PGMCP server instance and correctly bound
+connection with a distinct name for each admitted worktree. Each worktree may
+have its own independent QA context. At most one mutating Imp, including delegated
+implementation workers, may be active per worktree. Co manages assignment/release and serializes shared
+integration actions. Different admitted worktrees can run their own Imp in parallel.
+Co reconstructs durable progress from Git and existing workflow/planning evidence;
+overviews are disposable. Live agent/tool status governs safe handoff. The original
+independent QA-chat verdict suffices at required review boundaries; no additional
+Co progress register, verdict store or technical QA gate is required.
+
+The [portable deployment map](setup/pgmcp/README.md) identifies reviewed generic
+sources, the PGMCP 4.0.0 phase-instruction override and local Codex role consumers.
+Version generic sources under setup/pgmcp; deploy exact reconciled copies to each
+worktree's .pgmcp. Keep actual host paths, chat IDs and credentials local. Rebase
+reviewed workspace changes when upgrading package sources; do not silently replace
+them with an older packaged protocol.
+
+A short owner prompt may select the documented autonomous local product profile.
+It delegates bounded local work and role routing, with installation executed by
+Imp. Public deployment, spending, push/PR publication, merge and closure need
+explicit scoped authority. Host permissions and tool-specific authorization remain
+in force. The current issue documents this model; it does not establish live
+multi-worktree isolation, a technical writer lock or guaranteed unattended delivery.
 
 ## Quality policy
 
