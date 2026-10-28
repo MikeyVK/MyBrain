@@ -11,7 +11,13 @@ application stack, hosting and model processing remain research questions.
 
 | Read | Purpose |
 | --- | --- |
+| [Foundational principles](docs/architecture/decisions/0001-digital-brain-foundational-principles.md) | Owner-accepted conceptual principles and open design details. |
+| [Discussion map](docs/architecture/digital-brain-discussion-map.md) | Functions and shared aspects for conceptual brainstorming, with discussion coverage. |
 | [Public research baseline](docs/research/public/research-baseline.pdf) | Privacy-screened concepts, open questions and synthetic evaluation cases. |
+| [Open-source platform candidates](docs/research/public/open-source-platform-candidates.md) | Evidence-based platform comparison and proposed synthetic validation. |
+| [Open-source knowledge-core candidates](docs/research/public/open-source-knowledge-core-candidates.md) | Application-focused comparison of claim registration, context, history and reusable knowledge components. |
+| [OpenCloud–Wikibase gap assessment](docs/research/public/opencloud-wikibase-gap-analysis.md) | Concrete reuse boundaries, remaining integration work and proposed falsification tests against MyBrain's principles. |
+| [OpenCloud–Wikibase trial design](docs/research/public/opencloud-wikibase-trial-design.md) | Proposed synthetic architecture, contracts and independent managed/native trial oracles. |
 | [Repository structure](#repository-structure) | Locations for maintained documents and development tooling. |
 | [Working agreements](#working-agreements) | Naming, source handling and publication boundaries. |
 | [Git conventions](#git-conventions) | Issues, branches, commits and reviews. |
