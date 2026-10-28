@@ -3,7 +3,7 @@
 # Storage registration model and constraints
 
 **Status:** Design candidate — review requested  
-**Version:** 1.1  
+**Version:** 1.2  
 **Last Updated:** 2026-10-28
 
 ## Purpose
@@ -18,7 +18,9 @@ One owner, one registry database, immutable revisions and transactional head-sel
 
 All IDs are application-generated UUIDv4 strings, lowercase canonical spelling; the database type is uuid. IDs identify records, never imply equality of content or identity outside MyBrain. CommitId/BasisId is an immutable UUID identifying a publication. PublicationOrdinal is a positive signed bigint used only internally for serialized ordering, never an external basis identity. Operation/retry/cursor contexts carry an additional service-incarnation UUID; restoring a database creates a new incarnation before reopening. UtcTime is an RFC3339 UTC string with microsecond precision, stored as timestamptz. Hash is lowercase SHA-256 hex over an explicitly defined byte input. Unknown optional information is JSON null; absent required members, duplicate JSON keys, NaN/Infinity, unsafe integers and unrecognized core-envelope properties are rejected. Optional extension content lives only in the declared attributes object. Empty bytes, empty lists and empty text are valid and distinct from null.
 
-The component body is encoded as canonical UTF-8 using RFC8785 JCS profile mybrain-jcs/1. Decimal values needing more than IEEE754 precision use decimal strings under their contract; dates and large identifiers are strings. Canonicalization is for descriptions/requests only. It never replaces exact received source bytes, which are retained as a Payload. The same bytes in two items never merge their identities. Canonical-body equality may permit explicit reuse, not silent coalescing. See [RFC8785](https://www.rfc-editor.org/rfc/rfc8785.html).
+The component body is encoded as canonical UTF-8 using the restricted RFC8785 JCS profile mybrain-jcs/1. Decimal values needing more than IEEE754 precision use decimal strings under their contract; dates and large identifiers are strings. Canonicalization is for descriptions/requests only. It never replaces exact received source bytes, which are retained as a Payload. The same bytes in two items never merge their identities. Canonical-body equality may permit explicit reuse, not silent coalescing. See [RFC8785](https://www.rfc-editor.org/rfc/rfc8785.html).
+
+Admission requires PostgreSQL server_encoding=UTF8 and client_encoding=UTF8. The mybrain-jcs/1 profile accepts valid Unicode scalar strings but excludes U+0000 in EVERY decoded property name and string value, recursively, including escaped forms such as \u0000. Malformed UTF-8 and unpaired surrogates are also rejected; strings are not normalized, stripped or replaced. This restriction applies before canonicalization, operation-intent persistence or any conversion to jsonb, including extension attributes and control envelopes. Failure returns422 INVALID_ENVELOPE with details {reason:JSONB_TEXT_NUL,pointer:JSONPointer} for U+0000, or reason:INVALID_UNICODE for malformed encoding/surrogates; Pointers identify a representable ancestor without echoing invalid text; if the offending property name contains U+0000, stop before that member and include its zero-based key_index rather than echoing the name. Malformed input before parsing uses the root pointer. No plan, payload preparation or publication follows that rejected request. The profile is a deliberate subset of JCS because [PostgreSQL JSONB](https://www.postgresql.org/docs/18/datatype-json.html) cannot store U+0000 in text. Raw received bytes remain unrestricted Payload content: a valid minimal source envelope can register the original JSON/document/binary bytes through bytea or retained files even when their decoded text cannot be a structured description. A failed structured-write request does not erase existing candidate content/history or automatically claim that raw bytes were retained.
 
 ## Registry tables
 
@@ -102,3 +104,4 @@ PostgreSQL 18 core is sufficient: uuid, bytea, jsonb, constraints, indexes and t
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-28 | Codex (@imp designer) | Define implementable immutable registration, component and historical-view contracts. |
 | 1.1 | 2026-10-28 | Codex (@imp designer) | Add stable publication UUIDs/incarnation, branching/ABA-safe head tokens, precise role/FK/null rules and prepared-payload separation; distinguish view coordinates from composition fingerprints. |
+| 1.2 | 2026-10-28 | Codex (@imp designer) | Define UTF-8 JSONB-compatible admission, predictable Unicode rejection and the unrestricted original-byte alternative. |

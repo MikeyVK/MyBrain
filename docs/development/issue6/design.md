@@ -3,7 +3,7 @@
 # MyBrain storage foundation design
 
 **Status:** Complete Design candidate — independent review requested  
-**Version:** 1.2  
+**Version:** 1.3  
 **Last Updated:** 2026-10-28
 
 ## Purpose
@@ -61,7 +61,7 @@ Lifecycle remains ordinary metadata on the same registration before and after ad
 
 ## Atomic publication and failure behavior
 
-A durable operation intent precedes payload I/O. Exact compact bytes use bytea; normalized JSONB cannot replace original serialization. Payloads above 1 MiB use the protected archive. Exclusive creation, same-filesystem no-replace promotion, file/directory fsync and attempt fencing establish readiness before publication.
+A durable operation intent precedes payload I/O. Exact compact bytes use bytea; normalized JSONB cannot replace original serialization. Structured descriptions/envelopes use a restricted JCS profile on a UTF-8 database, excluding decoded U+0000 before JSONB admission; arbitrary original bytes remain registrable through a valid raw-payload envelope. Payloads above 1 MiB use the protected archive. Exclusive creation, same-filesystem no-replace promotion, file/directory fsync and attempt fencing establish readiness before publication.
 
 One PostgreSQL transaction validates references/contracts/expected heads, inserts revisions and bindings, selects heads, admits ready payloads and records the operation result. The serialized publication clock is held until commit; sequence numbers/timestamps alone never prove commit order. CAS includes prior selection-publication UUID to prevent ABA. Unselected branches may start from an older same-item revision; explicit later selection still uses CAS.
 
@@ -71,9 +71,9 @@ Failure preserves prior public state and pending evidence. Lost responses resolv
 
 Phase1 has one owner, global owner-authorized sessions and internal least privilege. No multi-party entity-rights architecture is introduced. Future bounded disclosure routes need their own admitted scope and cannot bypass current release controls. Other applications' native sessions and bytes already delivered are outside the owned route's revocation guarantee.
 
-Protected metadata/content release is split into bounded units serialized with revocation and destruction barriers. Current control checks never come from historical query snapshots. Session creation and control rotation serialize on the same owner-control row, preventing an old credential from creating a valid session after rotation.
+Protected metadata/content release is split into bounded units serialized with revocation and destruction barriers. A durable global release generation binds each request before snapshot/prefetch/open and invalidates its old buffers/descriptors even after a destruction barrier is removed; restore additionally changes incarnation. Current control checks never come from historical query snapshots. Session creation and control rotation serialize on the same owner-control row, preventing an old credential from creating a valid session after rotation.
 
-Destruction requires an exact owner-approved preview, handles shared dependencies and known copies explicitly, and distinguishes requested scope from verified result. Baseline adapters support a declared managed-object guarantee; physical-media erasure is rejected as unsupported. SQL DELETE, VACUUM and unlink are not presented as secure erasure. Out-of-reach copies remain pending.
+v1 rejects partial-version destruction before effects; whole-item scope includes every persisted revision/branch and requires explicit dependency handling. Destruction requires an exact owner-approved preview, handles shared dependencies and known copies explicitly, and distinguishes requested scope from verified result. Baseline adapters support a declared managed-object guarantee; physical-media erasure is rejected as unsupported. SQL DELETE, VACUUM and unlink are not presented as secure erasure. Out-of-reach copies remain pending.
 
 Coordinated backup binds one exported database snapshot to all exact retained objects and writes completion last. Offline restore preserves surviving UUIDs, reconciles effects/destruction and changes service incarnation before reopening. The restore guard requires an independently retained owner freshness receipt: HMAC proves journal integrity, not that an older whole journal was not replayed. Failure to establish current authority keeps recovery offline.
 
@@ -110,3 +110,4 @@ Source-specific automatic capture, semantic assessment/LLM consumers, ANN indexe
 | 1.0 | 2026-10-28 | Codex (@imp designer) | Start the storage Design discussion from reviewed Research; record logical boundaries and unresolved contracts without selecting a technical implementation. |
 | 1.1 | 2026-10-28 | Codex (@imp designer) | Establish the logical registry/history model and justify PostgreSQL plus protected retained payloads alongside OpenCloud working files; remaining contracts in progress. |
 | 1.2 | 2026-10-28 | Codex (@imp designer) | Complete the bounded design candidate with normative model, wire/publication, custody/recovery and acceptance contracts; request independent review without claiming runtime readiness. |
+| 1.3 | 2026-10-28 | Codex (@imp designer) | Correct review findings with persistent read-generation fencing, explicit whole-item destruction scope and JSONB-compatible admission while preserving arbitrary raw bytes. |
