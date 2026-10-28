@@ -1,105 +1,71 @@
 <!-- pgmcp:v1 id=design pv=1.0.0 pf=Uk1D2XWpiag1c6nn sf=WI5iXHBKVOU91bYE -->
 
-# MyBrain storage foundation: initial design frame
+# MyBrain storage foundation design
 
-**Status:** Draft — Design in progress  
-**Version:** 1.0  
+**Status:** Design in progress — logical model checkpoint  
+**Version:** 1.1  
 **Last Updated:** 2026-10-28
 
 ## Purpose
 
-Provide the entry point for the owner's storage-design discussion after Research review. This is an incomplete draft, not an implementable final design, a Design approval or permission to begin Planning or deployment.
+Develop a complete source-registration design from accepted principles to concrete contracts. This checkpoint fixes the logical model; operation, preservation and acceptance contracts are still being completed. It is not a Design-exit verdict or implementation permission.
 
-## Scope In
+## Authority and scope
 
-Logical registration and storage responsibilities; identities and versions; metadata definitions/applications; relationships and combined states; lifecycle/work views; basic storage operations and file/database consistency questions.
+[Research and its Approved Strategy](research.md) at commit71a1a6c is the reviewed basis. [ADR0001](../../architecture/decisions/0001-digital-brain-foundational-principles.md) and the [discussion map](../../architecture/digital-brain-discussion-map.md), revision1.12, govern requirements. No principle or historical report is amended.
 
-## Scope Out
+Design includes logical records, concrete storage/interface contracts, concurrency, preservation/recovery and behavioral validation. Source-specific automated intake, interpretation, AI/vector calculation, presentation, consumer exports, production implementation, deployment and live migration remain outside this design except for their generic stored inputs/results. Issue5 and its earlier proposed stack remain separate.
 
-Implementation steps or cycles, production code, physical schemas, runtime/library/model selection, live imports or migrations, deployment, semantic interpretation, user interfaces and consumer-specific processing/export behavior.
+## Architecture decision
 
-## Problem Statement
+Choose one PostgreSQL18 registry for compact exact source bytes, immutable component revisions, head-selection history and operational recovery records. Use registrar-owned retained files for larger payloads. OpenCloud7.2.4 remains the mutable native/offline working-file service, not the authority for permanent MyBrain versions.
 
-MyBrain needs one coherent registration and history model across database-resident content, files and mixed sources. Native file versions, database updates and mutable descriptions must not silently redefine source identity, historical evidence or the current view. The concrete contracts that deliver that coherence remain to be designed.
+The retained-file namespace is separate from ordinary OpenCloud mounts and client synchronization. It is an implementation behind the source-payload interface, not another knowledge database. Current files remain accessible through OpenCloud and native desktop applications; historical admitted bytes are retrieved through MyBrain by immutable payload/version identity. Automatic capture of every local or OpenCloud edit is not promised. Explicit admission preserves the actual received bytes, with uncertain upstream-version binding visible.
 
-## Functional Requirements
+```mermaid
+flowchart LR
+  Client[Owner or authorized intake consumer] --> API[MyBrain registration boundary]
+  OC[OpenCloud working files] -->|explicit received stream| API
+  API --> PG[PostgreSQL registry and compact bytes]
+  API --> Retained[Protected retained file payloads]
+  PG --> Views[Current and historical views]
+  Retained --> Read[Exact historical content read]
+  API --> Read
+```
 
-- Keep source identity, content version, copy/representation and receipt distinguishable; preserve originals separately from derivatives and references.
-- Version descriptions and coherent metadata sets without conflating recording, receipt or applicability, and retain definition/origin separately from assignment/assessment.
-- Preserve actual historical combinations while allowing current views and reuse of unchanged components.
-- Keep lifecycle metadata on the same registration before and after intake; staging selects work rather than defining another source authority.
-- Support generic recording of produced context, computational descriptions and contracts without performing their interpretation, calculation or enforcement within storage.
-- Protect sole-owner memory with global access first and optional bounded disclosure later; no planned multi-party per-entity rights.
+## Alternatives and trade-offs
 
-## Nonfunctional Requirements
-
-- Make integrity, completeness, availability and unknown outcomes distinguishable across directly stored content and references.
-- Define concurrent-change and interrupted-operation behavior before claiming a consistent combined version or completed effect.
-- Preserve owner-explicit destruction, recovery and revocation obligations without claiming already disclosed information can be recalled.
-- Reuse existing components where they meet the accepted contracts; do not equate native features or a valid document scaffold with proven guarantees.
-
-## Constraints
-
-- The Approved Strategy in research.md governs this draft; materially new compatibility or migration decisions return to the owner.
-- OpenCloud/PostgreSQL is the candidate boundary to assess. Exact storage roles, schemas, interfaces and integration mechanisms remain open.
-- The earlier OpenCloud–Wikibase trial remains a separate proposal; its canonical-store, journal and runtime choices are not adopted.
-- ADR 0001 and the discussion map remain at their accepted revision 1.12; this draft does not silently amend those principles.
-
-## Decision
-
-No new technical direction is selected in this entry draft. The accepted principles and reviewed Research strategy constrain the discussion; options, trade-offs and final contract decisions must be developed and reviewed before Design can be completed.
-
-## Questions
-
-- What is the smallest complete source-registration contract, and what evidence permits admission or identity matching?
-- What exactly changes a content version, a description-set version and a recorded combined state?
-- When does a relationship bind to continuing identity, to particular recorded values, or to a view resolved under a use contract?
-- Which coherent metadata sets should be reusable, and how are definition changes separated from reassessing existing applications?
-- What may each generic storage operation acknowledge after concurrent edits, partial failure or a lost response?
-- How should OpenCloud/PostgreSQL responsibilities satisfy preservation and recovery without silently adopting the older trial?
-- What bounded release and owner-authorized destruction contracts can be specified without adding third-party entity rights?
-
-## Production Design
-
-### Logical responsibility areas to resolve
-
-These areas organize discussion; they are not chosen services, tables or a deployment topology.
-
-| Area | Accepted responsibility | Concrete design decision still open |
+| Alternative | Benefit | Rejected or limited because |
 | --- | --- | --- |
-| Registration and identity | One continuing registration across lifecycle changes; separate identity from received exemplars and representations. | Minimal registration contract, recognition evidence and correction of identity mistakes. |
-| Content and reference versions | Identify exact preserved content and mixed-source components; a pointer alone does not preserve its target. | Version boundaries, integrity scope and file/database ownership of retained material. |
-| Descriptions and metadata | Reusable versioned sets, definitions/origins and distinct applications/assessments. | Set boundaries, reuse and how corrections/withdrawal retain historical interpretation. |
-| Relationships and compositions | Distinguish identity links, particular used versions and changing current views. | Reference semantics, composition boundaries and what constitutes a new recorded combined state. |
-| Lifecycle and working views | Lifecycle metadata stays with the source; staging selects registrations needing work. | Transition conditions, evidence of completed work and re-entry without re-registration. |
-| Storage operations | Register, retain a version, record a description or relationship, retrieve a historical/current view, and expose progress are conceptual needs. | Inputs, effects, read/write separation, acknowledgment and error contracts; these are not API signatures. |
-| Cross-store consistency | Partial success must not masquerade as a complete combined state. | Visibility/commit boundary, concurrent updates, uncertain outcomes, reconciliation and combined recovery. |
+| Treat native OpenCloud versions as permanent identity | Fewer additional retained objects. | Inspected revision/capture behavior does not establish immutable permanent source-version references. |
+| Protected OpenCloud retention namespace | Existing file API can hold snapshots. | Requires proving all overwrite/delete/space-admin bypasses and retained-byte behavior; native file permissions are not WORM. |
+| Put all content in PostgreSQL | One transactional content/registry domain. | Large payload limits and ordinary native-file workflow make this an unnecessary universal requirement. |
+| Full event sourcing or a custom persistent membership tree | Reconstructible history and sharing. | Immutable row revisions plus head-selection history satisfy current requirements with fewer custom mechanisms. |
+| Selected registry plus retained-file namespace | Exact references, small incremental changes, ordinary file use preserved. | Requires explicit durable file preparation before atomic registry publication and coordinated backup/destruction. |
 
-### Candidate boundary
+## Logical source model
 
-OpenCloud may supply file working copies and retention capabilities; PostgreSQL may hold directly stored content and structured registrations. This draft does not assign final authority or physical layout. The design must show how references, preserved versions and mixed compositions remain coherent regardless of their location. Earlier native-version/event findings remain evidence limits, not an adopted acquisition protocol.
+The normative [model and constraints](storage-model.md) distinguish:
+- enduring items from their immutable revisions;
+- received payload bytes from parsed/derived descriptions;
+- package/receipt occurrences from source identity;
+- definition/origin from assignment/assessment;
+- independently versioned metadata sets, relationships and representations;
+- selected historical combined state from a changing current view.
 
-## Test Design
+A source's combined registered version is (source_id,published_commit_id). PostgreSQL head-selection history reconstructs its selected content and bindings at that basis; exact member references do not float to later component heads. Adding a label stores only changed revisions/selections/bindings, not a duplicate of every source component. An explicit result manifest freezes actual chosen revisions when used by an action or analysis.
 
-Not yet a complete test design. Before Design exit, define durable behavioral evidence for historical reconstruction after independent changes, interrupted mixed-source updates, repeated receipt, uncertain completeness/availability, and owner-authorized destruction/revocation. No application tests are introduced or claimed here; concrete seams, fixtures and expected outcomes remain to be designed.
+The publication clock is transactionally locked and updated, never a bare sequence or timestamp. Head CAS includes the prior head-selection commit as well as revision ID, so moving back to an old revision cannot trick a stale client.
 
-## State and Failures
+## Contract completion still in progress
 
-Open: distinguish attempted from confirmed effects, pending work from unknown outcome, and current applicability from historical registration. No fixed status catalog, transition engine, transaction protocol or retry policy is selected. The contract must expose incomplete cross-store work without inventing a complete captured version.
+The next authored contract surfaces specify exact command/query envelopes, idempotency, byte preparation and atomic publication, recovery/destruction/backup boundaries, release authorization and independent behavioral oracles. Routine engineering decisions remain subject to Research strategy; genuine owner-policy conflicts return to Co.
 
-## Planning Consequences
-
-Planning remains pending. This draft is a discussion frame only; options, selected contracts, interface definitions, failure/recovery guarantees and durable validation design still require elaboration and independent Design review. No implementation sequence or cycle plan is established.
-
-## Sources
-
-- [Reviewed Research and Approved Strategy](<research.md>)
-- [Accepted foundational principles, revision 1.12](<../../architecture/decisions/0001-digital-brain-foundational-principles.md>)
-- [Discussion map](<../../architecture/digital-brain-discussion-map.md>)
-- [Dated OpenCloud–Wikibase gap evidence](<../../research/public/opencloud-wikibase-gap-analysis.md>)
+No application runtime or API framework is selected merely by using language-neutral JSON/HTTP and relational contracts. Stored contracts remain inert data; activating a validator or processor requires separate trusted authority.
 
 ## Version History
 
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-28 | Codex (@imp designer) | Start the storage Design discussion from reviewed Research; record logical boundaries and unresolved contracts without selecting a technical implementation. |
+| 1.1 | 2026-10-28 | Codex (@imp designer) | Establish the logical registry/history model and justify PostgreSQL plus protected retained payloads alongside OpenCloud working files; remaining contracts in progress. |
