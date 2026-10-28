@@ -4,7 +4,7 @@
   "parent_branch": "main",
   "issue_number": 6,
   "workflow_name": "feature",
-  "current_phase": "research",
+  "current_phase": "design",
   "current_cycle": null,
   "last_cycle": null,
   "cycle_history": [],
@@ -21,7 +21,16 @@
   "skip_reason": null,
   "issue_title": "Design the MyBrain storage foundation",
   "created_at": "2026-10-28T09:43:05.844815+00:00",
-  "transitions": [],
+  "transitions": [
+    {
+      "from_phase": "research",
+      "to_phase": "design",
+      "timestamp": "2026-10-28T10:03:42.175157+00:00",
+      "human_approval_message": "Hiermee ronden we het initi\u00eble research voor MyBrain opslag af en starten we ontwerp.",
+      "forced": false,
+      "skip_reason": null
+    }
+  ],
   "reconstructed": false,
   "current_sub_phase": null
 }
