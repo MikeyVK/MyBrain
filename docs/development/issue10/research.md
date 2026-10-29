@@ -3,7 +3,7 @@
 # Consolidation maintenance boundary
 
 **Status:** REVIEW REQUESTED — consolidation boundary  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-29
 
 ## Purpose
@@ -12,7 +12,7 @@ Record the bounded source consolidation requested by the owner.
 
 ## Scope In
 
-The 51 pinned files in the inventory, reconciliation of README additions, issue navigation and necessary documentation-link migration.
+The 52 pinned files in the inventory, reconciliation of README additions, issue navigation and necessary documentation-link migration.
 
 ## Scope Out
 
@@ -31,10 +31,11 @@ Research, design and deployment work for issues 5–9 exists on separate branche
 
 ### Frozen source-to-destination inventory
 
-All rows refer to committed Git objects, not a moving checkout. Main baseline is `84d5e0cbbe488fd45160de64d5faab9a97ba7687`. The existing public PDF and issue 1/2 material remain unchanged. There are 51 imported source files; README additions are reconciled separately rather than replacing the integration entrypoint.
+All rows refer to committed Git objects, not a moving checkout. Main baseline is `84d5e0cbbe488fd45160de64d5faab9a97ba7687`. The existing public PDF and issue 1/2 material remain unchanged. There are 52 imported source files; README additions are reconciled separately rather than replacing the integration entrypoint.
 
 | Issue | Source commit | Source path | Destination |
 | --- | --- | --- | --- |
+| 6 | `8a80c184cacfc61cc665b4fe12adf757bac8e54f` | `docs/architecture/digital-brain-discussion-map.md` | `docs/architecture/digital-brain-discussion-map.md` |
 | 5 | `c959d0e45cc4c8a92c67f34a70db38d3598045bb` | `docs/development/issue5/design.md` | `docs/development/issue5/design.md` |
 | 5 | `c959d0e45cc4c8a92c67f34a70db38d3598045bb` | `docs/development/issue5/planning.md` | `docs/development/issue5/planning.md` |
 | 5 | `c959d0e45cc4c8a92c67f34a70db38d3598045bb` | `docs/development/issue5/research.md` | `docs/development/issue5/research.md` |
@@ -133,3 +134,4 @@ Preserve source bytes and identify original evidence as historical. Do not run p
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-29 | Codex (@imp researcher) | Record owner-authorized consolidation strategy and exact source-to-destination inventory. |
+| 1.1 | 2026-10-29 | Codex (@imp researcher) | Correct inventory to 52 files by including the shared discussion map at its canonical path after independent review. |
