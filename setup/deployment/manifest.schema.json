@@ -1,0 +1,305 @@
+{
+  "$comment": "pgmcp:v1 id=json_schema pv=1.0.0 pf=BWf8UeUmziBUBY7b sf=WI5iXHBKVOU91bYE",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable deployment manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package_id",
+    "files"
+  ],
+  "properties": {
+    "builder_revision": {
+      "pattern": "^[a-f0-9]{40}$",
+      "type": "string"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "dependencies": {
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "version",
+          "filename",
+          "sha256",
+          "platform",
+          "provenance_url",
+          "license",
+          "license_paths",
+          "redistribution",
+          "delivery"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "provenance_url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "origin": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "license_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "redistribution": {
+            "type": "string"
+          },
+          "delivery": {
+            "enum": [
+              "bundled",
+              "download"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "source_filename": {
+            "type": "string"
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "source_url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "type": "array"
+    },
+    "exclusions": {
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reason"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "candidate": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "type": "array"
+    },
+    "files": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "size_bytes": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "size_bytes",
+          "sha256"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "files": {
+          "type": "integer",
+          "maximum": 20000
+        },
+        "uncompressed_bytes": {
+          "type": "integer",
+          "maximum": 2000000000
+        }
+      }
+    },
+    "network_mode": {
+      "enum": [
+        "bundled",
+        "hybrid"
+      ]
+    },
+    "package_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "sources": {
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "tree_path",
+          "files"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "deployment",
+              "baseline",
+              "development",
+              "historical",
+              "local-source"
+            ]
+          },
+          "ref": {
+            "type": "string"
+          },
+          "commit_sha": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capture_utc": {
+            "type": "string"
+          },
+          "tree_path": {
+            "type": "string"
+          },
+          "original_ancestry_included": {
+            "const": false
+          },
+          "base_source_id": {
+            "type": "string"
+          },
+          "base_commit_sha": {
+            "type": "string"
+          },
+          "operation": {
+            "enum": [
+              "add",
+              "replace",
+              "delete"
+            ]
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "operation",
+                "path"
+              ],
+              "properties": {
+                "operation": {
+                  "enum": [
+                    "add",
+                    "replace",
+                    "delete"
+                  ]
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            }
+          }
+        }
+      },
+      "type": "array"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "os",
+        "architecture",
+        "powershell_min"
+      ],
+      "properties": {
+        "os": {
+          "type": "string"
+        },
+        "architecture": {
+          "const": "x64"
+        },
+        "powershell_min": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
