@@ -3,7 +3,7 @@
 # OpenCloud admission extension feasibility
 
 **Status:** Focused source assessment — independent review requested; not an architecture decision  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-10-29
 
 ## Purpose
@@ -100,9 +100,9 @@ Do not overstate operating-system limits: iOS supports user-granted [recursive c
 | Web-owned upload UI plus server policy/postprocessing | Supports centralized control of owned uploads and server availability. | Independently packaged Web app/service, with explicit host/event compatibility. Does not satisfy before-first-byte hold for ordinary unmodified native folders. |
 | Server quarantine alone | Can delay availability after arrival. | Useful defense/control boundary, but changes the pre-transfer guarantee; requires explicit acceptance rather than being called equivalent. |
 
-The policy/candidate backend may be part of the existing MyBrain application; a mandatory second product is not implied. A proposed central policy service can return a common logical decision, while desktop/mobile/Web adapters own platform-specific discovery, snapshot and transport behavior. It is not one shared binary plugin. Before upload, a grant must correspond to the exact approved snapshot; edits, renames, retries and expiry must not authorize different bytes accidentally. This is a feasibility requirement, not an adopted token/schema design.
+The policy/candidate backend may be part of the existing MyBrain application; a mandatory second product is not implied. A proposed central policy service can return a common logical decision, while desktop/mobile/Web adapters own platform-specific discovery, snapshot and transport behavior. It is not one shared binary plugin. A snapshot-specific individual approval must not float to changed bytes after an edit, rename or retry. Reusable filters may instead authorize a class of new files without individual approval; their declared scope/conditions must be revalidated at transfer, and the actual received version registered. No universal per-file manual approval, content hash, cryptographic grant or token/schema is selected here.
 
-Continued updates mean supported release lanes, version pins, compatibility bounds and regression evidence, not unattended latest-version installation. In particular, [OpenCloud 7.x upgrade guidance](https://docs.opencloud.eu/de/docs/next/admin/maintenance/upgrade/upgrade-7.x.x/) warns about older Web-app compatibility. Policy loading also changes between the inspected [7.2.4](https://github.com/opencloud-eu/opencloud/blob/v7.2.4/services/policies/README.md) and [9.0.0](https://github.com/opencloud-eu/opencloud/blob/v9.0.0/services/policies/README.md) descriptions. No upgrade, addon or runtime change is proposed here.
+Continued updates mean supported release lanes, version pins, compatibility bounds and regression evidence, not unattended latest-version installation. In particular, [OpenCloud 7.x upgrade guidance](https://docs.opencloud.eu/de/docs/next/admin/maintenance/upgrade/upgrade-7.x.x/) warns about older Web-app compatibility. Policy-loading behavior affects live filter changes: the inspected [7.2.4 engine](https://github.com/opencloud-eu/opencloud/blob/v7.2.4/services/policies/pkg/engine/opa/engine.go) evaluates rego.Load during each evaluation, whereas [9.0.0](https://github.com/opencloud-eu/opencloud/blob/v9.0.0/services/policies/README.md) reads rules at startup and requires a restart for changed rules. Central policy rollout must account for that version difference rather than assuming immediate reload. No upgrade, addon or runtime change is proposed here.
 
 ## Required falsification tests and open decision
 
@@ -111,7 +111,7 @@ These are unexecuted tests for a later authorized prototype:
 | Proof | Required counterexample coverage |
 | --- | --- |
 | Before-first-byte hold | Create/edit inside each claimed ordinary sync folder with the policy service unavailable or undecided; observe actual network requests including TUS creation bodies. Zero content bytes must leave before approval if that guarantee is claimed. |
-| Approval binds exact bytes | Edit/replace/rename during scanning and between approval/upload; revoke/expire a decision; retry after lost response. A grant cannot silently apply to another snapshot or identity. |
+| Individual approvals versus reusable filters | Edit/replace/rename between a snapshot-specific approval and upload; revoke/expire it and retry after a lost response. That approval must not silently authorize changed bytes. Separately admit multiple new files by one reusable rule, rechecking its declared scope/conditions at transfer and recording each actual received version; no individual approval or hash barrier may be assumed universally. |
 | Cross-device bypass inventory | Exercise desktop providers, CLI, Web, Android camera/manual/document routes and iOS Share/File Provider/photo routes. Explicitly unsupported paths must not remain an unnoticed parallel bypass. |
 | Offline/restart/concurrency | Disconnect policy/device, restart during hold, use two clients and conflicting decisions. Demonstrate durable pending state and deliberate failure behavior, not a reactive-ignore race. |
 | Server timing | Prove actual request-denial and postprocessing availability boundaries separately; cover WebDAV/TUS/copy/move and failed/retried custom events. Postprocessing cannot pass a pre-transfer oracle. |
@@ -132,3 +132,4 @@ Source inspection supports the boundary assessment only. No extension was instal
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-29 | Codex (@imp researcher) | Consolidate version-pinned desktop, server/Web and mobile extension evidence, compatibility costs, alternatives and unexecuted proof obligations. |
+| 1.1 | 2026-10-29 | Codex (@imp researcher) | Distinguish snapshot-specific approval from reusable rule admission and state the concrete 7.2.4 versus 9.0.0 policy-loading difference. |
