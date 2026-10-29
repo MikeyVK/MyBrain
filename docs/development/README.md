@@ -25,7 +25,7 @@ Consolidated by issue 10 from pinned source revisions. Source branches and origi
 | 7 | [Deployment research](issue7/research.md), [implementation](../../setup/deployment/README.md) | Historical deployment evidence; no new package execution |
 | 8 | [Garmin research](issue8/research.md), [API catalog](issue8/api-catalog.md) | Research and strategy questions remain open |
 | 9 | [OpenCloud assessment](issue9/opencloud-admission-extension-feasibility.md) | Source inspection; experiments and architecture decision pending |
-| 10 | [Consolidation boundary](issue10/research.md) | Mechanical source consolidation |
+| 10 | [Consolidation boundary](issue10/research.md), [import evidence](issue10/implementation-evidence.md), [validation](issue10/validation.md), [handover](issue10/documentation.md) | Mechanical source consolidation; main integration pending |
 
 ## Shared conceptual baseline
 
