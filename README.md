@@ -11,6 +11,15 @@ application stack, hosting and model processing remain research questions.
 
 | Read | Purpose |
 | --- | --- |
+| [Development issue index](docs/development/README.md) | Consolidated work and original status for each issue. |
+| [Foundational principles](docs/architecture/decisions/0001-digital-brain-foundational-principles.md) | Owner-accepted conceptual principles and open design details. |
+| [Discussion map](docs/architecture/digital-brain-discussion-map.md) | Functions and shared aspects for conceptual brainstorming, with discussion coverage. |
+| [Open-source platform candidates](docs/development/issue6/open-source-platform-candidates.md) | Evidence-based platform comparison and proposed synthetic validation. |
+| [Open-source knowledge-core candidates](docs/development/issue6/open-source-knowledge-core-candidates.md) | Application-focused comparison of claim registration, context, history and reusable knowledge components. |
+| [OpenCloud–Wikibase gap assessment](docs/development/issue6/opencloud-wikibase-gap-analysis.md) | Reuse boundaries and proposed falsification tests. |
+| [OpenCloud–Wikibase trial design](docs/development/issue6/opencloud-wikibase-trial-design.md) | Proposed synthetic architecture and trial oracles. |
+| [OpenCloud admission assessment](docs/development/issue9/opencloud-admission-extension-feasibility.md) | Source research; runtime experiments remain outstanding. |
+| [Portable deployment](setup/deployment/README.md) | Screened Windows x64 package build, target setup and verification. |
 | [Public research baseline](docs/research/public/research-baseline.pdf) | Privacy-screened concepts, open questions and synthetic evaluation cases. |
 | [Repository structure](#repository-structure) | Locations for maintained documents and development tooling. |
 | [Working agreements](#working-agreements) | Naming, source handling and publication boundaries. |
