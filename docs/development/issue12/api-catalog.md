@@ -2,8 +2,8 @@
 
 # e-Boekhouden API documentation and capability catalogue
 
-**Status:** REFERENCE FINDINGS — official documents inspected; no live integration proof  
-**Version:** 1.1
+**Status:** REFERENCE FINDINGS — official contracts and screened bounded read evidence  
+**Version:** 1.2
 **Last Updated:** 2026-10-30
 
 ## Purpose
@@ -16,7 +16,7 @@ REST v1 resource groups, historical SOAP 5.7 reference and WSDL, official user-w
 
 ## Scope Out
 
-No credentials, live administration access, bookkeeping writes, tax filing, implementation or claim that undocumented endpoints cannot exist.
+No credentials or private records are published. This documentation update performs no new account operations. Financial writes, tax filing, production implementation and claims that undocumented endpoints cannot exist remain outside scope.
 
 ## Sources
 
@@ -122,7 +122,7 @@ The response deprecates `invoiceNumber` in favor of `mutationId` and `relationCo
 
 The REST quick start exchanges the secret API token through POST session with `accessToken` and a mandatory source identifier (maximum ten characters). The result contains `token` and `expiresIn`; DELETE session revokes the session token. Business operations declare the session security requirement and 401 responses.
 
-There is an observed documentation inconsistency: quick-start and response prose show the session value directly in Authorization, while the security-scheme description shows `Bearer SESSION_TOKEN`. The scheme is typed `apiKey`, not OAuth2. Resolve the exact accepted header in a future owner-authorized, read-only proof; no credentials or session calls were used here. No token-level read-only scope, fine-grained bookkeeping permission model or fixed REST call ceiling was established from the inspected specification.
+There is an observed documentation inconsistency: quick-start and response prose show the session value directly in Authorization, while the security-scheme description shows `Bearer SESSION_TOKEN`. The scheme is typed `apiKey`, not OAuth2. Documentation discovery itself used no credentials. A separately authorized live session, exact selected-record read and own-session revocation subsequently succeeded; the prose discrepancy remains an integration consideration rather than a universal compatibility claim. No token-level read-only scope, fine-grained bookkeeping permission model or fixed REST call ceiling was established from the inspected specification.
 
 Most search endpoints use `limit` (default 100, range 1–2000) and `offset` (default 0, minimum 0). Dates use ISO spelling; supported filter syntax is documented in the specification introduction. The document lists structured error codes. No 429 response, webhook path, concurrency token or generic idempotency header is declared; absence is not an unlimited-service guarantee. Errors such as duplicate invoice, invalid ledger/VAT, expired session and closed-period invoice processing need distinct handling. The latter appears on the optional invoice-to-mutation path, not as a proven universal rule for every mutation type.
 
@@ -189,9 +189,19 @@ A separately created payment mutation can duplicate an already booked bank payme
 
 The [pinned App API v4 assessment](app-api-v4-assessment.md) examines a community reconstruction of iOS traffic. It describes file upload/link/unlink and PUT mutation operations missing from official REST v1, plus imported-bank-row GET routes. It does not establish bank processing. Its incomplete schemas, mixed search prefixes, uncertain ID mappings and absent repository license prevent treating it as a supported or automatically reusable open-source connector. No example financial data or account identifiers are copied. Archive-mail delivery is distinct from Scan & Herken and does not by itself establish attachment linkage.
 
+### Accepted interface boundary and screened live evidence
+
+The owner selected official REST as the default on 2026-10-30 for standard reads, financial interpretation and writes supported by its contract. The owner checked the selected REST read against the actual UI and accepted that sample as correct. That is bounded sample evidence, not a blanket correctness guarantee.
+
+REST session creation, an exact existing-mutation read and revocation of the temporary session succeeded. Separate App credentials in Windows Credential Manager supported login, actual current-administration confirmation, a one-day metadata filter and internal-ID detail retrieval with context checks. The live App internal ID and visible mutation number differed; retain separate namespaces and explicit mapping. The published search paths failed route binding; the declared POST filter query worked with the explicit date scope. App session expiry/logout semantics remain unproved; no logout is claimed.
+
+Official REST defines row amount in relation to IN/EX VAT, makes row VAT conditional on per-row calculation, and defines aggregate VAT totals per code. The inferred App fields lack comparable descriptions. Some reported/calculated App monetary fields differed from REST and the owner's UI check; the cause is unknown. Do not infer different bookkeeping or use the App response as a validated PUT payload.
+
+App is reserved for deliberately chosen, demonstrated REST gaps. The first future investigation is linking an existing archive file to a mutation; mapping reads may support that task. This is not automatic fallback on REST errors. No file linking, mutation edit or bank-processing write was tested or authorized by this documentation decision. See the [accepted strategy](research.md#approved-strategy) and [App assessment](app-api-v4-assessment.md).
+
 ### Coverage and limitations
 
-The discovery covered the official API landing page; linked REST Scalar UI and its raw OpenAPI; the official FAQ's Dutch and English SOAP PDFs; the SOAP service/WSDL and inline schema; and the public bookkeeping manual for the owner's priority workflow. The web text extractor could not render Scalar or read raw JSON/WSDL, while direct unauthenticated public HTTP retrieval succeeded. The user manual was read as a public PDF with a local text extractor. No live bookkeeping API operation, account login or authorization token was used.
+The discovery covered the official API landing page; linked REST Scalar UI and its raw OpenAPI; the official FAQ's Dutch and English SOAP PDFs; the SOAP service/WSDL and inline schema; and the public bookkeeping manual for the owner's priority workflow. The web text extractor could not render Scalar or read raw JSON/WSDL, while direct unauthenticated public HTTP retrieval succeeded. The user manual was read as a public PDF with a local text extractor. No account operation was used in initial public-document discovery. The separately authorized read-only feasibility evidence above is summarized without private details.
 
 Retrieved public artifact identities:
 
@@ -207,5 +217,6 @@ Full vendor documents remain outside tracked deliverables. This catalogue is a s
 
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
+| 1.2 | 2026-10-30 | Codex (@imp researcher) | Record REST-first strategy, screened read proofs and App identity/monetary interpretation limits. |
 | 1.1 | 2026-10-30 | Codex (@imp researcher) | Scope capability gaps to official REST v1; link separate unofficial App assessment and exclude SOAP as a fallback. |
 | 1.0 | 2026-10-30 | Codex (@imp researcher) | Catalogue the official REST and SOAP surfaces and the documented API/UI boundaries for invoices, mutations and imported bank rows. |

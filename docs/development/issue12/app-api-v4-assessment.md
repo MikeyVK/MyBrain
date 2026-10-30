@@ -2,21 +2,21 @@
 
 # e-Boekhouden App API v4 assessment
 
-**Status:** RESEARCH FINDINGS — unofficial evidence; no live proof  
-**Version:** 1.0  
+**Status:** RESEARCH FINDINGS — bounded read proof; supplemental role accepted  
+**Version:** 1.1  
 **Last Updated:** 2026-10-30
 
 ## Purpose
 
-Assess the unofficial App API against attachment linking, existing-mutation editing and imported-bank-row processing, without account access.
+Assess the unofficial App API against attachment linking, existing-mutation editing and imported-bank-row processing, with screened conclusions from separately authorized bounded read probes.
 
 ## Scope In
 
-Public repository metadata, README and inferred OpenAPI snapshot, inspected 2026-10-30.
+Public repository metadata, README and inferred OpenAPI snapshot, plus screened bounded runtime evidence and the owner-selected interface boundary, inspected on 2026-10-30.
 
 ## Scope Out
 
-No authentication, financial requests, interception, implementation, live changes or strategy approval.
+No new authentication or financial request in this documentation update; no interception, bookkeeping writes or production implementation. Private credentials, records and locations are excluded from these published findings.
 
 ## Sources
 
@@ -38,12 +38,13 @@ This is an unofficial reconstruction of iPhone-app traffic, not a vendor-support
 
 | Requested action | Evidence grade | Conclusion |
 | --- | --- | --- |
-| Upload and link a file to a mutation | Explicit inferred routes and example exchanges | Plausible, considerably stronger than REST v1; target-kind and ID mapping still require proof |
+| Link an existing archive file to a mutation | Explicit inferred routes and example exchanges | First future REST-gap investigation accepted; no live link or upload tested |
+| Retrieve a selected known mutation | Bounded live login/current-admin/filter/detail/context proof | Identity mapping established for the sample; financial-field interpretation remains limited |
 | Edit an existing mutation | PUT with existing identifiers and captured success shape | Strong candidate for editing, not a guarantee for all fields/types or stable internal identity |
 | Read imported bank rows | Explicit GET list and detail | Observed in inferred contract; not exercised here |
 | Process or match imported bank rows | No processing route or queue-ID input found | Not established; new mutation creation is not equivalent |
 
-“Observed” refers only to evidence retained by the repository author. No current account/runtime success is claimed.
+The route catalogue distinguishes the repository author's retained exchanges from the separately authorized bounded read proof. Neither establishes file-write, mutation-edit or bank-processing success.
 
 ### Files: relevant route inventory
 
@@ -67,8 +68,8 @@ One captured soort value is not a universal target-type definition. koppelId is 
 | Method and path | Evidence |
 | --- | --- |
 | GET /api/v4/mutaties/{mutatieId} | Header and detailed mutatieRegels response |
-| POST /api/v4/mutaties/filter | Mutation lookup/filtering |
-| GET /mutaties/search | search and mutatienummer query parameters; unresolved prefix inconsistency |
+| POST /api/v4/mutaties/filter | One-day bounded metadata lookup succeeded; response items resolve visible number to internal ID |
+| GET /mutaties/search | Published inferred path; live search variants failed route binding and are not a working lookup contract |
 | GET /api/v4/mutaties/btwperregel | VAT-per-row-related read |
 | GET /api/v4/grootboekrekeningen/mutaties/{mutatieId}/pickerlist | Mutation-context ledger lookup |
 | PUT /api/v4/mutaties | Request contains id, mutatieNummer, factuurNummer, grootboekRekeningId/code, datum, bedrag, boekstuk, omschrijving, soort, isInclusiefBtw, termijnInDagen and mutatieRegels |
@@ -83,13 +84,21 @@ GET /api/v4/afschriftregels returns afschriftRegels with id, boekDatum, bedrag a
 
 POST /api/v4/auth/login has username/password and loginOk/token/twoFactorCodeRequired response fields. POST /api/v4/auth/renew mentions previousToken with credentials; the retained exchange failed. GET /api/v4/auth/userinfo and GET /api/v4/administraties provide identity/administration discovery. POST /api/appversion/validate is also present. The scheme is HTTP Bearer JWT, distinct from REST v1's session contract. Two-factor completion, token lifetime/revocation, choosing/binding the correct administration and read-only permissions are not adequately specified. Never assume credentials or identifiers transfer between interfaces.
 
+A separately authorized App login, actual current-administration confirmation, explicit one-day filter query, internal-ID detail read and context checks succeeded. Credentials were stored locally in a distinct Windows Credential Manager entry; they are not interchangeable with the official REST API token. Unexpected 2FA remained a stop condition. No account identifiers or credential details are published.
+
 Several inferred schemas omit required lists; empty arrays have unknown item shape. Renew properties contain literal strings instead of valid schema objects. Search paths omit /api/v4 despite the server being the host origin. Responses and error coverage are sparse. Captured HTTP success and permissive schemas do not establish a complete callable contract or current service support. README capture instructions were not followed; no interception or device-session extraction occurred.
+
+### Financial interpretation and identity boundary
+
+The live App internal ID differed from the selected visible mutation number used by official REST. This confirms a namespace distinction for that sample, not that file-link koppelId necessarily equals either value.
+
+The owner verified the official REST sample against the actual UI. Some App summary/calculated monetary fields were inconsistent with that result, while common identity/base-row information agreed. Official REST defines row amount through inExVat and aggregate VAT totals per VAT code; the inferred App fields bedrag, btw, bedragInclusief and bedragExclusief have no comparable descriptions. The discrepancy does not prove modified bookkeeping, a particular bug or a universal App limitation. It does mean that the read object is not a validated financial-write payload and must not be round-tripped into PUT.
 
 ### Proportional next evidence and route options
 
-The shortest plausible supported route remains official REST v1 for documented creation/reads plus the existing UI for unproved actions. The App interface could narrow attachment and editing gaps, but requires explicit owner acceptance of an unsupported interface and further evidence; it does not currently remove the bank-processing gap. SOAP is excluded by owner and is not a fallback.
+OWNER ACCEPTED — 2026-10-30: official REST is the default for ordinary reads, financial interpretation and supported writes. App v4 may supplement only an actual missing REST capability; the first future target is linking an existing archive file to a mutation. Identity/mapping reads may support that task, rather than duplicating general financial retrieval. The supplement remains unofficial and capability-specific. SOAP stays excluded.
 
-Before any financial-write proposal, a separately authorized read-only proof should establish authentication/2FA without leaking credentials, correct administration, a known mutation's App/REST/display identifiers, linked-file target semantics, actual search URL and bank-row visibility. Such a proof cannot prove write semantics; any subsequent synthetic write test would need separate scope and rollback/reconciliation evidence. No account requests are authorized or performed by this research. No Approved Strategy, implementation sequence or Research phase exit is implied.
+The selected read proved login/current context and a bounded identity mapping; the declared date filter worked where published search paths did not. File-target semantics and existing-file linkage still need their own bounded investigation, outcome verification and review. No file link, upload, mutation edit or bank-processing write was tested. Do not automatically switch to App after a REST authentication, validation or network error, or retry an alternate write because of such a failure. This accepted interface boundary does not authorize a write, imply a production implementation sequence or complete the Research phase. App JWT persistence/logout is not established; only process-memory use and process closure are claimed.
 
 ## Related Documents
 
@@ -100,4 +109,5 @@ Before any financial-write proposal, a separately authorized read-only proof sho
 
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
+| 1.1 | 2026-10-30 | Codex (@imp researcher) | Record screened live read findings and accepted supplemental role; separate identity and monetary interpretation limits from untested writes. |
 | 1.0 | 2026-10-30 | Codex (@imp researcher) | Assess pinned App API evidence and limits for files, edits and bank processing. |
