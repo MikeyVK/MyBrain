@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "projects": {
+    "12": {
+      "issue_title": "Connect Codex to e-Boekhouden with minimal integration",
+      "workflow_name": "feature",
+      "execution_mode": "interactive",
+      "required_phases": [
+        "research",
+        "design",
+        "planning",
+        "implementation",
+        "validation",
+        "documentation",
+        "ready"
+      ],
+      "skip_reason": null,
+      "parent_branch": "main",
+      "created_at": "2026-10-30T17:16:21.220741+00:00"
+    }
+  }
+}
