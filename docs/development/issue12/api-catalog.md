@@ -3,7 +3,7 @@
 # e-Boekhouden API documentation and capability catalogue
 
 **Status:** REFERENCE FINDINGS — official documents inspected; no live integration proof  
-**Version:** 1.0  
+**Version:** 1.1
 **Last Updated:** 2026-10-30
 
 ## Purpose
@@ -12,7 +12,7 @@ Index the discovered official public API contracts and identify the boundary aro
 
 ## Scope In
 
-REST v1 resource groups, SOAP 5.7 reference and WSDL, official user-workflow evidence, authentication, limits and documented gaps, inspected on 2026-10-30.
+REST v1 resource groups, historical SOAP 5.7 reference and WSDL, official user-workflow evidence, authentication, limits and documented gaps, inspected on 2026-10-30.
 
 ## Scope Out
 
@@ -132,7 +132,9 @@ Most search endpoints use `limit` (default 100, range 1–2000) and `offset` (de
 
 [api-4-src-1]: <https://api.e-boekhouden.nl/openapi/v1.json>
 
-### SOAP documentation and full operation inventory
+### Historical SOAP documentation and full operation inventory
+
+The owner excludes SOAP from further integration work; it is not a fallback. The owner's report of a 2025 phase-out is not independently verified by a vendor announcement. The following inventory preserves what the retrieved historical documents declare, not a guarantee of present availability or support.
 
 The public Dutch and English manuals identify SOAP version 5.7. The retrieved WSDL exposes 20 port-type operations and embeds its XSD; no imported XSD was declared.
 
@@ -159,16 +161,16 @@ SOAP authentication uses a username and two security codes; a session ID and the
 
 ### Owner-priority capability boundary
 
-The owner clarified that the target includes all imported bank rows, including supplier payments. Public API contracts and documented UI workflows cover different parts:
+The owner clarified that the target includes all imported bank rows, including supplier payments. Official REST v1 contracts and documented UI workflows cover different parts. The separate [App API v4 assessment](app-api-v4-assessment.md) records unofficial attachment and edit candidates; its evidence must not be conflated with the vendor contract:
 
 | Owner task | Evidence | Boundary |
 | --- | --- | --- |
-| Register an incoming invoice | REST create mutation type 1; SOAP AddMutatie FactuurOntvangen | Documented API creation, not executed |
+| Register an incoming invoice | REST create mutation type 1 | Documented API creation, not executed |
 | Associate a newly recorded supplier payment | REST type 4 with payment-row invoice number / relation | Not proof that an existing queued bank row is consumed or marked processed |
-| Edit an existing bookkeeping mutation | Public user manual describes the pencil in ledger/mutation views | No corresponding public REST or SOAP operation found |
-| Process already imported bank rows | Manual PDF pages 8–11 describes automatic matching, the unprocessed-row list and manual processing | Queue IDs, retrieval and processing endpoints absent from inspected APIs |
+| Edit an existing bookkeeping mutation | Public user manual describes the pencil in ledger/mutation views | No corresponding official REST v1 operation; unofficial App v4 PUT is a candidate, not live proof |
+| Process already imported bank rows | Manual PDF pages 8–11 describes automatic matching, the unprocessed-row list and manual processing | Queue API absent from official REST v1. App v4 describes GET list/detail; no processing contract established |
 | Reprocess after invoices were entered later | Manual page 11, section 1.4.3: Boekhouden > Invoeren > Importeren > Alle regels opnieuw automatisch verwerken | A plausible minimal UI complement; current UI behavior still needs verification. The all-rows action can affect other pending rows and is not a scoped API preview |
-| Attach a supplier PDF to a mutation | Manual page 27 describes files on new/existing mutations or from the digital archive | No general public attachment-upload/link endpoint found |
+| Attach a supplier PDF to a mutation | Manual page 27 describes files on new/existing mutations or from the digital archive | No official REST v1 upload/link endpoint; App v4 describes inferred upload/link routes |
 | Prepare quarterly review | Date-filtered mutations, VAT totals, ledger balances and open creditor items are available | No documented VAT-return report or filing endpoint found; these data do not by themselves certify an accurate tax return |
 
 A separately created payment mutation can duplicate an already booked bank payment or leave the imported row pending. Never create such a record merely to simulate the unproved queue-processing action. Creating counterentries to bypass missing update endpoints changes accounting meaning; no such policy is adopted here.
@@ -182,6 +184,10 @@ A separately created payment mutation can duplicate an already booked bank payme
 [api-6-src-1]: <https://api.e-boekhouden.nl/openapi/v1.json>
 [api-6-src-2]: <https://cdn.e-boekhouden.nl/handleiding/Handleiding_boekhoudpakket.pdf>
 [api-6-src-3]: <https://www.e-boekhouden.nl/boekhoudtermen/afletteren>
+
+### Unofficial App API boundary
+
+The [pinned App API v4 assessment](app-api-v4-assessment.md) examines a community reconstruction of iOS traffic. It describes file upload/link/unlink and PUT mutation operations missing from official REST v1, plus imported-bank-row GET routes. It does not establish bank processing. Its incomplete schemas, mixed search prefixes, uncertain ID mappings and absent repository license prevent treating it as a supported or automatically reusable open-source connector. No example financial data or account identifiers are copied. Archive-mail delivery is distinct from Scan & Herken and does not by itself establish attachment linkage.
 
 ### Coverage and limitations
 
@@ -201,4 +207,5 @@ Full vendor documents remain outside tracked deliverables. This catalogue is a s
 
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
+| 1.1 | 2026-10-30 | Codex (@imp researcher) | Scope capability gaps to official REST v1; link separate unofficial App assessment and exclude SOAP as a fallback. |
 | 1.0 | 2026-10-30 | Codex (@imp researcher) | Catalogue the official REST and SOAP surfaces and the documented API/UI boundaries for invoices, mutations and imported bank rows. |

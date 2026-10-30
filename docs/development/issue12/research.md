@@ -3,7 +3,7 @@
 # e-Boekhouden documentation-first connection research
 
 **Status:** RESEARCH IN PROGRESS — strategy and live proof pending  
-**Version:** 1.0  
+**Version:** 1.1
 **Last Updated:** 2026-10-30
 
 ## Purpose
@@ -12,7 +12,7 @@ Establish the public API evidence needed for the owner's immediate supplier-invo
 
 ## Scope In
 
-Official public API documentation discovery and capability analysis, with detailed attention to creating versus editing mutations, received invoices, imported bank rows, matching, attachments and quarterly-review data.
+Official public API documentation discovery, the separately assessed unofficial App API v4, and capability analysis, with detailed attention to creating versus editing mutations, received invoices, imported bank rows, matching, attachments and quarterly-review data.
 
 ## Scope Out
 
@@ -36,15 +36,17 @@ Issue 12 was initialized independently from the storage-design work on the repos
 
 ### Current evidence boundary
 
-The [API catalogue](api-catalog.md) inventories every declared REST business operation in the retrieved v1 specification: 39 operations on 24 business paths, plus two Swagger GET routes. It also covers both SOAP 5.7 manuals, the 20-operation live WSDL and its inline XSD, and official user-workflow documentation. Source retrieval was on 2026-10-30. It does not certify private documentation, current account entitlements or undocumented operations.
+The [API catalogue](api-catalog.md) inventories every declared REST business operation in the retrieved v1 specification: 39 operations on 24 business paths, plus two Swagger GET routes. It also covers both SOAP 5.7 manuals, the 20-operation live WSDL and its inline XSD, and official user-workflow documentation. Source retrieval was on 2026-10-30. It does not certify private documentation, current account entitlements or undocumented operations. The [App API v4 assessment](app-api-v4-assessment.md) separately examines 34 inferred operations from a pinned community repository. It provides attachment-linking and mutation-editing candidates but no proven bank-processing operation. These are not vendor-supported REST v1 extensions. The official iOS listing advertises unprocessed-bank-row management, so the missing processing route is a gap in the incomplete community evidence, not proof that the app lacks the function.
+
+The owner excludes SOAP from the intended integration. Its documentation is retained as historical evidence only, not a fallback. The owner's report of a 2025 phase-out has not been independently established from a vendor announcement.
 
 ### Priority workflow: four distinct actions
 
 | Action | What the inspected contract establishes | What remains unproved |
 | --- | --- | --- |
-| Register a supplier invoice | REST create mutation type 1 / SOAP AddMutatie FactuurOntvangen | Correct supplier, ledger, VAT and period choices for the owner's documents |
+| Register a supplier invoice | REST create mutation type 1 | Correct supplier, ledger, VAT and period choices for the owner's documents |
 | Record a supplier invoice payment | REST type 4 accepts invoice-number/relation association on rows | Whether that consumes an already imported bank row — no such public contract was found |
-| Correct an existing mutation | Official user manual describes UI editing | Neither public API declares mutation PATCH/PUT/delete; counterentries are a different accounting policy, not an equivalent edit |
+| Correct an existing mutation | Official user manual describes UI editing | Official REST v1 declares no update/delete. Unofficial App v4 PUT is an editing candidate with unresolved identity and validation semantics; counterentries are not an equivalent edit |
 | Reprocess the bank worklist | Manual section 1.4.3 describes reprocessing after later invoice entry | Current UI, match results and the broader impact on other pending rows require an authorized live check |
 
 The owner clarified that all bank rows imported through the bank connection are relevant, not only incoming money. This includes supplier payments. Creating a payment mutation independently is not a safe substitute for processing an existing bank row: it could duplicate a payment or leave the queue item unprocessed.
@@ -55,11 +57,12 @@ The owner clarified that all bank rows imported through the bank connection are 
 | --- | --- | --- |
 | REST scripts or a thin agent interface | Documented structured reads, new invoice/mutation creation and reference lookups; usable from scripts and potentially Codex tools | Does not add undeclared mutation edits, bank-worklist processing or incoming archive uploads |
 | API plus the documented UI worklist | Could register supplier invoices through the API, then use the existing reprocessing/manual screens for already imported bank rows and correction/attachment gaps | A proposal only. The all-rows command can affect other pending rows; verify the actual screen and review scope/results before any live action |
-| SOAP fallback | Existing official manual, WSDL and examples are available | Adds XML/session handling and documented retrieval limits; its 20 operations do not fill the key edit/bank-worklist gap |
+| App API v4 supplement | Inferred upload/link routes and PUT mutation request may fill two REST v1 gaps | Unsupported interface, incomplete schemas and authentication/ID uncertainties; bank processing still unproved. No acceptance or live proof |
+| Historical SOAP | Documentation remains indexed for provenance | Excluded by owner; not an integration option or fallback |
 | Reuse an existing connector | May reduce integration effort if its actual operations and maintenance fit | Not yet audited in this documentation-first checkpoint. A wrapper cannot establish vendor capabilities merely by naming tools |
 | Build a general automation platform | Could orchestrate multiple services | No evidenced need for this larger scope; it would delay the owner's immediate use case |
 
-A recommendation can favor the small hybrid option for a later proof, but no route has been accepted or implemented. The same underlying API restrictions apply whether a request originates in a script or an agent tool.
+A recommendation can favor the small hybrid option for a later proof, but no route has been accepted or implemented. The same interface-specific restrictions apply whether a request originates in a script or an agent tool.
 
 ### Interface and data questions affecting automation
 
@@ -67,12 +70,12 @@ A recommendation can favor the small hybrid option for a later proof, but no rou
 - API ledger IDs differ from displayed ledger codes. Purchase rows, payment rows and generated invoice-module objects have different contracts.
 - Outstanding-invoice responses recommend mutationId/relationId while payment input still names invoiceNumber. Preserve the actual current contract; do not invent a migration field.
 - Structured duplicate errors and optional payment-reference uniqueness are documented. Generic idempotency, queue consumption, transactional multi-step writes and a fixed REST rate limit were not established.
-- The public user manual documents archive-file linkage and mutation edits in the UI; the inspected APIs do not. Its layout is not a live version guarantee.
+- The public user manual documents archive-file linkage and mutation edits in the UI; official REST v1 does not. App v4 has separately graded inferred candidates, not current-runtime guarantees. Its layout is not a live version guarantee.
 - Mutations and VAT totals can support review, but no public VAT-return report or filing endpoint was found. The exact quarter, accounting treatment and final return checks are owner/accounting decisions outside this documentation inventory.
 
 ### Proportional blast radius
 
-This checkpoint changes only issue-12 research/reference documents and its initialized workflow records. Existing MyBrain storage design, deployment code, quality policy, templates and agent protocols remain unchanged. No new application stack, service, database, credentials, accounting records or connector registration was introduced. Future downstream consumers are the owner using Codex, scripts using the vendor contract, and any selected minimal connector; all require the same operation-level distinctions.
+This checkpoint changes only the three issue-12 research/reference documents and its initialized workflow records. Existing MyBrain storage design, deployment code, quality policy, templates and agent protocols remain unchanged. No new application stack, service, database, credentials, accounting records or connector registration was introduced. Future downstream consumers are the owner using Codex, scripts using the vendor contract, and any selected minimal connector; all require the same operation-level distinctions.
 
 ## Questions
 
@@ -85,6 +88,7 @@ This checkpoint changes only issue-12 research/reference documents and its initi
 ## References
 
 - [Detailed official API catalogue](<api-catalog.md>)
+- [Unofficial App API v4 assessment](<app-api-v4-assessment.md>)
 - [Official REST documentation](<https://api.e-boekhouden.nl/scalar/>)
 - [Official raw REST contract](<https://api.e-boekhouden.nl/openapi/v1.json>)
 - [Official SOAP manual](<https://cdn.e-boekhouden.nl/handleiding/Documentatie_soap.pdf>)
@@ -92,11 +96,11 @@ This checkpoint changes only issue-12 research/reference documents and its initi
 
 ## Approved Strategy
 
-PENDING — the owner has authorized documentation discovery and prioritized the workflow, but has not selected an API-only, hybrid UI/API or connector strategy. Preserve existing vendor contracts and current administration data during research. No migration, accounting-correction policy, live write scope or Design transition is approved by this checkpoint.
+PENDING — the owner has authorized documentation discovery and prioritized the workflow, but has not selected an API-only, hybrid UI/API, unofficial App API or connector strategy. SOAP is excluded by owner. Preserve existing vendor contracts and current administration data during research. No migration, accounting-correction policy, live write scope or Design transition is approved by this checkpoint.
 
 ## Expected Results
 
-A reader can find the official documents, distinguish the 39 REST operations and 20 SOAP operations, identify the supplier-invoice creation contract and understand why existing-mutation editing and imported-bank-row processing remain separate gaps. A later bounded proof must establish the actual authentication spelling and read access first, then validate the selected workflow with explicit scope and synthetic or otherwise owner-authorized data. Evidence must distinguish bookkeeping outcomes from queue status and prevent duplicate payment creation; this document does not sequence that implementation.
+A reader can find the official documents, distinguish the 39 REST operations and 20 SOAP operations, identify the supplier-invoice creation contract and understand the official REST v1 gaps, the unofficial App API attachment/edit candidates, and why imported-bank-row processing remains unproved. A later bounded proof must establish the actual authentication spelling and read access first, then validate the selected workflow with explicit scope and synthetic or otherwise owner-authorized data. Evidence must distinguish bookkeeping outcomes from queue status and prevent duplicate payment creation; this document does not sequence that implementation.
 
 ## Consumers
 
@@ -140,4 +144,5 @@ No account access in this checkpoint; use public sources and generic summaries o
 
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
+| 1.1 | 2026-10-30 | Codex (@imp researcher) | Add pinned unofficial App API findings; scope REST gaps and mark SOAP historical/excluded. |
 | 1.0 | 2026-10-30 | Codex (@imp researcher) | Record official API coverage and the documented creation/editing/bank-worklist boundaries for the owner's prioritized automation needs. |
