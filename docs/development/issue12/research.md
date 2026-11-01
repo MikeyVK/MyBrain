@@ -14,6 +14,10 @@
 - Consolidation received independent GO at `68bafa6750e64b99cc758f30377fa648566080eb`; the previous Design received independent GO at `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5`. Those verdicts cover their exact earlier scope/revisions, not this reopened strategy.
 - Current work is static/public-source research and screened documentation. No APK execution, current account/API/credential operation, implementation or phase transition occurs.
 
+## Subsequent web-backend gap research — 2026-11-01
+
+The owner requested investigation of missing functions through the web backend. [Public bundle evidence](web-backend-gap-research.md) identifies distinct browser JSON contracts and qualifies full App-only coverage as not positively established. The accepted App-only strategy remains the baseline pending any further owner decision; no web/REST/UI fallback or bookkeeping logic is introduced. This is source research, not account execution authority.
+
 ## Historical consolidation index
 
 - [Toolkit preservation and callable/test omissions](toolkit-preservation.md): current default-disabled source consolidation and isolated offline verification; final Research review pending.

@@ -14,6 +14,10 @@ The [endpoint registry/admission catalogue](endpoint-design-catalogue.md) binds 
 
 Version1.x remains in Git, including its independent review. Its business preparation, supplier matching, source-policy decisions, mandatory REST checks and operation-planning state machine are superseded, not inherited requirements. Historical REST helpers/proofs remain preserved and default-disabled; they are not imported, wrapped or invoked by this server.
 
+## Completeness qualification after web-gap research
+
+The subsequent [web-backend gap research](web-backend-gap-research.md) identifies concrete asset, filing, import-rule/processing, export, settings and archive-restore contracts in the separate browser JSON interface. Full 57-group/23-feature coverage through App-v4 is not positively established. This Design remains the owner-selected App-only endpoint baseline for admitted contracts, not a claim of complete web parity. No web/REST/UI fallback is added. If complete coverage is required, the unresolved routing/sufficiency decision must be settled before treating missing operations as implementable.
+
 ## Scope and exclusions
 
 | In scope | Out of scope |

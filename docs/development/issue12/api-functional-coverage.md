@@ -2,13 +2,15 @@
 
 # Function-by-function REST and App-v4 coverage research
 
-**Status:** REOPENED FUNCTION-FIRST RESEARCH — ROUTE STRATEGY NOT YET CHOSEN  
+**Status:** FUNCTION-FIRST EVIDENCE — APP-ONLY SELECTED; FULL COVERAGE NOT ESTABLISHED  
 **Version:** 1.0  
 **Last Updated:** 2026-11-01
 
 ## Purpose
 
 Reopen technical coverage from a function-first taxonomy, comparing official REST v1, the incomplete community App-v4 capture and broader static APK contracts. This evidence supersedes assumptions used by the earlier workflow-shaped design; it does not select or implement a replacement architecture.
+
+The subsequent [web-backend gap overlay](web-backend-gap-research.md) records concrete browser JSON contracts for missing sub-operations. The current App-only choice does not establish full web parity; browser routes do not automatically enter the App registry, and absence from inspected App sources is not universal impossibility.
 
 ## Scope In
 

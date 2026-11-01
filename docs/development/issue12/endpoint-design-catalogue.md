@@ -22,6 +22,8 @@ Define the single source-backed registration boundary for the chosen endpoint-or
 
 ## API Reference
 
+The [web-gap overlay](web-backend-gap-research.md) supplies concrete browser-interface evidence for several GAP rows below. Those operations remain unavailable in this App-only registry; a web route is neither an App equivalent nor an automatic registration or new route decision.
+
 ### Registry authority and admission
 
 One immutable registry is loaded once at startup. Each concrete entry has operation_id, stable MCP name, effect, HTTP method, fixed /api/v4 path template, typed path/query/body schemas, response schema, body serializer profile, pagination metadata, possible side effects, admission/evidence status and inventory IDs. Named endpoint entries are expanded from the finite rows below, not from caller URLs or reflection over every APK method. Method/URL/headers/schema IDs cannot be supplied by an MCP caller.
