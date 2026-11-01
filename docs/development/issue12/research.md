@@ -2,11 +2,18 @@
 
 # e-Boekhouden documentation-first connection research
 
-**Status:** RESEARCH IN PROGRESS — REST-first strategy accepted; capability proofs remain bounded  
-**Version:** 1.2
-**Last Updated:** 2026-10-30
+**Status:** RESEARCH IN PROGRESS — current consolidation indexed below; original findings retained as historical checkpoint  
+**Version:** 1.3
+**Last Updated:** 2026-11-01
 
-## Purpose
+## Current Research index — 2026-11-01
+
+- [Toolkit preservation and callable/test omissions](toolkit-preservation.md): current default-disabled source consolidation and isolated offline verification; final Research review pending.
+- [Thin MCP research inputs](mcp-research-inputs.md): deterministic capability inventory, exact retained symbols, process/authentication/audit lifecycle constraints and remaining design evidence.
+- The findings below are the original 2026-10-30 documentation/read-only checkpoint. Statements such as “no file linking or mutation editing tested” describe that checkpoint, not all subsequent research. Later separately authorized private work established selected narrow creation/upload/link/edit/rename/hours outcomes and manual native-UI editing; no universal API or accounting-correctness claim follows. Their public-safe preservation inventory distinguishes historical live observations from current offline tests.
+- The owner has closed the administrative run. Current authorization is preservation, offline checks and Research toward a later thin MCP design, with no live account/credential/browser actions or replay of old plans. No current MCP server, production readiness, completed consolidation or Research exit is claimed.
+
+## Historical checkpoint purpose
 
 Establish the public API evidence needed for the owner's immediate supplier-invoice and bank-processing work through Codex or scripts.
 
@@ -164,3 +171,7 @@ This checkpoint publishes only screened conclusions from public contracts and se
 | 1.2 | 2026-10-30 | Codex (@imp researcher) | Record owner-accepted REST-first boundaries and screened read-only feasibility evidence; retain unproved supplemental capabilities. |
 | 1.1 | 2026-10-30 | Codex (@imp researcher) | Add pinned unofficial App API findings; scope REST gaps and mark SOAP historical/excluded. |
 | 1.0 | 2026-10-30 | Codex (@imp researcher) | Record official API coverage and the documented creation/editing/bank-worklist boundaries for the owner's prioritized automation needs. |
+
+### Current index revision
+
+2026-11-01, version 1.3, Imp: add preservation/MCP Research entrypoints and distinguish the historical documentation/read-only checkpoint from later narrowly authorized observations and current offline-only work.

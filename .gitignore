@@ -58,3 +58,7 @@ desktop.ini
 # Machine-specific installation narratives and verification records stay local.
 /setup/initialisatieplan.txt
 /setup/deployment-status.txt
+
+# Isolated research toolkit dependencies and private operational working files
+/tools/eboekhouden/.local-work/
+/tools/eboekhouden/.venv/

@@ -177,14 +177,16 @@ those sources; packaged defaults remain unchanged.
 | Changed YAML configuration | Native mapping-root validation plus actual consumer admission after configuration reload. |
 | Changed JSON Schema | Separate native Draft 2020-12 envelope and metaschema validation. |
 | Application checks and tests | Deferred until the application stack, source/test roots and quality rules are approved. |
+| Isolated e-Boekhouden research toolkit | Owner-approved Python syntax and strictly offline synthetic tests only under `tools/eboekhouden/`, with its own pinned environment and scoped native adapter. This does not choose the application stack or activate unrelated Python checks. |
 | Automated fixes and native Commitlint | Deferred until a specific policy is approved; retain PGMCP commit conventions. |
 
 Use explicit file-family targets during implementation. Normal scaffolding and
 guarded editing use enforce; report is a diagnostic/setup exception and can persist
 failed or unvalidated content. In Validation, run the repository_review profile on
 the branch once after final implementation changes, plus the workflow-required
-configured-scope test request. Tests are currently inactive: no active tests is no
-passing test evidence. Required applicable checks must execute and pass before
+configured-scope test request. Application tests remain inactive. The isolated
+e-Boekhouden toolkit uses explicit test targets; its configured empty selection is
+unavailable, not passing test evidence. Required applicable checks must execute and pass before
 acceptance. An unavailable or unexecuted required check remains a blocker.
 
 Only branch scope applies the per-check target include/exclude policies; other scopes
@@ -216,3 +218,10 @@ Use separate chats with `$pgmcp-co`, `$pgmcp-imp` and `$pgmcp-qa`. Read the comp
 shared source protocols through [AGENTS.md](AGENTS.md) before governed issue work.
 A fresh workspace must provision the pinned harness and deploy its shared instruction
 sources; copied configuration filenames alone do not establish an active connection.
+
+## Isolated research tooling
+
+The [e-Boekhouden research toolkit](tools/eboekhouden/README.md) preserves screened
+helpers and synthetic verification in an isolated environment. Its scoped quality
+policy is separate from the deferred MyBrain application checks. A checkout grants
+no authority to access an administration or replay previous operations.

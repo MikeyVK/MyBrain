@@ -1,0 +1,8 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Synthetic data only. Runtime host configuration is local JSON; no credentials or active write plan is distributed.
+
+"administrationId": 800100
+"visibleMutationNumber": 101
+"knownDate": "2030-01-02"
+"purpose": "Synthetic illustration only; not an executable plan or live authority."

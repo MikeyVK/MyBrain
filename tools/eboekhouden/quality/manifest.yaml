@@ -1,0 +1,31 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Portable toolkit-only source. Merge into reviewed local overrides; never replace unrelated policies.
+
+"adapter_id": "eboekhouden_quality"
+"version": "1.0.0"
+"files":
+- "adapter.py"
+- "config.json"
+"roles":
+  "check":
+    "contract_version": 1
+    "entrypoint":
+      "executable": "python"
+      "args":
+      - "package_file": "adapter.py"
+    "capabilities":
+      "syntax":
+        "inputs":
+        - "content"
+        - "selection"
+        "requires_file": false
+        "configured_targets": "eboekhouden_sources"
+  "test":
+    "contract_version": 1
+    "entrypoint":
+      "executable": "python"
+      "args":
+      - "package_file": "adapter.py"
+    "capabilities":
+      "tests": {}
