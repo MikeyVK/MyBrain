@@ -3,7 +3,7 @@
 # Thin local e-Boekhouden MCP design
 
 **Status:** DESIGN — REVIEW CANDIDATE, NOT IMPLEMENTED  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-11-01
 
 ## Purpose
@@ -216,7 +216,7 @@ Tests exercise public application/port/SDK boundaries with immutable synthetic f
 | N provider queries share resources | N calls use one configured writer/client/provider; lazy first login only, no credential read on import/start/help; no financial command port in read service construction |
 | Auth lease/expiry | Fake expiresIn/clock, concurrent single-flight refresh, pinned generation remains valid until release, admin mismatch blocks, query retry bounded, command never replayed |
 | CQS and presentation | All own command ports return None; ACK persisted before receipt query; wrapper makes no extra HTTP call; no mutable last response; shared redacted error/presenter |
-| DTO/coverage | Leading zeros, explicit term0, negative credit, Decimal wire strings, extra fields, missing/null/unknown and cap exhaustion; incomplete never not-found |
+| DTO/coverage | Shared strict JSON-mode codec for SDK values, provider projection and SQLite; UUID/date/enum/array roundtrip, MoneyText strings, bool-ID/extra/invalid rejection, stable digest; leading zeros/term0/credit/missing/null/coverage |
 | Financial/source invariants | IN/EX/BI_EU_INK, rows/sign/order/groups, missing row VAT versus zero, approved source shortening, private split, explicit one-cent policy; wrong present VAT/groups fail |
 | Writes and evidence failure | Disk failure before PENDING makes zero HTTP calls; after dispatch existing PENDING remains unresolved; crash windows, early ID unverified, mismatch distinct from UNKNOWN; never auto replay |
 | Cross-process coordination | Two actual local processes on temp store contend for same admin/source/target; exactly one dispatch admission; new UUID/alias cannot bypass unresolved source; no TTL/PID release |
@@ -236,7 +236,7 @@ All names below are proposed stable MCP tool names. Inputs are extra-forbid type
 | Tool | Input → output | Effect / fixed provider route | Evidence / bounds / negative outcome |
 | --- | --- | --- | --- |
 | eb_capabilities | empty → CapabilityCatalogue | P; none | Declared enabled/unsupported profiles and limits; no login |
-| eb_source_import | SourceImportRequest → FrozenReceipt | L; configured inbox only, no provider | Explicit artifact capture/hash/magic/provenance; opaque entry, no arbitrary path |
+| eb_source_import | SourceImportRequest → FrozenReceipt | L; configured inbox only, no provider | Host/operator stages file and supplies exact basename; tool computes hash/magic/size and persists snapshot, no arbitrary path |
 | eb_references | profile, kind ledger/relation/costcenter, filters → ReferencePage | Q; GET /v1/ledger, /relation, /costcenter and detail by ID | Official schema; ledger/relation research evidence. Full catalogue explicitly paged; costcenter schema-only until fixture acceptance |
 | eb_mutation_get | profile, VisibleMutation → MutationSnapshot | Q; GET /v1/mutation/{id} | probe_rest; exact detail, type1..7 accepted for read |
 | eb_mutation_find | profile, exact invoice string → MutationSearchResult | Q; GET /v1/mutation?invoiceNumber=... plus details | preflight, all types, bounded complete paging; partial/mismatch blocks clear result |
@@ -406,7 +406,7 @@ These standards are in the maintained [coding standards](../../../.pgmcp/docs/co
 - [hours domain](../../../tools/eboekhouden/hours_domain.py): HoursReader, HoursCommand, ContextGuard, EventReader, EventWriter, SerialLock, HoursExecutor, HoursReconciler, cleanup_plan; [hours I/O](../../../tools/eboekhouden/hours_io.py): SharedWire, AppContext, SharedEventWriter, ExclusiveFileLock.
 - [private writer](../../../tools/eboekhouden/private_output.py): PrivateOutput; [runtime boundary](../../../tools/eboekhouden/toolkit_runtime.py): fixed SOURCE_ROOT/private runtime separation.
 
-MCP tool input/output schemas are generated from the explicit frozen DTOs, with structuredContent and a shared tool-error mapping. SDK protocol errors remain SDK concerns; domain/provider failures are safe typed tool results with isError as appropriate. readOnlyHint describes bookkeeping effect, with authentication/audit effects disclosed; annotations are hints, never permission or idempotency guarantees. UNKNOWN command outcomes must not be marked safe to retry.
+MCP tool input/output schemas are generated from the explicit frozen DTOs, with structuredContent and a shared tool-error mapping. One shared strict JSON-mode codec deterministically re-encodes the SDK's JSON-compatible argument values before model_validate_json(strict=True); it never sends the SDK dict directly to strict Python model_validate. Provider numeric projection and versioned SQLite reconstruction use the same JSON-mode admission, as specified in the contract appendix. Source import uses the explicit host/operator staging-and-basename protocol there, not an unimplemented listing tool. SDK protocol errors remain SDK concerns; domain/provider failures are safe typed tool results with isError as appropriate. readOnlyHint describes bookkeeping effect, with authentication/audit effects disclosed; annotations are hints, never permission or idempotency guarantees. UNKNOWN command outcomes must not be marked safe to retry.
 
 ### Resolved design details and residual evidence gaps
 
@@ -446,3 +446,4 @@ Graph preservation covers all explicitly observed and locally receipt-known targ
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-01 | Imp | Complete local MCP architecture, capability contracts, lifecycle, coordination and acceptance design. |
+| 1.1 | 2026-11-01 | Imp | Close strict JSON-mode serialization and explicit host/operator inbox intake contracts following independent review. |

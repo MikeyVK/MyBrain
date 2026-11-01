@@ -387,7 +387,7 @@ class RequestContext(FrozenModel):
     deadline: datetime
 ```
 
-A public ApplyRequest is exactly profile, operation_id and plan_digest. The resolved plan contains a closed discriminated union of the nine typed intents above, never arbitrary paths/JSON patches. Ledger change intent contains visible mutation, source ledger ID and desired ledger ID; description change contains SourceDescription; rename contains file ID, observed name and desired name; link contains file ID, visible target and supplied shared targets; create intents contain the exact purchase/supplier/hour proposals. File upload contains evidence ID, source SHA and desired name. Each intent is separately schema-versioned and included in intent_digest.
+A public ApplyRequest is exactly profile, operation_id and plan_digest. The resolved plan contains a closed discriminated union of the twelve typed intents declared in this appendix, never arbitrary paths/JSON patches. Ledger change intent contains visible mutation, source ledger ID and desired ledger ID; description change contains SourceDescription; rename contains file ID, observed name and desired name; link contains file ID, visible target and supplied shared targets; create intents contain the exact purchase/supplier/hour proposals. File upload contains evidence ID, source SHA and desired name. Each intent is separately schema-versioned and included in intent_digest.
 
 Canonical SHA-256 uses UTF-8 sorted-key compact JSON with Decimal serialized to exact fixed-point strings, tuple order retained, ISO dates and UTC timestamps; plan_digest excludes itself and includes all other fields. A host profile or rule change invalidates existing plans. No circular input/authorization hashes. Expiry is a stale-plan limit, never a claim that an in-flight write expired safely. A source key is derived from immutable source identity/hash plus operation kind/admin; changing alias, filename or operation UUID cannot clear an unresolved source gate.
 
@@ -771,7 +771,7 @@ The following additional declarations close artifact import and protected-provid
 class SourceImportRequest(ProfileRequest):
     operation_id: UUID
     inbox_entry: str
-    expected_sha256: Digest
+    expected_sha256: Digest | None = None
     provenance: str
 
 class SourceImportIntent(IntentBase):
@@ -794,7 +794,7 @@ class ProviderProtection(FrozenModel):
     unknown_fields: tuple[str, ...]
 ```
 
-SourceImportRequest is a separate explicit local artifact command, not provider apply. inbox_entry is a single opaque name issued by the configured inbox listing, never absolute/relative path syntax. The host-configured fixed inbox can contain only owner-supplied files; traversal/reparse/root/tracked-source checks precede open/ACL effects. The command verifies magic/size/hash, stores an immutable artifact through the shared writer, and its existing receipt exposes the EvidenceRef. No credentials or provider calls occur. Intent/OperationKind include source_import; DownloadIntent is a separate artifact command with provider-read effects. Public tools remain incapable of arbitrary local file reads.
+SourceImportRequest is a separate explicit local artifact command, not provider apply. The source-inbox intake protocol below defines how its basename is obtained; no MCP inbox-listing tool is implied. The command computes the bounded source bytes' SHA itself and, if supplied, compares expected_sha256. It stores an immutable artifact through the shared writer, and its existing receipt exposes EvidenceRef. No credentials or provider calls occur. Intent/OperationKind include source_import; DownloadIntent is a separate artifact command with provider-read effects. Public tools remain incapable of arbitrary local file reads.
 
 MutationSnapshot, HourSnapshot and ArchiveFile each additionally carry protection: ProviderProtection. The adapter owns the complete known provider field schema and classifies every field; a field unclassified by that schema makes unknown_fields nonempty and blocks writes. A canonical private full observation and per-field digests cover protected provider fields not convenient in public views (including payment/row/cost-center/reference/record-entry fields). Core verification compares these frozen digests against an explicit allowlist of intended text/ledger differences, never drops unmodeled fields or interprets an absent value as zero. No arbitrary provider body crosses into core. A read of a nonpurchase type can report its absent paths; a command requires its complete classified supported projection.
 
@@ -843,8 +843,47 @@ class PreparationEvidence(FrozenModel):
 
 PlanCalculator receives frozen captured values, not just handles requiring a hidden store read. It performs no filesystem/provider/audit mutation. Preflight likewise receives actual reference and duplicate results. Stored evidence handles bind the plan, but are not the calculator's I/O mechanism. At plan persistence/apply the application verifies that referenced artifacts exist in the local trusted evidence store, that their digests match supplied values and that the profile/source bindings agree; forged caller snapshots cannot authorize a dispatch. Fresh prewrite reads remain required. Reference/duplicate incompleteness produces blockers.
 
+## Shared strict JSON-mode codec
+
+Choose one shared pure JsonBoundaryCodec for MCP inputs, provider DTOs, persisted SQLite JSON and output serialization. Pydantic's [strict-mode documentation](https://docs.pydantic.dev/latest/concepts/strict_mode/) distinguishes Python-object and JSON validation; strict Python validation is not the selected wire admission route. No SDK-decoded dict goes directly to strict model_validate.
+
+At the MCP boundary, the codec first accepts only a finite JSON-compatible value tree: string keys, JSON scalars, lists and objects, with no Python UUID/date/Enum/tuple/custom objects. It encodes deterministically to UTF-8 JSON with sorted keys, no default=str, no NaN/Infinity and no coercion of values, then calls the selected model's model_validate_json(strict=True), or TypeAdapter.validate_json(strict=True) for a tagged union. MoneyText and HoursNumber remain JSON strings. Numeric amounts, bool-as-ID, numeric-string IDs, extra fields, unknown enum values, invalid UUIDs and invalid date/datetime strings are rejected. Valid JSON UUID/date/datetime/StrEnum strings and arrays enter the declared immutable types and frozen tuples. Datetime admission additionally requires an explicit offset; canonical output converts it to UTC. Internal already-typed core values use their types directly, not an untrusted-dict shortcut.
+
+Provider response bytes take the same JSON-mode typed admission, preceded only by a route-schema-specific lexical projection. Parse bounded UTF-8 JSON with exact Decimal number parsing, integer tokens as integers, duplicate-key rejection and nonfinite rejection: no intermediate binary float. The adapter's declared provider monetary/quantity fields are converted from their exact numeric tokens to canonical fixed-point JSON strings, only when exactly representable at the field precision; no rounding, numeric-ID-to-string conversion or blanket cast is allowed. Unknown fields remain privately observed and block writes as already specified. Nonmonetary JSON types retain their original kind. The projected UTF-8 JSON is admitted through the own provider DTO's strict JSON-mode codec, then explicitly mapped to frozen core values. This schema-specific numeric translation is provider representation handling, not a new VAT/amount rule.
+
+SQLite stores versioned canonical JSON from validated frozen models, not Python repr/pickle or a raw provider dict. Rehydration checks the schema version and uses the identical strict JSON-mode admission. Model output uses model_dump(mode="json") or model_dump_json with configured canonical serializers; tuple arrays, enum strings, UUID strings, ISO dates, UTC datetimes and MoneyText are explicit wire forms. Canonical hashing uses the deterministic shared encoding of that validated JSON value, never a float conversion or default=str. Nested core values remain frozen after roundtrip.
+
+```python
+from typing import TypeVar
+
+ModelT = TypeVar("ModelT", bound=FrozenModel)
+JsonScalar = str | int | float | bool | None
+JsonValue = JsonScalar | list["JsonValue"] | dict[str, "JsonValue"]
+
+class JsonBoundaryCodec(Protocol):
+    def admit_arguments(self, value: JsonValue, model: type[ModelT]) -> ModelT: ...
+    def admit_json(self, content: bytes, model: type[ModelT]) -> ModelT: ...
+    def encode(self, value: FrozenModel) -> bytes: ...
+
+class ProviderProjectionCodec(Protocol):
+    def project(self, content: bytes, contract_id: str) -> bytes: ...
+```
+
+These are pure signatures without bodies. JsonValue exists only at the outer protocol codec; application/domain models never accept it as an escape hatch. ProviderProjectionCodec has a closed startup registry of known route contracts; contract_id is not an MCP argument. Invalid shape/encoding/version preserves the original ValidationError/cause under the shared redacted diagnostics envelope, with field paths and bounded codes; no secrets or rejected values are blindly logged.
+
+Acceptance: valid JSON UUID, date, offset datetime, declared enum and nested arrays produce UUID/date/datetime/StrEnum and frozen tuple results; the same shapes passed directly as an untrusted Python dict are not a supported admission route. Numeric money, bool ID, extra key, invalid UUID/date/enum and nonfinite input fail. Duplicate keys fail on raw JSON admission (provider/SQLite); already-decoded SDK argument trees contain no recoverable duplicate-key history, so no additional claim is made for that SDK parsing stage. Provider decimals with long lexical precision never pass through float and must either map exactly or fail. MCP→core→canonical SQLite JSON→core→canonical output has identical semantic values and stable digest; UTC normalization and null-versus-missing behavior are asserted. These are future public-boundary fake tests, not claimed SDK execution today.
+
+## Source-inbox intake protocol outside MCP
+
+The fixed protected inbox is configured by the host at startup. An owner/operator, or the already-authorized host harness using its native file tools, copies the selected source into that inbox without changing the original. That staging action returns the actual staged single basename; alternatively the operator reads that basename through the host's normal directory listing. The operator/harness passes this exact basename to source_import. No server-issued token or absent MCP listing capability is required. The word opaque means the server interprets it only as that basename, never as an arbitrary path or an administration identifier.
+
+SourceImportRequest.inbox_entry and SourceImportIntent.inbox_entry have the same basename-only contract: nonempty, no separators, drive prefix, traversal components, control characters, dot/dot-dot entry, Windows device/alternate-stream name or symlink/reparse escape. The configured inbox itself is validated against source/system/root escapes. At open the command verifies a regular file and containment, reads bounded bytes from the validated handle, computes SHA-256 itself and validates magic/MIME/size. Optional request expected_sha256 is only a caller consistency check, not a demand for manual hashing. The command fills the resolved SourceImportIntent.expected_sha256 from the bytes it actually read before persisting the intent; the operator does not supply that internal mandatory digest. The command persists the exact imported bytes and source basename/provenance as a new immutable EvidenceRef, with its own operation receipt. Upload subsequently consumes those snapshot bytes, never reopens a mutable inbox path.
+
+The staging actor cannot select an output path or ACL target through MCP. Missing/changed/nonfile/oversize/hash-mismatch input stops without provider access. Private originals remain outside tracked source; no source-path value is copied into public docs. The host staging protocol is an explicit external prerequisite, not a hidden new tool or broader automation platform.
+
 ## Version History
 
 | Version | Date | Author | Change |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-01 | Imp | Concrete proposed DTOs, tool bindings and port signatures. |
+| 1.1 | 2026-11-01 | Imp | Define shared strict JSON-mode codec, exact provider numeric projection and external inbox intake; correct intent count. |
