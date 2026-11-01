@@ -3,7 +3,7 @@
 # e-Boekhouden research toolkit
 
 **Status:** Source preserved for offline research; live execution disabled by default  
-**Version:** 0.2  
+**Version:** 0.3
 **Last Updated:** 2026-11-01
 
 This isolated Python toolkit preserves screened research helpers and their synthetic
@@ -18,7 +18,8 @@ with nothing executed against an account.
    `get_work_context`. Verify issue, branch, phase, assigned role and mutation owner;
    do not substitute another worktree's connection.
 2. Read the [preservation inventory](../../docs/development/issue12/toolkit-preservation.md),
-   [MCP research inputs](../../docs/development/issue12/mcp-research-inputs.md) and
+   [MCP research inputs](../../docs/development/issue12/mcp-research-inputs.md),
+   [proposed MCP design](../../docs/development/issue12/design.md) and
    [quality bootstrap](quality/README.md). Historical private plans are not inputs.
 3. Create `.venv` using CPython 3.15.0 without system site packages and install
    [requirements.lock.txt](requirements.lock.txt). This environment is independent
@@ -102,7 +103,10 @@ row-text persistence, arbitrary updates and bank-worklist processing are not pro
 
 Shared modules are legacy reuse, not established process-lifetime ownership or
 MCP-ready architecture. PrivateOutput still contains CLI presentation; SDK/transport,
-expiry/concurrency and server audit lifetimes remain later design work. Unknown
+expiry/concurrency and server audit lifetimes are specified in the proposed
+[MCP design](../../docs/development/issue12/design.md); they remain unimplemented.
+The independent Research consolidation GO binds revision
+`68bafa6750e64b99cc758f30377fa648566080eb`, not the new Design's acceptance. Unknown
 writes remain uncertain: durable PENDING precedes dispatch, preserve received
 identifiers/observations and never automatically replay, roll back or recreate.
 Local locks and readback comparisons do not guarantee provider CAS or global
@@ -114,3 +118,4 @@ exactly-once behavior.
 | --- | --- | --- | --- |
 | 0.1 | 2026-10-31 | Imp | Extract admitted readers/libraries and verification sources. |
 | 0.2 | 2026-11-01 | Imp | Preserve explicitly authorized default-disabled command source, complete offline closure and fresh-chat runbook. |
+| 0.3 | 2026-11-01 | Imp | Link proposed Design and distinguish implemented research preservation from future MCP lifecycle. |
