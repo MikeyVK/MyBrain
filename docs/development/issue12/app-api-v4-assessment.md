@@ -2,10 +2,15 @@
 
 # e-Boekhouden App API v4 assessment
 
-**Status:** RESEARCH FINDINGS — bounded read proof; supplemental role accepted  
-**Version:** 1.1  
-**Last Updated:** 2026-10-30
+**Status:** HISTORICAL CHECKPOINT WITH EXPANDED EVIDENCE — provider strategy reopened  
+**Version:** 1.2  
+**Last Updated:** 2026-11-01
 
+## Expanded evidence — 2026-11-01
+
+The findings below describe the bounded 2026-10-30 community/read checkpoint. Current [functional coverage](api-functional-coverage.md) and the [whole-client APK catalogue](apk-api-contracts.md) supersede its completeness assumptions without rewriting that historical proof. Android3.9.0's compiled default host/version is the same App-v4 family. Its broader clients declare invoice/quote/subscription/reference/hours CRUD and report operations absent from the 33-path/34-operation community capture.
+
+In particular, `MutatiesClient.Create` declares POST `/api/v4/mutaties` with `CreateMutatieDto.afschriftRegelId` and `bestanden`, plus a source-bank-row next-data query. This is now an identified static processing candidate; pending-row consumption, matching, atomicity and retry safety are still unproved. `UpdateMutatieDto` explicitly includes `relatieId`, unlike the incomplete old captured request. Selected later archive upload/link/rename, narrow mutation edits and hours outcomes are historical runtime evidence in the [preservation inventory](toolkit-preservation.md), not blanket current server guarantees. No new account/auth/API operation occurs in this update, and no present operational authority is revived.
 ## Purpose
 
 Assess the unofficial App API against attachment linking, existing-mutation editing and imported-bank-row processing, with screened conclusions from separately authorized bounded read probes.
@@ -111,3 +116,4 @@ The selected read proved login/current context and a bounded identity mapping; t
 | --- | --- | --- | --- |
 | 1.1 | 2026-10-30 | Codex (@imp researcher) | Record screened live read findings and accepted supplemental role; separate identity and monetary interpretation limits from untested writes. |
 | 1.0 | 2026-10-30 | Codex (@imp researcher) | Assess pinned App API evidence and limits for files, edits and bank processing. |
+| 1.2 | 2026-11-01 | Imp | Preserve old checkpoint; link broader APK contracts, source-bank-row create candidate and bounded later runtime evidence. |

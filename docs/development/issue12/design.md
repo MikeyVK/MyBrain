@@ -2,8 +2,10 @@
 
 # Thin local e-Boekhouden MCP design
 
-**Status:** DESIGN — REVIEW CANDIDATE, NOT IMPLEMENTED  
-**Version:** 1.1  
+**Status:** HISTORICAL REVIEWED DESIGN — NOT CURRENT IMPLEMENTATION BASIS
+
+The owner has reopened the functional scope and provider-route strategy. The prior Design GO at revision `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5` remains historical evidence, not authority to implement this workflow-shaped design. Consult the [current per-function coverage research](api-functional-coverage.md) and [expanded APK contracts](apk-api-contracts.md) before a replacement strategy/design. No implementation or account operation is authorized by this document.  
+**Version:** 1.2  
 **Last Updated:** 2026-11-01
 
 ## Purpose
@@ -447,3 +449,4 @@ Graph preservation covers all explicitly observed and locally receipt-known targ
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-01 | Imp | Complete local MCP architecture, capability contracts, lifecycle, coordination and acceptance design. |
 | 1.1 | 2026-11-01 | Imp | Close strict JSON-mode serialization and explicit host/operator inbox intake contracts following independent review. |
+| 1.2 | 2026-11-01 | Imp | Mark reviewed design historical after owner reopened functional scope and provider strategy. |

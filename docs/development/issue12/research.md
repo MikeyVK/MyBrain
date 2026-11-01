@@ -2,11 +2,19 @@
 
 # e-Boekhouden documentation-first connection research
 
-**Status:** RESEARCH IN PROGRESS — current consolidation indexed below; original findings retained as historical checkpoint  
-**Version:** 1.3
+**Status:** REOPENED FUNCTION-FIRST COVERAGE — historical consolidation and design retained  
+**Version:** 1.4
 **Last Updated:** 2026-11-01
 
-## Current Research index — 2026-11-01
+## Current function-first research — 2026-11-01
+
+- [Per-function REST/App/APK coverage](api-functional-coverage.md): all 57 generic functional groups with separate operation coverage, 23 configuration feature types, bounded gaps and concrete follow-ups. No private administration values are published.
+- [Expanded APK contract catalogue](apk-api-contracts.md): all compiled mobile client groups, exact Production App-v4 binding and static method/path/DTO evidence. The APK is client evidence for App-v4, not a third independent API family.
+- The owner reopened scope and route choice after functional web research. The earlier REST-default strategy and [thin design](design.md) remain historical; they are not the current implementation basis. App-only core and deliberate mixed routing are now evidence options, neither yet chosen. Missing functions in both families remain missing evidence, not a reason to invent local accounting logic.
+- Consolidation received independent GO at `68bafa6750e64b99cc758f30377fa648566080eb`; the previous Design received independent GO at `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5`. Those verdicts cover their exact earlier scope/revisions, not this reopened strategy.
+- Current work is static/public-source research and screened documentation. No APK execution, current account/API/credential operation, implementation or phase transition occurs.
+
+## Historical consolidation index
 
 - [Toolkit preservation and callable/test omissions](toolkit-preservation.md): current default-disabled source consolidation and isolated offline verification; final Research review pending.
 - [Thin MCP research inputs](mcp-research-inputs.md): deterministic capability inventory, exact retained symbols, process/authentication/audit lifecycle constraints and remaining design evidence.
@@ -175,3 +183,4 @@ This checkpoint publishes only screened conclusions from public contracts and se
 ### Current index revision
 
 2026-11-01, version 1.3, Imp: add preservation/MCP Research entrypoints and distinguish the historical documentation/read-only checkpoint from later narrowly authorized observations and current offline-only work.
+| 1.4 | 2026-11-01 | Imp | Reopen function-first coverage and route strategy; index full APK evidence while retaining earlier findings and verdict boundaries as history. |

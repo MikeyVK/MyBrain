@@ -2,7 +2,9 @@
 
 # e-Boekhouden MCP boundary contracts
 
-**Status:** DESIGN — NOT IMPLEMENTED
+**Status:** HISTORICAL REVIEWED CONTRACTS — NOT CURRENT IMPLEMENTATION BASIS
+
+The owner has reopened the functional scope and provider-route strategy. The prior Design GO at revision `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5` remains historical evidence, not authority to implement this workflow-shaped design. Consult the [current per-function coverage research](api-functional-coverage.md) and [expanded APK contracts](apk-api-contracts.md) before a replacement strategy/design. No implementation or account operation is authorized by this document.
 
 ## Purpose
 
@@ -887,3 +889,4 @@ The staging actor cannot select an output path or ACL target through MCP. Missin
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-01 | Imp | Concrete proposed DTOs, tool bindings and port signatures. |
 | 1.1 | 2026-11-01 | Imp | Define shared strict JSON-mode codec, exact provider numeric projection and external inbox intake; correct intent count. |
+| 1.2 | 2026-11-01 | Imp | Mark reviewed contracts historical; current functional/provider evidence precedes replacement design. |

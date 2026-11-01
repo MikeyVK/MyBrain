@@ -3,9 +3,12 @@
 # e-Boekhouden API documentation and capability catalogue
 
 **Status:** REFERENCE FINDINGS — official contracts and screened bounded read evidence  
-**Version:** 1.2
-**Last Updated:** 2026-10-30
+**Version:** 1.3
+**Last Updated:** 2026-11-01
 
+## Current coverage entrypoint — 2026-11-01
+
+The official REST specification was refreshed on 2026-11-01: UTF-8 SHA-256 `C9F8CB8893796B347AE75CAE516DF98817FCCB9889E426308858E7554D341AF9`, still 39 business operations/24 business paths. Use the [complete operation-specific functional crosswalk](api-functional-coverage.md) for current scope and [expanded APK contracts](apk-api-contracts.md) for the additional App-v4 evidence. The APK is a client of that App family, not another independent API. REST create/read metadata must not be equated with every UI edit/queue/import/report/export action; the older priorities below remain historical. Route strategy is reopened rather than silently retaining the earlier REST-default decision.
 ## Purpose
 
 Index the discovered official public API contracts and identify the boundary around the owner's mutation and imported-bank-row workflow.
@@ -220,3 +223,4 @@ Full vendor documents remain outside tracked deliverables. This catalogue is a s
 | 1.2 | 2026-10-30 | Codex (@imp researcher) | Record REST-first strategy, screened read proofs and App identity/monetary interpretation limits. |
 | 1.1 | 2026-10-30 | Codex (@imp researcher) | Scope capability gaps to official REST v1; link separate unofficial App assessment and exclude SOAP as a fallback. |
 | 1.0 | 2026-10-30 | Codex (@imp researcher) | Catalogue the official REST and SOAP surfaces and the documented API/UI boundaries for invoices, mutations and imported bank rows. |
+| 1.3 | 2026-11-01 | Imp | Index refreshed official contract and reopened operation-specific REST/App/APK coverage. |

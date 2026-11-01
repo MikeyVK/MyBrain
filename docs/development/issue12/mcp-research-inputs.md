@@ -2,10 +2,13 @@
 
 # Thin e-Boekhouden MCP research inputs
 
-**Status:** Source consolidation preserved; final Research review pending; no Design selection  
-**Version:** 0.1  
+**Status:** HISTORICAL REUSE INPUTS — function scope and provider strategy reopened  
+**Version:** 0.2  
 **Last Updated:** 2026-11-01
 
+## Historical input boundary — 2026-11-01
+
+Consolidation and the earlier workflow-shaped Design received their exact-revision reviews, but the owner has reopened the functional scope and provider-route strategy. Use [current per-function coverage](api-functional-coverage.md) and [expanded APK evidence](apk-api-contracts.md) before any replacement strategy/design. The preserved seams and constraints below remain historical reuse evidence, not the current implementation basis or a chosen route mix. No account operation or implementation is authorized.
 ## Purpose
 
 Consolidate evidence and boundary constraints for the owner's later thin MCP design.
@@ -108,3 +111,4 @@ A later accepted design must demonstrate explicit query/auth/command/prepare/ver
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 0.1 | 2026-11-01 | Imp | Record owner strategy, retained symbols, lifecycle/contract gaps and primary MCP evidence. |
+| 0.2 | 2026-11-01 | Imp | Index reopened function-first provider research; retain earlier reuse inputs as historical. |
