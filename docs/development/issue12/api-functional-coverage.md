@@ -72,7 +72,7 @@ App-only is a serious core candidate: one client family covers mutations, source
 
 REST+App is also a candidate: official REST has clearer supported financial/create/reference contracts and historical strict readback experience, while App supplies genuine gaps. Costs are separate authentication/identity models and capability-level routing. It is not automatic fallback on REST errors and does not solve functions absent from both inspected families. REST invoice creation with immediate email is not App queue manipulation; REST payment creation is not bank-worklist consumption.
 
-No current route choice follows from the old REST-default policy or the earlier thin-tool design. Those remain historical reviewed artifacts. A new capability-specific strategy must follow this coverage review and the owner's priorities; unknown web/backend functions need additional contract research rather than invented local bookkeeping calculations.
+OWNER ACCEPTED — 2026-11-01: App API v4 is the uniform route, with APK contract evidence and the inventoried functions as the design basis. The [endpoint design](design.md) and [registry/admission mapping](endpoint-design-catalogue.md) apply that decision. The comparison above records research alternatives rather than an open routing decision. No REST/UI fallback is implied; unknown backend contracts remain research gaps, without locally invented bookkeeping calculations.
 
 ### Bookkeeping — BK crosswalk
 
@@ -208,7 +208,7 @@ These are research follow-ups, not permission to execute operations. Prefer furt
 | F15 Hours | Preserve exact nullable DTO/ID/date/precision/ownership semantics; trace invoiced-hour restrictions, billing settings and output effects; report aggregation/export needs its own evidence. |
 | F16 Administration | Obtain feature-specific flag/setter, user/rights/security/credential lifecycle and fiscal-year contracts. Keep accountant/linked administration listing separate from authenticated current-context binding. |
 
-The old interface policy and reviewed design can supply preservation lessons, but are not the current implementation basis. A later owner-approved strategy may select App-only for the evidenced core, deliberate REST+App composition, or additional backend research for uncovered functions. This document records evidence and trade-offs, not a new operational mandate.
+The old interface policy and workflow design supply historical preservation lessons. The subsequent owner-approved App-only strategy is implemented in the [current endpoint design](design.md); this evidence matrix still distinguishes declared, static and historical runtime proof. The decision does not authorize account operations or manufacture missing contracts.
 
 ## Related Documents
 

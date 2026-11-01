@@ -1,182 +1,153 @@
 <!-- pgmcp:v1 id=design pv=1.0.0 pf=Uk1D2XWpiag1c6nn sf=WI5iXHBKVOU91bYE -->
 
-# Thin local e-Boekhouden MCP design
+# Thin App-v4 endpoint MCP server design
 
-**Status:** HISTORICAL REVIEWED DESIGN — NOT CURRENT IMPLEMENTATION BASIS
-
-The owner has reopened the functional scope and provider-route strategy. The prior Design GO at revision `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5` remains historical evidence, not authority to implement this workflow-shaped design. Consult the [current per-function coverage research](api-functional-coverage.md) and [expanded APK contracts](apk-api-contracts.md) before a replacement strategy/design. No implementation or account operation is authorized by this document.  
-**Version:** 1.2  
+**Status:** OWNER-SELECTED APP-ONLY DESIGN — REVIEW CANDIDATE, NOT IMPLEMENTED  
+**Version:** 2.0  
 **Last Updated:** 2026-11-01
 
-## Purpose
+## Purpose and accepted strategy
 
-Define an implementation-ready thin MCP boundary following the independently reviewed research consolidation.
+The owner selected App API v4 as the uniform provider route, using the APK as source and the inventoried functionality as the scope. This replaces the earlier workflow-shaped design and REST-default/readback requirement. The server exposes named technical provider operations with shared authentication/logging and **no bookkeeping logic**.
 
-## Scope In
+The [endpoint registry/admission catalogue](endpoint-design-catalogue.md) binds the source-backed endpoint families to all 57 functional groups and 23 configuration feature types. The [contract appendix](design-contracts.md) defines concrete technical schemas, interfaces and failure semantics. The [coverage research](api-functional-coverage.md) and [APK catalogue](apk-api-contracts.md) own evidence and gaps.
 
-Local stdio server, typed deterministic queries/preparations and narrowly evidenced commands, per-process shared infrastructure, durable cross-process operation state, negative outcomes and test acceptance.
+Version1.x remains in Git, including its independent review. Its business preparation, supplier matching, source-policy decisions, mandatory REST checks and operation-planning state machine are superseded, not inherited requirements. Historical REST helpers/proofs remain preserved and default-disabled; they are not imported, wrapped or invoked by this server.
 
-## Scope Out
+## Scope and exclusions
 
-No implementation, SDK installation, provider/account access, deployment, new operational authority, bank queue processing, sales workflow, tax filing, arbitrary CRUD, native browser automation endpoint or choice of the wider MyBrain application stack.
+| In scope | Out of scope |
+| --- | --- |
+| Fixed typed App endpoint queries and provider commands | Arbitrary URL/method/headers, SQL/eval, generic unrestricted proxy |
+| Provider-native filter, calculation, billing, bulk and send operations | Locally calculated VAT, prices, balances, discounts, returns or reports |
+| Exact technical serialization, context/ID/shape checks, paging metadata, binary capture | Supplier matching, ledger/VAT/date/term/rounding choices or payment-completeness interpretation |
+| Shared session/credential/HTTP manager, redacted audit, technical dispatch receipts | Book/upload/link/repair/approve/prepare business workflows or automatic source selection |
+| Readback as separately callable App queries | Mandatory REST comparison, hidden REST/UI fallback, auto compensation/retry |
+| Explicit source gaps and registration admission | Callable placeholder tools pretending to implement missing asset/tax/import/export functions |
 
-## Prerequisites
+The server does not decide whether to create an invoice, consume a bank row, select quote rows, apply a discount, send mail or process bookkeeping. A provider endpoint may do several of these when explicitly requested through its native fields. Its possible effects must be declared; forwarding a provider billing command is not a local billing implementation.
 
-- Research consolidation revision 68bafa6750e64b99cc758f30377fa648566080eb received original independent QA GO. Design transition is authorized; old accounting work is closed.
-- Implementation requires a later approved Planning/implementation assignment and separately authorized live acceptance. Static writer preservation is not execution authority.
+There are no account operations, source implementation, SDK installs, new financial tests or deployment in this Design work.
 
-## Problem Statement
+## Responsibilities and architecture
 
-The preserved research toolkit contains useful bounded, tested contracts, but its CLI orchestration, configuration, provider access and presentation are not a reusable MCP application architecture. Codex needs deterministic typed tools without embedding supplier, ledger, VAT, tax or text judgment in HTTP adapters, without per-tool authentication/logging setup, and without replaying closed operational work.
+| Boundary | Own responsibility | Explicitly excluded responsibility |
+| --- | --- | --- |
+| Owner/LLM/harness | Select required operation and supplied provider values; authorize effects | Permission is not manufactured by an approved=true field |
+| MCP handler | Shared codec admission, correlation/deadline, invoke one injected technical service, present typed result | Construct transports, decide accounts/VAT, run multi-operation invoice workflows |
+| Technical query service | Resolve fixed registration, obtain context lease, perform bounded query, expose typed response | Hold a financial command port or persist proposals |
+| Technical command service | Admit dispatch identity, persist PENDING, issue the one registered command and preserve its response/outcome | Return provider result from own command method; automatically retry or verify bookkeeping meaning |
+| App adapter | Fixed route translation, source-backed DTO/JSON and HTTP handling | Select business values, recompute financial fields or silently round-trip GET objects |
+| Session manager | Credentials, token generations, context binding, serialized refresh/MFA state | Expose tokens/passwords through tools/results/logs |
+| Receipt/artifact storage | Durable technical dispatch/response and explicit bounded binary snapshots | Accounting plan/baseline/approval/source-deduplication engine |
+| Shared audit/presenter | Redacted structured events and consistent protocol-visible errors | Per-tool logger/exception framework or raw financial payload logging |
 
-## Functional Requirements
+Proposed isolated package:
 
-- Expose explicit, bounded queries and source-bound prepared commands through one canonical reusable core and thin SDK handlers.
-- Prefer official REST for financial reads and supported creates; deliberately route archive, evidenced narrow changes and hours gaps to App v4.
-- Preserve exact identity, money, source descriptions, payment evidence and document graph; distinguish missing, incomplete, unknown and verified outcomes.
-- Share authentication, transports and one durable audit/receipt facility for each process; coordinate commands across local processes.
-- Default to no live commands, no old-plan replay and no accounting actions from checkout, import, help or startup.
+- `server/`: official SDK stdio boundary and single startup composition.
+- `configuration/`: one ConfigLoader, pure immutable configuration models.
+- `core/interfaces/`: narrow provider-query, provider-command, session, receipt-reader/writer, artifact and audit ports.
+- `contracts/`: frozen technical DTOs, source schemas and the one operation registry.
+- `application/`: technical query/dispatch/context/artifact services; no bookkeeping domain.
+- `adapters/app/`, `adapters/host/`, `adapters/files/`: concrete implementations created only at startup.
+- `presentation/`: shared configured result/error projection.
 
-## Nonfunctional Requirements
+SDK lifespan owns process resources, not a service locator passed to every request. Each registered handler is constructed with only its narrow service/query interface. Request context contains correlation/deadline, not the writable container. Shared lower-level transport can support both effects, but a query consumer receives only the read/query port and a registry view containing query registrations.
 
-- Strict CQS, SRP, ISP, constructor injection, frozen extra-forbid DTOs, startup-only configuration and externally configured presentation.
-- Secrets stay in host storage; private evidence/state stays outside tracked source; stdout contains MCP protocol only.
-- Durable PENDING before dispatch, no automatic write retry or compensating rollback, bounded read-only reconciliation after uncertainty.
-- Meaningful public-boundary fake tests and future runtime/handshake acceptance; this document does not claim an implemented server.
+## Operation and schema registry
 
-## Constraints
+The registry is an immutable startup resource and the single source of operation names, route templates, input/output schema IDs, effects, source evidence, serializer profiles and inventory trace. The catalogue is the Design's authoritative finite registration specification. Implementation must expand grouped rows into separate explicit records and supply the complete source-bound schema/fixture for each enabled entry. Missing DTO/parameter/effect admission means no callable tool; it never becomes Any or caller-selected HTTP.
 
-- Do not mix owner/LLM choices with adapter mechanics; no generic raw HTTP, SQL, eval or arbitrary field-patch tool.
-- Native paid-invoice editing was a manual verified workflow, not a reusable App update contract. Do not expose it as a server capability.
-- Keep existing isolated toolkit quality approval separate from future MCP package/runtime acceptance; no activation of unrelated app checks.
-- Own command ports return None and persist their external responses internally; MCP command output comes from the separate receipt query.
+For example:
 
-## Options
+| Named operation | Technical effect | Provider request |
+| --- | --- | --- |
+| app_mutations_list | Query | POST /api/v4/mutaties/filter |
+| app_mutations_create | Command | POST /api/v4/mutaties, caller's typed CreateMutatieDto |
+| app_archive_upload | Command | JSON upload with explicitly selected artifact/filename/directory/scan flag |
+| app_hours_invoice | Command | POST /api/v4/uren/factureren with supplied hour IDs |
+| app_sales_invoices_calculate_totals | Query | Provider POST calculation; no local financial arithmetic |
+| app_sales_invoices_mail | Command with outward effect | Provider mail endpoint; never availability-tested by sending |
 
-### 1. Legacy CLI subprocess per tool
+Queries are not identified by HTTP GET alone: compiled filter/calculation POSTs have query semantics. Provider command/bulk/generate/send operations are not classified as safe queries merely because they return values. MCP annotations are hints, not authority or evidence of idempotency. Known payload flags may widen effects (mail, posting, scanning, cascading); descriptors list every possible effect and host policy may restrict them. The service validates declared effect scope, not the accounting correctness of the supplied values.
 
-Invoke preserved scripts for each request.
+Adding an evidenced endpoint requires a registration, schema and fixture; no handler/session/logger branches per action. Changing a path/schema is a versioned contract change. Existing callers receive explicit schema/admission errors rather than silent remapping.
 
-**Pros:**
+## Data fidelity and source contract
 
-- Small wrapper surface; keeps reference behavior.
+The appendix defines strict JSON-mode admission for SDK-decoded arguments, provider raw UTF-8 responses, immutable models and persisted result reconstruction. Do not pass an untrusted SDK dict directly into strict Python validation. JSON numbers are parsed without intermediate binary float; the technical DTO projection uses exact number text and explicit wire-number serialization. There is no cent quantization, sign/amount rule or accounting recomputation.
 
-**Cons:**
+Preserve missing versus null versus zero, array order, string identifiers including leading zeros/whitespace, unknown response fields and changed App IDs. Client Required metadata is not automatically provider-required: Json.NET Default0, AllowNull1, Always2 and DisallowNull3 have different presence/null rules. Static client constraints are labelled as such; no invented server defaults are filled.
 
-- Repeated auth/log setup, subprocess/CLI schemas, mixed responsibilities and stale orchestration; rejects shared-lifetime mandate.
+Unknown response fields are retained in a bounded typed extension projection with a schema warning, not discarded. Unknown request fields are refused until the registry schema is updated. An App response with calculated zero values is returned as the observed provider data, not “corrected” with REST or guessed totals. No GET→PUT object roundtrip is implicit.
 
-### 2. Local stdio canonical core and official SDK
+Path IDs are separate technical types: App internal mutation version ID, visible number, bank row ID, file/directory ID, association ID, quote/invoice/hour IDs and administration ID. Link kind and target namespace come from supplied source-backed fields; the server does not equate a numeric link kind with a bookkeeping mutation kind. A returned new internal ID is exposed with its namespace; caller can issue a separate named GET.
 
-One process per host registration, narrow application ports, official SDK framing and shared resources.
+## Strict CQS and result access
 
-**Pros:**
+Own provider/application command ports have the signature `execute(dispatch_id, typed_request) -> None`. The unavoidable external HTTP response is captured immediately by the adapter through the already injected receipt writer. No mutable last_response, callback/event bus or extra provider read just to construct a tool acknowledgement.
 
-- Small local deployment; clear lifetimes and typed tools; no network service or copied business core.
+The MCP command handler invokes the command, then separately queries `receipt_reader.get(dispatch_id)`, then uses the shared presenter. This protocol response is a boundary projection, not a core command that saves and returns a domain aggregate. Provider result/ACK, HTTP status and schema warnings are observations, **not a claim that bookkeeping is financially correct**.
 
-**Cons:**
+A named readback tool is an independent App query. There is no built-in read→prepare→approve→apply→verify workflow. Auth/current-context checks and response capture are technical infrastructure effects and do not perform business orchestration.
 
-- Requires deliberate extraction/refactoring and future supported-runtime/SDK handshake proof.
+Binary download performs a provider query and an explicit local artifact command; its result comes from the separate receipt/artifact reader. Source import is also an explicit technical local command. Read services themselves do not secretly save a proposal or choose a source file.
 
-### 3. HTTP service or generic automation platform
+## Process lifetime, authentication and context
 
-Persistent network service with generic provider command routing.
+Startup loads configuration once; validates private roots/registrations/schemas; constructs one audit writer, receipt/artifact services, shared HTTPS/session managers and Windows credential adapter; then injects handler instances. No import/help/checkout/startup login occurs. App credentials are read lazily once per configured credential reference per process, never per tool, and stay in manager-owned memory. No REST token/session/client dependency exists.
 
-**Pros:**
+Authentication is lazy on the first explicit provider operation. Shared session state includes current App administration, nonsecret lease generation, token availability, challenge state and known/advisory expiry. Login/renew/userinfo responses containing secrets are consumed only by the auth manager; no raw auth response enters normal command receipts, output or audit. Token values never appear in launch environment, arguments or public configuration.
 
-- Could centralize resources across hosts.
+Serialized single-flight renewal admits one refresh for a generation. Where expiry is not authoritatively established, the client uses a conservative auth-invalid state; it does not invent an unlimited lease from missing expiry or trust an unvalidated JWT claim as provider truth. Refresh happens before a new dispatch when needed. An already-dispatched command is never replayed after auth failure, timeout or renewal.
 
-**Cons:**
+MFA: a challenge produces a nonsecret AUTH_INTERACTION_REQUIRED result and pauses provider admission. The owner/operator supplies any one-time secret through the configured host credential-interaction channel, not an MCP argument or model-visible code. The manager completes the source-backed challenge once and validates context. No account security settings are modified.
 
-- Adds service security/deployment, unrestricted scope and a new platform absent from owner need.
+Administration context is checked from source-backed userinfo after login/renew/explicit context selection and before command admission. A query cannot switch administration. Explicit selection uses only host-configured allowed aliases, drains old-generation leases and obtains exclusive context ownership. A context mismatch or incomplete binding blocks before dispatch; a mismatch observed afterwards is recorded without replay/rollback. API administration IDs are not equated with UI or other-family IDs.
 
-### 4. JSONL operation journals with file locks only
+Multiple processes share no in-memory auth state: each has its own manager/writer/connection. Configured local receipt identity and dispatch locking prevent the same dispatch ID being resent by two participating processes. They do not serialize external UI sessions or prove provider CAS/global exactly-once.
 
-Retain source-keyed append/fsync and exclusive locks directly.
+Logout is source-backed but provider-wide revocation scope is unproved. Default shutdown stops admission, drains bounded workers, closes local connections, flushes/closes writers and drops secrets. It does not automatically call a potentially broader logout or claim that a vendor session was revoked. An explicitly enabled host-auth logout operation records only safe status and clears local state; never automatically replay it after uncertainty.
 
-**Pros:**
+## HTTP ownership and budgets
 
-- Proven useful legacy patterns; few dependencies.
+The process owns a reusable HTTPS client per configured context. A single connection mutex spans send, body read and close/discard: HTTPConnection is never concurrently accessed by workers. Authentication single-flight state is released during network I/O, and lease acquisition precedes taking the transport mutex; no lock-order inversion.
 
-**Cons:**
+Use bounded worker execution around blocking stdlib HTTPS, not subprocesses. A replaced/disconnected connection is not permission to retry its request. Fixed HTTPS origin is appapi.e-boekhouden.nl, fixed source version /api/v4, no arbitrary redirects or caller headers. Source-proven exceptional version-validation routes are internal technical operations, not a raw proxy escape.
 
-- Atomic multi-index operation/source/target claims and crash recovery require additional custom coordination.
+Request count, response bytes, timeout, worker queue and binary size are explicit resource limits, not vendor business limits. List tools request one typed provider page and return provider paging/hasMoreRows as observed; they do not infer global absence from an empty page or automatically scan all business records. Provider-native bulk is one explicit endpoint request, not a local per-record loop.
 
-### 5. Local SQLite operation store
+Design launch budget: host tool_timeout_sec660; server absolute deadline600 seconds including queue/auth/provider and local response work; final cleanup reserve30 seconds; per-HTTP timeout at most60 seconds clipped to remaining budget. Admit no new command if its technical send/capture budget cannot fit. After dispatch cancellation/time limit still leaves possible remote effects; the deadline is not rollback.
 
-One process writer owner with short atomic transactions and durable cross-process claims.
+## Minimal dispatch journal, not an accounting state machine
 
-**Pros:**
+Choose per-dispatch append-only JSONL receipts with exclusive filesystem locking and fsync, reusing the preserved technical journal/lock patterns. Reject retaining the former SQLite plan/source/target/business-baseline machine: no plan store, supplier/invoice duplicate policy, accounting approval or financial state belongs here. SQLite could offer atomic indexes, but would add coordination breadth unnecessary for a UUID-addressed single dispatch/result store.
 
-- Standard library; unique constraints and event/receipt atomicity; no external service.
+A canonical UUID selects a private receipt file under the fixed validated root. Under an OS-backed cross-process exclusive lock, create/validate the header binding dispatch_id, operation name, stable profile/administration binding and canonical request digest. Auth/lease generation is recorded only as a dispatch observation, never an identity key. Commit PENDING and fsync before the sole provider send. Append observed response/status and persist the typed result through the shared writer before releasing the lock. Atomic file creation and lock acquisition enforce one admission for that UUID.
 
-**Cons:**
+Same ID/same digest reads the existing receipt without another send; same ID/different operation/profile/digest is CONFLICT. A PENDING/incomplete file after crash is unresolved, even if a process/lock disappeared. No TTL or PID liveness clears it and no automatic replay follows. An UNKNOWN receipt is not a failed-request proof. Fresh explicit queries may investigate known IDs, but no generic reconciliation tool restarts a command.
 
-- Local-filesystem constraint; migrations/backup/disk-failure and contention tests remain required.
+New UUID means an explicitly new request: this server does not promise source/invoice/body deduplication or global exactly-once. The harness must reuse the same dispatch ID when retrying delivery of the same intended call. A changed ID is not silently interpreted as the old request; accidental duplicate business actions remain the caller/provider's responsibility. This is transparent technical delivery coordination, not an accounting-policy engine.
 
-## Decision
+A short profile-level OS dispatch lock prevents overlapping local sends during context mutation. It is held only for the bounded technical operation, not a long SQL/network transaction or indefinitely waiting for human judgment. Crash releases OS locks, while persistent PENDING remains blocked for the affected dispatch ID. External clients and different explicitly new dispatches are not provider-fenced.
 
-Choose local stdio with official Python SDK mcp==2.3.0, CPython 3.14, a canonical package with typed ports, and a local SQLite operation/evidence index. Retain the toolkit as reference; do not call its CLIs as production tool implementations.
+Before-dispatch evidence/storage failure causes zero sends. Failure/crash/disk-full after send can leave PENDING with no final append; the service must not promise it can durably record UNKNOWN on a full disk. No second POST/PUT/DELETE, automatic compensating mutation or generated recovery transaction occurs.
 
-## Rationale
+## Shared audit, result storage and errors
 
-This meets thin-local scope and explicit shared-resource requirements while separating decisions from transport. Python 3.14 is declared in the pinned SDK metadata; the preserved toolkit's tested 3.15 interpreter is not SDK compatibility proof. SQLite provides small cross-process coordination without pretending to fence the provider or external UI.
+One structured audit writer is constructor-injected into session/transport/services; it owns event framing, UTC timestamps, correlation/dispatch IDs, operation name/effect, stage, status and bounded diagnostics. Stdout is SDK protocol only; sanitized diagnostics go to stderr. SDK notifications/wire diagnostics are not durable audit.
 
-## Key Decisions
+No request/response financial payload, password, token, OTP, Authorization header or raw user-info profile is logged. Ordinary receipts record technical metadata/digests plus a pointer to the **private typed provider-result store**, needed for CQS response access. This result store is not the audit log: it holds legitimate command results/unknown-field projections under the same protected retention controls. Auth responses never enter it. Raw unparsed bodies are not dumped into logs; parse/shape failures retain bounded original cause/status/field paths and content digest.
 
-### Lazy provider authentication, composed once per process
+Capture safe HTTP facts and any schema-valid received ID before later validation raises. Unrecognized ACK is exposed as an observed/invalid-schema result or outcome-unknown state, never as an invented failure/retry instruction. The original exception/cause chain is preserved under shared redaction at the existing SDK boundary; no endpoint-specific exception hierarchy or logger framework.
 
-Startup and capability discovery must not access credentials/accounts. Cache providers/clients and authenticate only on explicit provider use.
+Private configuration, artifacts and receipts live in a fixed local per-user runtime root outside Git/source. No MCP argument selects output/ACL/root paths. Reject system/root/tracked-source/network/reparse escapes. Retention may purge completed typed result data after a documented local period while keeping a digest/tombstone preventing same-ID replay; unresolved receipts are never automatically erased. No backup claim is made.
 
-**Alternatives:**
+## Runtime, composition and host policy
 
-- Eager login would turn startup into an account operation.
-- Per-tool login repeats secrets/session setup and defeats lifecycle sharing.
+Choose local stdio with official Python SDK mcp==2.3.0 and CPython3.14, whose classifier support is declared in the pinned SDK metadata. Pydantic>=2.12,<3 is the DTO admission choice; exact transitive dependency locks and actual install/handshake remain future acceptance. The SDK's httpx2 dependency does not imply compatibility with legacy httpx examples. The App transport remains an independently typed stdlib HTTPS adapter.
 
-### Read handlers receive query services only
-
-SDK lifespan owns resources but cannot become a writable service locator passed down every read path.
-
-**Alternatives:**
-
-- A broad AppContext would make read-isolation a convention instead of an interface property.
-
-### Short SQLite transactions, durable dispatch claims
-
-No SQL transaction spans HTTP. A PENDING source/target claim survives process death and has no automatic TTL release.
-
-**Alternatives:**
-
-- PID/lease expiry cannot prove that a provider write did not complete.
-
-### Fixed provider routing and conservative operation profiles
-
-REST failures do not justify alternate writes; existing App evidence is narrow and inconsistent calculated fields must not round-trip.
-
-**Alternatives:**
-
-- Automatic REST→App fallback silently changes semantics.
-
-## Production Design
-
-## Responsibilities and package boundary
-
-| Responsibility | Owner / LLM | Deterministic tool/core | Provider adapter |
-| --- | --- | --- | --- |
-| Supplier identity, ledger, VAT/tax treatment, private split | Supplies explicit choice and provenance; resolves ambiguity | Computes comparisons/conflicts, validates chosen IDs and preserves source | Translates documented IDs/fields only |
-| Description and shortening | Approves meaning and any shortening | Exact source preservation, length/encoding validation, before/after diff | Sends approved text and validates provider shape; application/domain verifier compares the observed result |
-| Book date, term and discount handling | Supplies rule/choice, including explicit 0 | Applies supplied rule; no silent defaults or settlement allocation | No judgment or mail/bank side effect |
-| Paging, matching, money and duplicate evidence | Reviews unresolved candidates | Exact bounded arithmetic, complete coverage and identity checks | Reads/translates/validates once |
-| Execution authority | Host/harness approvals and persistent owner mandate | Validates profile, enabled capability, plan and freshness | Never treats approved=true as authorization |
-
-The proposed package is `src/mybrain_eboekhouden/`: `server` (SDK boundary/startup), `config` (one loader), `domain` (pure values/rules), `application` (query/preparation/command orchestration), `core/interfaces` (narrow external-system protocols), `adapters/rest`, `adapters/app`, `adapters/host`, `adapters/storage`, and `presentation`. It is independent of the preserved CLI package. No subprocess wrapper, SDK context in domain code, concrete constructor inside an action, or duplicate helper per operation.
-
-The SDK registry is built at startup from typed handler instances. It exposes only configured capabilities. Each read handler receives its specific query interface plus the shared presenter; each command boundary receives its dedicated command service and ReceiptReader. Request context carries correlation/deadline only. Pure validators and calculators do not hold transports, writers or configuration loaders.
-
-## Runtime and host integration
-
-Use the official SDK's stdio transport and protocol negotiation. Select CPython 3.14 and pin mcp==2.3.0; use Pydantic v2 frozen models at >=2.12,<3, certifi as the explicit trust bundle and a future reproducible transitive lock. The design uses the stdlib HTTPS transport behind a port, preserving fixed-origin/TLS/redirect/body-size guards; it does not assume the SDK's httpx2 dependency has another library's API. SDK and HTTP package compatibility, wheel availability and cancellation behavior require future isolated execution. There is no SDK/runtime install or handshake evidence today.
-
-SDK lifespan enters before requests and closes at process shutdown. Stdout is exclusively protocol; stderr carries sanitized diagnostics. Official Codex registration is local host configuration, represented only by this nonexecutable placeholder:
+A placeholder local Codex registration uses an isolated interpreter and module launch, no secrets or real paths:
 
 ```toml
 [mcp_servers.eboekhouden]
@@ -186,267 +157,71 @@ cwd = "<installed-package-root>"
 tool_timeout_sec = 660
 ```
 
-The host timeout is explicitly 660 seconds, above the server's 600-second absolute operation deadline including queue/auth/read/verification, with a 30-second cleanup reserve and final response margin. This replaces the documented host default of 60 seconds for this proposed registration. A per-HTTP timeout is at most 60 seconds and always clipped to remaining operation budget. Request-count limits are separate from elapsed seconds. Before PENDING, admission refuses a command if remaining budget cannot cover its bounded verification/cleanup; after dispatch a deadline/cancellation can still leave UNKNOWN and never permits replay. These are proposed settings, not executed timings.
+Host/harness approval policy and enabled operation/effect lists govern execution. Default distributed configuration enables no remote mutation or outward send. A supplied approved=true field is neither accepted nor authority. The server does not add a repeated custom approval UI or infer mandates from old runs. Query POSTs and auth technical side effects are disclosed; tool annotations are not authorization.
 
-No secret, real path, credential target or administration ID belongs in tracked launch examples. Host tool enable/disable and approval configuration remain local. Documentation of registration is not proof of actual host activation.
+This package does not select the wider MyBrain application stack, activate general app checks or install/deploy an MCP server now.
 
-## Reuse and required refactoring
+## Reuse, alternatives and evidence
 
-| Preserved seam | Retain / adapt | Required boundary change |
+| Preserved source | Reuse as evidence/technical patterns | Not carried into endpoint core |
 | --- | --- | --- |
-| preflight.Client; complete_pages, inspect_duplicates, money, map_ledgers | Pure pagination/money/identity rules and negative fixtures | Split TLS/session/call budget from catalogue/vendor policy; no batch orchestration |
-| catalogue_match.shortlist / identity_evidence | Exact/candidate/conflict comparison | Choice remains supplied; no alias auto-selection |
-| probe_rest / credential_store / app_session.AppAuthentication | Fixed routes, TLS, credential abstraction, admin observations | Process-owned clients/auth, expiry/lease/concurrency contract; no per-call setup |
-| book_one_invoice.verify_readback / booking_source_guard | Strict rows/groups/term/source descriptions and uncertainty | Typed immutable inputs; no private historical policy/default replay |
-| upload_invoice.execute/reconcile_readonly/recover_once | ACK allowlist, early unverified ID, source gate, PDF hash | Inject narrow ports/store; exceptional recovery is separately owner-bound, never general retry |
-| change_ledger; metadata_repair; repair_contract | Narrow tested field changes and invariant comparisons | Explicit operation profiles; no raw GET→PUT, no ledger hack for text |
-| RepairReads.capture / compose_reads | Observations-before-assert, payment/file graph comparison | Separate capture orchestration from concrete transport construction |
-| link_invoice / probe_link_contract | Visible target versus opaque link reference, retention checks | Typed link DTO and shared reader, no guessed unlink |
-| hours_domain HoursReader/ContextGuard/EventReader/EventWriter/SerialLock, plans/reconciliation | Existing narrow ports, pure validation and owned cleanup semantics | Replace dynamic mappings with frozen DTOs; separate persistence from reconcile query |
-| hours_io SharedWire/AppContext/SharedEventWriter/ExclusiveFileLock | Shared wire concept, context guards, durable-event/lock patterns | Composition at startup; HoursCommand.send ACK return becomes execute→None with receipt writer; remove mutable last_user_info |
-| private_output.PrivateOutput | Redaction, append/fsync and safe private paths | Separate durable evidence, audit events and terminal/SDK presentation |
-| Native browser paid edits | Historical evidence/manual fallback description | No tool registration or implied API implementation |
+| app_session, processed_invoice_probe transport | Fixed TLS/context/auth abstractions and bounded reads | Per-tool credential/login setup or financial interpretation |
+| private_output, hours_io SharedEventWriter/ExclusiveFileLock | Redaction, append/fsync, lock and safe private-path patterns | CLI presentation and private run layouts |
+| hours_domain HoursReader/ContextGuard/EventReader/EventWriter/SerialLock | Narrow ports and immutable values | Hours business plans, owned-cleanup workflow or command→ACK return |
+| upload/link/change/repair helpers | Source endpoint/DTO and uncertainty lessons | Whole CLI wrappers, source-case guards, alias/rounding policies, REST snapshots |
+| preflight/catalogue_match | Historical research only | Matching/ledger/VAT/duplicate decisions |
+| REST source/proofs | Preserved historical reference | Any new server dependency or fallback |
 
-Legacy exact batch sizes and scope constants are research limits, not provider limits or inherited mandates. Hours create/edit has separate historical evidence; receipt-owned synthetic cleanup is not generic deletion. The preserved code is not already SRP/DIP/CQS-compliant production code.
+Chosen over alternatives: App-only obeys the owner decision and the broader APK evidence. A deliberate REST mix was considered in research and is no longer the new design route. A generic HTTP proxy would defeat named typed scope; per-CLI subprocess wrappers would defeat shared lifetime and mix policy. A network service/NAS/UI platform is unnecessary; stdio stays local. JSONL receipts are sufficient for dispatch identity; the old SQLite planning machinery is intentionally removed.
 
-## Test Design
+## Test design and acceptance
 
-Tests exercise public application/port/SDK boundaries with immutable synthetic fixtures and injected fake credentials/transports/clocks/store. No account, real credential backend, browser or network access is permitted in deterministic suites. Retain meaningful reference edge cases and rebind them to canonical public interfaces; do not preserve private run counts or test incidental helper names.
+These are future implementation acceptance obligations, not tests run by this Design.
 
-| Acceptance | Observable test / oracle |
+| Boundary | Observable fake/harness acceptance |
 | --- | --- |
-| N provider queries share resources | N calls use one configured writer/client/provider; lazy first login only, no credential read on import/start/help; no financial command port in read service construction |
-| Auth lease/expiry | Fake expiresIn/clock, concurrent single-flight refresh, pinned generation remains valid until release, admin mismatch blocks, query retry bounded, command never replayed |
-| CQS and presentation | All own command ports return None; ACK persisted before receipt query; wrapper makes no extra HTTP call; no mutable last response; shared redacted error/presenter |
-| DTO/coverage | Shared strict JSON-mode codec for SDK values, provider projection and SQLite; UUID/date/enum/array roundtrip, MoneyText strings, bool-ID/extra/invalid rejection, stable digest; leading zeros/term0/credit/missing/null/coverage |
-| Financial/source invariants | IN/EX/BI_EU_INK, rows/sign/order/groups, missing row VAT versus zero, approved source shortening, private split, explicit one-cent policy; wrong present VAT/groups fail |
-| Writes and evidence failure | Disk failure before PENDING makes zero HTTP calls; after dispatch existing PENDING remains unresolved; crash windows, early ID unverified, mismatch distinct from UNKNOWN; never auto replay |
-| Cross-process coordination | Two actual local processes on temp store contend for same admin/source/target; exactly one dispatch admission; new UUID/alias cannot bypass unresolved source; no TTL/PID release |
-| Upload/link/change/rename | PDF magic/size/SHA, safe alias, exact IDs, shared 3/2/2 target retention, whitespace guard, missing outstanding blocks full PUT, rename NOT_RETURNED does not fabricate amounts |
-| Hours | Existing public create/edit/plan/reconcile semantics, duplicate marker scope, server IDs and ownership; cleanup only bound synthetic receipt and latest state |
-| SDK boundary/lifecycle | Future installed 3.14+SDK2.3.0 initialize/list/call/schema/error/structured output/cancel/shutdown harness; stdout only JSON-RPC; process cleanup/revoke bounded |
-| Privacy/paths | Import fake tripwires, no host I/O; tracked-tree scan, reparse/traversal/root/tracked-source refusal, diagnostic secret redaction and bounded payload evidence |
-
-The research preservation suite (275 tests plus 145 subtests on its own Python 3.15 environment) is reference evidence only. It does not execute this design or certify SDK compatibility. Future MCP tests require an explicitly approved isolated binding; current configured-empty-selection remains unavailable, not passing. No global MyBrain app checks or fixes are activated by this document.
-
-## Contracts
-
-### Stable capability catalogue and effect notation
-
-All names below are proposed stable MCP tool names. Inputs are extra-forbid typed envelopes: a configured profile alias plus the named DTO. Q means bookkeeping query (may require technical authentication/audit effects); P is pure calculation from supplied frozen evidence; L is explicit local persistence; C is provider command with evidence effects. Every Q returns a typed result and Coverage/EvidenceRef where applicable. Every C input is ApplyRequest; its result is FrozenReceipt read after the command port returns None. All writes are default disabled.
-
-| Tool | Input → output | Effect / fixed provider route | Evidence / bounds / negative outcome |
-| --- | --- | --- | --- |
-| eb_capabilities | empty → CapabilityCatalogue | P; none | Declared enabled/unsupported profiles and limits; no login |
-| eb_source_import | SourceImportRequest → FrozenReceipt | L; configured inbox only, no provider | Host/operator stages file and supplies exact basename; tool computes hash/magic/size and persists snapshot, no arbitrary path |
-| eb_references | profile, kind ledger/relation/costcenter, filters → ReferencePage | Q; GET /v1/ledger, /relation, /costcenter and detail by ID | Official schema; ledger/relation research evidence. Full catalogue explicitly paged; costcenter schema-only until fixture acceptance |
-| eb_mutation_get | profile, VisibleMutation → MutationSnapshot | Q; GET /v1/mutation/{id} | probe_rest; exact detail, type1..7 accepted for read |
-| eb_mutation_find | profile, exact invoice string → MutationSearchResult | Q; GET /v1/mutation?invoiceNumber=... plus details | preflight, all types, bounded complete paging; partial/mismatch blocks clear result |
-| eb_outstanding_get | profile, exact target/relation/invoice → Outstanding | Q; GET /v1/mutation/invoice/outstanding?credDeb=C&invoiceNumber=... | Exact identity; absent NOT_RETURNED, never paid0; no general bank scan |
-| eb_app_mapping_get | profile, visible/day → AppVersion | Q; POST /api/v4/mutaties/filter then GET /mutaties/{internalId} | Day max2×20, exact visible match, admin before/after; search routes unavailable |
-| eb_archive_list | profile, directory ID → ArchiveListing | Q; GET /api/v4/bestanden[/directoryId] | archive_read; one selected level, caps/coverage, no recursive implicit scan |
-| eb_archive_get | ArchiveGetRequest → ArchiveFile | Q; GET /api/v4/bestanden/bestand/{id} | Metadata only; typed identity and shape validation |
-| eb_archive_download | ApplyRequest/DownloadIntent → FrozenReceipt | L + provider Q; GET /api/v4/bestanden/download/{id} | Explicit local artifact persistence; fixed MIME/magic/5MiB/no redirect; binary not tool text |
-| eb_archive_links_get | profile, visible target → AttachmentGraph | Q; POST /bestanden/gekoppeld | Read POST; kind1 target domain observed, returned koppelId opaque, exact target scoped |
-| eb_hours_get | profile, hour ID → HourSnapshot or explicit NOT_FOUND | Q; GET /api/v4/uren/{id} | hours_reader; only documented/observed 404 means absent |
-| eb_hours_find | profile, day/marker → HourSearchResult | Q; POST /api/v4/uren/filter | Bounded day/paging, no broad absence inference |
-| eb_supplier_match | candidates + supplied identity + Coverage → MatchResult | P; none | catalogue_match; conflicts/aliases visible, no implicit choice |
-| eb_purchase_preflight | PurchaseProposal + reference/duplicate/source evidence → ValidationResult | P; none | Source full text/IDs/amount/groups; no I/O/default VAT choice |
-| eb_operation_prepare | discriminated Intent + captured evidence/rules → PreparedPlan | P; none | Exact supported kind, hash/changes/blockers; no persistence |
-| eb_plan_store | operation_id, PreparedPlan → FrozenReceipt | L; none | Command→None then receipt query, immutable plan; no provider request |
-| eb_operation_status | profile, operation_id → FrozenReceipt | Q local store; none | Current recorded state, not a fresh provider assertion |
-| eb_operation_reconcile | profile, operation_id → FrozenReceipt | C local-state + Q provider | Read-only provider reconciliation then separate journal command; never repeats original write |
-| eb_supplier_create | ApplyRequest → FrozenReceipt | C; POST /v1/relation, GET by returned ID | create_relations individual supplier; exact code+identity precheck, no fixed9 mandate/mail |
-| eb_purchase_create | ApplyRequest → FrozenReceipt | C; POST /v1/mutation type1, GET returned ID | book_one_invoice; 1–4 rows conservative profile/IN/EX/credit/mixed supplied choice; strict financial readback |
-| eb_archive_upload | ApplyRequest → FrozenReceipt | C; POST /api/v4/bestanden/upload | Reviewed JSON fileName/data(base64)/directoryId/scan=false contract retained in adapter; ACK not proof, metadata+download hash mandatory; no scan/book |
-| eb_archive_link | ApplyRequest → FrozenReceipt | C; POST /api/v4/bestanden/koppel | Existing file+visible target, kind1; prior exact query/already desired skip; all shared targets re-read |
-| eb_mutation_ledger_change | ApplyRequest → FrozenReceipt | C; PUT /api/v4/mutaties | Narrow one-row IN/high-rate unpaid profile; only row ledger delta; App ID re-resolved after |
-| eb_mutation_description_change | ApplyRequest → FrozenReceipt | C; PUT /api/v4/mutaties | Supported unpaid IN profile, exact positive open evidence, whitespace guard; source header only; no independent row-text guarantee |
-| eb_archive_rename | ApplyRequest → FrozenReceipt | C; PUT /api/v4/bestanden {id,naam} | ID/name only; preserve bytes/directory/full linked REST/graph; missing open post recorded, not zero |
-| eb_hours_create | ApplyRequest → FrozenReceipt | C; POST /api/v4/uren | hours create contract, explicit employee/project/activity choices, marker/source admission and readback |
-| eb_hours_edit | ApplyRequest → FrozenReceipt | C; PUT /api/v4/uren | Existing exact hour baseline; supplied supported-field delta, all protected fields compared |
-| eb_hours_owned_cleanup | ApplyRequest → FrozenReceipt | C; DELETE /api/v4/uren/{id} | Disabled restricted test-maintenance capability only; own synthetic create/latest receipts+marker required, never generic user-hour deletion |
-
-This is 29 distinct tools, not 27 proven MCP endpoints. Route spellings and field translations must be pinned to the retained adapter contracts during implementation; a catalogue row does not broaden evidence. ReferencePage/ArchiveListing/MutationSearchResult wrap typed tuples plus Coverage and evidence; validation returns typed blockers/conflicts, never raw provider JSON. Supplied page/detail/call budgets cannot be enlarged through tool arguments.
-
-Unsupported: bank-import/worklist consumption and settlement, paid full mutation PUT, App EX/exceptional rounding/general field editing, automatic supplier/ledger/VAT selection, separate row-description guarantees, arbitrary sales/create-delete/update, outbound invoice email, generic hours deletion and raw HTTP/SQL/eval. A documented endpoint without accepted semantics/fixtures remains disabled. Manual native paid-edit evidence is not registered as an API tool. No REST error causes App fallback.
-
-### Authentication and lifecycle
-
-Startup loads config once, validates protected local roots, opens the operation store, constructs one AuditWriter/evidence facility, fixed-origin REST/App clients and host credential providers, then injects narrow adapters/services/handlers. No login at startup. The SDK lifespan owns these objects once per server process; request contexts never recreate them. One provider authentication acquisition covers N sequential tools while valid, not N logins.
-
-REST authentication is POST /v1/session and own DELETE /v1/session cleanup, even for bookkeeping queries. A shared auth manager uses expiresIn, a monotonic deadline with bounded skew and remaining-request budget. Single-flight renewal is guarded per profile. Each operation pins an immutable lease generation; old generations are retired only after holders release, then own-session revoke is bounded. Command admission reserves enough valid lease lifetime or renews before dispatch. No renewal/re-auth error automatically replays a command.
-
-App auth preserves fixed login/user-info and current-admin checks. Expiry/logout semantics are not documented sufficiently: no JWT-clock guess, invented logout or blanket revocation promise. A rejected lease is invalidated. A safe query may acquire a new lease and retry that bounded query once when explicitly classified; a dispatched command remains UNKNOWN and is reconciled, never resent. Secret material is memory-only and neither audit/config DTO nor tool result. Reset drops local App token references; shutdown does not claim a vendor logout.
-
-Current-admin checks bind App context before/after relevant operations; lease generation changes invalidate prepared transport context. REST credential origin is configured separately and never inferred from App numeric IDs. Administration switching and credential installation are not implicit read-tool actions. Initial platform support is the existing Windows host credential provider; fake providers are constructor-injected for tests.
-
-On shutdown stop new commands, drain bounded in-flight workers, capture what is safely observable, release query leases, best-effort revoke own REST sessions, close clients/store/writer. A timeout after dispatch does not become canceled bookkeeping; persistent PENDING remains unresolved if no final write can be recorded.
-
-### Cross-process state, audit and authority
-
-Use one local SQLite store per canonical host account/administration binding, shared across Codex processes. The fixed protected per-user root is not an MCP input. One dedicated writer owner per process serializes all mutation/audit/evidence-index requests through short transactions; immutable query connections are separate. Blocking provider calls run in bounded workers; no SQLite transaction or event-loop lock remains held across HTTP. The store schema owns unique operation_id, immutable plan_digest, server-derived source claims and canonical target claims.
-
-Source keys are recomputed by the service from normalized provider binding, operation kind and immutable source identity/hash; caller source_key is checked, not trusted as a gate. Supplier identity uses exact supplied code plus source identity; purchase identity includes relation+literal invoice string and source digest; upload identity uses original bytes SHA independent of alias; existing-object changes claim visible mutation/file/hour identity. Conservative admin-scoped command serialization prevents overlapping command kinds while a write is unresolved. Aliases cannot create another coordination namespace for the same verified administration. A second local store/config bypass is unsupported and prohibited by startup root/binding checks; no provider-global enforcement is claimed.
-
-Atomic reserve checks operation/source/target uniqueness and stores the complete intent/baseline; a short transaction commits PENDING before dispatch. Repeated same operation ID+same digest returns its receipt without another send; same ID+different digest is CONFLICT. A new UUID/source alias cannot bypass an unresolved canonical source/target claim. Verified identical desired intent is ALREADY_DESIRED after required fresh observations, not blind repetition. PENDING/UNKNOWN claims have no TTL/PID expiry: process death cannot prove provider failure. Read reconciliation may record verified state and release the claim; unresolved cases need an explicit operator disposition contract, never automatic replay. No additional recovery write is authorized by status/reconcile.
-
-SQLite uses FULL synchronous durability, local filesystem locking, foreign keys and bounded busy timeout; event append, receipt head and claim state change share one transaction. Private content-addressed evidence is atomically written/fsynced before its store reference; a crash may leave an unreferenced private artifact, never a reference to silently omitted evidence. Disk/permission failure before PENDING causes zero provider writes. After dispatch, capture/storage failure leaves PENDING and an in-memory diagnostic; do not promise durable UNKNOWN when disk is full. Evidence retention/rotation never deletes unresolved claims or their source/journals automatically. Export/backup is a separate future maintenance contract, not a current backup claim.
-
-A single structured AuditEvent envelope contains schema_version, event_id, operation_id or query correlation, profile alias/binding digest, UTC timestamp, stage, semantic effect, state, safe diagnostic code, typed ID references and evidence digests. Secrets/auth headers/passwords/tokens/user-info profiles/raw arbitrary responses never enter it. Redacted private observations are captured before validation can raise; public errors expose bounded stage/code and evidence handles, not private bodies. SDK wire logs/notifications and stderr diagnostics are not the durable audit. A configured shared presenter maps typed results consistently.
-
-Harness/host approval and persistent owner mandates govern execution. Server configuration enables named capabilities but is not itself proof of current human permission. No custom repeated approval UI, approved=true argument or silent policy engine is introduced. Local claims cannot serialize external UI/other clients, implement provider CAS or guarantee global exactly-once. Fresh pre/post comparisons expose drift; they cannot eliminate a concurrent external race.
-
-### Read, prepare, dispatch and reconciliation semantics
-
-1. Explicit query authenticates lazily if needed, performs only its bounded route, captures sanitized observations before shape/identity assertions, then returns immutable values with exact coverage. Authentication and local evidence are disclosed technical side effects. Incomplete or invalid provider response is not an empty result.
-2. Pure preparation validates supplied choices and evidence, computes field-level before/desired changes and a canonical plan digest. Persisting that proposal is a distinct local command. A plan is not authority and cannot contain raw provider JSON or arbitrary paths.
-3. Apply resolves the stored plan, checks current config/rule/source digests, enabled capability and authority boundary, acquires canonical claims, and freshly captures full baseline. Known-old must match exactly; already-desired is an explicit no-write result. Missing/multi/unknown payment or identity blocks before PUT.
-4. Commit PENDING with exact payload/intent digest and known IDs, fsync, then dispatch once. Capture HTTP status/content-type/allowlisted ACK facts and received IDs before subsequent predicates. ACK_UNVERIFIED is not success. No unknown ACK/timeout triggers another POST/PUT.
-5. Verify with official REST as financial truth and targeted App/file/hour reads. Compare intended fields and every protected field, row order/count, money/VAT/groups/relations/ledger/date/term/costcenter/invoice strings/payment state/metadata/bytes/shared links. Rename allows only name and evidenced modified timestamp. Re-resolve App version after update; never reuse old internal ID.
-6. All matching evidence yields VERIFIED. An observed unintended delta is MISMATCH with preserved before/after; an unobservable dispatch outcome is UNKNOWN. Both stop further writes in that command series; no rollback/recreate/automatic correction. If an ACK is unreadable, safely read the known object anyway and record RECONCILED only when all exact checks pass.
-7. Reconcile is provider-read-only plus explicit local journal update. A found upload needs exact byte hash/admin/directory; multiple/mismatch/no-match remains unresolved. No-match is not proof that the old POST failed. Exceptional owner-approved extra upload is a separate future immutable recovery intent with previous hashes and one-extra source gate; it is never a default retry.
-
-Full mutation PUT is financially broad even for text. Never send App GET calculated zero fields back; use only the evidenced write profile and explicit preserved identity/financial fields. Missing outstanding never means paid0; paid/EX/general updates remain unavailable. Invoice-number whitespace blocks App mutation PUT because normalization was observed. A source-description repair cannot silently change identifiers. Separate row texts are not promised because observed provider processing may overwrite/project them; verify actual header and report row result honestly.
-
-The source/policy exception for a lower one-cent VAT total is explicit evidence, not a tolerance. Financial source versus booking figures remain distinct; no invented row allocation. Discounts/open balances, bank matching and quarterly filing remain outside tools that create invoices or rename documents. File linking must preserve every supplied previous target, including shared document groups. Query filters/path/ID namespaces are fixed by contract, not guessed grids. Cancellation after send is an operation-state concern, not provider rollback.
-
-## Flow
-
-SDK request schema → narrow handler → query/preparation or application command → fixed REST/App port → immediate private observation/receipt capture → exact validation/readback → frozen result via shared presenter. Human/LLM decisions enter as supplied typed evidence-bound choices; no adapter chooses them.
-
-## State and Failures
-
-PREPARED/BLOCKED are local states before dispatch. PENDING is committed before the write; ACK_UNVERIFIED records response facts; VERIFIED/ALREADY_DESIRED are evidenced success/no-write; UNKNOWN and MISMATCH retain claims for read-only reconciliation. Crash with PENDING is conservatively unresolved. No clock expiry, lost lock, cancellation or auth refresh authorizes replay.
-
-## Preservation
-
-Keep research toolkit and its historical evidence boundaries immutable as reference. Refactor selected generic contracts into one canonical core only under later implementation authority; no old batches/profiles/plans are imported or executed. Private config/evidence stays local; tracked examples are synthetic.
-
-## Transition and Cleanup
-
-No automatic migration of old operational journals into executable plans. Receipt-owned synthetic hours cleanup requires original creation/latest-state ownership and remains disabled otherwise. Shutdown releases only locally safe resources; no bookkeeping rollback/delete/compensation or invented App logout.
-
-## Validation
-
-### Strict CQS and injection
-
-**Method:** Inspect signatures and public fake-boundary tests against contract appendix.
-
-**Expected Result:** Own commands return None; query consumers have no command ports; only startup constructs concrete dependencies.
-
-### Routing and evidence alignment
-
-**Method:** Map every tool to retained source symbol, pinned provider route and supported operation profile.
-
-**Expected Result:** No catalogue-only/manual UI capability promoted to general write; unsupported routes not registered.
-
-### Cross-process/no-replay
-
-**Method:** Future two-process crash/claim fixture suite with injected provider barriers and disk failures.
-
-**Expected Result:** One admitted dispatch; persistent unknown claims; no TTL, alias or new UUID bypass.
-
-### SDK/runtime feasibility
-
-**Method:** Future isolated Python3.14 install/lock and official SDK stdio harness.
-
-**Expected Result:** Real initialize/list/call/schema/cancellation/shutdown evidence; docs are not runtime proof.
-
-### Document correctness
-
-**Method:** Native Markdown checks and public-safe diff review on Design artifacts.
-
-**Expected Result:** Valid local links, truthful evidence/unknown boundaries and no private data/source paths.
-
-## Risks
-
-### App v4 is a community-observed contract with incomplete monetary/update semantics.
-
-Expose only narrow evidenced profiles; REST before/after is mandatory; no GET roundtrip/fallback.
-
-**Consequence:** Some desired edits remain unsupported/manual.
-
-### External UI can change records between baseline and write.
-
-Fresh exact comparisons, durable source claims, strict post-state and uncertainty stop.
-
-**Consequence:** No provider CAS/global exactly-once guarantee.
-
-### Local crash/disk failure after dispatch loses final receipt.
-
-PENDING committed first; safe read-only reconciliation and retained claims.
-
-**Consequence:** Human resolution may remain necessary; no blind retry.
-
-### SDK declared support is not installed compatibility.
-
-Separate future Python3.14/SDK2.3.0 handshake acceptance and lock.
-
-**Consequence:** Runtime pin may need a reviewed compatible update.
-
-## Planning Consequences
-
-The design defines cohesive production/test boundaries and acceptance obligations, not implementation cycles or patch steps. Later Planning must preserve these contracts, resolve actual runtime/schema feasibility, schedule independent revision-bound review and keep live acceptance separately owner-authorized. No account operation or product implementation follows merely from this Design document.
-
-## Standards traceability and exact reuse sources
-
-| Standard / constraint | Design consequence | Acceptance |
-| --- | --- | --- |
-| ARCHITECTURE_PRINCIPLES §1.5/§6 SRP/ISP/DIP | External system contracts live under core/interfaces; concrete constructors startup only; read handlers have no financial command dependency | Composition/port fake tests and interface inspection |
-| ARCH §5 strict CQS | Own command ports return None; separate frozen receipt reader; proposal persistence/download artifact capture explicit | Command/query call graph and no extra provider acknowledgement request |
-| ARCH §15.1 error/presentation boundary | One SDK boundary, shared presenter, original redacted cause, no bespoke exception hierarchy | SafeError/privacy/stdout tests |
-| Configuration/style rules | One ConfigLoader; pure frozen models, no import I/O/singletons or config methods | Schema/import/loader tests |
-| DOCUMENTATION_STANDARD / quality policy | Research evidence versus future acceptance explicit; normal native document checks; no global app-check activation | Revision-bound Design review |
-
-These standards are in the maintained [coding standards](../../../.pgmcp/docs/coding_standards/README.md), [Architecture Principles](../../../.pgmcp/docs/coding_standards/ARCHITECTURE_PRINCIPLES.md) and [Documentation Standard](../../../.pgmcp/docs/coding_standards/DOCUMENTATION_STANDARD.md). The source paths below identify concrete symbols for reuse; they do not imply those legacy modules satisfy the new architecture unchanged.
-
-- [preflight](../../../tools/eboekhouden/preflight.py): Client, complete_pages, inspect_duplicates, map_ledgers, money; [catalogue matching](../../../tools/eboekhouden/catalogue_match.py): shortlist, identity_evidence.
-- [REST create](../../../tools/eboekhouden/rest_create_command.py): RestCreateCommand; [purchase](../../../tools/eboekhouden/book_one_invoice.py): precheck, execute, verify_readback; [source guard](../../../tools/eboekhouden/booking_source_guard.py): source binding.
-- [shared App authentication](../../../tools/eboekhouden/app_session.py): AppAuthentication; [repair reads](../../../tools/eboekhouden/repair_io.py): RepairReads.capture, compose_reads; [metadata repair](../../../tools/eboekhouden/metadata_repair.py): prepare, execute.
-- [upload](../../../tools/eboekhouden/upload_invoice.py): UploadAPI, execute, reconcile_readonly, recover_once; [link](../../../tools/eboekhouden/link_invoice.py): execute; [link reader](../../../tools/eboekhouden/probe_link_contract.py): linked_query, project_files.
-- [hours domain](../../../tools/eboekhouden/hours_domain.py): HoursReader, HoursCommand, ContextGuard, EventReader, EventWriter, SerialLock, HoursExecutor, HoursReconciler, cleanup_plan; [hours I/O](../../../tools/eboekhouden/hours_io.py): SharedWire, AppContext, SharedEventWriter, ExclusiveFileLock.
-- [private writer](../../../tools/eboekhouden/private_output.py): PrivateOutput; [runtime boundary](../../../tools/eboekhouden/toolkit_runtime.py): fixed SOURCE_ROOT/private runtime separation.
-
-MCP tool input/output schemas are generated from the explicit frozen DTOs, with structuredContent and a shared tool-error mapping. One shared strict JSON-mode codec deterministically re-encodes the SDK's JSON-compatible argument values before model_validate_json(strict=True); it never sends the SDK dict directly to strict Python model_validate. Provider numeric projection and versioned SQLite reconstruction use the same JSON-mode admission, as specified in the contract appendix. Source import uses the explicit host/operator staging-and-basename protocol there, not an unimplemented listing tool. SDK protocol errors remain SDK concerns; domain/provider failures are safe typed tool results with isError as appropriate. readOnlyHint describes bookkeeping effect, with authentication/audit effects disclosed; annotations are hints, never permission or idempotency guarantees. UNKNOWN command outcomes must not be marked safe to retry.
-
-### Resolved design details and residual evidence gaps
-
-The SDK/runtime, local coordination and module boundaries above are chosen design decisions. Remaining implementation acceptance gaps are actual installed SDK/3.14 compatibility, provider schema validation against synthetic fixtures, complete optional-field projections on nonpurchase types, bounded shutdown under cancellation and process-crash/disk durability. They do not authorize broader endpoints or accounting tests now.
-
-REST profile binding uses a local owner-activated credential-version record, not the same vault target string as proof after token rotation. Changed/missing version seal blocks before authentication until the owner rebinds the token/admin identity. App administration and REST identity are separate namespaces; a future GET /v1/administration identity validator needs accepted field semantics. The public catalogue reports this assurance limitation explicitly.
-
-The SQLite writer owns its connection on one dedicated thread; worker threads submit bounded typed persistence commands and wait for the commit outcome. The SDK event loop does not execute blocking SQLite fsync or HTTP. Cross-process uniqueness and source/target claim acquisition occur in short transactions, and no HTTP occurs inside them. Source IDs supplied by callers are re-derived/checked using canonical trusted content; new operation IDs with an identical unresolved logical purchase key, file SHA or object target cannot bypass a claim. Only explicit read reconciliation or separately authorized operator disposition can close an unresolved claim; no automatic TTL, PID liveness inference or provider fencing claim.
-
-### Transport ownership and local documentation dependency
-
-Each shared provider/profile client owns a single HTTPS connection guarded by a transport mutex spanning send, response read and close/discard. An HTTPConnection is never used concurrently by worker threads. A failed/closed connection is replaced under that mutex; replacement does not authorize request replay. REST and App clients are distinct; authentication acquisition completes before a business request takes the connection mutex. Auth renewal single-flight state is protected separately, but its mutex is released during network I/O, avoiding lock-order inversion. SQL writer ownership and transport ownership are independent; no SQL transaction spans an HTTP call. Read concurrency is bounded and may serialize on the provider client; thin correctness is preferred over speculative throughput.
-
-The coding-standard links above resolve through this checkout's reconciled .pgmcp runtime/bootstrap documentation. They are local maintained dependencies, not claims that hidden runtime paths publish as GitHub document links. Native offline local-link PASS proves their presence in this workspace only; the versioned design/toolkit documents remain the public-safe artifact set. Public protocol/SDK links below are primary documentation sources, not installed execution evidence.
-
-Graph preservation covers all explicitly observed and locally receipt-known targets for a file. The service unions those targets with supplied references and refuses a purported complete graph whose evidence is incomplete. No full reverse-graph guarantee is invented where the provider exposes only target-scoped lists; unclassified file-link metadata or an unresolved dependency blocks the affected write. External concurrent links remain outside local atomic control, as with external mutation edits.
-## Sources
-
-- [MCP tools and annotations](<https://modelcontextprotocol.io/specification/2026-07-28/server/tools>)
-- [MCP stdio](<https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio>)
-- [MCP cancellation](<https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation>)
-- [Pinned SDK release](<https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.3.0>)
-- [Pinned process lifespan](<https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/v2.3.0/docs/handlers/lifespan.md>)
-- [Pinned SDK runtime metadata](<https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/v2.3.0/pyproject.toml>)
-- [Codex MCP host configuration](<https://learn.chatgpt.com/docs/extend/mcp?surface=cli>)
-
-## Related Documents
-
-- [Approved Research strategy](<research.md>)
-- [Preserved toolkit and evidence inventory](<toolkit-preservation.md>)
-- [MCP research constraints](<mcp-research-inputs.md>)
-- [Concrete contract appendix](<design-contracts.md>)
-- [Toolkit bootstrap and limitations](<../../../tools/eboekhouden/README.md>)
+| Registry completeness | All57/23 IDs accounted for; every enabled operation has fixed expanded path, source method/schema/effects; GAP entries produce no tool; no action if-chain |
+| JSON/schema | Strict JSON-mode UUID/date/enum/array admission; exact numeric lexical roundtrip; missing/null/zero; Required0/1/2/3; inherited DTO fields/JsonIgnore; unknown-response preservation/unknown-input rejection |
+| Thin operation semantics | Exactly selected endpoint and supplied values; no REST call, account/VAT math, matching, source selection, hidden business readback or local bulk loop |
+| Shared lifecycle | N calls reuse one credential read/session manager/transport/audit; refresh single-flight, challenge pause, old lease/context draining, no command replay |
+| CQS | Command ports return None; immediate private result capture then separate receipt reader; no mutable last_response or extra provider call to format ACK |
+| Uncertainty/durability | Failure before PENDING sends0; crash windows and disk-full retain unresolved dispatch; same UUID replay blocked across two processes; different digest conflict; no TTL/compensation |
+| Query isolation | Query handlers constructed without command ports; fixed query registry including POST filters/calculations |
+| Effects | Mail/billing/process/cascade/scan/deletion metadata and payload effect checks; never actually send in unit tests |
+| Binary handling | Explicit source basename/artifact selection, unchanged bytes/hash, traversal/reparse/size refusal, no auto alias/OCR |
+| Errors/privacy | Original cause retained, no secrets/financial payload audit, bounded result/quarantine, stdout only protocol |
+| Runtime | Future actual isolated3.14+SDK2.3.0 initialize/list/call/error/cancel/shutdown harness; source metadata is not installation proof |
+
+Use representative mutation/archive/hours public boundary fixtures and selected catalogue families. No ceremonial tests of private helper layout, no real credentials/network/accounts in deterministic suites. Historical toolkit275tests+145subtests do not prove this new server or broaden provider semantics. Existing isolated-toolkit check approval does not silently enable general MyBrain application tests.
+
+## Standards and planning consequences
+
+SRP/ISP/DIP and external ports under core/interfaces follow the maintained coding standards; strict CQS is explicit, config models are pure, ConfigLoader is the sole startup reader, presentation is shared/configured. Constructor injection and no import-time I/O remain mandatory. Standard links resolve through the reconciled local .pgmcp deployment, not a claim that those runtime files publish with GitHub docs.
+
+Planning can now implement the stated technical boundaries and admission obligations without inheriting the old invoice workflow. It must preserve the owner-selected App-only route, source gaps and technical uncertainty semantics. This document defines architecture/contracts/acceptance, not an implementation cycle sequence. There is no phase progression, live command authority or publication of private source data here.
+
+## Sources and related documents
+
+- [Endpoint registry and inventory admission](endpoint-design-catalogue.md)
+- [Concrete technical contracts](design-contracts.md)
+- [Accepted strategy and source chronology](research.md)
+- [Function-by-function evidence](api-functional-coverage.md)
+- [APK method/path/DTO evidence](apk-api-contracts.md)
+- [Preserved source and tests](toolkit-preservation.md)
+- [Architecture Principles](../../../.pgmcp/docs/coding_standards/ARCHITECTURE_PRINCIPLES.md)
+- [Documentation Standard](../../../.pgmcp/docs/coding_standards/DOCUMENTATION_STANDARD.md)
+- [Official SDK2.3.0 metadata](https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/v2.3.0/pyproject.toml)
+- [Official process lifespan](https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/v2.3.0/docs/handlers/lifespan.md)
+- [MCP tools specification](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
+- [MCP stdio](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio)
+- [MCP cancellation](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/cancellation)
+- [Codex MCP configuration](https://learn.chatgpt.com/docs/extend/mcp?surface=cli)
 
 ## Version History
 
-| Version | Date | Author | Changes |
+| Version | Date | Author | Change |
 | --- | --- | --- | --- |
-| 1.0 | 2026-11-01 | Imp | Complete local MCP architecture, capability contracts, lifecycle, coordination and acceptance design. |
-| 1.1 | 2026-11-01 | Imp | Close strict JSON-mode serialization and explicit host/operator inbox intake contracts following independent review. |
-| 1.2 | 2026-11-01 | Imp | Mark reviewed design historical after owner reopened functional scope and provider strategy. |
+| 1.0 | 2026-11-01 | Imp | Historical workflow-shaped local MCP design. |
+| 1.1 | 2026-11-01 | Imp | Close historical JSON-mode/inbox contract gaps. |
+| 1.2 | 2026-11-01 | Imp | Mark earlier design historical after scope reopened. |
+| 2.0 | 2026-11-01 | Imp | Replace with owner-selected App-only technical endpoint design, shared infrastructure and no bookkeeping workflows. |

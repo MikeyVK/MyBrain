@@ -2,11 +2,13 @@
 
 # e-Boekhouden App API v4 assessment
 
-**Status:** HISTORICAL CHECKPOINT WITH EXPANDED EVIDENCE — provider strategy reopened  
+**Status:** HISTORICAL CHECKPOINT WITH EXPANDED EVIDENCE — App-only strategy subsequently accepted  
 **Version:** 1.2  
 **Last Updated:** 2026-11-01
 
 ## Expanded evidence — 2026-11-01
+
+Subsequent owner decision: use App API v4 uniformly, APK-sourced, for the [new endpoint design](design.md) and [admission catalogue](endpoint-design-catalogue.md). Earlier REST-default policy remains historical; no live authority is implied.
 
 The findings below describe the bounded 2026-10-30 community/read checkpoint. Current [functional coverage](api-functional-coverage.md) and the [whole-client APK catalogue](apk-api-contracts.md) supersede its completeness assumptions without rewriting that historical proof. Android3.9.0's compiled default host/version is the same App-v4 family. Its broader clients declare invoice/quote/subscription/reference/hours CRUD and report operations absent from the 33-path/34-operation community capture.
 

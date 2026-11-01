@@ -8,7 +8,7 @@
 
 ## Current coverage entrypoint — 2026-11-01
 
-The official REST specification was refreshed on 2026-11-01: UTF-8 SHA-256 `C9F8CB8893796B347AE75CAE516DF98817FCCB9889E426308858E7554D341AF9`, still 39 business operations/24 business paths. Use the [complete operation-specific functional crosswalk](api-functional-coverage.md) for current scope and [expanded APK contracts](apk-api-contracts.md) for the additional App-v4 evidence. The APK is a client of that App family, not another independent API. REST create/read metadata must not be equated with every UI edit/queue/import/report/export action; the older priorities below remain historical. Route strategy is reopened rather than silently retaining the earlier REST-default decision.
+The official REST specification was refreshed on 2026-11-01: UTF-8 SHA-256 `C9F8CB8893796B347AE75CAE516DF98817FCCB9889E426308858E7554D341AF9`, still 39 business operations/24 business paths. Use the [complete operation-specific functional crosswalk](api-functional-coverage.md) for current scope and [expanded APK contracts](apk-api-contracts.md) for the additional App-v4 evidence. The APK is a client of that App family, not another independent API. REST create/read metadata must not be equated with every UI edit/queue/import/report/export action; the older priorities below remain historical. The subsequent owner decision selects App API v4 uniformly for the [new endpoint design](design.md); the earlier REST-default decision below is historical.
 ## Purpose
 
 Index the discovered official public API contracts and identify the boundary around the owner's mutation and imported-bank-row workflow.
@@ -200,7 +200,7 @@ REST session creation, an exact existing-mutation read and revocation of the tem
 
 Official REST defines row amount in relation to IN/EX VAT, makes row VAT conditional on per-row calculation, and defines aggregate VAT totals per code. The inferred App fields lack comparable descriptions. Some reported/calculated App monetary fields differed from REST and the owner's UI check; the cause is unknown. Do not infer different bookkeeping or use the App response as a validated PUT payload.
 
-App is reserved for deliberately chosen, demonstrated REST gaps. The first future investigation is linking an existing archive file to a mutation; mapping reads may support that task. This is not automatic fallback on REST errors. No file linking, mutation edit or bank-processing write was tested or authorized by this documentation decision. See the [accepted strategy](research.md#approved-strategy) and [App assessment](app-api-v4-assessment.md).
+Historical 2026-10-30 strategy: App was reserved for deliberately chosen, demonstrated REST gaps. The first investigation was linking an existing archive file to a mutation; mapping reads could support that task. This is not automatic fallback on REST errors. No file linking, mutation edit or bank-processing write was tested or authorized by this documentation decision. See the [accepted strategy](research.md#approved-strategy) and [App assessment](app-api-v4-assessment.md).
 
 ### Coverage and limitations
 

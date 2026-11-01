@@ -2,13 +2,13 @@
 
 # Thin e-Boekhouden MCP research inputs
 
-**Status:** HISTORICAL REUSE INPUTS — function scope and provider strategy reopened  
+**Status:** HISTORICAL REUSE INPUTS — current App-only endpoint design linked  
 **Version:** 0.2  
 **Last Updated:** 2026-11-01
 
 ## Historical input boundary — 2026-11-01
 
-Consolidation and the earlier workflow-shaped Design received their exact-revision reviews, but the owner has reopened the functional scope and provider-route strategy. Use [current per-function coverage](api-functional-coverage.md) and [expanded APK evidence](apk-api-contracts.md) before any replacement strategy/design. The preserved seams and constraints below remain historical reuse evidence, not the current implementation basis or a chosen route mix. No account operation or implementation is authorized.
+Consolidation and the earlier workflow-shaped Design received their exact-revision reviews. On 2026-11-01 the owner subsequently selected App API v4 uniformly, APK-sourced, without bookkeeping logic. The [current endpoint design](design.md), [contracts](design-contracts.md) and [registry](endpoint-design-catalogue.md) supersede the former workflow/REST route choice. The preserved seams below remain historical reuse evidence, not an operational mandate. No account operation or implementation is authorized.
 ## Purpose
 
 Consolidate evidence and boundary constraints for the owner's later thin MCP design.
@@ -100,7 +100,7 @@ The original bookkeeping run is closed. Current work is static source preservati
 
 ## Approved Strategy
 
-Owner requirements recorded on 2026-11-01: consolidate first; expose deterministic operations through a thin MCP boundary; keep provider adapters cohesive and accounting/owner decisions separate; share authentication/logging through the process lifetime. Previously accepted routing remains official REST first, with App-v4 only for demonstrated gaps. Preserve tested operation contracts rather than treating this preservation task as permission for a broad refactor. SDK/transport/runtime and concrete interface choices are not yet selected. Writer-source preservation is accepted as static, default-disabled research source only; final Research acceptance remains open.
+Current owner-accepted strategy (2026-11-01): uniform App API v4 using APK contract evidence, technical endpoint tools without bookkeeping logic, shared process-owned authentication and logging. The [canonical design](design.md) selects the technical boundaries and records future runtime acceptance. Prior REST-first and workflow-shaped constraints below are historical reuse inputs, not requirements of the new server. Research consolidation was accepted at its exact revision; static writer sources remain default-disabled and no prior live authority is reactivated.
 
 ## Expected Results
 

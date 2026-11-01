@@ -2,15 +2,15 @@
 
 # e-Boekhouden documentation-first connection research
 
-**Status:** REOPENED FUNCTION-FIRST COVERAGE — historical consolidation and design retained  
-**Version:** 1.4
+**Status:** OWNER-ACCEPTED APP-ONLY STRATEGY — endpoint Design review candidate  
+**Version:** 1.5
 **Last Updated:** 2026-11-01
 
 ## Current function-first research — 2026-11-01
 
 - [Per-function REST/App/APK coverage](api-functional-coverage.md): all 57 generic functional groups with separate operation coverage, 23 configuration feature types, bounded gaps and concrete follow-ups. No private administration values are published.
 - [Expanded APK contract catalogue](apk-api-contracts.md): all compiled mobile client groups, exact Production App-v4 binding and static method/path/DTO evidence. The APK is client evidence for App-v4, not a third independent API family.
-- The owner reopened scope and route choice after functional web research. The earlier REST-default strategy and [thin design](design.md) remain historical; they are not the current implementation basis. App-only core and deliberate mixed routing are now evidence options, neither yet chosen. Missing functions in both families remain missing evidence, not a reason to invent local accounting logic.
+- Following functional web and APK research, the owner accepted App API v4 as the uniform route on 2026-11-01. The [current endpoint design](design.md), [technical contracts](design-contracts.md) and [registry/admission catalogue](endpoint-design-catalogue.md) implement that strategy without bookkeeping logic. Earlier REST-default/workflow designs remain historical. Missing function contracts remain unavailable, not locally invented accounting logic.
 - Consolidation received independent GO at `68bafa6750e64b99cc758f30377fa648566080eb`; the previous Design received independent GO at `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5`. Those verdicts cover their exact earlier scope/revisions, not this reopened strategy.
 - Current work is static/public-source research and screened documentation. No APK execution, current account/API/credential operation, implementation or phase transition occurs.
 
@@ -102,7 +102,7 @@ Credentials were kept locally in separate Windows Credential Manager entries; se
 
 This checkpoint changes only the three issue-12 research/reference documents and its initialized workflow records. Existing MyBrain storage design, deployment code, quality policy, templates and agent protocols remain unchanged. This documentation update introduces no application stack, service, database, credentials, accounting records or connector registration. The separately authorized local research probes and credentials remain outside published repository artifacts. Future downstream consumers are the owner using Codex, scripts using the vendor contract, and any selected minimal connector; all require the same operation-level distinctions.
 
-## Questions
+## Historical questions — earlier REST-first checkpoint
 
 - What minimal production integration should implement the accepted REST-first capability routing?
 - Which concrete existing mutation fields need editing, and which pending bank rows or invoice exceptions are the first bounded use case?
@@ -121,7 +121,11 @@ This checkpoint changes only the three issue-12 research/reference documents and
 
 ## Approved Strategy
 
-OWNER ACCEPTED — 2026-10-30, for the following boundaries:
+OWNER ACCEPTED — 2026-11-01: use App API v4 uniformly, with the APK as primary contract evidence, and the inventoried functions as scope. Expose named technical provider operations through a thin MCP boundary, without bookkeeping decisions or workflows, and share authentication and logging per process. Reads, writes and readback use App; no mandatory REST comparison or implicit REST/UI fallback. Source gaps remain unavailable pending contract admission. See the [endpoint design](design.md) and [catalogue](endpoint-design-catalogue.md). This is design authority, not account execution authority.
+
+### Historical strategy — 2026-10-30 (superseded for the new server)
+
+The following earlier boundaries are retained as history:
 
 - Use official REST as the default for ordinary data retrieval, interpretation of financial amounts and writes that its supported contract provides. The owner verified the selected read sample in the UI; retain operation-specific validation rather than asserting all REST output is infallible.
 - Investigate App v4 only as a narrow, deliberate supplement where an actual REST capability is missing. The first future target is linking an existing archive file to a mutation. App reads may establish the identity mapping needed for such a capability, not become a duplicate general financial data source.
@@ -184,3 +188,4 @@ This checkpoint publishes only screened conclusions from public contracts and se
 
 2026-11-01, version 1.3, Imp: add preservation/MCP Research entrypoints and distinguish the historical documentation/read-only checkpoint from later narrowly authorized observations and current offline-only work.
 | 1.4 | 2026-11-01 | Imp | Reopen function-first coverage and route strategy; index full APK evidence while retaining earlier findings and verdict boundaries as history. |
+| 1.5 | 2026-11-01 | Imp | Record owner-accepted uniform App-v4 endpoint strategy and supersede earlier routing for the new Design. |
