@@ -1,0 +1,6 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Portable toolkit-only source. Merge into reviewed local overrides; never replace unrelated policies.
+
+"trusted_adapter_ids":
+- "eboekhouden_quality"

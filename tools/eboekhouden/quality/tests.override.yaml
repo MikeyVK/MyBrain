@@ -1,0 +1,12 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Portable toolkit-only source. Merge into reviewed local overrides; never replace unrelated policies.
+
+"tests":
+  "eboekhouden_research_tests":
+    "adapter_id": "eboekhouden_quality"
+    "capability": "tests"
+    "timeout_seconds": 240
+    "configuration_choice": "configured_arguments"
+    "default_args": []
+    "active": true

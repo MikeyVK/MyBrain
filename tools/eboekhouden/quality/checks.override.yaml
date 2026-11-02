@@ -1,0 +1,25 @@
+# pgmcp:v1 id=yaml_configuration pv=1.0.0 pf=PLMSEYmswjuR9tyD sf=WI5iXHBKVOU91bYE
+
+# Portable toolkit-only source. Merge into reviewed local overrides; never replace unrelated policies.
+
+"checks":
+  "eboekhouden_syntax":
+    "adapter_id": "eboekhouden_quality"
+    "capability": "syntax"
+    "timeout_seconds": 45
+    "configuration_choice": "configured_arguments"
+    "default_args": []
+"profiles":
+  "python_preflight":
+    "checks":
+    - "eboekhouden_syntax"
+  "eboekhouden_toolkit":
+    "checks":
+    - "eboekhouden_syntax"
+"configured_targets":
+  "eboekhouden_sources":
+    "include":
+    - "tools/eboekhouden/**/*.py"
+    "exclude":
+    - "tools/eboekhouden/.venv/**"
+    - "tools/eboekhouden/.local-work/**"
