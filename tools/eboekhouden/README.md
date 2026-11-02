@@ -19,8 +19,12 @@ concept is unimplemented; this toolkit preserves the earlier helper behavior.
 ## Fresh-chat bootstrap
 
 1. Resolve this checkout's dedicated PGMCP connection locally and call its
-   `get_work_context`. Verify issue, branch, phase, assigned role and mutation owner;
-   do not substitute another worktree's connection.
+   `get_work_context`. Verify the worktree/binding, actual branch/workflow and
+   selected role; do not substitute another worktree's connection. Neutral `main`
+   may have no active issue or phase: static source inspection and authorized
+   offline checks need no fabricated issue/bootstrap state. Before future
+   implementation or governed edits, Co must initialize a real issue and assign
+   the sole mutation owner.
 2. Read the [preservation inventory](../../docs/development/issue12/toolkit-preservation.md),
    [MCP research inputs](../../docs/development/issue12/mcp-research-inputs.md),
    [proposed MCP design](../../docs/development/issue12/design.md) and
@@ -126,4 +130,4 @@ exactly-once behavior.
 | 0.1 | 2026-10-31 | Imp | Extract admitted readers/libraries and verification sources. |
 | 0.2 | 2026-11-01 | Imp | Preserve explicitly authorized default-disabled command source, complete offline closure and fresh-chat runbook. |
 | 0.3 | 2026-11-01 | Imp | Link proposed Design and distinguish implemented research preservation from future MCP lifecycle. |
-| 0.4 | 2026-11-02 | Codex (@imp designer) | Link research closeout and qualify REST-first behavior as historical toolkit routing. |
+| 0.4 | 2026-11-02 | Codex (@imp designer) | Link research closeout, qualify historical routing and allow neutral-main offline inspection. |
