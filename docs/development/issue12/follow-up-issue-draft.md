@@ -1,5 +1,14 @@
 <!-- pgmcp:v1 id=issue pv=1.0.0 pf=C7ZyrWd13VGRh7Gy sf=WI5iXHBKVOU91bYE -->
 
+## Unpublished issue proposal
+
+- Proposed title: Decide MyBrain accounting scope, provider route and ledger ownership
+- Type: feature
+- Priority: medium
+- Scope: architecture
+- Parent: none
+- Originating reference: #12
+
 ## Problem
 
 Decide the accounting scope, authoritative ledger and provider route before resuming MyBrain accounting implementation. This is one unpublished follow-up issue draft, not an approved strategy change or an implementation assignment.
