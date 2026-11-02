@@ -3,7 +3,7 @@
 # Issue 12 research closeout
 
 **Status:** RESEARCH CLOSEOUT SNAPSHOT — independent review pending  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-11-02
 
 ## Purpose
@@ -36,6 +36,8 @@ Use this checkout's verified dedicated PGMCP connection, the [toolkit quality bo
 | `run_checks(scope="targets", targets=["tools/eboekhouden"], checks=["eboekhouden_syntax"], timeout_seconds=60)` | Passed; all 56 selected Python source/test/quality files parsed using CPython 3.15.0. |
 | `run_tests(scope="targets", targets=["tools/eboekhouden/tests"], tests=["eboekhouden_research_tests"], timeout_seconds=240)` | Passed; 275 tests and 145 subtests, pytest 9.1.1, native exit 0. |
 | `run_tests(scope="configured", timeout_seconds=240)` | Unavailable: `unsupported_input`, `EXPLICIT_NONEMPTY_SELECTION_REQUIRED`; no configured-suite pass is claimed. |
+
+A later closeout format correction removed only surplus terminal empty lines, leaving exactly one final LF in seven retained files under `tools/eboekhouden/`: `full_relation_names.py`, `hours_domain.py`, `preflight.py`, `probe.py`, `relation_supplement.py`, `tests/test_quality_adapter.py` and `tests/test_upload_invoice.py`. Their complete preceding byte prefixes remain identical to `e2ee57339f425bd75d3b33f7f74a39d23bee87ef`; native AST admission passed for each edit. No implementation, fixture or behavioral change was made. Original extraction/hash facts and the behavioral results above remain historical snapshot evidence; current retained bytes include this explicit format-only delta. The unchanged behavioral suite is not repeated for terminal whitespace alone.
 
 Final documentation/configuration verification uses `run_checks(scope="branch", profile="repository_review")` after content is final. Its actual result belongs in the revision-bound hand-over; this document does not predeclare that result. Required Markdown checks use native offline local links/fragments; external URLs are excluded. MyBrain application tests/checks and automated fixes remain deferred under the [repository policy](../../../README.md#quality-policy). The explicit complete toolkit selection above supplies the approved toolkit test evidence.
 
@@ -72,3 +74,5 @@ Only screened source/metadata, synthetic fixtures and public links belong in the
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-02 | Codex (@imp designer) | Index delivered research, offline reproduction, deferred decisions and exploratory own-accounting feasibility for research-only closeout. |
+
+| 1.1 | 2026-11-02 | Codex (@imp designer) | Record the seven-file terminal-newline-only correction and preserve historical behavioral/source-hash evidence scope. |

@@ -166,4 +166,3 @@ class Admission(unittest.TestCase):
             r=self.fake(*a,**k);v=json.loads(r.stdout);v.update(status='failed',message='SYNTAX_FAILED');r.stdout=json.dumps(v);r.returncode=1;return r
         result,code=adapter.run(value,self.cfg,failed)
         self.assertEqual(code,1);self.assertIsNone(result['coverage']);self.assertEqual(result['required_targets'],[])
-

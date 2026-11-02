@@ -58,5 +58,3 @@ def collect(client, profiles, plan):
             "allReturnedBusinessAndPrivateTypesCovered": True, "relations": details, "supplierGroups": groups,
             "caveat": "Coverage applies only to relations returned by official REST; no documented inactive filter or active-only default. No claim of global absence or automatic mapping.",
             "noNewRelationsCreated": True, "noFinancialOrRegisterWrites": True}
-
-

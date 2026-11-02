@@ -466,4 +466,3 @@ class HoursReconciler:
             status = "MATCHES_EXPECTED"
         return ReconciliationResult(canonical({"status": status, "planHash": plan.digest, "targetId": target_id,
                 "after": None if after is None else after.data()}))
-

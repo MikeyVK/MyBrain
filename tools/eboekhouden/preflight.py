@@ -322,5 +322,3 @@ def redact(value, secrets):
     if isinstance(value, dict):
         return {redact(str(key), secrets): redact(item, secrets) for key, item in value.items()}
     return value
-
-

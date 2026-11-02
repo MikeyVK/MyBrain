@@ -99,5 +99,3 @@ def load_checked(path, expected):
     if hashlib.sha256(raw).hexdigest().lower() != expected.lower():
         raise base.app.app.Stop("RELATION_INPUT_FINGERPRINT_CHANGED")
     return json.loads(raw)
-
-

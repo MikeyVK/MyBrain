@@ -258,5 +258,3 @@ def hidden(prompt: str) -> str:
     if not value or len(value) > 4096:
         raise Stop("EMPTY_OR_INVALID_INPUT")
     return value
-
-
