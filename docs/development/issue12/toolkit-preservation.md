@@ -2,9 +2,13 @@
 
 # e-Boekhouden toolkit preservation inventory
 
-**Status:** Default-disabled research source preserved; final Research review pending  
-**Version:** 0.2  
-**Last Updated:** 2026-11-01
+**Status:** Default-disabled source consolidation reviewed at the recorded revision  
+**Version:** 0.3  
+**Last Updated:** 2026-11-02
+
+## Closeout status
+
+Independent Research consolidation review accepted `68bafa6750e64b99cc758f30377fa648566080eb`, including the source/test dispositions below and the 275-test/145-subtest offline evidence. That historical verdict supplies no live execution or MCP acceptance. The [research closeout](documentation.md) records the fresh offline rerun and separates preserved helper behavior from the later unimplemented App-only concept.
 
 ## Authority and scope
 
@@ -120,3 +124,4 @@ authorization is implied.
 | --- | --- | --- | --- |
 | 0.1 | 2026-10-31 | Imp | Record partial admitted extraction and explicit omitted boundaries. |
 | 0.2 | 2026-11-01 | Imp | Record approved default-disabled writer source, complete closure, dispositions and actual isolated offline suite. |
+| 0.3 | 2026-11-02 | Codex (@imp designer) | Correct consolidation review status from the original verdict and link the research-only closeout. |

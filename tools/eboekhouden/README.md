@@ -3,14 +3,18 @@
 # e-Boekhouden research toolkit
 
 **Status:** Source preserved for offline research; live execution disabled by default  
-**Version:** 0.3
-**Last Updated:** 2026-11-01
+**Version:** 0.4
+**Last Updated:** 2026-11-02
 
 This isolated Python toolkit preserves screened research helpers and their synthetic
 regressions. It is not a MyBrain application-stack decision, an MCP server, a
 production-readiness claim or authority to continue a closed administrative run.
 The owner explicitly authorized preserving existing writing functions as source,
 with nothing executed against an account.
+
+The [issue 12 research closeout](../../docs/development/issue12/documentation.md)
+indexes delivered evidence and deferred work. The later reviewed App-only MCP
+concept is unimplemented; this toolkit preserves the earlier helper behavior.
 
 ## Fresh-chat bootstrap
 
@@ -94,8 +98,11 @@ research test methods, twelve scoped-adapter regressions and eight runtime/impor
 checks. Full module-import checks deny host/runtime effects; actual tests are
 offline and credential-free. The inventory records exact invocation and omissions.
 
-Official REST is the default for accounting truth and supported operations. App-v4
-is an incompletely captured supplement only for actual REST gaps. Preserve
+In the preserved historical helpers, official REST supplies the default financial
+reference and supported operations; App-v4 fills selected REST gaps. The later
+[App-only endpoint concept](../../docs/development/issue12/design.md) supersedes
+that route choice for a future MCP server; it has not been implemented here and
+full functional coverage remains unproved. Preserve
 number/internal-ID namespaces, fresh baselines, money/terms/VAT, positive payment
 evidence and all shared PDF links. Missing outstanding is not paid/open zero.
 App updates can replace IDs and normalize invoice-number whitespace. Separate
@@ -119,3 +126,4 @@ exactly-once behavior.
 | 0.1 | 2026-10-31 | Imp | Extract admitted readers/libraries and verification sources. |
 | 0.2 | 2026-11-01 | Imp | Preserve explicitly authorized default-disabled command source, complete offline closure and fresh-chat runbook. |
 | 0.3 | 2026-11-01 | Imp | Link proposed Design and distinguish implemented research preservation from future MCP lifecycle. |
+| 0.4 | 2026-11-02 | Codex (@imp designer) | Link research closeout and qualify REST-first behavior as historical toolkit routing. |

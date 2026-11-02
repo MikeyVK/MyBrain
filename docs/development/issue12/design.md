@@ -2,9 +2,13 @@
 
 # Thin App-v4 endpoint MCP server design
 
-**Status:** OWNER-SELECTED APP-ONLY DESIGN — REVIEW CANDIDATE, NOT IMPLEMENTED  
-**Version:** 2.0  
-**Last Updated:** 2026-11-01
+**Status:** REVIEWED APP-ONLY CONCEPT — not implemented; full coverage unproved  
+**Version:** 2.1  
+**Last Updated:** 2026-11-02
+
+## Research-only closeout
+
+The original independent reviewer accepted the App-only endpoint Design at `12e7fe8cd4f69de010c6209efcb93b08d9d5b492`; the later web-gap overlay and its screened publication were reviewed at `aec2e7aa97d8d8582f3e783b128bce9351d99ef3`. Neither verdict authorized implementation or phase progression. The owner subsequently requested research-only closure. The [closeout snapshot](documentation.md) retains this concept, its completeness qualification and deferred implementation; no new route is selected and the closeout itself awaits exact-revision review.
 
 ## Purpose and accepted strategy
 
@@ -229,3 +233,4 @@ Planning can now implement the stated technical boundaries and admission obligat
 | 1.1 | 2026-11-01 | Imp | Close historical JSON-mode/inbox contract gaps. |
 | 1.2 | 2026-11-01 | Imp | Mark earlier design historical after scope reopened. |
 | 2.0 | 2026-11-01 | Imp | Replace with owner-selected App-only technical endpoint design, shared infrastructure and no bookkeeping workflows. |
+| 2.1 | 2026-11-02 | Codex (@imp designer) | Record historical concept-review scope and research-only closeout without changing architecture or claiming implementation. |

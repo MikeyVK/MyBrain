@@ -3,8 +3,8 @@
 # Thin e-Boekhouden MCP research inputs
 
 **Status:** HISTORICAL REUSE INPUTS — current App-only endpoint design linked  
-**Version:** 0.2  
-**Last Updated:** 2026-11-01
+**Version:** 0.3  
+**Last Updated:** 2026-11-02
 
 ## Historical input boundary — 2026-11-01
 
@@ -33,7 +33,7 @@ Repeated CLI/session/orchestration work should become reproducible tools while e
 
 ## Background
 
-The owner requested a complete thin MCP design after consolidation, with deterministic work expressed as tools, SRP provider adapters and authentication/logging shared for process lifetime. The active branch remains Research; concrete design choices follow the governed boundary. The owner explicitly authorized default-disabled writer-source preservation; old private originals remain unchanged and no historical operation is replayed.
+The owner requested a complete thin MCP design after consolidation, with deterministic work expressed as tools, SRP provider adapters and authentication/logging shared for process lifetime. At that input checkpoint the branch remained in Research; the later reviewed App-only concept and research-only closeout are indexed in [documentation.md](documentation.md). These historical inputs are not a current phase claim. The owner explicitly authorized default-disabled writer-source preservation; old private originals remain unchanged and no historical operation is replayed.
 
 ## Findings
 
@@ -112,3 +112,4 @@ A later accepted design must demonstrate explicit query/auth/command/prepare/ver
 | --- | --- | --- | --- |
 | 0.1 | 2026-11-01 | Imp | Record owner strategy, retained symbols, lifecycle/contract gaps and primary MCP evidence. |
 | 0.2 | 2026-11-01 | Imp | Index reopened function-first provider research; retain earlier reuse inputs as historical. |
+| 0.3 | 2026-11-02 | Codex (@imp designer) | Qualify the historical Research-phase statement and link the closeout evidence. |

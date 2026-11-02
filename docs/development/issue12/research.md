@@ -2,16 +2,20 @@
 
 # e-Boekhouden documentation-first connection research
 
-**Status:** OWNER-ACCEPTED APP-ONLY STRATEGY — endpoint Design review candidate  
-**Version:** 1.5
-**Last Updated:** 2026-11-01
+**Status:** RESEARCH CLOSEOUT — App-only baseline retained; implementation deferred  
+**Version:** 1.6
+**Last Updated:** 2026-11-02
+
+## Research closeout — 2026-11-02
+
+The owner requested research-only branch closeout. The [closeout document](documentation.md) indexes delivered evidence, offline reproduction, exploratory own-accounting feasibility and the unpublished follow-up draft. No new provider route or ledger/kernel is selected. Planning and MCP implementation remain deferred; this source snapshot awaits independent closeout review.
 
 ## Current function-first research — 2026-11-01
 
 - [Per-function REST/App/APK coverage](api-functional-coverage.md): all 57 generic functional groups with separate operation coverage, 23 configuration feature types, bounded gaps and concrete follow-ups. No private administration values are published.
 - [Expanded APK contract catalogue](apk-api-contracts.md): all compiled mobile client groups, exact Production App-v4 binding and static method/path/DTO evidence. The APK is client evidence for App-v4, not a third independent API family.
-- Following functional web and APK research, the owner accepted App API v4 as the uniform route on 2026-11-01. The [current endpoint design](design.md), [technical contracts](design-contracts.md) and [registry/admission catalogue](endpoint-design-catalogue.md) implement that strategy without bookkeeping logic. Earlier REST-default/workflow designs remain historical. Missing function contracts remain unavailable, not locally invented accounting logic.
-- Consolidation received independent GO at `68bafa6750e64b99cc758f30377fa648566080eb`; the previous Design received independent GO at `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5`. Those verdicts cover their exact earlier scope/revisions, not this reopened strategy.
+- Following functional web and APK research, the owner accepted App API v4 as the uniform route on 2026-11-01. The [current endpoint design](design.md), [technical contracts](design-contracts.md) and [registry/admission catalogue](endpoint-design-catalogue.md) describe that strategy without bookkeeping logic. Earlier REST-default/workflow designs remain historical. Missing function contracts remain unavailable, not locally invented accounting logic.
+- Consolidation received independent GO at `68bafa6750e64b99cc758f30377fa648566080eb`; the earlier workflow-shaped Design at `1d2fc8da06ac41c49134e5ee1bc67e1a347413b5`; the replacement App-only Design at `12e7fe8cd4f69de010c6209efcb93b08d9d5b492`; and the screened web-gap research/publication at `aec2e7aa97d8d8582f3e783b128bce9351d99ef3`. The original reviewer replies bind those exact scopes/revisions, not the new closeout snapshot or live execution.
 - Current work is static/public-source research and screened documentation. No APK execution, current account/API/credential operation, implementation or phase transition occurs.
 
 ## Subsequent web-backend gap research — 2026-11-01
@@ -20,10 +24,10 @@ The owner requested investigation of missing functions through the web backend. 
 
 ## Historical consolidation index
 
-- [Toolkit preservation and callable/test omissions](toolkit-preservation.md): current default-disabled source consolidation and isolated offline verification; final Research review pending.
+- [Toolkit preservation and callable/test omissions](toolkit-preservation.md): default-disabled source consolidation and isolated offline verification; consolidation accepted at `68bafa6750e64b99cc758f30377fa648566080eb`.
 - [Thin MCP research inputs](mcp-research-inputs.md): deterministic capability inventory, exact retained symbols, process/authentication/audit lifecycle constraints and remaining design evidence.
 - The findings below are the original 2026-10-30 documentation/read-only checkpoint. Statements such as “no file linking or mutation editing tested” describe that checkpoint, not all subsequent research. Later separately authorized private work established selected narrow creation/upload/link/edit/rename/hours outcomes and manual native-UI editing; no universal API or accounting-correctness claim follows. Their public-safe preservation inventory distinguishes historical live observations from current offline tests.
-- The owner has closed the administrative run. Current authorization is preservation, offline checks and Research toward a later thin MCP design, with no live account/credential/browser actions or replay of old plans. No current MCP server, production readiness, completed consolidation or Research exit is claimed.
+- The owner closed the administrative run. The preserved consolidation was reviewed and the branch entered Design; subsequent Design and web-gap findings received their own exact-revision reviews. Current work closes the research branch with offline evidence and no live account/credential/browser action or replay of old plans. No current MCP server or production acceptance is claimed.
 
 ## Historical checkpoint purpose
 
@@ -193,3 +197,4 @@ This checkpoint publishes only screened conclusions from public contracts and se
 2026-11-01, version 1.3, Imp: add preservation/MCP Research entrypoints and distinguish the historical documentation/read-only checkpoint from later narrowly authorized observations and current offline-only work.
 | 1.4 | 2026-11-01 | Imp | Reopen function-first coverage and route strategy; index full APK evidence while retaining earlier findings and verdict boundaries as history. |
 | 1.5 | 2026-11-01 | Imp | Record owner-accepted uniform App-v4 endpoint strategy and supersede earlier routing for the new Design. |
+| 1.6 | 2026-11-02 | Codex (@imp designer) | Link research-only closeout and correct historical review status from original revision-bound verdicts. |
