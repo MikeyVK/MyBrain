@@ -74,5 +74,4 @@ Only screened source/metadata, synthetic fixtures and public links belong in the
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-02 | Codex (@imp designer) | Index delivered research, offline reproduction, deferred decisions and exploratory own-accounting feasibility for research-only closeout. |
-
 | 1.1 | 2026-11-02 | Codex (@imp designer) | Record the seven-file terminal-newline-only correction and preserve historical behavioral/source-hash evidence scope. |
