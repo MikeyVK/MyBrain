@@ -3,8 +3,8 @@
 # Development issue index
 
 **Status:** MAINTAINED — issue navigation  
-**Version:** 1.1  
-**Last Updated:** 2026-11-02
+**Version:** 1.2  
+**Last Updated:** 2026-11-04
 
 ## Purpose
 
@@ -24,7 +24,7 @@ Consolidated by issue 10 from pinned source revisions, with later issue entrypoi
 | 6 | [Storage research](issue6/research.md), [design](issue6/design.md) | Preserve document-specific status; design is not implemented storage |
 | 7 | [Deployment research](issue7/research.md), [implementation](../../setup/deployment/README.md) | Historical deployment evidence; no new package execution |
 | 8 | [Garmin research](issue8/research.md), [API catalog](issue8/api-catalog.md) | Research and strategy questions remain open |
-| 9 | [OpenCloud assessment](issue9/opencloud-admission-extension-feasibility.md) | Source inspection; experiments and architecture decision pending |
+| 9 | [Companion research](issue9/research.md), [preserved OpenCloud assessment](issue9/opencloud-admission-extension-feasibility.md) | Research active; local/cloud rule-building route and proposed proofs documented; experiments and strategy decisions pending |
 | 10 | [Consolidation boundary](issue10/research.md), [import evidence](issue10/implementation-evidence.md), [validation](issue10/validation.md), [handover](issue10/documentation.md) | Consolidated source snapshots; original issue statuses retained |
 | 12 | [Research closeout](issue12/documentation.md), [research](issue12/research.md), [App-only concept](issue12/design.md), [web-gap evidence](issue12/web-backend-gap-research.md) | Research-only closeout snapshot; default-disabled helper source preserved and offline-tested; concept unimplemented, full App coverage unproved |
 
@@ -38,3 +38,4 @@ The [foundational ADR](../architecture/decisions/0001-digital-brain-foundational
 | --- | --- | --- | --- |
 | 1.0 | 2026-10-29 | Codex (@imp implementer) | Add consolidated issue navigation with explicit historical status boundaries. |
 | 1.1 | 2026-11-02 | Codex (@imp designer) | Index issue 12 research-only closeout with explicit toolkit, concept and coverage boundaries. |
+| 1.2 | 2026-11-04 | Codex (@imp researcher) | Link issue 9 companion Research checkpoint while retaining unexecuted experiment and open strategy status. |
