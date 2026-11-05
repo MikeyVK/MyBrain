@@ -3,12 +3,12 @@
 # Integrated native wizard and local–cloud rule coordination
 
 **Status:** RESEARCH CHECKPOINT — strategy and runtime proofs pending  
-**Version:** 1.1  
+**Version:** 1.2  
 **Last Updated:** 2026-11-05
 
 ## Purpose
 
-Investigate an integrated native-app wizard and a practical local/cloud route that help the owner establish synchronization and MyBrain intake rules together, incrementally while using the system.
+Investigate an integrated native-app wizard and a practical local/cloud route that help the owner establish synchronization and MyBrain intake rules together, with Windows first and an existing-application comparison before Design.
 
 ## Scope In
 
@@ -39,6 +39,12 @@ On 2026-11-04 the owner prioritized research into a local/cloud route and a comp
 On 2026-11-05 the owner accepted a wizard presented by the desktop or mobile app before unknown new file content reaches the server. One flow, summary and confirmation cover where files are kept, selected devices and supported on-demand/offline use, whether MyBrain registers them, and the rule's present/future scope. The MyBrain choice is independently selectable inside the same wizard and reusable rule; it must not become an unrelated later prompt. The app needs the owner's registered-device view, including offline devices and their capabilities. One confirmation records a coherent intention; asynchronous device actions and MyBrain processing retain separate truthful status.
 
 The [native integration and update assessment](native-wizard-update-feasibility.md) records the accepted experience, pinned desktop/Android/iOS source evidence, device-inventory gap, maintenance options and unexecuted probes. A separate Web dashboard remains useful supporting interaction or shared-content reuse, but alone no longer represents the requested native presentation host. No client integration, fork or update strategy has been selected.
+
+### Windows-first application comparison
+
+The owner next prioritized realizing the wizard and rules on Windows and asked whether existing applications fit issue 9 better before starting Design. The [Windows synchronization candidate comparison](windows-sync-candidate-comparison.md) reuses the earlier platform shortlist only within this issue's synchronization/admission scope. It compares the OpenCloud baseline, Nextcloud, Seafile Community, Syncthing and rclone, including the distinct native Rclone UI application. The MyBrain knowledge, wiki, AI and accounting layers are excluded. Seafile's earlier AI/metadata dependency finding does not disqualify its separate Community sync path.
+
+No ready application was established to implement the complete integrated wizard. Conditional first challengers are externally controlled Syncthing for device/configuration reuse if a topology change is acceptable, or Rclone UI plus a controlled rclone protocol route if OpenCloud retention is important. These reduce different parts of the custom work; neither has passed the admission, device or upgrade proof. Nextcloud/Seafile remain useful comparisons without a demonstrated smaller complete gap. No backend, engine or client strategy is selected. A first Windows-only proof can precede mobile implementation, whose continuity costs remain visible.
 
 ### Research boundary and current evidence
 
@@ -119,7 +125,7 @@ No integration route is selected. The accepted native wizard brings all choices 
 
 ## Questions
 
-- Which native/client integration route can satisfy the unchanged connected-folder hold with acceptable maintenance, or would the owner explicitly accept a changed workflow?
+- Which Windows-first candidate and integration boundary can satisfy the unchanged connected-folder hold with acceptable maintenance; must OpenCloud remain the storage/transport endpoint, or may a changed topology be compared?
 - What may an offline device continue under a previously accepted rule, and when does a changed rule become effective for that device?
 - Which candidate facts may leave the device before content admission, including paths, counts, grouping and optional previews?
 - Which native integration and update-maintenance route can host the integrated wizard and control all claimed upload paths; which shared or supporting Web views are useful without replacing that native flow?
@@ -137,11 +143,11 @@ No integration route is selected. The accepted native wizard brings all choices 
 
 ## Approved Strategy
 
-The owner approved the investigation direction and, on 2026-11-05, the integrated native wizard experience: storage, device availability, MyBrain admission and reusable scope are selected in one flow and confirmation. Study the local/cloud interaction and native client integration/update routes. No native integration, replacement workflow, transport, rule contract or candidate-storage architecture is approved. Compatibility and policy decisions remain pending; stay in Research and do not start Design.
+The owner approved the investigation direction and, on 2026-11-05, the integrated native wizard experience: storage, device availability, MyBrain admission and reusable scope are selected in one flow and confirmation. The owner subsequently prioritized Windows and requested an existing-application comparison before Design. Study the local/cloud interaction and native client integration/update routes; the comparison does not select an engine, replacement backend or broader MyBrain platform. No native integration, replacement workflow, transport, rule contract or candidate-storage architecture is approved. Compatibility and policy decisions remain pending; stay in Research and do not start Design.
 
 ## Expected Results
 
-This document is an initial evidence and experiment proposal only. Research remains open. The smallest proposed test separates the rule roundtrip from the native enforcement proof; neither has run.
+This document is an evidence and experiment proposal only, extended by the Windows-first alternatives comparison. Research remains open. The smallest proposed test separates the rule roundtrip from the native enforcement proof; neither has run.
 
 ### Proposed decisive experiment
 
@@ -157,7 +163,7 @@ Use an isolated synthetic selected directory and a disposable test server, plus 
 | Native transfer gate | With the claimed ordinary connected-folder integration, create/edit while approval is pending or service unavailable; include initial TUS bodies. Compare with stock-client control. | Zero content bytes leave before approval if that guarantee is claimed. Reactive ignore, server rejection or quarantine cannot pass this oracle. An unobserved upload route is insufficient evidence. |
 | Distribution follow-up | Only after the required seams are proved, use a second, new and reconnected test client for origin-only versus all-client eligibility. | Observe item visibility, bytes and offline retention separately; no unintended deletion of retained copies. Central enforcement cannot be inferred from manual client setup. |
 
-The first minimal roundtrip can isolate local/client/cloud coordination, but a browser-only orchestration proof must be labelled partial and cannot substitute for the accepted native wizard. Shared Web Uppy, full native bypass inventory, platform breadth and update compatibility retain the separate obligations in the historical assessment and issue #9. A phone is optional for this first proof; another browser session is enough to test the investigated remote-control distinction. Do not point a trial at production sync roots, accounts or the live NAS.
+A first Windows-only proof can isolate the wizard, rule handling and local/client/cloud coordination before mobile implementation. A browser-only orchestration proof must be labelled partial and cannot substitute for the accepted native wizard. Shared Web Uppy, full native bypass inventory, platform breadth and update compatibility retain the separate obligations in the historical assessment and issue #9. A phone is optional for this first proof; another browser session is enough to test the investigated remote-control distinction. Do not point a trial at production sync roots, accounts or the live NAS.
 
 ### Decisions needed before Design
 
@@ -171,6 +177,7 @@ The owner must choose the admissible native/client compatibility route or explic
 
 ## Related Documents
 
+- [Windows synchronization candidate comparison](<windows-sync-candidate-comparison.md>)
 - [Native wizard integration and update feasibility](<native-wizard-update-feasibility.md>)
 - [Preserved OpenCloud extension assessment](<opencloud-admission-extension-feasibility.md>)
 - [Foundational principles](<../../architecture/decisions/0001-digital-brain-foundational-principles.md>)
@@ -183,3 +190,4 @@ The owner must choose the admissible native/client compatibility route or explic
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-04 | Codex (@imp researcher) | Initialize issue-9 Research entrypoint and investigate local/cloud companion responsibilities, reuse options and bounded unexecuted proof obligations. |
 | 1.1 | 2026-11-05 | Codex (@imp researcher) | Record the accepted integrated native wizard with MyBrain choice in the same confirmation; link platform/update evidence and retain pending strategy/proof limits. |
+| 1.2 | 2026-11-05 | Codex (@imp researcher) | Record Windows-first priority and link the issue-9-only application/engine comparison with conditional unexecuted trial recommendations. |
