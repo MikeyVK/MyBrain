@@ -3,7 +3,7 @@
 # Integrated native wizard and update feasibility
 
 **Status:** RESEARCH CHECKPOINT — source evidence; native integration and update proofs pending  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-11-05
 
 ## Purpose
@@ -35,6 +35,8 @@ On 2026-11-05 the owner accepted a wizard offered by the desktop or mobile app b
 | How broadly does this apply? | Only these files; future files in this directory; a reusable rule. | Preview affected files and exceptions. Rule changes do not implicitly destroy existing copies. |
 
 The app must show all devices registered for the owner's configuration, rather than only devices currently online. Future devices require an explicit rule-scope decision; no automatic inclusion default is selected. Saved intent, receipt on each device, effective rule application, transfer completion and MyBrain registration/processing need distinct truthful feedback. One user confirmation does not imply an instantaneous distributed transaction or simultaneous success.
+
+The owner subsequently clarified that rules can be authored, confirmed and durably saved offline using last-known devices, server folders and policy. Origin/local storage, intended local-only or shared reach, and actual application are separate. The canonical [local/shared policy requirements](research.md#local-rule-authorship-intended-reach-and-shared-application) and [offline/reconciliation probe contract](research.md#offline-and-reconciliation-probe-contract) govern reconnect and connected-policy-change cases for every native integration candidate. These accepted behaviors do not choose precedence, offline use of prior rules, group enrollment, a central master or a merge algorithm.
 
 The native app is the required presentation host. Reusing shared wizard content or an embedded Web view is an option to investigate, but opening a separate dashboard alone does not satisfy the native-flow requirement or stop native uploads.
 
@@ -135,3 +137,4 @@ Before Design, the owner must choose the acceptable maintenance/compatibility ro
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-05 | Codex (@imp researcher) | Record the accepted integrated native wizard and assess desktop/mobile seams, device inventory and update-maintenance alternatives. |
+| 1.1 | 2026-11-05 | Codex (@imp researcher) | Link accepted offline/local/shared policy distinctions and the canonical unexecuted reconciliation probe contract. |

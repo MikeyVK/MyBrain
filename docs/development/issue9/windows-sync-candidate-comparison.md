@@ -3,7 +3,7 @@
 # Windows synchronization candidates for the integrated wizard
 
 **Status:** RESEARCH CHECKPOINT — Windows-first comparison; no candidate selected or runtime proof  
-**Version:** 1.0  
+**Version:** 1.1  
 **Last Updated:** 2026-11-05
 
 ## Purpose
@@ -118,6 +118,8 @@ Seafile is a secondary engine/UI comparison if library-based workflow and server
 
 All proposed runs use synthetic directories and isolated processes/accounts. No experiment has run in this checkpoint.
 
+Every candidate is also subject to the canonical [local/shared policy distinction](research.md#local-rule-authorship-intended-reach-and-shared-application) and [offline/reconciliation probe contract](research.md#offline-and-reconciliation-probe-contract). A local rule can be authored offline yet target shared use; an API, local ignore file or externally controlled executor alone does not establish persistence of the combined choice, reconciliation of local/server changes, truthful per-device effects or native pre-content enforcement. This common requirement does not adopt a candidate, precedence rule, group-enrollment default or merge engine.
+
 | Proof | Common oracle |
 | --- | --- |
 | Unknown file inside an already governed ordinary directory | Install the declared default policy before starting the engine; create files, nested directories and edits while undecided. Observe initial and retried requests, not just final server contents. Zero content leaves before an applicable decision if that guarantee is claimed. |
@@ -142,3 +144,4 @@ P18/P19/P38 remain authoritative: scope is not value, narrowing is not destructi
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-05 | Codex (@imp researcher) | Compare Windows-first native applications and externally controlled engines against the integrated issue-9 wizard and update requirements. |
+| 1.1 | 2026-11-05 | Codex (@imp researcher) | Apply the canonical offline/local/shared policy distinction and unexecuted reconciliation probes equally to the compared candidates. |
