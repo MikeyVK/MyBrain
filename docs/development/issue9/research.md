@@ -1,14 +1,14 @@
 <!-- pgmcp:v1 id=research pv=1.0.0 pf=MBj0BrCWRmEii6mk sf=WI5iXHBKVOU91bYE -->
 
-# Local–cloud companion and incremental synchronization rules
+# Integrated native wizard and local–cloud rule coordination
 
 **Status:** RESEARCH CHECKPOINT — strategy and runtime proofs pending  
-**Version:** 1.0  
-**Last Updated:** 2026-11-04
+**Version:** 1.1  
+**Last Updated:** 2026-11-05
 
 ## Purpose
 
-Investigate a practical local/cloud route that helps the owner establish synchronization and MyBrain intake rules incrementally while using the system.
+Investigate an integrated native-app wizard and a practical local/cloud route that help the owner establish synchronization and MyBrain intake rules together, incrementally while using the system.
 
 ## Scope In
 
@@ -34,6 +34,12 @@ On 2026-11-04 the owner prioritized research into a local/cloud route and a comp
 
 ## Findings
 
+### Accepted integrated native wizard
+
+On 2026-11-05 the owner accepted a wizard presented by the desktop or mobile app before unknown new file content reaches the server. One flow, summary and confirmation cover where files are kept, selected devices and supported on-demand/offline use, whether MyBrain registers them, and the rule's present/future scope. The MyBrain choice is independently selectable inside the same wizard and reusable rule; it must not become an unrelated later prompt. The app needs the owner's registered-device view, including offline devices and their capabilities. One confirmation records a coherent intention; asynchronous device actions and MyBrain processing retain separate truthful status.
+
+The [native integration and update assessment](native-wizard-update-feasibility.md) records the accepted experience, pinned desktop/Android/iOS source evidence, device-inventory gap, maintenance options and unexecuted probes. A separate Web dashboard remains useful supporting interaction or shared-content reuse, but alone no longer represents the requested native presentation host. No client integration, fork or update strategy has been selected.
+
 ### Research boundary and current evidence
 
 The owner requested incremental help in establishing synchronization rules during ordinary use. This checkpoint starts with the local/cloud interaction and companion experience, ahead of the previously listed desktop upload experiment. "On the go" is treated as iterative rule building; using a phone or another device is an additional research scenario, not a newly imposed mobile requirement.
@@ -42,7 +48,7 @@ The preserved [2026-10-29 assessment](opencloud-admission-extension-feasibility.
 
 ### What the companion must help distinguish
 
-The first three owner choices describe distribution; MyBrain registration is a separate choice. They are not a four-step promotion ladder.
+The first three owner choices describe distribution; MyBrain registration is an independent dimension in the same integrated wizard, summary and confirmation. They are not a four-step promotion ladder or separate-time workflows.
 
 | Choice | Meaning under investigation | Required distinction |
 | --- | --- | --- |
@@ -57,7 +63,7 @@ The [foundational principles](../../architecture/decisions/0001-digital-brain-fo
 
 | Concern | Existing evidence | Research inference or gap |
 | --- | --- | --- |
-| Incremental rule interface | OpenCloud Web apps can supply routed views, navigation and focused UI extensions. Version-7.2 documentation identifies shared host dependencies and a version-sensitive app skeleton. [Web guide](https://docs.opencloud.eu/de/docs/dev/web/extension-system/getting-started/), [extension overview](https://docs.opencloud.eu/de/docs/next/dev/web/extension-system/). | A separately packaged companion UI is a credible reuse route. Static frontend loading does not provide a durable candidate/rule/device-status backend. A minimal MyBrain-owned backend module is a candidate, not a selected extra standalone product. |
+| Incremental rule interface | OpenCloud Web apps can supply routed views, navigation and focused UI extensions. Version-7.2 documentation identifies shared host dependencies and a version-sensitive app skeleton. [Web guide](https://docs.opencloud.eu/de/docs/dev/web/extension-system/getting-started/), [extension overview](https://docs.opencloud.eu/de/docs/next/dev/web/extension-system/). | A Web app can support the companion or shared interaction content, but the accepted wizard must be offered by the native client. Static frontend loading supplies neither a native upload hold nor a durable candidate/rule/device-status backend. A minimal MyBrain-owned backend module is a candidate, not a selected extra standalone product. |
 | Local discovery | A supported browser session can request a user-selected directory; availability and user-activation restrictions vary. [Directory picker](https://developer.mozilla.org/en-US/docs/Web/API/Window/showDirectoryPicker). | Browser-only interaction can help deliberate local selection. It does not establish durable discovery after the browser closes or supervision of unmodified native clients. A local process is the candidate boundary for autonomous workstation observation. |
 | Browser lifetime | The Service Worker draft binds execution to events and permits idle termination. [Lifetime](https://w3c.github.io/ServiceWorker/#service-worker-lifetime). | An installed PWA alone is not proof of a continuously running filesystem observer. A browser on another device observes that device's permitted files, not an offline workstation's disk. |
 | Local/cloud communication | WebSocket starts with a client handshake and supports two-way messages. [RFC 6455, section 1.3](https://www.rfc-editor.org/rfc/rfc6455.html#section-1.3). | Device-initiated authenticated HTTPS requests or a secure persistent channel can be investigated without an inbound workstation listener. Neither option supplies durable decisions, application acknowledgements or conflict semantics by itself. No networking deployment or circumvention is proposed. |
@@ -72,9 +78,9 @@ Primary pages above were inspected on 2026-11-04. The Web guide labels itself 7.
 All names and content in this example are synthetic.
 
 1. The owner selects a permitted local work area containing a document, source files and a generated cache subtree. Enrollment must establish how this area is governed; discovery must not be mistaken for an already-proved upload hold inside an ordinary connected folder.
-2. Local observations make a grouped candidate worklist available. The companion shows what it knows and when it last heard from the workstation. It need not upload file contents to ask whether an unfamiliar subtree should synchronize.
-3. While working, the owner chooses a candidate group and drafts a reusable rule: for example keep generated caches local, allow selected project documents on the server, and decide MyBrain registration separately. The UI previews the currently known matching scope, exclusions and conflicts before acceptance.
-4. The same UI could be opened elsewhere. If the workstation is offline, a rule can be saved as a desired change, while local receipt and application remain visibly pending. New unobserved files or an exact current match count must not be invented from old inventory.
+2. Local observations make a grouped candidate worklist available. The native wizard and supporting companion show what they know and when they last heard from each device. It need not upload file contents to ask whether an unfamiliar subtree should synchronize.
+3. While working, the owner chooses a candidate group and drafts a reusable rule: for example keep generated caches local, allow selected project documents on the server, and choose MyBrain registration within the same wizard. The UI previews currently known matching scope, devices, availability, registration and conflicts, then presents one combined summary and confirmation.
+4. A supporting view or the app on another device could present the same intended rule. If the workstation is offline, a rule can be saved as a desired change, while local receipt and application remain visibly pending. New unobserved files or an exact current match count must not be invented from old inventory.
 5. The workstation receives the applicable rule revision, re-evaluates its current local state and reports the result. Receipt, successful evaluation and an observed transfer are different evidence.
 6. Where a transfer boundary has actually been proved, the executor performs the permitted action. A changed file, overlapping rule or invalid decision returns to a visible unresolved state rather than silently inheriting a stale individual approval.
 7. Subsequent observations can match the reusable rule without repeated per-file review. New exceptions remain visible. Changing a rule must not imply deletion of already retained local or server copies.
@@ -98,7 +104,7 @@ Candidate names, relative paths and grouping metadata can themselves expose priv
 | Supported upstream hold contract or maintained client integration plus companion | Keep ordinary client behavior where an actual candidate/hold/resume seam exists. | Best alignment to transparent connected folders if proved. Existing source evidence does not establish a delivered stable contract; each Web/mobile/native route still needs coverage. | Upstream acceptance is unknown. A version-bound integration needs an explicit maintenance and regression commitment. |
 | Browser-only companion with deliberate folder sessions | Small deliberate interactions in supported browsers. | Does not demonstrate unattended cross-device discovery or enforcement after the browser session ends. | Useful bounded route, with browser/permission/lifetime constraints; any relaxed workflow must be explicit. |
 
-No route is selected. Building the companion interface and closing the native synchronization gap are related but independently falsifiable questions. A successful local/cloud rule roundtrip cannot be used as proof that an unchanged OpenCloud desktop client obeys it.
+No integration route is selected. The accepted native wizard brings all choices together; implementing its presentation and proving native synchronization control are related but independently falsifiable questions. A successful local/cloud rule roundtrip cannot be used as proof that an unchanged OpenCloud desktop client obeys it.
 
 ### Blast radius and retained boundaries
 
@@ -116,7 +122,7 @@ No route is selected. Building the companion interface and closing the native sy
 - Which native/client integration route can satisfy the unchanged connected-folder hold with acceptable maintenance, or would the owner explicitly accept a changed workflow?
 - What may an offline device continue under a previously accepted rule, and when does a changed rule become effective for that device?
 - Which candidate facts may leave the device before content admission, including paths, counts, grouping and optional previews?
-- Does a companion belong inside OpenCloud Web or a separate MyBrain view, given host-version coupling and the still-unimplemented shared backend?
+- Which native integration and update-maintenance route can host the integrated wizard and control all claimed upload paths; which shared or supporting Web views are useful without replacing that native flow?
 
 ## References
 
@@ -131,7 +137,7 @@ No route is selected. Building the companion interface and closing the native sy
 
 ## Approved Strategy
 
-The owner approved the investigation direction: first study local/cloud interaction and a companion that helps construct rules. No native integration, replacement workflow, transport, rule contract or candidate-storage architecture is approved. Compatibility and policy decisions remain pending; stay in Research and do not start Design.
+The owner approved the investigation direction and, on 2026-11-05, the integrated native wizard experience: storage, device availability, MyBrain admission and reusable scope are selected in one flow and confirmation. Study the local/cloud interaction and native client integration/update routes. No native integration, replacement workflow, transport, rule contract or candidate-storage architecture is approved. Compatibility and policy decisions remain pending; stay in Research and do not start Design.
 
 ## Expected Results
 
@@ -144,14 +150,14 @@ Use an isolated synthetic selected directory and a disposable test server, plus 
 | Probe | Controlled variation | Pass, fail or insufficient-evidence boundary |
 | --- | --- | --- |
 | Candidate roundtrip | Create a synthetic document, a source file and a cache subtree; send only admitted candidate facts to the companion. | UI represents the grouped observations and their freshness. Content or excluded paths appearing in requests/previews/logs fails the declared metadata boundary. Missing observation coverage is insufficient evidence. |
-| Incremental rule construction | Preview and accept one reusable rule plus a cache exception; add a second matching file. | Known matches/exceptions and unresolved overlaps are understandable; the second file is evaluated without fabricated per-file owner approval. This alone does not prove transfer enforcement. |
+| Integrated wizard and incremental rules | In the native app preview and confirm storage, devices/availability, MyBrain choice and reusable scope together; add a second matching file and a cache exception. | One summary/confirmation records all choices; no separate later MyBrain prompt. Known matches/exceptions and unresolved overlaps are understandable; later matches need no fabricated per-file review. This alone does not prove transfer enforcement. |
 | Device receipt and effect | Save a rule, deliver it, then independently observe local evaluation and the executor result. | Saved, received, evaluated and observed effect remain distinguishable. A successful HTTP response without local evidence is insufficient. |
 | Offline and unavailable service | Disconnect the workstation or rule service, create candidates, change a rule centrally, restart, then reconnect. | Pending/stale status is truthful; queued work survives according to the declared trial contract; no unknown content acquires new permission. Continued use of prior accepted rules must follow the owner-approved offline policy. |
 | Stale/conflicting decisions | Deliver older revisions after newer ones; edit or replace content between an individual approval and transfer; overlap two rules. | Stale individual approval does not float to changed content. Undecided precedence is reported rather than invented. No universal hash/token implementation is assumed. |
 | Native transfer gate | With the claimed ordinary connected-folder integration, create/edit while approval is pending or service unavailable; include initial TUS bodies. Compare with stock-client control. | Zero content bytes leave before approval if that guarantee is claimed. Reactive ignore, server rejection or quarantine cannot pass this oracle. An unobserved upload route is insufficient evidence. |
 | Distribution follow-up | Only after the required seams are proved, use a second, new and reconnected test client for origin-only versus all-client eligibility. | Observe item visibility, bytes and offline retention separately; no unintended deletion of retained copies. Central enforcement cannot be inferred from manual client setup. |
 
-Only local/browser/cloud orchestration need be in the first minimal roundtrip. Shared Web Uppy, full native bypass inventory, platform breadth and update compatibility retain the separate obligations in the historical assessment and issue #9. A phone is optional for this first proof; another browser session is enough to test the investigated remote-control distinction. Do not point a trial at production sync roots, accounts or the live NAS.
+The first minimal roundtrip can isolate local/client/cloud coordination, but a browser-only orchestration proof must be labelled partial and cannot substitute for the accepted native wizard. Shared Web Uppy, full native bypass inventory, platform breadth and update compatibility retain the separate obligations in the historical assessment and issue #9. A phone is optional for this first proof; another browser session is enough to test the investigated remote-control distinction. Do not point a trial at production sync roots, accounts or the live NAS.
 
 ### Decisions needed before Design
 
@@ -165,6 +171,7 @@ The owner must choose the admissible native/client compatibility route or explic
 
 ## Related Documents
 
+- [Native wizard integration and update feasibility](<native-wizard-update-feasibility.md>)
 - [Preserved OpenCloud extension assessment](<opencloud-admission-extension-feasibility.md>)
 - [Foundational principles](<../../architecture/decisions/0001-digital-brain-foundational-principles.md>)
 - [Storage-foundation design](<../issue6/design.md>)
@@ -175,3 +182,4 @@ The owner must choose the admissible native/client compatibility route or explic
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-04 | Codex (@imp researcher) | Initialize issue-9 Research entrypoint and investigate local/cloud companion responsibilities, reuse options and bounded unexecuted proof obligations. |
+| 1.1 | 2026-11-05 | Codex (@imp researcher) | Record the accepted integrated native wizard with MyBrain choice in the same confirmation; link platform/update evidence and retain pending strategy/proof limits. |
