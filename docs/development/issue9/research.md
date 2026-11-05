@@ -2,8 +2,8 @@
 
 # Integrated native wizard and local–cloud rule coordination
 
-**Status:** RESEARCH CHECKPOINT — strategy and runtime proofs pending  
-**Version:** 1.3  
+**Status:** RESEARCH CHECKPOINT — bounded CLI measurements recorded; strategy and full native proofs pending  
+**Version:** 1.4  
 **Last Updated:** 2026-11-05
 
 ## Purpose
@@ -12,11 +12,11 @@ Investigate an integrated native-app wizard and a practical local/cloud route th
 
 ## Scope In
 
-Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; local and shared policy, offline authorship and reconciliation; options and a minimal synthetic experiment proposal.
+Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; local and shared policy, offline authorship and reconciliation; options, synthetic experiment contracts and the owner-approved bounded stock CLI measurement.
 
 ## Scope Out
 
-No architecture selection, Design, implementation plan, code, deployment, live account or NAS access, package installation, client configuration change, production experiment or phase transition.
+No architecture selection, Design, implementation plan, maintained application code, production deployment/account/NAS access, global package installation, personal client configuration change, production experiment or phase transition. Temporary isolated fixture instrumentation is limited to the separately owner-authorized exploratory probe.
 
 ## Problem Statement
 
@@ -30,7 +30,7 @@ OpenCloud provides file storage and synchronization, but the owner needs assista
 
 ## Background
 
-On 2026-11-04 the owner prioritized research into a local/cloud route and a companion for rule construction. Coordination initialized the standalone feature issue with parent main and Research active. The already consolidated assessment remains unchanged. This document records the new investigation order, not completed tests or an approved implementation strategy.
+On 2026-11-04 the owner prioritized research into a local/cloud route and a companion for rule construction. Coordination initialized the standalone feature issue with parent main and Research active. The already consolidated assessment remains unchanged. The initial entry recorded the investigation order. Subsequent bounded stock CLI measurements are identified below; no implementation strategy is approved.
 
 ## Findings
 
@@ -45,6 +45,14 @@ The [native integration and update assessment](native-wizard-update-feasibility.
 The owner next prioritized realizing the wizard and rules on Windows and asked whether existing applications fit issue 9 better before starting Design. The [Windows synchronization candidate comparison](windows-sync-candidate-comparison.md) reuses the earlier platform shortlist only within this issue's synchronization/admission scope. It compares the OpenCloud baseline, Nextcloud, Seafile Community, Syncthing and rclone, including the distinct native Rclone UI application. The MyBrain knowledge, wiki, AI and accounting layers are excluded. Seafile's earlier AI/metadata dependency finding does not disqualify its separate Community sync path.
 
 No ready application was established to implement the complete integrated wizard. Conditional first challengers are externally controlled Syncthing for device/configuration reuse if a topology change is acceptable, or Rclone UI plus a controlled rclone protocol route if OpenCloud retention is important. These reduce different parts of the custom work; neither has passed the admission, device or upgrade proof. Nextcloud/Seafile remain useful comparisons without a demonstrated smaller complete gap. No backend, engine or client strategy is selected. A first Windows-only proof can precede mobile implementation, whose continuity costs remain visible.
+
+### First stock Windows runtime measurement
+
+The owner explicitly authorized the smallest stock-client experiment on 2026-11-05. The [stock Windows filter probe](stock-windows-filter-probe.md) records the actual unchanged 4.0.0.3642 CLI and real disposable OpenCloud 9.0.0 server, verified executable/core identities, synthetic fixtures, exact filter states, request-body measurements, readbacks and cleanup.
+
+The pre-established catch-all held the tested unknowns. Gitignore-style !a.txt did not override it, but a finite manually written complement of the exact flat filename a.txt did permit only its 19-byte body while other and later unknowns remained local. Two initial upload POST bodies were observed directly, with matching server readbacks. Thus a blanket claim that stock filters cannot express any positive scope is contradicted by this bounded case; general rule compilation, live GUI reload and race safety remain unproved.
+
+An offline-saved deny filter was reread by a fresh batch after reconnect, preserving both the edited local file and previous server copy. A missing explicit --exclude file caused startup abort without file-content upload. Offline preflight failed before an engine queue was established: cancellation of an already queued GUI upload is therefore **not established**. No shared-policy reconciliation, integrated native wizard/MyBrain flow, VFS/mobile/update guarantee or topology strategy follows. Probe processes/ports were stopped; screened evidence is durable in the report and raw synthetic instrumentation remains ignored locally.
 
 ### Local rule authorship, intended reach and shared application
 
@@ -66,7 +74,7 @@ The [offline and reconciliation probe contract](#offline-and-reconciliation-prob
 
 ### Existing OpenCloud settings and the shared-policy gap
 
-The following additional primary sources were inspected on 2026-11-05. Desktop v4.0.0 and server v9.0.0 are separate source snapshots, not a claim about installed versions or a tested version pair.
+The following additional primary sources were inspected on 2026-11-05. Desktop v4.0.0 and server v9.0.0 were inspected as separate source snapshots; that inspection alone does not establish installed-version or compatibility claims. The subsequent stock CLI runtime pairing is recorded separately.
 
 | Inspected surface | Observed behavior and bounded conclusion |
 | --- | --- |
@@ -81,7 +89,7 @@ No complete device-group synchronization inheritance, offline policy exchange an
 
 The owner requested incremental help in establishing synchronization rules during ordinary use. This checkpoint starts with the local/cloud interaction and companion experience, ahead of the previously listed desktop upload experiment. "On the go" includes iterative rule building and the subsequently accepted offline authorship/reconciliation requirements; using a phone or another device is an additional research scenario, not a newly imposed mobile requirement.
 
-The preserved [2026-10-29 assessment](opencloud-admission-extension-feasibility.md) remains the historical source baseline, including its release pins and native-client limitations. This checkpoint does not reclassify source inspection as runtime evidence. Actual installed server, Web, desktop and SDK versions have not been inspected. No companion, queue, rule backend, native hold mechanism or MyBrain registration service has been implemented in this work.
+The preserved [2026-10-29 assessment](opencloud-admission-extension-feasibility.md) remains the historical source baseline, including its release pins and native-client limitations. This checkpoint does not reclassify source inspection as runtime evidence. Production server, Web and SDK versions remain uninspected; the installed Windows program payload and copied CLI version were verified only for the bounded probe. No companion, shared-policy queue/backend, custom native hold mechanism or MyBrain registration service has been implemented. Existing stock batch behavior was measured without modifying the client.
 
 ### What the companion must help distinguish
 
@@ -104,7 +112,7 @@ The [foundational principles](../../architecture/decisions/0001-digital-brain-fo
 | Local discovery | A supported browser session can request a user-selected directory; availability and user-activation restrictions vary. [Directory picker](https://developer.mozilla.org/en-US/docs/Web/API/Window/showDirectoryPicker). | Browser-only interaction can help deliberate local selection. It does not establish durable discovery after the browser closes or supervision of unmodified native clients. A local process is the candidate boundary for autonomous workstation observation. |
 | Browser lifetime | The Service Worker draft binds execution to events and permits idle termination. [Lifetime](https://w3c.github.io/ServiceWorker/#service-worker-lifetime). | An installed PWA alone is not proof of a continuously running filesystem observer. A browser on another device observes that device's permitted files, not an offline workstation's disk. |
 | Local/cloud communication | WebSocket starts with a client handshake and supports two-way messages. [RFC 6455, section 1.3](https://www.rfc-editor.org/rfc/rfc6455.html#section-1.3). | Device-initiated authenticated HTTPS requests or a secure persistent channel can be investigated without an inbound workstation listener. Neither option supplies durable decisions, application acknowledgements or conflict semantics by itself. No networking deployment or circumvention is proposed. |
-| Before-content admission | The historical assessment found no documented independent approve/defer contract for the inspected stock native clients; the initial TUS request can already carry content. | A watcher next to an unmodified sync client is not a proved hold. The actual transfer owner or a demonstrated native seam must enforce the decision. A Web screen or server quarantine cannot prove that boundary. Pre-established default-deny exclusion rules differ from reactive exclusions; whether stock ignore semantics can form a safe positive allowlist across traversal, reloads and edits remains unproved and should be tested rather than ruled out. |
+| Before-content admission | The historical assessment found no documented independent approve/defer contract for the inspected stock native clients; the initial TUS request can already carry content. | A watcher next to an unmodified sync client is not a proved hold. The actual transfer owner or a demonstrated native seam must enforce the decision. A Web screen or server quarantine cannot prove that boundary. Pre-established default-deny exclusion rules differ from reactive exclusions; a finite flat exact-file batch case is now measured in the [stock probe](stock-windows-filter-probe.md), while a general safe projection across GUI traversal, live reloads and concurrent edits remains unproved. |
 | Existing transport reuse | OpenCloud's historical 4.0 migration guide uses rclone with WebDAV; rclone documents per-call filters and remote-control operations. [Migration](https://docs.opencloud.eu/docs/4.0/admin/maintenance/migrate/), [rclone RC](https://rclone.org/rc/). | A constrained local transfer adapter could reuse an executor rather than reimplement transport. This does not establish bidirectional sync semantics, a stock-client hold or per-device distribution. Raw RC exposes broad filesystem power and must not be treated as the cloud/browser-facing companion API. |
 | Credentials | OpenCloud 7.2 documents expiring, revocable App Tokens but explicitly says they reach all user data. [App Tokens](https://docs.opencloud.eu/docs/user/admin/app-tokens/). | They are not evidence of folder-limited device credentials. Owner identity, device enrollment, token custody and backend authorization remain separate future contract decisions. |
 
@@ -148,11 +156,11 @@ No integration route is selected. The accepted native wizard brings all choices 
 | Surface | Impact of this checkpoint | Later affected boundary to investigate |
 | --- | --- | --- |
 | MyBrain source storage and lifecycle | Principles and issue-6 design unchanged; no runtime claimed. | Admission of operational candidates versus durable registration, receipt and version evidence. |
-| OpenCloud storage and versions | No installation, upgrade, deletion rule or copy/archive mechanism changed. | Exact protocol/Space/version behavior of admitted transfers. |
+| OpenCloud storage and versions | A real disposable test server was initialized and stopped; production storage, upgrade, deletion and archive mechanisms unchanged. | Exact protocol/Space/version behavior of admitted transfers. |
 | Client and Web integrations | No client modifications or executable extension added. | Discovery, decision enforcement, app/host versions, native bypasses and per-device distribution. |
 | Rules and companion backend | Evidence/options only. | Policy ownership, persistence, revision application, conflict handling, local/cloud recovery and UI explanations. |
-| Authentication/logging | No credentials accessed, no new service/connection activated. | Exclusive owner access, device credentials, metadata minimization and structured shared diagnostics. |
-| Repository/docs/quality | One canonical Research entrypoint and index update; historical assessment retained. No app source, tests, templates or quality configuration changed. | Any later prototype needs a bounded assignment, selected versions and applicable application checks before execution. |
+| Authentication/logging | Only synthetic guest credentials/app token and scoped loopback instrumentation used; no existing credentials accessed. Temporary services stopped, raw records ignored. | Exclusive owner access, device credentials, metadata minimization and structured shared diagnostics. |
+| Repository/docs/quality | Canonical research, related reports and screened probe evidence; historical assessment retained. No maintained app source, tests, templates or quality configuration changed. Temporary diagnostic script uses the documented report-mode exception with unavailable native binding disclosed. | A maintained prototype needs a bounded assignment, selected versions and applicable quality admission before execution. |
 
 ## Questions
 
@@ -175,15 +183,15 @@ No integration route is selected. The accepted native wizard brings all choices 
 
 ## Approved Strategy
 
-The owner approved the investigation direction and, on 2026-11-05, the integrated native wizard experience: storage, device availability, MyBrain admission and reusable scope are selected in one flow and confirmation. The owner subsequently prioritized Windows and requested an existing-application comparison before Design. The owner also accepted offline local rule authorship, separation of origin/storage from intended reach and actual application, and reconciliation on reconnect or relevant local/server policy changes. Study the local/cloud interaction and native client integration/update routes; the comparison does not select an engine, replacement backend or broader MyBrain platform. No native integration, replacement workflow, transport, formal rule contract or candidate-storage architecture is approved. The accepted offline/shared-policy behavior does not select a central master, merge algorithm, precedence, deletion policy or device-enrollment default. Compatibility and policy decisions remain pending; stay in Research and do not start Design.
+The owner approved the investigation direction and, on 2026-11-05, the integrated native wizard experience: storage, device availability, MyBrain admission and reusable scope are selected in one flow and confirmation. The owner subsequently prioritized Windows and requested an existing-application comparison before Design. The owner also accepted offline local rule authorship, separation of origin/storage from intended reach and actual application, and reconciliation on reconnect or relevant local/server policy changes. Study the local/cloud interaction and native client integration/update routes; the comparison does not select an engine, replacement backend or broader MyBrain platform. No native integration, replacement workflow, transport, formal rule contract or candidate-storage architecture is approved. The accepted offline/shared-policy behavior does not select a central master, merge algorithm, precedence, deletion policy or device-enrollment default. The owner separately authorized the bounded unchanged Windows-client experiment, including isolated fixture preparation and observation; it does not authorize a client patch or production installation. Compatibility and policy decisions remain pending; stay in Research and do not start Design.
 
 ## Expected Results
 
-This document is an evidence and experiment proposal only, extended by the Windows-first alternatives comparison. Research remains open. The smallest proposed test separates the rule roundtrip from the native enforcement proof; neither has run.
+This document combines source evidence, the Windows-first comparison, behavioral experiment contracts and the [bounded stock CLI measurement](stock-windows-filter-probe.md). Research remains open. The integrated rule roundtrip and full native GUI enforcement proof have not run; the manually supplied stock batch filter component has been measured separately.
 
 ### Proposed decisive experiment
 
-This section is the linkable behavioral probe contract for issue 9. Every probe below is **NOT RUN**; the offline/reconciliation cases are detailed in the dedicated subsection.
+This section is the linkable behavioral probe contract for issue 9. The complete integrated probes below are **NOT RUN**; partial stock CLI gate/restart measurements are reported separately and do not stand in for these end-to-end obligations. The offline/reconciliation cases are detailed in the dedicated subsection.
 
 Use an isolated synthetic selected directory and a disposable test server, plus a controlled browser session. Before execution, record actual OS, OpenCloud server/Web/desktop, SDK and any executor versions; the exact claimed seam; fixtures; network/request observation points; an unmodified control run; and retention-safe cleanup. A mock executor may establish orchestration only and must be labelled as such.
 
@@ -201,7 +209,7 @@ A first Windows-only proof can isolate the wizard, rule handling and local/clien
 
 ### Offline and reconciliation probe contract
 
-Use synthetic files, folders, file-type rules, retained copies and test devices only. Establish a known last-reconciled policy and record which inventories and capabilities are current or cached before each case. Fixtures must include changes that the declared trial policy treats as compatible, overlapping changes requiring resolution, and queued work awaiting a decision. If the necessary offline/precedence policy is not approved, report that part as insufficient evidence instead of inventing a result. **All cases are NOT RUN.**
+Use synthetic files, folders, file-type rules, retained copies and test devices only. Establish a known last-reconciled policy and record which inventories and capabilities are current or cached before each case. Fixtures must include changes that the declared trial policy treats as compatible, overlapping changes requiring resolution, and queued work awaiting a decision. If the necessary offline/precedence policy is not approved, report that part as insufficient evidence instead of inventing a result. **These integrated end-to-end cases are NOT RUN.** The stock CLI probe supplies only manually configured filter/restart and retention evidence, without the combined wizard, policy exchange, conflicts or a demonstrated persistent engine queue.
 
 | Case | Controlled variation | Required observable result or falsifier |
 | --- | --- | --- |
@@ -227,11 +235,12 @@ The owner must choose the admissible native/client compatibility route or explic
 ## Assumptions
 
 - The companion serves the exclusive owner; no third-party per-entity rights model is introduced.
-- Actual installed product versions and the usable local transfer seam remain unknown.
+- The stock CLI/server test versions and batch filter boundary are known for the recorded fixtures; production versions and a usable persistent native GUI admission seam remain unknown.
 - A local component and outbound channel are research candidates, not a mandate to install services or open network ports.
 
 ## Related Documents
 
+- [Stock Windows filter probe and measurements](<stock-windows-filter-probe.md>)
 - [Windows synchronization candidate comparison](<windows-sync-candidate-comparison.md>)
 - [Native wizard integration and update feasibility](<native-wizard-update-feasibility.md>)
 - [Preserved OpenCloud extension assessment](<opencloud-admission-extension-feasibility.md>)
@@ -247,3 +256,4 @@ The owner must choose the admissible native/client compatibility route or explic
 | 1.1 | 2026-11-05 | Codex (@imp researcher) | Record the accepted integrated native wizard with MyBrain choice in the same confirmation; link platform/update evidence and retain pending strategy/proof limits. |
 | 1.2 | 2026-11-05 | Codex (@imp researcher) | Record Windows-first priority and link the issue-9-only application/engine comparison with conditional unexecuted trial recommendations. |
 | 1.3 | 2026-11-05 | Codex (@imp researcher) | Distinguish offline local rule authorship, intended reach and actual application; add bounded OpenCloud policy evidence and an unexecuted reconciliation probe contract. |
+| 1.4 | 2026-11-05 | Codex (@imp researcher) | Record measured unchanged Windows CLI filter/body/readback evidence and keep GUI queue, integrated wizard and shared-policy guarantees explicitly unproved. |
