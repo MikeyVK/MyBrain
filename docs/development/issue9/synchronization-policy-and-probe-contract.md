@@ -178,4 +178,3 @@ The maintenance/compatibility choice (supported extension/upstream contract, mai
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-07 | Codex (@imp researcher) | Consolidate accepted personal synchronization/group/bulk/presentation policies, remaining usage questions and the current unexecuted behavioral probe contract. |
-
