@@ -3,8 +3,8 @@
 # Integrated native wizard and update feasibility
 
 **Status:** RESEARCH CHECKPOINT — source evidence; native integration and update proofs pending  
-**Version:** 1.1  
-**Last Updated:** 2026-11-05
+**Version:** 1.2  
+**Last Updated:** 2026-11-07
 
 ## Purpose
 
@@ -29,14 +29,14 @@ On 2026-11-05 the owner accepted a wizard offered by the desktop or mobile app b
 | Question in the same wizard | Plain-language choice | Boundary |
 | --- | --- | --- |
 | Where to keep the files? | Keep only on this device; also keep in my cloud. | Undecided new content remains local; a matching accepted rule can handle later files automatically. |
-| Which other devices? | Use on the named devices I select. | Include registered offline devices and show capabilities; origin-only concerns automatic distribution, not another person's access rights. |
+| Which other devices? | Use on the named devices or groups I select. | Include configured offline devices and capabilities; group policy is the base with visible device exceptions. Origin-only concerns distribution, not another person's access rights. |
 | How to use them there? | Retrieve when opened; also use without internet. | Offer only supported device behavior; visibility, actual download and retained local copy differ. |
 | Include in MyBrain? | Also include in MyBrain, or preserve the chosen storage/synchronization without admission. | This is independently selectable in the same confirmation, not a separate-time workflow. MyBrain processing semantics remain under the intake contracts. |
 | How broadly does this apply? | Only these files; future files in this directory; a reusable rule. | Preview affected files and exceptions. Rule changes do not implicitly destroy existing copies. |
 
-The app must show all devices registered for the owner's configuration, rather than only devices currently online. Future devices require an explicit rule-scope decision; no automatic inclusion default is selected. Saved intent, receipt on each device, effective rule application, transfer completion and MyBrain registration/processing need distinct truthful feedback. One user confirmation does not imply an instantaneous distributed transaction or simultaneous success.
+The app must show all devices registered for the owner's configuration, rather than only devices currently online. Deliberately adding a device to a group inherits its policy; unknown/new devices are not silently selected or enrolled. Saved intent, receipt on each device, effective rule application, transfer completion and MyBrain registration/processing need distinct truthful feedback. One user confirmation does not imply an instantaneous distributed transaction or simultaneous success.
 
-The owner subsequently clarified that rules can be authored, confirmed and durably saved offline using last-known devices, server folders and policy. Origin/local storage, intended local-only or shared reach, and actual application are separate. The canonical [local/shared policy requirements](research.md#local-rule-authorship-intended-reach-and-shared-application) and [offline/reconciliation probe contract](research.md#offline-and-reconciliation-probe-contract) govern reconnect and connected-policy-change cases for every native integration candidate. These accepted behaviors do not choose precedence, offline use of prior rules, group enrollment, a central master or a merge algorithm.
+The current [policy decisions and behavioral probe contract](synchronization-policy-and-probe-contract.md) governs all native candidates: one active personal administration endpoint, normal draft/Apply with explicit alternatives, selectable running-work handling, offline plans and clean automatic reconciliation, independent confirmed merges, deliberate group inheritance/visible device exceptions, all-action bulk safeguards and lasting continuing approvals. It preserves offline rule creation, intended reach versus record disclosure/application, and the same MyBrain confirmation. True group contradictions and ambiguous changes go to the owner. No central master, merge algorithm, native seam or update route is selected.
 
 The native app is the required presentation host. Reusing shared wizard content or an embedded Web view is an option to investigate, but opening a separate dashboard alone does not satisfy the native-flow requirement or stop native uploads.
 
@@ -118,16 +118,17 @@ These are proposed tests, not executed results. Use synthetic data and isolated 
 | Snapshot and rule changes | Edit/replace between individual approval and send, deliver older rule revisions and reconnect stale devices; no stale permission silently authorizes changed content. Rule narrowing does not delete retained copies. |
 | Actual version upgrade | Use two explicitly selected real client/host versions and the intended signed update path. Preserve decisions/pending work, re-run native entry routes and verify the wizard and hold survive. Source compilation or a same-version restart alone is insufficient. A stock update that cannot load the custom integration must leave undecided content held rather than silently resume uncontrolled synchronization. |
 
-The pending observation-to-source-registration boundary still follows P18/P19/P38 in the [foundational principles](../../architecture/decisions/0001-digital-brain-foundational-principles.md). A worklist must not silently become a second authoritative source registry or permanently register every excluded cache. Metadata disclosure, offline use of prior rules, retention and future-device defaults remain policy questions.
+The pending observation-to-source-registration boundary still follows P18/P19/P38 in the [foundational principles](../../architecture/decisions/0001-digital-brain-foundational-principles.md). A worklist must not silently become a second authoritative source registry or permanently register every excluded cache. The [remaining product-policy inventory](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions) separates disclosure, bulk/consent boundaries and uncertain activation/handover recovery from already accepted group and clean-reconnect behavior.
 
 ## Research conclusion and decision boundary
 
 The accepted user experience can be described clearly and there are concrete owned-code integration points to test. The evidence does not establish an update-independent addon that delivers the entire requirement inside unchanged official apps. The strongest long-term route to investigate is a maintainer-supported native UI/admission contract; a small maintained native change set is a plausible fallback with its own release obligations. These are recommendations for investigation, not adopted implementation strategy.
 
-Before Design, the owner must choose the acceptable maintenance/compatibility route based on proof, and resolve device authority, candidate disclosure and offline rule applicability. This checkpoint stays in Research. No prototype, upstream acceptance, binary upgrade or compatibility matrix has been demonstrated.
+Before Design, the owner must choose the acceptable maintenance/compatibility route based on proof and resolve the applicable remaining policy questions identified in the companion. This checkpoint stays in Research. No prototype, upstream acceptance, binary upgrade or compatibility matrix has been demonstrated.
 
 ## Related Documents
 
+- [Current policy decisions and behavioral probe contract](<synchronization-policy-and-probe-contract.md>)
 - [Canonical issue-9 research](<research.md>)
 - [Preserved earlier source assessment](<opencloud-admission-extension-feasibility.md>)
 - [Issue 9](<https://github.com/MikeyVK/MyBrain/issues/9>)
@@ -138,3 +139,4 @@ Before Design, the owner must choose the acceptable maintenance/compatibility ro
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-05 | Codex (@imp researcher) | Record the accepted integrated native wizard and assess desktop/mobile seams, device inventory and update-maintenance alternatives. |
 | 1.1 | 2026-11-05 | Codex (@imp researcher) | Link accepted offline/local/shared policy distinctions and the canonical unexecuted reconciliation probe contract. |
+| 1.2 | 2026-11-07 | Codex (@imp researcher) | Link the current accepted personal/group/activation/bulk/presentation policy and remaining questions; retain pinned integration/update findings unchanged. |

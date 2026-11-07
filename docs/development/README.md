@@ -3,8 +3,8 @@
 # Development issue index
 
 **Status:** MAINTAINED — issue navigation  
-**Version:** 1.4  
-**Last Updated:** 2026-11-05
+**Version:** 1.5  
+**Last Updated:** 2026-11-07
 
 ## Purpose
 
@@ -24,7 +24,7 @@ Consolidated by issue 10 from pinned source revisions, with later issue entrypoi
 | 6 | [Storage research](issue6/research.md), [design](issue6/design.md) | Preserve document-specific status; design is not implemented storage |
 | 7 | [Deployment research](issue7/research.md), [implementation](../../setup/deployment/README.md) | Historical deployment evidence; no new package execution |
 | 8 | [Garmin research](issue8/research.md), [API catalog](issue8/api-catalog.md) | Research and strategy questions remain open |
-| 9 | [Wizard research](issue9/research.md), [Windows candidate comparison](issue9/windows-sync-candidate-comparison.md), [native/update assessment](issue9/native-wizard-update-feasibility.md), [preserved OpenCloud assessment](issue9/opencloud-admission-extension-feasibility.md) | Research active; Windows-first integrated wizard and scoped application/engine alternatives assessed; runtime proofs and strategy decisions pending |
+| 9 | [Wizard research](issue9/research.md), [policy and behavioral probes](issue9/synchronization-policy-and-probe-contract.md), [stock CLI measurements](issue9/stock-windows-filter-probe.md), [Windows candidate comparison](issue9/windows-sync-candidate-comparison.md), [native/update assessment](issue9/native-wizard-update-feasibility.md), [preserved OpenCloud assessment](issue9/opencloud-admission-extension-feasibility.md) | Research active; accepted policy consolidated and bounded CLI control measured; integrated behavioral probes NOT RUN and technical strategy pending |
 | 10 | [Consolidation boundary](issue10/research.md), [import evidence](issue10/implementation-evidence.md), [validation](issue10/validation.md), [handover](issue10/documentation.md) | Consolidated source snapshots; original issue statuses retained |
 | 12 | [Research closeout](issue12/documentation.md), [research](issue12/research.md), [App-only concept](issue12/design.md), [web-gap evidence](issue12/web-backend-gap-research.md) | Research-only closeout snapshot; default-disabled helper source preserved and offline-tested; concept unimplemented, full App coverage unproved |
 
@@ -41,3 +41,4 @@ The [foundational ADR](../architecture/decisions/0001-digital-brain-foundational
 | 1.2 | 2026-11-04 | Codex (@imp researcher) | Link issue 9 companion Research checkpoint while retaining unexecuted experiment and open strategy status. |
 | 1.3 | 2026-11-05 | Codex (@imp researcher) | Index issue 9 integrated native-wizard/update research while preserving source-only evidence and pending decisions. |
 | 1.4 | 2026-11-05 | Codex (@imp researcher) | Link Windows-first issue-9 candidate comparison without selecting a backend or expanding to other MyBrain layers. |
+| 1.5 | 2026-11-07 | Codex (@imp researcher) | Index issue 9 accepted policy/current behavioral probe contract and bounded CLI evidence without claiming integrated runtime proof or phase acceptance. |

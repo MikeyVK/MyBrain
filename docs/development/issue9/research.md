@@ -2,9 +2,9 @@
 
 # Integrated native wizard and local–cloud rule coordination
 
-**Status:** RESEARCH CHECKPOINT — bounded CLI measurements recorded; strategy and full native proofs pending  
-**Version:** 1.4  
-**Last Updated:** 2026-11-05
+**Status:** RESEARCH CHECKPOINT — owner policy consolidated; bounded CLI evidence only; full native proofs and strategy pending  
+**Version:** 1.5  
+**Last Updated:** 2026-11-07
 
 ## Purpose
 
@@ -12,7 +12,7 @@ Investigate an integrated native-app wizard and a practical local/cloud route th
 
 ## Scope In
 
-Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; local and shared policy, offline authorship and reconciliation; options, synthetic experiment contracts and the owner-approved bounded stock CLI measurement.
+Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; accepted personal draft/activation, device/group, bulk and presentation behavior; offline/shared policy and reconciliation; options, synthetic behavioral probe contracts and the owner-approved bounded stock CLI measurement.
 
 ## Scope Out
 
@@ -56,21 +56,28 @@ An offline-saved deny filter was reread by a fresh batch after reconnect, preser
 
 ### Local rule authorship, intended reach and shared application
 
-On 2026-11-05 the owner accepted a further behavioral distinction: a synchronization rule can be created, confirmed and durably saved on a device without an active server connection. Where the rule originates and is stored does not determine its intended reach. A rule authored offline may be local-only or intended for selected other devices or a device group, where that group mechanism is supported. This requirement selects neither a central policy master nor a merge engine.
+The owner accepted offline authorship of a complete synchronization/MyBrain rule using last-known devices, server folders and policy. Where the rule originates and is stored does not determine its intended execution reach. The current [policy decisions and behavioral probe contract](synchronization-policy-and-probe-contract.md) consolidates the subsequent owner choices; it is the authoritative detailed behavioral companion to this Research entrypoint.
 
 | Distinction | Required meaning |
 | --- | --- |
-| Origin and local durable storage | Identify where a rule was authored and preserve the confirmed combined choice locally, including after restart. Offline authorship is possible using locally available knowledge. |
-| Intended reach | Distinguish local-only policy from a choice intended for selected devices or a supported group. Neither a server copy of a rule nor its originating device automatically determines that reach. New devices are not silently selected or enrolled. |
-| Actual application | Distinguish locally saved/accepted intent, locally effective behavior, sharing, receipt and evaluation on each intended device, and actual content transfer or MyBrain registration. These are evidence distinctions, not a prescribed state schema. |
+| Origin and local durable storage | Offline creation, confirmation and persistence are possible; a saved draft is not automatically active policy. |
+| Intended reach | Distinguish origin-only execution, named devices and deliberately chosen device groups. No silent new-device selection or group enrollment. |
+| Record disclosure/distribution | An expressly allowed server copy does not widen origin-only execution. A deliberately private local rule is not silently shared. Permitted disclosure remains a separate question. |
+| Actual application | Distinguish confirmed intent, each device's received/evaluated/effective version, transfer, retained copy and MyBrain registration. No simultaneous distributed success is implied. |
 
-The same native wizard must allow rules for files, folders, file types and other supported scopes using last-known clients, server folders and policy. Its one summary and confirmation retain storage, device availability, MyBrain admission and reusable scope together. The interface must disclose stale inventory and uncertain capabilities; it may not invent unseen files, current counts, device receipt or completed registration. Local-only intended application must not silently become shared application merely because its rule record is reconciled or stored on the server. Policy-record disclosure/distribution is a separate choice: an explicitly permitted server backup or shared representation can still describe origin-only application. Reconciliation must not force sharing of a deliberately private local rule. The allowed record-distribution policy remains open; no default is selected.
+Reconciliation applies at reconnect and on relevant connected changes. A clean returning device may automatically execute its approved plan and resume when it has no local policy changes, conflicts or bulk warnings. Already-confirmed local/server changes may merge automatically only when demonstrably independent in effect, without conflicts or bulk warnings; ambiguity goes to the owner and unapplied drafts stay drafts. Different folders alone do not prove independence. No timestamp/server/local winner or merge algorithm is selected.
 
-Locally executable effects may apply while disconnected within the explicitly accepted offline policy. Full server transfer, policy distribution and remote application require the relevant connection. Saving or accepting a rule is therefore not proof that all its effects have occurred. The treatment of prior accepted rules while offline remains a policy decision; unknown, unavailable or conflicted policy must not itself grant new transfer permission.
+Unknown, unavailable or conflicting policy cannot itself grant new permission. Queued work must obey the applicable reconciled activation plan; no stale decision bypass or unintended destruction follows from reconciliation. The unresolved recovery boundary concerns uncertain/partial activation, pending changes and handover, rather than inventing routine fresh server permission whenever an unchanged device is offline.
 
-Reconciliation is required both on reconnect and when relevant local or server-registered policy changes during connected work. Compare changes against the last reconciled state, preserve local and server changes, distinguish compatible changes from unresolved overlaps, and report which decisions/effects remain pending. Do not silently choose latest-timestamp-wins, server-wins or local-wins, or treat every overlap as already resolved. The precedence and compatibility rules remain to be established explicitly. Queued work must be re-evaluated against the applicable reconciled policy before a later transfer; an obsolete or unresolved rule must not provide a bypass. Changes of rule scope, delivery retries and policy reconciliation do not authorize deletion of retained content.
+### Accepted policy and presentation checkpoint
 
-The [offline and reconciliation probe contract](#offline-and-reconciliation-probe-contract) makes these behavioral requirements falsifiable. It is an unexecuted Research protocol, not a Design contract, API or selected merge algorithm.
+The [detailed owner decisions D01–D25](synchronization-policy-and-probe-contract.md#findings) preserve one personal owner and one active operating/administration endpoint at a time, while allowing multiple synchronizing devices. Group policy is the base, explicit visible device exceptions may override it, compatible group instructions combine and true contradictions go to the owner. Deliberate membership causes inheritance; no fixed group ranking or automatic enrollment is selected.
+
+Normal use edits/saves a draft while the valid old policy remains active; explicit Apply uses a controlled pause, activation/confirmation and resumption. Pause-before-edit and later-maintenance remain explicit alternatives. Targeted pause is preferred, broader pause is a fallback and automatic restart the last alternative, subject to feasibility. At finalization all three context-relevant in-flight choices remain selectable: finish current files, finish a clearly bounded planned round, or interrupt and re-evaluate outstanding work. No universal default, deadline or already-sent-byte rollback is assumed. Offline devices receive a later execution/reconciliation plan.
+
+Safety assessment covers all bulk actions, potentially with different settings per action, over a whole logically related offering including nested/multiple jointly offered folders. Splitting notifications/batches must not bypass it. A cumulative guard is accepted in principle. Approval of a recognizable continuing flow becomes visible lasting policy for that flow/action, without repeating the same warning merely on a new batch, time window or reconnect. Recognition, metrics, drift, one-off consent and intervention boundaries remain open; illustrative values are not defaults.
+
+Presentation starts with plain-language intention and effects; powerful details are progressively disclosed without hiding essential consequences. The one integrated summary explains devices/groups, exceptions, reuse and MyBrain. Show draft/confirmed/active/pending per device separately from actual effects. Continuing approvals must be visible, editable and explainable. The probe contract includes a beginner explaining consequences before confirmation. Other-user sharing through a bounded Space/share remains a later direction outside current personal-use acceptance.
 
 ### Existing OpenCloud settings and the shared-policy gap
 
@@ -126,7 +133,7 @@ All names and content in this example are synthetic.
 2. Local observations make a grouped candidate worklist available. The native wizard and supporting companion show what they know and when they last heard from each device. It need not upload file contents to ask whether an unfamiliar subtree should synchronize.
 3. While working, the owner chooses a candidate group and drafts a reusable rule: for example keep generated caches local, allow selected project documents on the server, and choose MyBrain registration within the same wizard. The UI previews currently known matching scope, devices, availability, registration and conflicts, then presents one combined summary and confirmation.
 4. The device can create, confirm and save that complete combined rule while offline using last-known devices, server folders and policy. Its origin and intended reach remain separate: it can be intended only here or for selected other devices. Locally executable effects may apply under the accepted offline policy; unavailable server transfer, distribution and remote application remain pending. Stale inventory must be visible without invented files or current match counts.
-5. On reconnect, or a relevant policy change while connected, compare local and server changes against the last reconciled state. Preserve both sides' changes, recognize compatible changes and expose unresolved overlaps without an invented winner. Re-evaluate current local content and queued work before any newly permitted transfer. Receipt, successful evaluation and an observed effect remain different evidence.
+5. On reconnect, or a relevant policy change while connected, compare local and server changes against the last reconciled state. A clean device may execute its approved plan automatically; only demonstrably independent confirmed changes may auto-merge without conflicts/bulk warnings. Preserve unapplied drafts and ask the owner about ambiguities or true contradictions. Re-evaluate outstanding work against the applicable activation plan. Receipt, successful evaluation and an observed effect remain different evidence.
 6. Where a transfer boundary has actually been proved, the executor performs the permitted action. A changed file, overlapping rule or invalid decision returns to a visible unresolved state rather than silently inheriting a stale individual approval.
 7. Subsequent observations can match the reusable rule without repeated per-file review. New exceptions remain visible. Changing a rule must not imply deletion of already retained local or server copies.
 
@@ -136,7 +143,7 @@ This journey is a proposal for evaluation. It does not select a rule language, p
 
 A companion is useful only if the owner can understand both a rule's intended reach and its actual effect. Research must test local feedback during rule construction, coarse folder decisions, reusable classes, exceptions and a preview against the presently observed inventory. The companion should help explain why an existing or draft rule matches or does not match, and distinguish a proposed draft from accepted and locally effective revisions. A preview can be stale; an apparently matching filename is not a durable identity.
 
-The [local/shared policy distinction](#local-rule-authorship-intended-reach-and-shared-application) governs evidence for saved/accepted intention, intended devices, receipt, evaluation, local effectiveness, synchronization and MyBrain registration. A remote edit cannot instantly alter a disconnected workstation. Previously accepted offline rules, expiration, precedence and conflicting changes still require explicit policy before implementation. Unknown, unavailable or conflicted policy must not grant new transfer permission; a successful reconciliation response alone is not native enforcement evidence.
+The [local/shared policy distinction](#local-rule-authorship-intended-reach-and-shared-application) governs evidence for saved/accepted intention, intended devices, receipt, evaluation, local effectiveness, synchronization and MyBrain registration. A remote edit cannot instantly alter a disconnected workstation. Accepted group inheritance/exception/conflict and independent-confirmed-merge behavior are fixed in the [policy companion](synchronization-policy-and-probe-contract.md#findings); the remaining activation-recovery and disclosure questions are kept separate. Unknown, unavailable or conflicted policy must not grant new transfer permission; a successful reconciliation response alone is not native enforcement evidence.
 
 Candidate names, relative paths and grouping metadata can themselves expose private information. The minimum centrally visible information, optional redaction and retention need a deliberate decision. "Metadata only" must not be equated with harmless or public. Synthetic experiments must inspect request bodies, logs and previews as well as final storage.
 
@@ -164,11 +171,9 @@ No integration route is selected. The accepted native wizard brings all choices 
 
 ## Questions
 
-- Which Windows-first candidate and integration boundary can satisfy the unchanged connected-folder hold with acceptable maintenance; must OpenCloud remain the storage/transport endpoint, or may a changed topology be compared?
-- What may an offline device continue under a previously accepted rule; how are compatible changes, precedence, unresolved overlaps and effective application defined without silently discarding local or server changes?
-- Which supported device/group scope, enrollment defaults and deletion semantics are acceptable? Device enrollment is not implied by creating or sharing a rule.
-- Which candidate facts may leave the device before content admission, including paths, counts, grouping and optional previews?
-- Which native integration and update-maintenance route can host the integrated wizard and control all claimed upload paths; which shared or supporting Web views are useful without replacing that native flow?
+The current [five-area product-policy inventory](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions) covers continuing-flow boundaries, bulk measures/unknown scope, intervention and one-off consent, uncertain activation/handover recovery, and candidate/policy disclosure. Each item identifies the probes that need it; accepted group precedence, clean automatic reconciliation, personal management scope and lasting continuing approval are not reopened.
+
+Technical research still must establish a live Windows GUI hold and external activation seam, feasible pause granularity, truthful device/application evidence and update preservation. The existing [candidate comparison](windows-sync-candidate-comparison.md) remains conditional: no replacement topology, workflow or native integration route is adopted.
 
 ## References
 
@@ -183,7 +188,9 @@ No integration route is selected. The accepted native wizard brings all choices 
 
 ## Approved Strategy
 
-The owner approved the investigation direction and, on 2026-11-05, the integrated native wizard experience: storage, device availability, MyBrain admission and reusable scope are selected in one flow and confirmation. The owner subsequently prioritized Windows and requested an existing-application comparison before Design. The owner also accepted offline local rule authorship, separation of origin/storage from intended reach and actual application, and reconciliation on reconnect or relevant local/server policy changes. Study the local/cloud interaction and native client integration/update routes; the comparison does not select an engine, replacement backend or broader MyBrain platform. No native integration, replacement workflow, transport, formal rule contract or candidate-storage architecture is approved. The accepted offline/shared-policy behavior does not select a central master, merge algorithm, precedence, deletion policy or device-enrollment default. The owner separately authorized the bounded unchanged Windows-client experiment, including isolated fixture preparation and observation; it does not authorize a client patch or production installation. Compatibility and policy decisions remain pending; stay in Research and do not start Design.
+The owner accepted the integrated native Windows-first experience and the [current behavioral choices](synchronization-policy-and-probe-contract.md#findings): personal administration, draft/Apply alternatives, selectable in-flight handling, explicit offline plans, clean automatic reconciliation, independent confirmed merges, device groups/exceptions, all-action bulk safeguards, lasting continuing approvals and understandable presentation. These refine the earlier local/shared-policy distinction; they do not constitute a formal Design/API contract.
+
+The separately authorized unchanged stock Windows CLI experiment remains bounded evidence. No native implementation, replacement workflow/topology/backend, transfer architecture, candidate-storage design, rule language, merge algorithm or update-maintenance strategy is selected. Product recovery/disclosure/guard details remain explicit questions. Compatibility strategy per affected boundary and independent phase review are still required before Design; remain in Research.
 
 ## Expected Results
 
@@ -191,46 +198,19 @@ This document combines source evidence, the Windows-first comparison, behavioral
 
 ### Proposed decisive experiment
 
-This section is the linkable behavioral probe contract for issue 9. The complete integrated probes below are **NOT RUN**; partial stock CLI gate/restart measurements are reported separately and do not stand in for these end-to-end obligations. The offline/reconciliation cases are detailed in the dedicated subsection.
+The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) supersedes the earlier incomplete tables while preserving this link anchor. Its W01/W02 cases distinguish live graphical-client discovery/hold and genuine external policy activation from manual stock settings or fresh CLI batch behavior. All twenty-one integrated cases are **NOT RUN**.
 
-Use an isolated synthetic selected directory and a disposable test server, plus a controlled browser session. Before execution, record actual OS, OpenCloud server/Web/desktop, SDK and any executor versions; the exact claimed seam; fixtures; network/request observation points; an unmodified control run; and retention-safe cleanup. A mock executor may establish orchestration only and must be labelled as such.
-
-| Probe | Controlled variation | Pass, fail or insufficient-evidence boundary |
-| --- | --- | --- |
-| Candidate roundtrip | Create a synthetic document, a source file and a cache subtree; send only admitted candidate facts to the companion. | UI represents the grouped observations and their freshness. Content or excluded paths appearing in requests/previews/logs fails the declared metadata boundary. Missing observation coverage is insufficient evidence. |
-| Integrated wizard and incremental rules | In the native app preview and confirm storage, devices/availability, MyBrain choice and reusable scope together; add a second matching file and a cache exception. | One summary/confirmation records all choices; no separate later MyBrain prompt. Known matches/exceptions and unresolved overlaps are understandable; later matches need no fabricated per-file review. This alone does not prove transfer enforcement. |
-| Device receipt and effect | Save a rule, deliver it, then independently observe local evaluation and the executor result. | Saved, received, evaluated and observed effect remain distinguishable. A successful HTTP response without local evidence is insufficient. |
-| Offline authorship and policy reconciliation | Execute the [offline and reconciliation cases](#offline-and-reconciliation-probe-contract) with local-only and shared intentions, independently changed local/server rules, and connected policy updates. | Local durability, intended reach and actual application remain distinguishable. Both sides' changes are preserved; compatible changes and unresolved conflicts are visible. New permission arising solely from unknown/unavailable/conflicted policy, unintended deletion or a stale queued-transfer bypass fails. |
-| Stale/conflicting decisions | Deliver older revisions after newer ones; edit or replace content between an individual approval and transfer; overlap two rules. | Stale individual approval does not float to changed content. Undecided precedence is reported rather than invented. No universal hash/token implementation is assumed. |
-| Native transfer gate | With the claimed ordinary connected-folder integration, create/edit while approval is pending or service unavailable; include initial TUS bodies. Compare with stock-client control. | Zero content bytes leave before approval if that guarantee is claimed. Reactive ignore, server rejection or quarantine cannot pass this oracle. An unobserved upload route is insufficient evidence. |
-| Distribution follow-up | Only after the required seams are proved, use a second, new and reconnected test client for origin-only versus all-client eligibility. | Observe item visibility, bytes and offline retention separately; no unintended deletion of retained copies. Central enforcement cannot be inferred from manual client setup. |
-
-A first Windows-only proof can isolate the wizard, rule handling and local/client/cloud coordination before mobile implementation. A browser-only orchestration proof must be labelled partial and cannot substitute for the accepted native wizard. Shared Web Uppy, full native bypass inventory, platform breadth and update compatibility retain the separate obligations in the historical assessment and issue #9. A phone is optional for this first proof; another browser session is enough to test the investigated remote-control distinction. Do not point a trial at production sync roots, accounts or the live NAS.
+The contract also covers the accepted normal draft/Apply workflow and alternatives, real running work under all three finalization choices, group inheritance/device exceptions/group contradictions, whole-offering and cumulative guards across actions, once-approved continuing flow versus new scope, beginner comprehension, retention, interrupted/retried/versioned work and platform/update boundaries. Each applicable unresolved product choice is a named prerequisite rather than an invented test expectation.
 
 ### Offline and reconciliation probe contract
 
-Use synthetic files, folders, file-type rules, retained copies and test devices only. Establish a known last-reconciled policy and record which inventories and capabilities are current or cached before each case. Fixtures must include changes that the declared trial policy treats as compatible, overlapping changes requiring resolution, and queued work awaiting a decision. If the necessary offline/precedence policy is not approved, report that part as insufficient evidence instead of inventing a result. **These integrated end-to-end cases are NOT RUN.** The stock CLI probe supplies only manually configured filter/restart and retention evidence, without the combined wizard, policy exchange, conflicts or a demonstrated persistent engine queue.
+The [R01–R06 and G01–G02 cases](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) are now the detailed offline/shared-policy protocol; this anchor remains for existing readers. They cover durable offline creation, origin-only versus record sharing, explicit plans for unreachable devices, clean automatic return, independent confirmed changes versus conflicts, preservation of unapplied drafts, connected changes, duplicate/out-of-order delivery, interrupted reconciliation, stale inventory and management handover. No new runtime result is implied.
 
-| Case | Controlled variation | Required observable result or falsifier |
-| --- | --- | --- |
-| Complete rule authored offline | Disconnect before opening the native wizard; use last-known devices/server folders, confirm the full storage/device/availability/MyBrain/scope choice, then restart the app/device. | The same accepted intention survives locally, including MyBrain choice and intended reach. Staleness and unperformed remote effects stay visible. A server roundtrip required merely to save, lost choice, or falsely reported remote success fails. |
-| Offline local-only intention | Create or edit a rule expressly limited to the originating device, then reconnect after a separate server rule changed. | Local intent and relevant server changes remain distinguishable and preserved. Reconciliation does not silently publish that local-only rule as shared intent or turn a remote change into proof of local application. |
-| Offline shared intention | Offline, create/edit a rule intended for selected known devices or a supported group; keep one target offline through origin reconnect. | Offline creation does not restrict the intended reach to the origin. Sharing/receipt/evaluation and actual effects are separately observed; the offline target remains pending rather than falsely effective. |
-| Compatible local and server changes | From the recorded baseline, change distinct scopes independently, then reconnect. | Both changes remain available and are evaluated for compatibility under the declared policy; no whole-side replacement silently loses either change. A compatible case is not reported completed without application evidence. |
-| Overlapping local and server changes | Independently change the same effective scope in incompatible ways. | Preserve both changes and expose the unresolved overlap without implicit timestamp/server/local precedence. The unresolved state grants no new transfer permission or deletion authority. |
-| Policy changes while connected | Change local policy, then server-registered policy while discovery or queued work is active. | Reconciliation also occurs without a disconnect event. Pending/effective status and actual execution reflect re-evaluation; an old decision may not silently authorize later queued transfer. |
-| Duplicate and out-of-order delivery | Repeat a policy/change delivery and deliver an older one after a newer one. | Delivery does not duplicate rule effects, silently restore obsolete permission or discard an outstanding local/server change. Receipt alone is not evidence of application. |
-| Disconnect/retry during reconciliation | Interrupt after local save, during exchange and before/after a reported application; restart and retry. | Durable intentions and unresolved changes remain visible without false completion or repeated unsafe effects. Retry does not bypass the required reconciliation/re-evaluation. |
-| Stale device/folder inventory | Use cached entries for an offline/retired device, a changed server folder or an unknown capability. | The wizard permits a truthful draft/confirmed intention where possible, discloses uncertainty and does not invent unseen files, exact current counts or supported capabilities. Final application remains pending where it cannot be established. |
-| Queued transfer under obsolete policy | Queue under an accepted rule, narrow/change it locally or on the server, or introduce an unresolved overlap before retry/reconnect. | Re-evaluate against the applicable reconciled policy before the later transfer. The queued approval is not a bypass; observe all claimed real request paths when asserting a before-content result. |
-| New/offline device and intended group | Add a test device or reconnect an existing one after shared rules changed; test only explicitly declared enrollment/group semantics. | Recognizable inventory, intended membership, receipt and effective revision remain distinct. No automatic device selection/inheritance is inferred from product defaults; unsupported group behavior is reported. |
-| Preservation across policy changes | Change distribution scope, exclude a previously included subtree, cancel the wizard, reconcile and retry. | Retained local/server copies are not deleted merely because policy changed or narrowed. Any separate deletion semantics remain unselected and require explicit authorization. |
-
-These observations can establish rule orchestration and truthful user feedback only. To claim native before-first-byte enforcement, separately execute the native transfer-gate oracle against every claimed path, including initial request bodies, restart, retries and changes after approval. A mock executor, local exclude file, policy-exchange response or server rejection is insufficient evidence of that guarantee. One user confirmation still does not imply an instantaneous distributed transaction.
+The [stock CLI measurement](stock-windows-filter-probe.md) proves only its recorded manual filter/restart/body/readback cases. Offline preflight failed before an engine queue existed. A mock executor, exchange response, local exclude file or new batch start cannot prove a persistent live GUI queue, shared-policy behavior or native before-first-byte enforcement.
 
 ### Decisions needed before Design
 
-The owner must choose the admissible native/client compatibility route or explicitly accept a workflow change, decide offline use of prior rules and their effective boundary, precedence/compatibility and conflict handling, supported device/group enrollment scope and separate deletion semantics, and approve the centrally visible candidate information. Test results may narrow these choices. An experiment protocol and a working UI would not close Research without those strategy decisions and independent phase review.
+Resolve the [applicable remaining owner usage choices](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions) and use bounded evidence to select the admissible native/client compatibility route. Explicit owner approval is needed for a changed workflow/topology or maintained integration strategy; no such choice follows from this checkpoint. A working screen or successful component test would not by itself close Research or replace independent phase review.
 
 ## Assumptions
 
@@ -240,6 +220,7 @@ The owner must choose the admissible native/client compatibility route or explic
 
 ## Related Documents
 
+- [Current synchronization policy decisions and behavioral probe contract](<synchronization-policy-and-probe-contract.md>)
 - [Stock Windows filter probe and measurements](<stock-windows-filter-probe.md>)
 - [Windows synchronization candidate comparison](<windows-sync-candidate-comparison.md>)
 - [Native wizard integration and update feasibility](<native-wizard-update-feasibility.md>)
@@ -257,3 +238,4 @@ The owner must choose the admissible native/client compatibility route or explic
 | 1.2 | 2026-11-05 | Codex (@imp researcher) | Record Windows-first priority and link the issue-9-only application/engine comparison with conditional unexecuted trial recommendations. |
 | 1.3 | 2026-11-05 | Codex (@imp researcher) | Distinguish offline local rule authorship, intended reach and actual application; add bounded OpenCloud policy evidence and an unexecuted reconciliation probe contract. |
 | 1.4 | 2026-11-05 | Codex (@imp researcher) | Record measured unchanged Windows CLI filter/body/readback evidence and keep GUI queue, integrated wizard and shared-policy guarantees explicitly unproved. |
+| 1.5 | 2026-11-07 | Codex (@imp researcher) | Consolidate accepted personal/group/draft/bulk/presentation policy in a focused companion; update canonical summaries and probe anchors, retaining measured evidence and pending strategy status. |

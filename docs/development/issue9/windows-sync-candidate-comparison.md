@@ -3,8 +3,8 @@
 # Windows synchronization candidates for the integrated wizard
 
 **Status:** RESEARCH CHECKPOINT — Windows-first comparison; no candidate selected or runtime proof  
-**Version:** 1.1  
-**Last Updated:** 2026-11-05
+**Version:** 1.2  
+**Last Updated:** 2026-11-07
 
 ## Purpose
 
@@ -26,7 +26,7 @@ No examined stock app demonstrates the entire integrated wizard. Syncthing offer
 
 The owner prioritized realizing the integrated wizard and rules with Windows first, and requested an alternatives check before Design. The [earlier platform research](../issue6/open-source-platform-candidates.md) supplies candidate discovery only. Its broad ranking for knowledge/workspace functions does not decide this narrower issue. In particular, Seafile's previously examined closed metadata/AI dependency does not disqualify an open-source Community synchronization path that does not require it.
 
-The accepted [wizard requirement](native-wizard-update-feasibility.md#accepted-interaction-requirement) remains unchanged: one native-client flow, summary and confirmation cover storage, selected devices and supported availability, MyBrain admission, and present/future reusable scope. Unknown new content in an ordinary connected directory must stay local until an applicable decision; later matching files need not require manual per-file approval.
+The accepted [wizard requirement](native-wizard-update-feasibility.md#accepted-interaction-requirement) retains one native-client flow, summary and confirmation covering storage, selected devices/groups and supported availability, MyBrain admission, and reusable scope. The [current behavioral companion](synchronization-policy-and-probe-contract.md) adds the accepted draft/activation, group, all-action bulk and presentation constraints to every candidate; its integrated cases are NOT RUN. Unknown new content in an ordinary connected directory must stay local until an applicable decision; later matching files need not require manual per-file approval.
 
 This comparison separates built-in capability, public external control, custom UI/integration work, unproved behavior and an explicit workflow/backend change. An unknown is not scored as absent; feature count is not a feasibility verdict. Source and documentation were inspected on 2026-11-05. No app was installed, exercised, upgraded or benchmarked. Mobile is a continuity consideration rather than a requirement to complete the first Windows proof.
 
@@ -118,7 +118,7 @@ Seafile is a secondary engine/UI comparison if library-based workflow and server
 
 All proposed runs use synthetic directories and isolated processes/accounts. No experiment has run in this checkpoint.
 
-Every candidate is also subject to the canonical [local/shared policy distinction](research.md#local-rule-authorship-intended-reach-and-shared-application) and [offline/reconciliation probe contract](research.md#offline-and-reconciliation-probe-contract). A local rule can be authored offline yet target shared use; an API, local ignore file or externally controlled executor alone does not establish persistence of the combined choice, reconciliation of local/server changes, truthful per-device effects or native pre-content enforcement. This common requirement does not adopt a candidate, precedence rule, group-enrollment default or merge engine.
+Every candidate is subject to the [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract), including group-base/visible device exceptions, true group contradictions going to the owner, normal draft/Apply and selectable in-flight handling, clean automatic reconciliation and independent confirmed merges, whole-offering/cumulative all-action guards and lasting continuing-flow approval. Offline authorship, intended reach, record disclosure and actual per-device effects remain distinct. An API, ignore file or executor alone does not prove these behaviors or live native pre-content enforcement. No candidate, topology or merge engine is selected.
 
 | Proof | Common oracle |
 | --- | --- |
@@ -130,10 +130,11 @@ Every candidate is also subject to the canonical [local/shared policy distinctio
 | OpenCloud interoperability | Where claimed, verify actual supported API/protocol, Space/URL mapping, credentials, retained versions and failure handling. Never bypass the application by writing managed internal storage. |
 | Independent updates | Use actual admitted engine/UI versions and the intended update path; preserve pending decisions/rules and repeat the admission/device probes. Replacing a modified official UI binary cannot be assumed safe. |
 
-P18/P19/P38 remain authoritative: scope is not value, narrowing is not destruction, and any registered source retains its lifecycle. Operational observation-to-registration boundaries and candidate disclosure remain explicit open questions. The owner-approved Windows priority and integrated wizard are established; compatibility/topology, offline policy and required feature-chain decisions remain open before Design.
+P18/P19/P38 remain authoritative: scope is not value, narrowing is not destruction, and any registered source retains its lifecycle. Operational observation-to-registration boundaries and candidate disclosure remain explicit open questions. The owner-approved Windows priority, integrated wizard and subsequent policy choices are established. Compatibility/topology and required feature-chain choices remain open before Design, alongside only the applicable [remaining product-policy questions](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions). The measured [stock Windows CLI report](stock-windows-filter-probe.md) is a later narrow control, not a runtime comparison of these alternatives or proof of the integrated cases.
 
 ## Related Documents
 
+- [Current policy decisions and behavioral probe contract](<synchronization-policy-and-probe-contract.md>)
 - [Canonical issue-9 research](<research.md>)
 - [Native wizard and update assessment](<native-wizard-update-feasibility.md>)
 - [Earlier broad platform research, reviewed unchanged](<../issue6/open-source-platform-candidates.md>)
@@ -145,3 +146,4 @@ P18/P19/P38 remain authoritative: scope is not value, narrowing is not destructi
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-05 | Codex (@imp researcher) | Compare Windows-first native applications and externally controlled engines against the integrated issue-9 wizard and update requirements. |
 | 1.1 | 2026-11-05 | Codex (@imp researcher) | Apply the canonical offline/local/shared policy distinction and unexecuted reconciliation probes equally to the compared candidates. |
+| 1.2 | 2026-11-07 | Codex (@imp researcher) | Apply the current accepted policy/probe baseline to every candidate and separate residual questions from accepted behavior; retain historical source comparison and conditional rankings. |
