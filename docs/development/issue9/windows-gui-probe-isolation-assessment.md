@@ -3,7 +3,7 @@
 # Windows GUI probe setup, isolation and host prerequisite
 
 **Status:** HISTORICAL R1/R2 SETUP — later R3 components measured separately; R3 cleanup pending
-**Version:** 1.3
+**Version:** 1.4
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -106,7 +106,7 @@ A later content run must establish a positive **GUI** upload and independent ser
 
 After the application restart, supported native accessibility returned usable current state without screenshot capture. Accessibility set_value changed visible non-sensitive fields; mouse geometry was unavailable and keyboard advancement was not observed. The owner performed the native button/radio/security actions, and Browser Use completed the synthetic localhost login. Only one Personal CFAPI root inside the admitted disposable directory was connected, with the exact automatic startup-value effect restored immediately.
 
-The [separate GUI measurement report](stock-windows-gui-live-policy-probe.md) records positive small stock components: pre-established filtering held added/edited/nested unknown content while a permitted edit uploaded; external filter replacement then released held/new files without Apply or restart in the same GUI. Six initial content POSTs totaled 175 bytes with matching positive server readbacks. W01/W02 remain PARTIAL against the full oracles; the other twenty cases remain NOT RUN. A later token-refresh request returned 401.
+The [separate GUI measurement report](stock-windows-gui-live-policy-probe.md) records positive small stock components: pre-established filtering held added/edited/nested unknown content while a permitted edit uploaded; external filter replacement then released held/new files without Apply or restart in the same GUI. Six initial content POSTs totaled 175 bytes with matching positive server readbacks. W01/W02 remain PARTIAL against the full oracles; the other twenty cases remain NOT RUN. A later Graph GET returned 401, followed by a successful refresh POST and successful Graph retries. The raw sequence join does not establish the cause or long-term authentication stability.
 
 Physical Escape stopped the final accessibility read after the summary was written. **R3 restoration is PENDING.** A read-only host check at 16:37:36 UTC still found the same synthetic GUI, original two plus one synthetic registration, absent startup value, new normal profiles and active fixture helpers; the original client was stopped. None of the R1 completed-restoration statements below describes R3.
 
@@ -169,4 +169,5 @@ The guest shut down normally. A PowerShell stop-cmdlet error left the two owned 
 | 1.0 | 2026-11-08 | Codex (@imp researcher) | Initial untracked entry-only draft: record official binary/source isolation investigation without content execution. |
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Supersede the initial profile barrier with actual fresh unpackaged entry, real fixture preparation, locked-desktop finding and completed restoration; retain W01/W02 as NOT RUN. |
 | 1.2 | 2026-11-08 | Codex (@imp researcher) | Retain the first locked attempt and restoration; add actual unlocked readiness/capture failures with no second client interruption or content execution. |
-| 1.3 | 2026-11-08 | Codex (@imp researcher) | Preserve historical R1/R2 facts; link actual R3 accessibility/handoff and GUI components, late refresh failure and pending restoration; remove image-only prerequisite. |
+| 1.3 | 2026-11-08 | Codex (@imp researcher) | Preserve historical R1/R2 facts; link actual R3 accessibility/handoff and GUI components, initial HTTP attribution (corrected in 1.4) and pending restoration; remove image-only prerequisite. |
+| 1.4 | 2026-11-08 | Codex (@imp researcher) | Correct QA's HTTP attribution finding: Graph GET 401, refresh POST and subsequent Graph GETs 200; preserve R1/R2 history and R3 pending restoration. |

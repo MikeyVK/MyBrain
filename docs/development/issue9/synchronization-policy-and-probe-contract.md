@@ -3,7 +3,7 @@
 # Synchronization policy decisions and behavioral probe contract
 
 **Status:** RESEARCH CHECKPOINT — owner policy consolidated; W01/W02 components measured, full cases PARTIAL; technical strategy and cleanup open
-**Version:** 1.4
+**Version:** 1.5
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -43,7 +43,7 @@ The owner accepted these choices in the discussion culminating in this consolida
 | Owner decisions | The accepted behavior below constrains later probes and Design. |
 | Source/release research | Pinned evidence remains in the [native assessment](native-wizard-update-feasibility.md) and [candidate comparison](windows-sync-candidate-comparison.md). No new platform verification is claimed here. |
 | Executed component control | The [stock Windows CLI report](stock-windows-filter-probe.md) measured manually supplied filters and fresh batch starts only. |
-| Later GUI preparation and measurement | [R1/R2 isolation/readiness history](windows-gui-probe-isolation-assessment.md) remains unchanged in scope. [R3 actual GUI measurements](stock-windows-gui-live-policy-probe.md) then established finite stock hold and external-file activation components using supported accessibility and human handoffs. A late refresh returned 401; R3 cleanup is PENDING. |
+| Later GUI preparation and measurement | [R1/R2 isolation/readiness history](windows-gui-probe-isolation-assessment.md) remains unchanged in scope. [R3 actual GUI measurements](stock-windows-gui-live-policy-probe.md) then established finite stock hold and external-file activation components using supported accessibility and human handoffs. A later Graph GET returned 401, followed by successful refresh and Graph retries; R3 cleanup is PENDING. |
 | Integrated behavioral probes | W01/W02 are **PARTIAL** against their full oracles, with positive bounded stock components. The other twenty cases are **NOT RUN**. No full wizard, effective-revision/interruption/recovery or shared-device acceptance follows. |
 
 ### Accepted scope and integrated intention
@@ -139,7 +139,7 @@ W01/W02 have the bounded coverage below; the other twenty rows remain **NOT RUN*
 | Current coverage | Status | Measured and still missing |
 | --- | --- | --- |
 | W01 | **PARTIAL** | New/edited/nested held markers stayed local under a pre-established finite stock filter while a permitted GUI edit uploaded; complete bodies and independent readbacks were observed. Full integrated wizard/candidate sharing, service-outage and every claimed path remain unestablished. |
-| W02 | **PARTIAL** | External user-filter replacement took effect while the same GUI lived, without Apply/restart; held/new content uploaded with exact readbacks, first completed round about 18.17 seconds after the write. Explicit effective revision, interruption, uncertain-transition hold and recovery remain unestablished; later token refresh returned 401. |
+| W02 | **PARTIAL** | External user-filter replacement took effect while the same GUI lived, without Apply/restart; held/new content uploaded with exact readbacks, first completed round about 18.17 seconds after the write. Explicit effective revision, interruption, uncertain-transition hold and recovery remain unestablished; a later Graph GET returned 401, then refresh POST and Graph retries returned 200. This authentication recovery is distinct from policy-activation recovery. |
 | Other twenty cases | **NOT RUN** | No result is supplied by the bounded stock components. |
 | R3 restoration | **PENDING** | Physical Escape stopped the final UI read after measurement. At 16:37:36 UTC the synthetic GUI/root/helpers still existed, with the original client stopped. |
 
@@ -217,4 +217,5 @@ The maintenance/compatibility choice (supported extension/upstream contract, mai
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Resolve Q1–Q5 from owner replies, add shared admitted-location/rule/history defaults and takeover/recovery/consent behavior, and revise unexecuted probes without selecting implementation or numeric defaults. |
 | 1.2 | 2026-11-08 | Codex (@imp researcher) | Link actual isolated GUI preparation and locked-desktop prerequisite; add unlock-before-stop and bounded UI-execution safeguards without changing unexecuted behavioral expectations. |
 | 1.3 | 2026-11-08 | Codex (@imp researcher) | Record unlocked window discovery but failed supported capture/recovery; preserve all NOT RUN oracles and require operable capture before ordinary-client interruption. |
-| 1.4 | 2026-11-08 | Codex (@imp researcher) | Record bounded positive W01/W02 GUI components as PARTIAL full cases, remaining twenty NOT RUN, late refresh failure and pending cleanup; admit supported accessibility/handoffs without changing oracles. |
+| 1.4 | 2026-11-08 | Codex (@imp researcher) | Record bounded positive W01/W02 GUI components as PARTIAL full cases, remaining twenty NOT RUN, initial HTTP attribution (corrected in 1.5) and pending cleanup; admit supported accessibility/handoffs without changing oracles. |
+| 1.5 | 2026-11-08 | Codex (@imp researcher) | Correct HTTP sequence attribution to transient Graph 401 followed by successful refresh/retries; preserve full-case PARTIAL and cleanup PENDING without claiming policy-recovery proof. |

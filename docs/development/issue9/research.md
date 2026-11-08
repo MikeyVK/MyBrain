@@ -3,7 +3,7 @@
 # Integrated native wizard and local–cloud rule coordination
 
 **Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts, cleanup and strategy remain open
-**Version:** 1.9
+**Version:** 1.10
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -60,7 +60,7 @@ The owner requested actual W01/W02 GUI measurements on 2026-11-08. The [isolatio
 
 R3 used supported native accessibility observation and set_value, owner-operated native buttons/security handoffs and the ordinary synthetic browser-login flow. It connected only one Personal CFAPI root inside the disposable directory using the unchanged Windows GUI. The [graphical measurement report](stock-windows-gui-live-policy-probe.md) records the actual protocol, bodies, independent readbacks and limits. A pre-established finite a.txt filter held new/edited/nested unknown content while a permitted edit uploaded. Externally emptying that filter while the same GUI remained alive then released held and new files without Apply or restart; the first completed sync followed about 18.17 seconds later.
 
-Six complete initial file-content POSTs totaled 175 bytes and six positive server readbacks matched. The two held-path readbacks during W01 returned 404. A later token-refresh POST returned 401; sustained authentication and later round success are not claimed. These are positive bounded stock components, with **W01 and W02 PARTIAL against their full contracts** and the other twenty cases NOT RUN. No integrated candidate wizard/MyBrain flow, shared policy/revision acknowledgement, interrupted activation or recovery was established.
+Six complete initial file-content POSTs totaled 175 bytes and six positive server readbacks matched. The two held-path readbacks during W01 returned 404. A later Graph GET returned 401; the sequence-joined capture then shows a successful refresh POST and successful Graph retries without agent repair. The initial 401 cause and long-term authentication stability are not established. These are positive bounded stock components, with **W01 and W02 PARTIAL against their full contracts** and the other twenty cases NOT RUN. No integrated candidate wizard/MyBrain flow, shared policy/revision acknowledgement, interrupted activation or recovery was established.
 
 The final accessibility read was stopped by physical Escape after the measurement summary was written. **R3 cleanup/restoration remains PENDING**; its synthetic GUI/root and fixture helpers were still active in a read-only host check at 16:37:36 UTC, with the original client stopped. The startup value was absent and the original two registrations plus one synthetic registration remained. R1 restoration must not be confused with R3 completion. Raw credentials, host paths, identities and captures remain local-only. Supported observable accessibility with explicit handoffs is a valid GUI-control route; screenshots are not the sole prerequisite.
 
@@ -214,7 +214,7 @@ This document combines source evidence, the Windows-first comparison, behavioral
 
 ### Proposed decisive experiment
 
-The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) preserves this anchor. W01/W02 now have positive bounded GUI components and remain PARTIAL against their full oracles; the other twenty cases remain NOT RUN. The report separates complete initial bodies/readbacks, finite filter limits, the late refresh failure and pending cleanup from full native/shared-policy acceptance.
+The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) preserves this anchor. W01/W02 now have positive bounded GUI components and remain PARTIAL against their full oracles; the other twenty cases remain NOT RUN. The report separates complete initial bodies/readbacks, finite filter limits, the transient Graph 401, successful refresh/retries and pending cleanup from full native/shared-policy acceptance.
 
 The contract also covers the accepted normal draft/Apply workflow and alternatives, real running work under all three finalization choices, group inheritance/device exceptions/group contradictions, whole-offering and cumulative guards across actions, once-approved continuing flow versus new scope, beginner comprehension, retention, interrupted/retried/versioned work and platform/update boundaries. The revised cases now test the accepted resolutions, including bounded job consent, independent continuation, recovery/takeover, and shared rule/location/history records. A single focused I01 case covers new inventory/history/cleanup obligations; explicit test parameters do not become product defaults.
 
@@ -260,4 +260,5 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.6 | 2026-11-08 | Codex (@imp researcher) | Record resolved Q1–Q5, shared scoped location/rule/history behavior and recovery/consent choices; align the 22 unexecuted probe cases and separate deferred parameters from technical strategy. |
 | 1.7 | 2026-11-08 | Codex (@imp researcher) | Record actual isolated GUI/backend preparation, locked-desktop prerequisite and restored host state; retain W01/W02 and content controls as NOT RUN. |
 | 1.8 | 2026-11-08 | Codex (@imp researcher) | Record the later UNLOCKED readiness attempt and concrete capture failures before any new fixture/client interruption; GUI content probes remain NOT RUN. |
-| 1.9 | 2026-11-08 | Codex (@imp researcher) | Record actual bounded GUI hold/external activation, late refresh failure and pending restoration; preserve historical attempts and full-contract limits. |
+| 1.9 | 2026-11-08 | Codex (@imp researcher) | Record actual bounded GUI hold/external activation, initial HTTP attribution (corrected in 1.10) and pending restoration; preserve historical attempts and full-contract limits. |
+| 1.10 | 2026-11-08 | Codex (@imp researcher) | Correct the QA-identified HTTP attribution using unique sequences: Graph GET 401 followed by refresh/retry 200; retain measured scope and pending restoration. |

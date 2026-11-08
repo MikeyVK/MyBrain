@@ -3,7 +3,7 @@
 # Stock Windows GUI hold and live external filter measurement
 
 **Status:** RESEARCH MEASUREMENT — bounded GUI components observed; cleanup and independent review pending
-**Version:** 1.0
+**Version:** 1.1
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -26,7 +26,7 @@ Earlier CLI batches and GUI preparation did not prove a persistent graphical cli
 
 - Distinguish measured stock GUI components from the full W01/W02 behavioral contracts.
 - Retain exact request-body and independent server-readback evidence without publishing private runtime material.
-- Keep incomplete cleanup, authentication failure and remaining coverage visible.
+- Keep incomplete cleanup, transient authentication response/recovery and remaining coverage visible.
 
 ## Background
 
@@ -89,11 +89,22 @@ During W01 the live watcher logged ignored flat/nested paths; discovery/propagat
 
 W02 changed only the synthetic user filter from the complement to an empty file through an external guarded filesystem write. Ordinary local file changes stimulated discovery. The first resulting sync completed at **16:28:09.144 UTC**, about **18.17 seconds** after the external write. No GUI Apply or restart occurred. This establishes observed effective behavior for that local-file seam; it does not establish an explicit policy revision protocol, a stable external control API or instantaneous/race-safe activation.
 
-At **16:29:34.779 UTC**, later in the W02 capture, a **POST /konnect/v1/token** with refresh_token grant returned **401**. Its 1472-byte body was authentication data, not file content; raw values remain private scratch. This later failure does not undo earlier exact upload/readback observations, but sustained authentication and any later round success are not claimed. Its cause was not investigated or repaired in this bounded measurement.
+Joining requests and responses by their unique sequence keys gives the following later authentication sequence:
+
+| Sequence | UTC | Request | Body | Response |
+| --- | --- | --- | --- | --- |
+| S117 | 16:29:32.482 | GET /graph/v1.0/me/drives | 0 bytes | **401** |
+| S121 | 16:29:34.779 | POST /konnect/v1/token, refresh_token grant | 1472-byte authentication form | **200** |
+| S122 | 16:29:35.730 | GET /graph/v1.0/me/drives | 0 bytes | **200** |
+| S123 | 16:29:35.734 | GET /graph/v1.0/me/drives | 0 bytes | **200** |
+
+The capture shows a transient Graph 401 followed by successful client refresh and Graph retries, without an agent repair. The refresh request did not fail. Its form is authentication data, not file content; raw values remain private scratch. The cause of the initial 401 was not established. This bounded recovery observation does not prove long-term authentication stability or the separate W02 interrupted-policy/uncertain-activation recovery contract.
+
+Revision 1.0 incorrectly attributed the 401 to S121. Independent QA identified the error; this revision corrects it using the sequence join. Raw captures and aggregate counts are unchanged.
 
 ### Complete-body coverage and limits
 
-Across S77–127 there were **51 requests**: 35 GET, 8 PROPFIND, 1 MKCOL and 7 POST. Six POSTs contained file content, totaling **175 bytes**. The remaining POST was the 1472-byte token-refresh form. Eight PROPFIND XML bodies totaled **2211 bytes**; metadata bodies are not file content. No PATCH, PUT or DELETE occurred in this interval. Status totals were 33 HTTP 200, 7 HTTP 201, 8 HTTP 207, 2 intentional readback 404 and 1 token-refresh 401.
+Across S77–127 there were **51 requests**: 35 GET, 8 PROPFIND, 1 MKCOL and 7 POST. Six POSTs contained file content, totaling **175 bytes**. The remaining POST was the 1472-byte token-refresh form. Eight PROPFIND XML bodies totaled **2211 bytes**; metadata bodies are not file content. No PATCH, PUT or DELETE occurred in this interval. Status totals were 33 HTTP 200, 7 HTTP 201, 8 HTTP 207, 2 intentional readback 404 and 1 Graph GET 401.
 
 The observer captured each Content-Length body before forwarding. Declared/observed lengths matched, and every measured request had a response record; there were zero recorded framing, incomplete-body or transport errors. The unchanged observer source SHA256 was **A0F9E6B755CF9AB05345617399FDE235A3637743A9C939E5B757D26C5A00E118**. Its [documented limit](stock-windows-filter-probe.md#observation-and-quality-limits) rejects Transfer-Encoding and bodies above 16 MiB; unobserved/unsupported routes would invalidate a zero-content claim. No general chunked/TUS-mode or large-file coverage follows from these six small initial POSTs.
 
@@ -132,4 +143,5 @@ W01 and W02 remain PARTIAL against the full current behavioral contract. Their r
 
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
-| 1.0 | 2026-11-08 | Codex (@imp researcher) | Record actual stock GUI hold/external activation, complete body/readback counts, late authentication failure and pending restoration without claiming full W01/W02. |
+| 1.0 | 2026-11-08 | Codex (@imp researcher) | Record actual stock GUI hold/external activation, complete body/readback counts, initial authentication-response attribution (corrected in 1.1) and pending restoration without claiming full W01/W02. |
+| 1.1 | 2026-11-08 | Codex (@imp researcher) | Correct the independent-QA HTTP attribution finding: S117 Graph GET 401, S121 refresh POST 200 and S122/S123 Graph retries 200; preserve raw/aggregate evidence and bounded PARTIAL/PENDING status. |
