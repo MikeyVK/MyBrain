@@ -127,7 +127,7 @@ No native integration, replacement workflow, topology or maintenance strategy is
 
 ### Completed restoration
 
-No synthetic account, credential or sync-root registration was created. The exact startup value and existing root set remained unchanged. Before resuming the original client, the protected Store file sets/digests matched the post-quit baseline. Only the two newly created ordinary synthetic profile directories were moved to their prechecked, absent host sibling quarantines; no protected Store profile was copied, moved or edited.
+No synthetic **GUI** account, GUI credential/Windows-keychain entry or Windows sync-root registration was created. The disposable server's separate synthetic administrator and app-token preparation remains local-only. The exact startup value and existing root set remained unchanged. Before resuming the original client, the protected Store file sets/digests matched the post-quit baseline. Only the two newly created ordinary synthetic profile directories were moved to their prechecked, absent host sibling quarantines; no protected Store profile was copied, moved or edited.
 
 Normal original-package activation succeeded. Follow-up metadata confirmed the original packaged executable, expected existing account/root status and absence of a normal synthetic profile that could shadow it. Normal post-resume application writes are not claimed identical to the frozen pre-resume baseline.
 
