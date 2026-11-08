@@ -3,8 +3,8 @@
 # Integrated native wizard and update feasibility
 
 **Status:** RESEARCH CHECKPOINT — source evidence; native integration and update proofs pending  
-**Version:** 1.2  
-**Last Updated:** 2026-11-07
+**Version:** 1.3  
+**Last Updated:** 2026-11-08
 
 ## Purpose
 
@@ -36,7 +36,7 @@ On 2026-11-05 the owner accepted a wizard offered by the desktop or mobile app b
 
 The app must show all devices registered for the owner's configuration, rather than only devices currently online. Deliberately adding a device to a group inherits its policy; unknown/new devices are not silently selected or enrolled. Saved intent, receipt on each device, effective rule application, transfer completion and MyBrain registration/processing need distinct truthful feedback. One user confirmation does not imply an instantaneous distributed transaction or simultaneous success.
 
-The current [policy decisions and behavioral probe contract](synchronization-policy-and-probe-contract.md) governs all native candidates: one active personal administration endpoint, normal draft/Apply with explicit alternatives, selectable running-work handling, offline plans and clean automatic reconciliation, independent confirmed merges, deliberate group inheritance/visible device exceptions, all-action bulk safeguards and lasting continuing approvals. It preserves offline rule creation, intended reach versus record disclosure/application, and the same MyBrain confirmation. True group contradictions and ambiguous changes go to the owner. No central master, merge algorithm, native seam or update route is selected.
+The current [policy decisions and behavioral probe contract](synchronization-policy-and-probe-contract.md) governs all native candidates: one active personal administration endpoint, normal draft/Apply with explicit alternatives, selectable running-work handling, offline plans and clean automatic reconciliation, independent confirmed merges, deliberate group inheritance/visible device exceptions, all-action bulk safeguards and lasting continuing approvals. It preserves offline rule creation, intended reach versus record disclosure/application, and the same MyBrain confirmation. True group contradictions and ambiguous changes go to the owner. Q1–Q5 are now behaviorally resolved: bounded normal versus advanced broad future rules, count/size limits, independent continuation and job-bound consent, uncertain-transition recovery/explicit takeover, and shared admitted-location/rule/history defaults. Concrete settings and technical seams remain unselected. No central master, merge algorithm, native seam or update route is selected.
 
 The native app is the required presentation host. Reusing shared wizard content or an embedded Web view is an option to investigate, but opening a separate dashboard alone does not satisfy the native-flow requirement or stop native uploads.
 
@@ -90,7 +90,7 @@ The required device list must represent named owner-registered devices, includin
 
 The inspected [auth-app API](<https://github.com/opencloud-eu/opencloud/blob/v7.2.4/services/auth-app/README.md>) lists token records with identifiers, creation/expiry and labels. The [Graph service overview](<https://github.com/opencloud-eu/opencloud/blob/v7.2.4/services/graph/README.md>) documents user/group/role/Space surfaces; the [clientlog service](<https://github.com/opencloud-eu/opencloud/blob/v7.2.4/services/clientlog/README.md>) describes notifications delivered through SSE. The [Web options](<https://github.com/opencloud-eu/opencloud/blob/v7.2.4/services/web/pkg/config/options.go>) can link logout to an external identity provider's sessions/devices view. None of these inspected surfaces established the complete device-catalogue/capability/effective-policy contract required by the wizard. This is a bounded gap finding, not a universal claim of absence.
 
-Reusing an existing device-enrollment source or providing a small owner-controlled catalogue are research options. The exact authority, device lifecycle, capability freshness and acknowledgement contracts remain open. This does not introduce multi-party or per-source access rights. The Uppy Companion setting in Web configuration is an external-cloud import helper; its name is not evidence of this MyBrain client companion.
+Reusing an existing device-enrollment source or providing a small owner-controlled catalogue are research options. The technical catalogue identity, lifecycle/freshness and acknowledgement mechanism remain unselected. The owner's shared scoped overview and explicit management-takeover behavior are now recorded in the companion; source inspection alone does not prove them. This does not introduce multi-party or per-source access rights. The Uppy Companion setting in Web configuration is an external-cloud import helper; its name is not evidence of this MyBrain client companion.
 
 ## Ways to preserve updates
 
@@ -118,13 +118,13 @@ These are proposed tests, not executed results. Use synthetic data and isolated 
 | Snapshot and rule changes | Edit/replace between individual approval and send, deliver older rule revisions and reconnect stale devices; no stale permission silently authorizes changed content. Rule narrowing does not delete retained copies. |
 | Actual version upgrade | Use two explicitly selected real client/host versions and the intended signed update path. Preserve decisions/pending work, re-run native entry routes and verify the wizard and hold survive. Source compilation or a same-version restart alone is insufficient. A stock update that cannot load the custom integration must leave undecided content held rather than silently resume uncontrolled synchronization. |
 
-The pending observation-to-source-registration boundary still follows P18/P19/P38 in the [foundational principles](../../architecture/decisions/0001-digital-brain-foundational-principles.md). A worklist must not silently become a second authoritative source registry or permanently register every excluded cache. The [remaining product-policy inventory](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions) separates disclosure, bulk/consent boundaries and uncertain activation/handover recovery from already accepted group and clean-reconnect behavior.
+The pending observation-to-source-registration boundary still follows P18/P19/P38 in the [foundational principles](../../architecture/decisions/0001-digital-brain-foundational-principles.md). Operational inventory/history may be durable within consciously connected scope, including observed per-file location changes outside wizard jobs, without becoming MyBrain staging/admission or a second source authority. Default shared visibility/rule management and history preservation are settled in the [Q1–Q5 resolution ledger](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions). Current/last-known information is foregrounded, history is behind details, and cleanup does not itself delete files or registrations.
 
 ## Research conclusion and decision boundary
 
 The accepted user experience can be described clearly and there are concrete owned-code integration points to test. The evidence does not establish an update-independent addon that delivers the entire requirement inside unchanged official apps. The strongest long-term route to investigate is a maintainer-supported native UI/admission contract; a small maintained native change set is a plausible fallback with its own release obligations. These are recommendations for investigation, not adopted implementation strategy.
 
-Before Design, the owner must choose the acceptable maintenance/compatibility route based on proof and resolve the applicable remaining policy questions identified in the companion. This checkpoint stays in Research. No prototype, upstream acceptance, binary upgrade or compatibility matrix has been demonstrated.
+Before Design, evidence must support the acceptable maintenance/compatibility choice. The companion's former Q1–Q5 votes are resolved; actual limits/windows/scope values, technical detection and enforcement remain separate. This checkpoint stays in Research. No prototype, upstream acceptance, binary upgrade or compatibility matrix has been demonstrated.
 
 ## Related Documents
 
@@ -140,3 +140,4 @@ Before Design, the owner must choose the acceptable maintenance/compatibility ro
 | 1.0 | 2026-11-05 | Codex (@imp researcher) | Record the accepted integrated native wizard and assess desktop/mobile seams, device inventory and update-maintenance alternatives. |
 | 1.1 | 2026-11-05 | Codex (@imp researcher) | Link accepted offline/local/shared policy distinctions and the canonical unexecuted reconciliation probe contract. |
 | 1.2 | 2026-11-07 | Codex (@imp researcher) | Link the current accepted personal/group/activation/bulk/presentation policy and remaining questions; retain pinned integration/update findings unchanged. |
+| 1.3 | 2026-11-08 | Codex (@imp researcher) | Align current interpretation with resolved Q1–Q5 and durable shared admitted-location/rule/history behavior; retain pinned source findings and pending technical strategy. |

@@ -3,8 +3,8 @@
 # Windows synchronization candidates for the integrated wizard
 
 **Status:** RESEARCH CHECKPOINT — Windows-first comparison; no candidate selected or runtime proof  
-**Version:** 1.2  
-**Last Updated:** 2026-11-07
+**Version:** 1.3  
+**Last Updated:** 2026-11-08
 
 ## Purpose
 
@@ -118,7 +118,7 @@ Seafile is a secondary engine/UI comparison if library-based workflow and server
 
 All proposed runs use synthetic directories and isolated processes/accounts. No experiment has run in this checkpoint.
 
-Every candidate is subject to the [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract), including group-base/visible device exceptions, true group contradictions going to the owner, normal draft/Apply and selectable in-flight handling, clean automatic reconciliation and independent confirmed merges, whole-offering/cumulative all-action guards and lasting continuing-flow approval. Offline authorship, intended reach, record disclosure and actual per-device effects remain distinct. An API, ignore file or executor alone does not prove these behaviors or live native pre-content enforcement. No candidate, topology or merge engine is selected.
+Every candidate is subject to the [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract), including group-base/visible device exceptions, true group contradictions going to the owner, normal draft/Apply and selectable in-flight handling, clean automatic reconciliation and independent confirmed merges, whole-offering/cumulative all-action guards and lasting continuing-flow approval. The resolved Q1–Q5 baseline adds bounded normal/advanced future rules, per-action count/size guards, independent continuation/job-bound consent, uncertain-transition recovery/takeover, and default shared admitted-location/rule/history records. These apply equally to every candidate. Offline authorship, intended reach, shared records and actual per-device effects remain distinct. An API, ignore file or executor alone does not prove these behaviors or live native pre-content enforcement. No candidate, topology or merge engine is selected.
 
 | Proof | Common oracle |
 | --- | --- |
@@ -130,7 +130,7 @@ Every candidate is subject to the [current behavioral probe contract](synchroniz
 | OpenCloud interoperability | Where claimed, verify actual supported API/protocol, Space/URL mapping, credentials, retained versions and failure handling. Never bypass the application by writing managed internal storage. |
 | Independent updates | Use actual admitted engine/UI versions and the intended update path; preserve pending decisions/rules and repeat the admission/device probes. Replacing a modified official UI binary cannot be assumed safe. |
 
-P18/P19/P38 remain authoritative: scope is not value, narrowing is not destruction, and any registered source retains its lifecycle. Operational observation-to-registration boundaries and candidate disclosure remain explicit open questions. The owner-approved Windows priority, integrated wizard and subsequent policy choices are established. Compatibility/topology and required feature-chain choices remain open before Design, alongside only the applicable [remaining product-policy questions](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions). The measured [stock Windows CLI report](stock-windows-filter-probe.md) is a later narrow control, not a runtime comparison of these alternatives or proof of the integrated cases.
+P18/P19/P38 remain authoritative: scope is not value, narrowing is not destruction, and any registered source retains its lifecycle. The technical observation-to-registration transition remains separate from the accepted durable operational inventory/history, which does not create MyBrain admission or a second source authority. The [Q1–Q5 ledger](synchronization-policy-and-probe-contract.md#remaining-product-policy-questions) now records settled behavior, with actual limits/windows/scope and cleanup settings deferred. Compatibility/topology, required feature-chain and technical enforcement/detection evidence remain open before Design. The measured [stock Windows CLI report](stock-windows-filter-probe.md) is a later narrow control, not a runtime comparison of these alternatives or proof of the integrated cases.
 
 ## Related Documents
 
@@ -147,3 +147,4 @@ P18/P19/P38 remain authoritative: scope is not value, narrowing is not destructi
 | 1.0 | 2026-11-05 | Codex (@imp researcher) | Compare Windows-first native applications and externally controlled engines against the integrated issue-9 wizard and update requirements. |
 | 1.1 | 2026-11-05 | Codex (@imp researcher) | Apply the canonical offline/local/shared policy distinction and unexecuted reconciliation probes equally to the compared candidates. |
 | 1.2 | 2026-11-07 | Codex (@imp researcher) | Apply the current accepted policy/probe baseline to every candidate and separate residual questions from accepted behavior; retain historical source comparison and conditional rankings. |
+| 1.3 | 2026-11-08 | Codex (@imp researcher) | Apply resolved Q1–Q5 and shared scoped inventory/history/rule requirements to every candidate, retaining conditional rankings and historical source evidence. |
