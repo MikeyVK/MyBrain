@@ -78,7 +78,7 @@ The probe created only previously absent ordinary application-data directories, 
 
 ### Decisive desktop prerequisite
 
-The final Computer Use launch request used the exact copied executable path. It produced no completed launch response before the coordinated interruption after approximately **925 seconds**. This was an overlong setup call, not an acceptable bounded content wait; subsequent calls must use supported timeouts/cancellation. Subsequent process inspection found no remaining OpenCloud test GUI. The Computer Use JavaScript kernel was reset to terminate stale execution; no further app input or unlock attempt followed.
+The final Computer Use launch request used the exact copied executable path. No usable launch outcome was obtained before the coordinated interruption. Subsequent calls must use supported timeouts/cancellation. Subsequent process inspection found no remaining OpenCloud test GUI. The Computer Use JavaScript kernel was reset to terminate stale execution; no further app input or unlock attempt followed.
 
 A read-only WTSQuerySessionInformationW query for WTSInfoEx checked the returned level and session before interpreting SessionFlags. It returned **WTS_SESSIONSTATE_LOCK (0)**. [Microsoft documents this as locked](https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/ns-wtsapi32-wtsinfoex_level1_w) on the observed Windows version. Process/window inventory alone had been insufficient; MainWindowHandle 0 and a wizard log are not proof that no modal exists or that the desktop is usable.
 
