@@ -3,7 +3,7 @@
 # Windows GUI probe setup, isolation and host prerequisite
 
 **Status:** HISTORICAL R1/R2 SETUP — later R3 components measured separately; R3 kept active by owner
-**Version:** 1.5
+**Version:** 1.6
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -106,9 +106,13 @@ A later content run must establish a positive **GUI** upload and independent ser
 
 After the application restart, supported native accessibility returned usable current state without screenshot capture. Accessibility set_value changed visible non-sensitive fields; mouse geometry was unavailable and keyboard advancement was not observed. The owner performed the native button/radio/security actions, and Browser Use completed the synthetic localhost login. Only one Personal CFAPI root inside the admitted disposable directory was connected, with the exact automatic startup-value effect restored immediately.
 
-The [separate GUI measurement report](stock-windows-gui-live-policy-probe.md) records positive small stock components: pre-established filtering held added/edited/nested unknown content while a permitted edit uploaded; external filter replacement then released held/new files without Apply or restart in the same GUI. Six initial content POSTs totaled 175 bytes with matching positive server readbacks. W01/W02 remain PARTIAL against the full oracles; the other twenty cases remain NOT RUN. A later Graph GET returned 401, followed by a successful refresh POST and successful Graph retries. The raw sequence join does not establish the cause or long-term authentication stability.
+The [separate GUI measurement report](stock-windows-gui-live-policy-probe.md) records positive small stock components: pre-established filtering held added/edited/nested unknown content while a permitted edit uploaded; external filter replacement then released held/new files without Apply or restart in the same GUI. Six initial content POSTs totaled 175 bytes with matching positive server readbacks. At the end of R3, W01/W02 remained PARTIAL against the full oracles and the other twenty cases were NOT RUN. A later Graph GET returned 401, followed by a successful refresh POST and successful Graph retries. The raw sequence join does not establish the cause or long-term authentication stability.
 
 Physical Escape stopped the final accessibility read after the summary was written. At the historical 16:37:36 UTC checkpoint, R3 restoration remained pending. The owner subsequently explicitly chose **ACTIVE RETENTION for future tests**: keep the test GUI/account/root, credentials, files/journal, profiles and backend helpers active; leave the ordinary Store client stopped. Read-only host/listener/status checks at 18:37:28 UTC confirmed the retained services and local HTTP 200. No shutdown, move, removal, unregister or original-client resume was performed. The guest /root/.opencloud is on tmpfs and QEMU has no writable disk, so host restart or QEMU shutdown would lose backend state; durable preservation is separate future work. R1 completed restoration below remains historical and does not describe this retained R3 disposition.
+
+### Later R4 background continuation
+
+The [R4 report](stock-windows-gui-background-probes.md) records separately authorized synthetic background file/filter tests without GUI input, activation, browser/auth interaction or process changes while the owner used the PC. The same retained GUI/account/root/journal and helpers continued. Finite filtering, running admitted propagation, later hold, sampled copy retention and a fixed 120-second policy-only observation are measured with explicit instrumentation/coverage limits. Current W01/W02/P01 are PARTIAL; the other nineteen cases remain NOT RUN. The final empty test filter and positive readbacks were retained, with the same known processes/listeners at 19:40:14 UTC. R1/R2 restoration and readiness history above is unchanged; RAM-only active retention continues.
 
 ## Questions
 
@@ -172,3 +176,4 @@ The guest shut down normally. A PowerShell stop-cmdlet error left the two owned 
 | 1.3 | 2026-11-08 | Codex (@imp researcher) | Preserve historical R1/R2 facts; link actual R3 accessibility/handoff and GUI components, initial HTTP attribution (corrected in 1.4) and pending restoration; remove image-only prerequisite. |
 | 1.4 | 2026-11-08 | Codex (@imp researcher) | Correct QA's HTTP attribution finding: Graph GET 401, refresh POST and subsequent Graph GETs 200; preserve R1/R2 history and R3 pending restoration. |
 | 1.5 | 2026-11-08 | Codex (@imp researcher) | Preserve historical restoration checkpoints and record the owner's later active-retention decision, read-only readiness and RAM-only backend limitation. |
+| 1.6 | 2026-11-08 | Codex (@imp researcher) | Link separately authorized background-only R4 evidence and current partial retention coverage; preserve R1/R2/R3 historical facts and active volatile fixture disposition. |

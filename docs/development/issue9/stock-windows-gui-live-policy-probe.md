@@ -3,7 +3,7 @@
 # Stock Windows GUI hold and live external filter measurement
 
 **Status:** RESEARCH MEASUREMENT — bounded GUI components observed; owner-directed active retention
-**Version:** 1.2
+**Version:** 1.3
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -41,7 +41,7 @@ The owner requested the first two graphical Windows probes on 2026-11-08. R1/R2 
 | W01 | A pre-established stock filter held newly added flat/nested files and an edit to the held flat file inside an already-connected ordinary root. A permitted edit uploaded in the same interval. | **PARTIAL** for the full case; positive evidence for this finite stock-filter component. |
 | W02 | Replacing the user filter externally while the same graphical client stayed alive released held and newly added files, with complete initial upload bodies and matching server readbacks. | **PARTIAL** for the full case; positive evidence for this local external-file activation component. |
 
-No native MyBrain decision wizard, shared candidate/location index, central device policy, effective-revision acknowledgement, interrupted activation, uncertain-transition hold, recovery, arbitrary rule compiler or upgrade contract was established. The other twenty behavioral cases remain NOT RUN.
+No native MyBrain decision wizard, shared candidate/location index, central device policy, effective-revision acknowledgement, interrupted activation, uncertain-transition hold, recovery, arbitrary rule compiler or upgrade contract was established. At the end of R3, the other twenty behavioral cases remained NOT RUN. The separately authorized [R4 background continuation](stock-windows-gui-background-probes.md) later added a bounded P01 retention component; current W01/W02/P01 are PARTIAL and the other nineteen cases are NOT RUN.
 
 ### Runtime and isolation
 
@@ -136,7 +136,7 @@ No native integration, fork, replacement workflow or maintenance strategy is sel
 
 ## Expected Results
 
-W01 and W02 remain PARTIAL against the full current behavioral contract. Their recorded small stock components have positive runtime evidence. The other twenty cases remain NOT RUN. The owner-directed runtime disposition is active retention; no full-contract completion or phase acceptance follows.
+W01 and W02 remain PARTIAL against the full current behavioral contract. Their recorded small stock components have positive runtime evidence. For this R3 interval the other twenty cases were NOT RUN; the later R4 report records the current additional partial P01 component. The owner-directed runtime disposition is active retention; no full-contract completion or phase acceptance follows.
 
 ## Related Documents
 
@@ -152,3 +152,4 @@ W01 and W02 remain PARTIAL against the full current behavioral contract. Their r
 | 1.0 | 2026-11-08 | Codex (@imp researcher) | Record actual stock GUI hold/external activation, complete body/readback counts, initial authentication-response attribution (corrected in 1.1) and pending restoration without claiming full W01/W02. |
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Correct the independent-QA HTTP attribution finding: S117 Graph GET 401, S121 refresh POST 200 and S122/S123 Graph retries 200; preserve raw/aggregate evidence and bounded PARTIAL/PENDING status. |
 | 1.2 | 2026-11-08 | Codex (@imp researcher) | Record the owner's keep-active decision, superseding pending restoration while preserving its history; disclose RAM-only backend and unchanged bounded measurements. |
+| 1.3 | 2026-11-08 | Codex (@imp researcher) | Scope R3 coverage counts historically and link the separately authorized R4 background continuation, preserving original measurements and retention history. |

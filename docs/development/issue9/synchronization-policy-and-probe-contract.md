@@ -2,8 +2,8 @@
 
 # Synchronization policy decisions and behavioral probe contract
 
-**Status:** RESEARCH CHECKPOINT — owner policy consolidated; W01/W02 full cases PARTIAL, technical strategy open; owner-directed active fixture retention
-**Version:** 1.6
+**Status:** RESEARCH CHECKPOINT — owner policy consolidated; W01/W02/P01 full cases PARTIAL, technical strategy open; owner-directed active fixture retention
+**Version:** 1.7
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -44,7 +44,7 @@ The owner accepted these choices in the discussion culminating in this consolida
 | Source/release research | Pinned evidence remains in the [native assessment](native-wizard-update-feasibility.md) and [candidate comparison](windows-sync-candidate-comparison.md). No new platform verification is claimed here. |
 | Executed component control | The [stock Windows CLI report](stock-windows-filter-probe.md) measured manually supplied filters and fresh batch starts only. |
 | Later GUI preparation and measurement | [R1/R2 isolation/readiness history](windows-gui-probe-isolation-assessment.md) remains unchanged in scope. [R3 actual GUI measurements](stock-windows-gui-live-policy-probe.md) then established finite stock hold and external-file activation components using supported accessibility and human handoffs. A later Graph GET returned 401, followed by successful refresh and Graph retries; the owner now directs active retention of R3 rather than immediate restoration. |
-| Integrated behavioral probes | W01/W02 are **PARTIAL** against their full oracles, with positive bounded stock components. The other twenty cases are **NOT RUN**. No full wizard, effective-revision/interruption/recovery or shared-device acceptance follows. |
+| Integrated behavioral probes | W01/W02/P01 are **PARTIAL** against their full oracles, with positive bounded stock components. The other nineteen cases are **NOT RUN**. No full wizard, effective-revision/interruption/recovery or shared-device acceptance follows. |
 
 ### Accepted scope and integrated intention
 
@@ -134,16 +134,17 @@ The owner has approved D01–D36 as behavioral direction, including the Q1–Q5 
 
 ### Current behavioral probe contract
 
-W01/W02 have the bounded coverage below; the other twenty rows remain **NOT RUN**. These are Research oracles, not formal interfaces or an implementation plan. Q1–Q5 now supply accepted behavioral expectations rather than unanswered votes. A bounded synthetic probe must declare its selected scope, settings and limits/windows where relevant as fixture parameters, never as silent product defaults. A genuinely new policy question blocks only the case that needs it and must be identified explicitly. Before a bounded run, record the actual OS/client/server/Web/SDK/executor versions, the claimed seam, supported paths/actions, synthetic fixtures, request/body observation points, unmodified control and retention-safe cleanup. Observe the initial TUS POST as well as later requests. Missing coverage is insufficient evidence, not a zero-byte result. A mock or policy-only roundtrip must be labelled partial.
+W01/W02/P01 have the bounded coverage below; the other nineteen rows remain **NOT RUN**. These are Research oracles, not formal interfaces or an implementation plan. Q1–Q5 now supply accepted behavioral expectations rather than unanswered votes. A bounded synthetic probe must declare its selected scope, settings and limits/windows where relevant as fixture parameters, never as silent product defaults. A genuinely new policy question blocks only the case that needs it and must be identified explicitly. Before a bounded run, record the actual OS/client/server/Web/SDK/executor versions, the claimed seam, supported paths/actions, synthetic fixtures, request/body observation points, unmodified control and retention-safe cleanup. Observe the initial TUS POST as well as later requests. Missing coverage is insufficient evidence, not a zero-byte result. A mock or policy-only roundtrip must be labelled partial.
 
 | Current coverage | Status | Measured and still missing |
 | --- | --- | --- |
-| W01 | **PARTIAL** | New/edited/nested held markers stayed local under a pre-established finite stock filter while a permitted GUI edit uploaded; complete bodies and independent readbacks were observed. Full integrated wizard/candidate sharing, service-outage and every claimed path remain unestablished. |
-| W02 | **PARTIAL** | External user-filter replacement took effect while the same GUI lived, without Apply/restart; held/new content uploaded with exact readbacks, first completed round about 18.17 seconds after the write. Explicit effective revision, interruption, uncertain-transition hold and recovery remain unestablished; a later Graph GET returned 401, then refresh POST and Graph retries returned 200. This authentication recovery is distinct from policy-activation recovery. |
-| Other twenty cases | **NOT RUN** | No result is supplied by the bounded stock components. |
-| R3 runtime disposition | **OWNER-DIRECTED ACTIVE RETENTION** | The earlier Escape/pending-restoration checkpoint is historical. The owner chose to keep the probe account/root/GUI and backend helpers active and leave the ordinary Store client stopped. A read-only 18:37:28 UTC check found the known processes/listeners and local status 200. Backend state is RAM-only; host restart or QEMU shutdown would lose it. Durable preservation is separate future work; no restoration or new test is claimed. |
+| W01 | **PARTIAL** | New/edited/nested held markers stayed local under a pre-established finite stock filter while a permitted GUI edit uploaded; complete bodies and independent readbacks were observed. R4 additionally measured finite extension/folder/nested/excluded-source rename/move behavior. Full integrated wizard/candidate sharing, service-outage and every claimed path remain unestablished. |
+| W02 | **PARTIAL** | External user-filter replacement took effect while the same GUI lived, without Apply/restart; held/new content uploaded with exact readbacks, first completed round about 18.17 seconds after the write. Explicit effective revision, interruption, uncertain-transition hold and recovery remain unestablished; a later Graph GET returned 401, then refresh POST and Graph retries returned 200. This authentication recovery is distinct from policy-activation recovery. R4 observed admitted running propagation continue after a stricter filter write, later new content held, and no held release in a fixed 120-second filter-only window; release followed a deliberate root control edit. Complete-body capture times are not first-byte/effective-revision acknowledgements. |
+| P01 | **PARTIAL** | R4 sampled earlier uploaded local/server copies under a narrower rule: both remained with matching hashes. Cancel/defer/interruption/retry, placeholders, history and MyBrain registration remain unestablished. |
+| Other nineteen cases | **NOT RUN** | No result is supplied by the bounded stock components. |
+| R3 runtime disposition | **OWNER-DIRECTED ACTIVE RETENTION** | The earlier Escape/pending-restoration checkpoint is historical. The owner chose to keep the probe account/root/GUI and backend helpers active and leave the ordinary Store client stopped. A read-only 18:37:28 UTC check found the known processes/listeners and local status 200. Backend state is RAM-only; host restart or QEMU shutdown would lose it. Durable preservation is separate future work; no restoration is claimed. R4 subsequently continued background-only tests under separate owner authority; the same GUI and helpers remained active with the final empty filter and positive readbacks. |
 
-The [GUI report](stock-windows-gui-live-policy-probe.md) contains exact versions, fixture states, body/readback counts, observation bounds and current retention disposition. The following full oracles are unchanged.
+The [R3 GUI report](stock-windows-gui-live-policy-probe.md) and [R4 background report](stock-windows-gui-background-probes.md) contain versions, fixtures, body/readback counts, the S1178 R4 coverage gap, observation bounds and active retention. No exhaustive zero-content claim follows from the incomplete whole R4 prefix. The following full oracles are unchanged.
 
 | ID | Probe and controlled variation | Required observation or falsifier | Parameters or technical evidence still needed |
 | --- | --- | --- | --- |
@@ -220,3 +221,4 @@ The maintenance/compatibility choice (supported extension/upstream contract, mai
 | 1.4 | 2026-11-08 | Codex (@imp researcher) | Record bounded positive W01/W02 GUI components as PARTIAL full cases, remaining twenty NOT RUN, initial HTTP attribution (corrected in 1.5) and pending cleanup; admit supported accessibility/handoffs without changing oracles. |
 | 1.5 | 2026-11-08 | Codex (@imp researcher) | Correct HTTP sequence attribution to transient Graph 401 followed by successful refresh/retries; preserve full-case PARTIAL and cleanup PENDING without claiming policy-recovery proof. |
 | 1.6 | 2026-11-08 | Codex (@imp researcher) | Record owner-directed active fixture retention, superseding the pending restoration decision; preserve behavioral oracles and disclose volatile backend state. |
+| 1.7 | 2026-11-08 | Codex (@imp researcher) | Add bounded R4 background evidence and P01 retention component; retain full oracles, W01/W02/P01 PARTIAL, nineteen NOT RUN, capture/timing limits and active retention. |

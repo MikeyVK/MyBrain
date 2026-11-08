@@ -3,7 +3,7 @@
 # Integrated native wizard and local–cloud rule coordination
 
 **Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts/strategy open, fixture kept active by owner
-**Version:** 1.11
+**Version:** 1.12
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -60,9 +60,15 @@ The owner requested actual W01/W02 GUI measurements on 2026-11-08. The [isolatio
 
 R3 used supported native accessibility observation and set_value, owner-operated native buttons/security handoffs and the ordinary synthetic browser-login flow. It connected only one Personal CFAPI root inside the disposable directory using the unchanged Windows GUI. The [graphical measurement report](stock-windows-gui-live-policy-probe.md) records the actual protocol, bodies, independent readbacks and limits. A pre-established finite a.txt filter held new/edited/nested unknown content while a permitted edit uploaded. Externally emptying that filter while the same GUI remained alive then released held and new files without Apply or restart; the first completed sync followed about 18.17 seconds later.
 
-Six complete initial file-content POSTs totaled 175 bytes and six positive server readbacks matched. The two held-path readbacks during W01 returned 404. A later Graph GET returned 401; the sequence-joined capture then shows a successful refresh POST and successful Graph retries without agent repair. The initial 401 cause and long-term authentication stability are not established. These are positive bounded stock components, with **W01 and W02 PARTIAL against their full contracts** and the other twenty cases NOT RUN. No integrated candidate wizard/MyBrain flow, shared policy/revision acknowledgement, interrupted activation or recovery was established.
+Six complete initial file-content POSTs totaled 175 bytes and six positive server readbacks matched. The two held-path readbacks during W01 returned 404. A later Graph GET returned 401; the sequence-joined capture then shows a successful refresh POST and successful Graph retries without agent repair. The initial 401 cause and long-term authentication stability are not established. These are positive bounded stock components, with **W01 and W02 PARTIAL against their full contracts** and, at the end of R3, the other twenty cases NOT RUN. No integrated candidate wizard/MyBrain flow, shared policy/revision acknowledgement, interrupted activation or recovery was established.
 
 Physical Escape stopped the final accessibility read after the measurement summary was written. At the historical 16:37:36 UTC checkpoint, R3 restoration was pending and the original client was stopped. The owner then explicitly chose **ACTIVE RETENTION for future tests**, leaving the ordinary Store client stopped because it was not needed. A read-only 18:37:28 UTC check confirmed the retained GUI/QEMU/helpers, loopback listeners and local status HTTP 200. Account, credentials, root, files, journal, profile/cache and backend remain active; no stop/move/deletion/unregister/resume was performed. The backend is RAM-only: /root/.opencloud is on tmpfs and QEMU has no writable disk; host restart or QEMU shutdown would lose that state. Durable preservation is separate future work. This is neither completed baseline restoration nor a new measurement. Raw private runtime material remains local-only; supported accessibility with explicit handoffs remains a valid observation route.
+
+### Background continuation without desktop input
+
+The owner then requested autonomous tests while using the PC. The [R4 background report](stock-windows-gui-background-probes.md) records finite extension/folder/nested/rename/move filtering in the same retained GUI, one failed sharing-sensitive trigger and one bounded retry with actual running propagation. All 64 offered files existed before the stricter write; 59 complete-body capture timestamps followed that write and the admitted batch finished. A later file was held while an outside control uploaded. Earlier sampled local/server copies remained under narrowed policy, supplying a bounded P01 component.
+
+A separately declared 120-second filter-only window showed no held upload despite connectivity activity. After the single planned root control edit, the held file uploaded with its saved hash. This is finite timing evidence, not a universal trigger or effective-revision guarantee. The report preserves the S1178 capture gap, diagnostic failures, complete indexed body accounting and readback provenance. W01/W02/P01 remain PARTIAL, other nineteen cases NOT RUN. No UI/input/activation, restart, browser/auth interaction or process stop occurred; empty-filter baseline and owner-directed RAM-only active retention remain in place.
 
 ### Local rule authorship, intended reach and shared application
 
@@ -214,7 +220,7 @@ This document combines source evidence, the Windows-first comparison, behavioral
 
 ### Proposed decisive experiment
 
-The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) preserves this anchor. W01/W02 now have positive bounded GUI components and remain PARTIAL against their full oracles; the other twenty cases remain NOT RUN. The report separates complete initial bodies/readbacks, finite filter limits, the transient Graph 401, successful refresh/retries and the current active-retention disposition from full native/shared-policy acceptance.
+The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) preserves this anchor. W01/W02 and the later P01 retention component have bounded GUI evidence and remain PARTIAL against their full oracles; the other nineteen cases remain NOT RUN. The [R4 background continuation](stock-windows-gui-background-probes.md) adds finite filtering, running propagation and a fixed policy-only window without desktop input. The report separates complete initial bodies/readbacks, finite filter limits, the transient Graph 401, successful refresh/retries and the current active-retention disposition from full native/shared-policy acceptance.
 
 The contract also covers the accepted normal draft/Apply workflow and alternatives, real running work under all three finalization choices, group inheritance/device exceptions/group contradictions, whole-offering and cumulative guards across actions, once-approved continuing flow versus new scope, beginner comprehension, retention, interrupted/retried/versioned work and platform/update boundaries. The revised cases now test the accepted resolutions, including bounded job consent, independent continuation, recovery/takeover, and shared rule/location/history records. A single focused I01 case covers new inventory/history/cleanup obligations; explicit test parameters do not become product defaults.
 
@@ -239,6 +245,7 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 - [Current synchronization policy decisions and behavioral probe contract](<synchronization-policy-and-probe-contract.md>)
 - [Stock Windows filter probe and measurements](<stock-windows-filter-probe.md>)
 - [Stock Windows GUI hold and external activation](<stock-windows-gui-live-policy-probe.md>)
+- [Background GUI filtering, running work and activation window](<stock-windows-gui-background-probes.md>)
 - [Windows GUI setup, isolation and desktop prerequisite](<windows-gui-probe-isolation-assessment.md>)
 - [Windows synchronization candidate comparison](<windows-sync-candidate-comparison.md>)
 - [Native wizard integration and update feasibility](<native-wizard-update-feasibility.md>)
@@ -263,3 +270,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.9 | 2026-11-08 | Codex (@imp researcher) | Record actual bounded GUI hold/external activation, initial HTTP attribution (corrected in 1.10) and pending restoration; preserve historical attempts and full-contract limits. |
 | 1.10 | 2026-11-08 | Codex (@imp researcher) | Correct the QA-identified HTTP attribution using unique sequences: Graph GET 401 followed by refresh/retry 200; retain measured scope and pending restoration. |
 | 1.11 | 2026-11-08 | Codex (@imp researcher) | Record owner-directed active retention instead of immediate restoration, current read-only readiness and RAM-only backend limits; keep measurements and historical checkpoints unchanged. |
+| 1.12 | 2026-11-08 | Codex (@imp researcher) | Record R4 background filtering/running-work/retention and fixed-window activation evidence; mark W01/W02/P01 PARTIAL, other nineteen NOT RUN, preserving R3 history and active retention. |
