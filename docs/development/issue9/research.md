@@ -2,8 +2,8 @@
 
 # Integrated native wizard and local–cloud rule coordination
 
-**Status:** RESEARCH CHECKPOINT — owner policy consolidated; bounded CLI evidence only; full native proofs and strategy pending  
-**Version:** 1.6  
+**Status:** RESEARCH CHECKPOINT — CLI component evidence and isolated GUI setup recorded; GUI content probes await unlocked desktop
+**Version:** 1.7
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -12,11 +12,11 @@ Investigate an integrated native-app wizard and a practical local/cloud route th
 
 ## Scope In
 
-Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; accepted personal draft/activation, device/group, bulk, shared admitted-location inventory/history and presentation behavior; offline/shared rule records and reconciliation; options, synthetic behavioral probe contracts and the owner-approved bounded stock CLI measurement.
+Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; accepted personal draft/activation, device/group, bulk, shared admitted-location inventory/history and presentation behavior; offline/shared rule records and reconciliation; options, synthetic behavioral probe contracts, the bounded stock CLI measurement and owner-authorized isolated GUI preparation.
 
 ## Scope Out
 
-No architecture selection, Design, implementation plan, maintained application code, production deployment/account/NAS access, global package installation, personal client configuration change, production experiment or phase transition. Temporary isolated fixture instrumentation is limited to the separately owner-authorized exploratory probe.
+No architecture selection, Design, implementation plan, maintained application code, production deployment/account/NAS access, global package installation, personal client configuration change, production experiment or phase transition. Temporary isolated fixture instrumentation and the reviewed reversible normal-client stop/resume are limited to the separately owner-authorized exploratory GUI probe; personal profiles remain protected.
 
 ## Problem Statement
 
@@ -53,6 +53,14 @@ The owner explicitly authorized the smallest stock-client experiment on 2026-11-
 The pre-established catch-all held the tested unknowns. Gitignore-style !a.txt did not override it, but a finite manually written complement of the exact flat filename a.txt did permit only its 19-byte body while other and later unknowns remained local. Two initial upload POST bodies were observed directly, with matching server readbacks. Thus a blanket claim that stock filters cannot express any positive scope is contradicted by this bounded case; general rule compilation, live GUI reload and race safety remain unproved.
 
 An offline-saved deny filter was reread by a fresh batch after reconnect, preserving both the edited local file and previous server copy. A missing explicit --exclude file caused startup abort without file-content upload. Offline preflight failed before an engine queue was established: cancellation of an already queued GUI upload is therefore **not established**. No shared-policy reconciliation, integrated native wizard/MyBrain flow, VFS/mobile/update guarantee or topology strategy follows. Probe processes/ports were stopped; screened evidence is durable in the report and raw synthetic instrumentation remains ignored locally.
+
+### Graphical Windows probe preparation
+
+The owner next requested actual W01/W02 GUI measurements on 2026-11-08. The [GUI setup and isolation report](windows-gui-probe-isolation-assessment.md) records a real disposable OpenCloud server/observer, the unchanged official Windows GUI and completed reversible restoration. Actual copied-process checks established unpackaged execution, a fresh zero-account/root profile, matching protected Store-profile hashes and unchanged startup/root metadata before account connection.
+
+The desktop was subsequently confirmed **locked** through a read-only WTS session flag. No targetable connected GUI, account/root setup, positive GUI upload/readback or content-hold/external-activation measurement completed. W01/W02 remain **NOT RUN**; setup traffic with no file body is not a successful zero-content hold. The earlier untracked profile-entry blocker is superseded by the demonstrated fresh-profile boundary. Normal Windows unlock and a bounded continuation are the next host prerequisites, not a new synchronization-policy choice.
+
+The original client was normally resumed, synthetic ordinary profiles quarantined after exact-path checks, and all owned fixture processes/listeners stopped. No private source, personal credential, global trust change or production server was used. The source and observer limits, setup deviations and actual restoration evidence are retained separately from unexecuted content oracles.
 
 ### Local rule authorship, intended reach and shared application
 
@@ -200,11 +208,11 @@ The separately authorized unchanged stock Windows CLI experiment remains bounded
 
 ## Expected Results
 
-This document combines source evidence, the Windows-first comparison, behavioral experiment contracts and the [bounded stock CLI measurement](stock-windows-filter-probe.md). Research remains open. The integrated rule roundtrip and full native GUI enforcement proof have not run; the manually supplied stock batch filter component has been measured separately.
+This document combines source evidence, the Windows-first comparison, behavioral experiment contracts, the [bounded stock CLI measurement](stock-windows-filter-probe.md) and [isolated GUI setup evidence](windows-gui-probe-isolation-assessment.md). Research remains open. The integrated rule roundtrip and full native GUI enforcement proof have not run; the manually supplied stock batch filter component has been measured separately.
 
 ### Proposed decisive experiment
 
-The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) supersedes the earlier incomplete tables while preserving this link anchor. Its W01/W02 cases distinguish live graphical-client discovery/hold and genuine external policy activation from manual stock settings or fresh CLI batch behavior. All twenty-two integrated cases are **NOT RUN**.
+The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) supersedes the earlier incomplete tables while preserving this link anchor. Its W01/W02 cases distinguish live graphical-client discovery/hold and genuine external policy activation from manual stock settings or fresh CLI batch behavior. All twenty-two integrated cases are **NOT RUN**. The subsequent GUI attempt established only fresh-profile/backend preparation and a locked-desktop prerequisite; no GUI content component was measured.
 
 The contract also covers the accepted normal draft/Apply workflow and alternatives, real running work under all three finalization choices, group inheritance/device exceptions/group contradictions, whole-offering and cumulative guards across actions, once-approved continuing flow versus new scope, beginner comprehension, retention, interrupted/retried/versioned work and platform/update boundaries. The revised cases now test the accepted resolutions, including bounded job consent, independent continuation, recovery/takeover, and shared rule/location/history records. A single focused I01 case covers new inventory/history/cleanup obligations; explicit test parameters do not become product defaults.
 
@@ -228,6 +236,7 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 
 - [Current synchronization policy decisions and behavioral probe contract](<synchronization-policy-and-probe-contract.md>)
 - [Stock Windows filter probe and measurements](<stock-windows-filter-probe.md>)
+- [Windows GUI setup, isolation and desktop prerequisite](<windows-gui-probe-isolation-assessment.md>)
 - [Windows synchronization candidate comparison](<windows-sync-candidate-comparison.md>)
 - [Native wizard integration and update feasibility](<native-wizard-update-feasibility.md>)
 - [Preserved OpenCloud extension assessment](<opencloud-admission-extension-feasibility.md>)
@@ -246,3 +255,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.4 | 2026-11-05 | Codex (@imp researcher) | Record measured unchanged Windows CLI filter/body/readback evidence and keep GUI queue, integrated wizard and shared-policy guarantees explicitly unproved. |
 | 1.5 | 2026-11-07 | Codex (@imp researcher) | Consolidate accepted personal/group/draft/bulk/presentation policy in a focused companion; update canonical summaries and probe anchors, retaining measured evidence and pending strategy status. |
 | 1.6 | 2026-11-08 | Codex (@imp researcher) | Record resolved Q1–Q5, shared scoped location/rule/history behavior and recovery/consent choices; align the 22 unexecuted probe cases and separate deferred parameters from technical strategy. |
+| 1.7 | 2026-11-08 | Codex (@imp researcher) | Record actual isolated GUI/backend preparation, locked-desktop prerequisite and restored host state; retain W01/W02 and content controls as NOT RUN. |

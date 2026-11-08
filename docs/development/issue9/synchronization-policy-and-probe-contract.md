@@ -2,8 +2,8 @@
 
 # Synchronization policy decisions and behavioral probe contract
 
-**Status:** RESEARCH CHECKPOINT — owner policy consolidated; integrated probes NOT RUN; technical strategy open  
-**Version:** 1.1  
+**Status:** RESEARCH CHECKPOINT — owner policy consolidated; integrated probes NOT RUN; technical strategy open
+**Version:** 1.2
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -43,6 +43,7 @@ The owner accepted these choices in the discussion culminating in this consolida
 | Owner decisions | The accepted behavior below constrains later probes and Design. |
 | Source/release research | Pinned evidence remains in the [native assessment](native-wizard-update-feasibility.md) and [candidate comparison](windows-sync-candidate-comparison.md). No new platform verification is claimed here. |
 | Executed component control | The [stock Windows CLI report](stock-windows-filter-probe.md) measured manually supplied filters and fresh batch starts only. |
+| Later GUI preparation | [Fresh unpackaged profile/backend setup](windows-gui-probe-isolation-assessment.md) was observed; the Windows session was locked. No GUI account/root or positive content control completed, so W01/W02 remain NOT RUN. |
 | Integrated behavioral probes | All cases in this document are **NOT RUN**. Accepted policy supplies the expectations; each run must still declare its parameters, actual seam and coverage. |
 
 ### Accepted scope and integrated intention
@@ -162,6 +163,8 @@ Every row is **NOT RUN**. These are Research oracles, not formal interfaces or a
 
 A first Windows proof may precede mobile implementation. Shared Web/Uppy upload routes retain their separate coverage obligations from the [historical assessment](opencloud-admission-extension-feasibility.md); Web or a custom upload-screen result cannot substitute for the native wizard/hold. No production roots, accounts or live infrastructure belong in these synthetic runs.
 
+The 2026-11-08 [GUI attempt](windows-gui-probe-isolation-assessment.md) established setup facts only. Before a further attempt, read-only confirmation that the interactive Windows session is unlocked must precede temporarily stopping the ordinary client. At a locked desktop, request normal owner unlock and do not launch the GUI. Use bounded Computer Use calls (at most 60 seconds) and supported cancellation/kernel quiescence before restoration; do not leave an action running behind a Promise.race timeout. This is a harness prerequisite, not a product policy to stop synchronization when Windows locks. All twenty-two cases remain NOT RUN.
+
 W01/W02 are the decisive missing evidence about the stock Windows GUI and an external activation seam. The earlier CLI control proves neither. This contract does not prescribe a new queue, central-master store or message broker. Actual candidate feedback and before-content enforcement must be observed independently.
 
 ### Remaining product-policy questions
@@ -202,3 +205,4 @@ The maintenance/compatibility choice (supported extension/upstream contract, mai
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-07 | Codex (@imp researcher) | Consolidate accepted personal synchronization/group/bulk/presentation policies, remaining usage questions and the current unexecuted behavioral probe contract. |
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Resolve Q1–Q5 from owner replies, add shared admitted-location/rule/history defaults and takeover/recovery/consent behavior, and revise unexecuted probes without selecting implementation or numeric defaults. |
+| 1.2 | 2026-11-08 | Codex (@imp researcher) | Link actual isolated GUI preparation and locked-desktop prerequisite; add unlock-before-stop and bounded UI-execution safeguards without changing unexecuted behavioral expectations. |
