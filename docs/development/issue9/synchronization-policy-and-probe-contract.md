@@ -2,8 +2,8 @@
 
 # Synchronization policy decisions and behavioral probe contract
 
-**Status:** RESEARCH CHECKPOINT — owner policy consolidated; integrated probes NOT RUN; technical strategy open
-**Version:** 1.3
+**Status:** RESEARCH CHECKPOINT — owner policy consolidated; W01/W02 components measured, full cases PARTIAL; technical strategy and cleanup open
+**Version:** 1.4
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -12,11 +12,11 @@ Consolidate the owner's accepted issue-9 policy and presentation choices, separa
 
 ## Scope In
 
-The integrated Windows-first native wizard, personal device/group policy, draft and activation behavior, offline reconciliation, all-action bulk safeguards, presentation and unexecuted proof obligations.
+The integrated Windows-first native wizard, personal device/group policy, draft and activation behavior, offline reconciliation, all-action bulk safeguards, presentation, measured bounded stock GUI components and remaining proof obligations.
 
 ## Scope Out
 
-No formal Design/API contract, selected implementation or compatibility route, application code, probe execution, production access, deployment, new storage decisions, or phase exit. Sharing with other users is a later direction only.
+No formal Design/API contract, selected implementation or compatibility route, application code, production access, deployment, new storage decisions or phase exit. This document supplies no standing runtime authorization; measured results below came from a separate owner-authorized synthetic probe. Sharing with other users is a later direction only.
 
 ## Problem Statement
 
@@ -43,8 +43,8 @@ The owner accepted these choices in the discussion culminating in this consolida
 | Owner decisions | The accepted behavior below constrains later probes and Design. |
 | Source/release research | Pinned evidence remains in the [native assessment](native-wizard-update-feasibility.md) and [candidate comparison](windows-sync-candidate-comparison.md). No new platform verification is claimed here. |
 | Executed component control | The [stock Windows CLI report](stock-windows-filter-probe.md) measured manually supplied filters and fresh batch starts only. |
-| Later GUI preparation | [Fresh unpackaged profile/backend setup and subsequent readiness](windows-gui-probe-isolation-assessment.md) were observed. First the session was locked; after unlock, supported capture/recovery failed before new client interruption or setup. No GUI account/root or positive content control completed, so W01/W02 remain NOT RUN. |
-| Integrated behavioral probes | All cases in this document are **NOT RUN**. Accepted policy supplies the expectations; each run must still declare its parameters, actual seam and coverage. |
+| Later GUI preparation and measurement | [R1/R2 isolation/readiness history](windows-gui-probe-isolation-assessment.md) remains unchanged in scope. [R3 actual GUI measurements](stock-windows-gui-live-policy-probe.md) then established finite stock hold and external-file activation components using supported accessibility and human handoffs. A late refresh returned 401; R3 cleanup is PENDING. |
+| Integrated behavioral probes | W01/W02 are **PARTIAL** against their full oracles, with positive bounded stock components. The other twenty cases are **NOT RUN**. No full wizard, effective-revision/interruption/recovery or shared-device acceptance follows. |
 
 ### Accepted scope and integrated intention
 
@@ -134,7 +134,16 @@ The owner has approved D01–D36 as behavioral direction, including the Q1–Q5 
 
 ### Current behavioral probe contract
 
-Every row is **NOT RUN**. These are Research oracles, not formal interfaces or an implementation plan. Q1–Q5 now supply accepted behavioral expectations rather than unanswered votes. A bounded synthetic probe must declare its selected scope, settings and limits/windows where relevant as fixture parameters, never as silent product defaults. A genuinely new policy question blocks only the case that needs it and must be identified explicitly. Before a bounded run, record the actual OS/client/server/Web/SDK/executor versions, the claimed seam, supported paths/actions, synthetic fixtures, request/body observation points, unmodified control and retention-safe cleanup. Observe the initial TUS POST as well as later requests. Missing coverage is insufficient evidence, not a zero-byte result. A mock or policy-only roundtrip must be labelled partial.
+W01/W02 have the bounded coverage below; the other twenty rows remain **NOT RUN**. These are Research oracles, not formal interfaces or an implementation plan. Q1–Q5 now supply accepted behavioral expectations rather than unanswered votes. A bounded synthetic probe must declare its selected scope, settings and limits/windows where relevant as fixture parameters, never as silent product defaults. A genuinely new policy question blocks only the case that needs it and must be identified explicitly. Before a bounded run, record the actual OS/client/server/Web/SDK/executor versions, the claimed seam, supported paths/actions, synthetic fixtures, request/body observation points, unmodified control and retention-safe cleanup. Observe the initial TUS POST as well as later requests. Missing coverage is insufficient evidence, not a zero-byte result. A mock or policy-only roundtrip must be labelled partial.
+
+| Current coverage | Status | Measured and still missing |
+| --- | --- | --- |
+| W01 | **PARTIAL** | New/edited/nested held markers stayed local under a pre-established finite stock filter while a permitted GUI edit uploaded; complete bodies and independent readbacks were observed. Full integrated wizard/candidate sharing, service-outage and every claimed path remain unestablished. |
+| W02 | **PARTIAL** | External user-filter replacement took effect while the same GUI lived, without Apply/restart; held/new content uploaded with exact readbacks, first completed round about 18.17 seconds after the write. Explicit effective revision, interruption, uncertain-transition hold and recovery remain unestablished; later token refresh returned 401. |
+| Other twenty cases | **NOT RUN** | No result is supplied by the bounded stock components. |
+| R3 restoration | **PENDING** | Physical Escape stopped the final UI read after measurement. At 16:37:36 UTC the synthetic GUI/root/helpers still existed, with the original client stopped. |
+
+The [GUI report](stock-windows-gui-live-policy-probe.md) contains exact versions, fixture states, body/readback counts, observation bounds and cleanup status. The following full oracles are unchanged.
 
 | ID | Probe and controlled variation | Required observation or falsifier | Parameters or technical evidence still needed |
 | --- | --- | --- | --- |
@@ -163,9 +172,9 @@ Every row is **NOT RUN**. These are Research oracles, not formal interfaces or a
 
 A first Windows proof may precede mobile implementation. Shared Web/Uppy upload routes retain their separate coverage obligations from the [historical assessment](opencloud-admission-extension-feasibility.md); Web or a custom upload-screen result cannot substitute for the native wizard/hold. No production roots, accounts or live infrastructure belong in these synthetic runs.
 
-The 2026-11-08 [GUI attempts](windows-gui-probe-isolation-assessment.md) established setup/readiness facts only. The later UNLOCKED check and returned window inventory did not establish an operable capture; screenshot and its one supported recovery failed before the ordinary client was stopped. Confirm supported GUI capture as well as unlocked session status before client interruption, and stop at the desktop-control skill's recovery boundary. Before a further attempt, read-only confirmation that the interactive Windows session is unlocked must precede temporarily stopping the ordinary client. At a locked desktop, request normal owner unlock and do not launch the GUI. Use bounded Computer Use calls (at most 60 seconds) and supported cancellation/kernel quiescence before restoration; do not leave an action running behind a Promise.race timeout. This is a harness prerequisite, not a product policy to stop synchronization when Windows locks. All twenty-two cases remain NOT RUN.
+The earlier 2026-11-08 [R1/R2 attempts](windows-gui-probe-isolation-assessment.md) established setup/readiness facts only. R3 subsequently used supported accessibility observation and set_value with explicit human native-button/security handoffs; screenshots were not needed for those observations. Before interrupting an ordinary client, confirm both an unlocked session and a supported observable GUI-control route appropriate to the next actions. At a locked desktop, request normal owner unlock. Use bounded supported calls and stop at the desktop-control skill's recovery/interruption boundary; never leave an action behind a Promise.race timeout. These are harness prerequisites, not product policy to stop synchronization when Windows locks. Cleanup after the R3 Escape interruption remains pending.
 
-W01/W02 are the decisive missing evidence about the stock Windows GUI and an external activation seam. The earlier CLI control proves neither. This contract does not prescribe a new queue, central-master store or message broker. Actual candidate feedback and before-content enforcement must be observed independently.
+The decisive small stock GUI hold and local external-file activation components are now measured separately from the earlier CLI batches. Full W01/W02 acceptance remains open. This contract does not prescribe a queue, central-master store or message broker; integrated candidate feedback, explicit policy state and the remaining enforcement/recovery paths must still be demonstrated.
 
 ### Remaining product-policy questions
 
@@ -179,7 +188,7 @@ W01/W02 are the decisive missing evidence about the stock Windows GUI and an ext
 | Q4 — Uncertain activation and handover | Affected work waits; recover approved transition automatically only when unambiguous without new decision/conflict/bulk warning, otherwise owner. Explicit management takeover is allowed with unreachable previous endpoint; preserve drafts/confirmed changes and show pending receipt. | Real active-revision, recovery and single-management enforcement seam; no fresh permission lease for ordinary unchanged offline use. W01–W04/R01–R06/G01/U01. |
 | Q5 — Candidate, location, history and policy records | Default shared limited inventory and manageable rule records within consciously connected locations, including local-only files/device-bound rules. Deliberately private local rule is explicit exception. Observed per-file location/decision/execution history is retained by default; cleanup only explicit or consciously configured. Content and MyBrain staging/admission keep their own applicable decision/rule in the same wizard. | Exact record projection, identifiers/observation coverage and any deliberately configured cleanup period are later details. No whole-device inventory, default expiry or durable MyBrain registration from mere visibility. W01/W05/R01/R06/T01/I01/U01. |
 
-Separate technical unknowns remain: live GUI hold/reload/pause/activation seams, action/dependency granularity, reconciliation and management handover enforcement, admitted-location discovery/metadata projection and history persistence, the observation-to-registration transition under P18/P19/P38, mobile coverage, OpenCloud/executor interoperability and native packaging/updates. These require source/runtime evidence, not reopening the accepted usage choices.
+Separate technical unknowns remain: integrated native admission and explicit policy-revision/pause/activation contracts beyond the measured stock filter components, action/dependency granularity, reconciliation and management handover enforcement, admitted-location discovery/metadata projection and history persistence, the observation-to-registration transition under P18/P19/P38, mobile coverage, OpenCloud/executor interoperability and native packaging/updates. These require source/runtime evidence, not reopening accepted usage choices.
 
 Virus/content checks, temporary/cache classification and possible local AI are **future research input only**. No detection technique, reliability guarantee or implementation requirement is selected for the current probes.
 
@@ -187,13 +196,14 @@ The maintenance/compatibility choice (supported extension/upstream contract, mai
 
 ## Assumptions
 
-- All future runtime probes require a separate bounded assignment and synthetic isolated data; this documentation task executes none.
+- Future runtime probes require a separate bounded assignment and synthetic isolated data. This contract records the separately authorized R3 result without granting further runtime or cleanup authority.
 - Shared location/rule/history behavior does not select a database/schema, protocol, default numeric value, time limit, detection technique or screen layout.
 
 ## Related Documents
 
 - [Canonical issue-9 research](<research.md>)
 - [Measured stock Windows filter probe](<stock-windows-filter-probe.md>)
+- [Measured stock Windows GUI components](<stock-windows-gui-live-policy-probe.md>)
 - [Native integration/update source assessment](<native-wizard-update-feasibility.md>)
 - [Windows candidate comparison](<windows-sync-candidate-comparison.md>)
 - [Foundational principles](<../../architecture/decisions/0001-digital-brain-foundational-principles.md>)
@@ -207,3 +217,4 @@ The maintenance/compatibility choice (supported extension/upstream contract, mai
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Resolve Q1–Q5 from owner replies, add shared admitted-location/rule/history defaults and takeover/recovery/consent behavior, and revise unexecuted probes without selecting implementation or numeric defaults. |
 | 1.2 | 2026-11-08 | Codex (@imp researcher) | Link actual isolated GUI preparation and locked-desktop prerequisite; add unlock-before-stop and bounded UI-execution safeguards without changing unexecuted behavioral expectations. |
 | 1.3 | 2026-11-08 | Codex (@imp researcher) | Record unlocked window discovery but failed supported capture/recovery; preserve all NOT RUN oracles and require operable capture before ordinary-client interruption. |
+| 1.4 | 2026-11-08 | Codex (@imp researcher) | Record bounded positive W01/W02 GUI components as PARTIAL full cases, remaining twenty NOT RUN, late refresh failure and pending cleanup; admit supported accessibility/handoffs without changing oracles. |

@@ -2,13 +2,13 @@
 
 # Windows GUI probe setup, isolation and host prerequisite
 
-**Status:** SETUP MEASURED — W01/W02 NOT RUN; later unlocked desktop capture failed
-**Version:** 1.2
+**Status:** HISTORICAL R1/R2 SETUP — later R3 components measured separately; R3 cleanup pending
+**Version:** 1.3
 **Last Updated:** 2026-11-08
 
 ## Purpose
 
-Record the actual bounded preparation for W01/W02, the demonstrated fresh-profile boundary, the remaining desktop prerequisite and completed restoration without inventing a graphical-client content result.
+Preserve the actual R1/R2 preparation, fresh-profile boundary, readiness failures and R1 restoration; link later R3 content measurements and their current pending-restoration boundary.
 
 ## Scope In
 
@@ -16,7 +16,7 @@ The unchanged official Windows GUI, supported package activation and configurati
 
 ## Scope Out
 
-No personal account or file use, personal profile relocation, client patch, production server/NAS/VPN access, global trust/network change, Windows feature/SDK installation, completed GUI account connection, content measurement, integration choice or phase exit.
+No personal account/file use, personal profile relocation, client patch, production infrastructure, global trust/network change, Windows feature/SDK installation, integration choice or phase exit. R1/R2 did not complete account/root connection or content measurement; separately authorized R3 results are linked below.
 
 ## Problem Statement
 
@@ -94,7 +94,7 @@ A screenshot-only state request then returned the concrete error **“FrameArriv
 
 Windows automation stopped at the skill's recovery boundary, and the JavaScript kernel was reset. A final read-only check still confirmed UNLOCKED, the original installed client running, no ordinary synthetic profile directories and no probe listeners. No backend, synthetic GUI profile, account/root, file or transfer was created in this second attempt. No restoration stop/resume was necessary because the ordinary client was never stopped.
 
-This second attempt resolves the former locked-session prerequisite but exposes a separate **Computer Use capture failure**. It does not establish a defect in OpenCloud synchronization, an impossible native hold, a policy-activation result or a general failure of every desktop-control route. The original W01/W02 tests still require an operable supported GUI capture/control surface before their isolated fixture can resume.
+This second attempt resolves the former locked-session prerequisite but exposes a separate **Computer Use capture failure**. It does not establish a defect in OpenCloud synchronization, an impossible native hold, a policy-activation result or a general failure of every desktop-control route. At that R2 checkpoint W01/W02 still required an operable supported observation/control surface. The later R3 accessibility/handoff route is recorded below; a screenshot is not the only supported observation.
 
 ### Observer and content-proof boundary
 
@@ -102,15 +102,21 @@ The unchanged observer described in the [historical CLI measurement](stock-windo
 
 A later content run must establish a positive **GUI** upload and independent server readback, distinguish metadata XML from file-content bodies, inspect status/transport/framing errors and preserve the same real measured GUI PID/profile/root across hold and external-change cases. None of those GUI content controls ran here. Old CLI records cannot fill that gap.
 
+### Later R3 accessibility and actual measurement
+
+After the application restart, supported native accessibility returned usable current state without screenshot capture. Accessibility set_value changed visible non-sensitive fields; mouse geometry was unavailable and keyboard advancement was not observed. The owner performed the native button/radio/security actions, and Browser Use completed the synthetic localhost login. Only one Personal CFAPI root inside the admitted disposable directory was connected, with the exact automatic startup-value effect restored immediately.
+
+The [separate GUI measurement report](stock-windows-gui-live-policy-probe.md) records positive small stock components: pre-established filtering held added/edited/nested unknown content while a permitted edit uploaded; external filter replacement then released held/new files without Apply or restart in the same GUI. Six initial content POSTs totaled 175 bytes with matching positive server readbacks. W01/W02 remain PARTIAL against the full oracles; the other twenty cases remain NOT RUN. A later token-refresh request returned 401.
+
+Physical Escape stopped the final accessibility read after the summary was written. **R3 restoration is PENDING.** A read-only host check at 16:37:36 UTC still found the same synthetic GUI, original two plus one synthetic registration, absent startup value, new normal profiles and active fixture helpers; the original client was stopped. None of the R1 completed-restoration statements below describes R3.
+
 ## Questions
 
-The latest attempt confirmed a normally unlocked Windows desktop but could not obtain a supported operable Computer Use capture. Resolving that host-control prerequisite, then verifying it before ordinary-client interruption, is necessary for bounded resumption. This does not reopen accepted product policy.
-
-Account setup, fresh credential/root identity, scoped startup/root restoration and actual GUI positive-control coverage must still pass after that prerequisite is available. There is no evidence yet for a live external policy-activation seam, native candidate wizard or before-content hold.
+The former observation prerequisite was satisfied in R3 by supported accessibility with explicit handoffs. Current open work is verified restoration, the integrated wizard/candidate/shared-policy contract, explicit effective revision and interruption/recovery, and broader rule/platform/VFS/update coverage. These do not reopen accepted product policy.
 
 ## Approved Strategy
 
-No native integration, replacement workflow, topology or maintenance strategy is selected. The reviewed reversible fixture-entry route was used for setup only. W01/W02 acceptance remains unchanged; a fresh profile, healthy backend or manual GUI settings alone cannot satisfy it.
+No native integration, replacement workflow, topology or maintenance strategy is selected. The reviewed reversible fixture-entry route was used for R1 setup and later R3 component measurements. W01/W02 acceptance remains unchanged; a fresh profile, healthy backend or manual GUI settings alone cannot satisfy it.
 
 ## Expected Results
 
@@ -118,7 +124,7 @@ No native integration, replacement workflow, topology or maintenance strategy is
 
 | Step | Required evidence |
 | --- | --- |
-| Interactive desktop preflight | Before stopping the ordinary client, confirm read-only that the interactive Windows session is unlocked. If locked, request normal owner unlock and do not launch the GUI. This is a harness prerequisite, not product behavior on Windows lock. Bound each Computer Use call to at most 60 seconds through supported timeout/cancellation; prove cancellation/kernel quiescence before restoration and never leave an action behind a Promise.race timeout. |
+| Interactive desktop preflight | Before stopping the ordinary client, confirm read-only that the interactive Windows session is unlocked and that the next GUI actions have a supported observable accessibility/screenshot route or explicit human handoff. If locked, request normal owner unlock and do not launch the GUI. This is a harness prerequisite, not product behavior on Windows lock. Bound each Computer Use call to at most 60 seconds through supported timeout/cancellation; prove cancellation/kernel quiescence before restoration and never leave an action behind a Promise.race timeout. |
 | Fresh isolated entry | Recheck current user/package/KnownFolder and original-profile preservation; do not overwrite retained synthetic quarantines. Confirm the actual graphical process, fresh account/root namespace and operable window before content. |
 | Positive GUI control | Connect only the disposable account and ordinary synthetic root. Record an actual GUI upload including the initial content-bearing request, plus independent real-server readback. |
 | W01 | Pre-establish the supported hold before newly added, edited and nested content enters the already-connected ordinary root. Observe live discovery and claimed transfer paths. Separate a stock ignore primitive from the requested MyBrain candidate/wizard/index. |
@@ -126,6 +132,8 @@ No native integration, replacement workflow, topology or maintenance strategy is
 | Cleanup | Preserve synthetic raw evidence; normally stop only test GUI instances, remove only their admitted account/root effects, restore exact startup/profile metadata and resume the original client. Stop only owned fixture processes/listeners. |
 
 ### Recorded outcome
+
+**Historical R1/R2 only.** The following outcomes retain their original attempt scope. Later R3 components and pending cleanup are reported above and in the separate measurement report.
 
 | Case | Status | Actual evidence |
 | --- | --- | --- |
@@ -139,7 +147,7 @@ No native integration, replacement workflow, topology or maintenance strategy is
 
 ### Completed restoration
 
-No synthetic **GUI** account, GUI credential/Windows-keychain entry or Windows sync-root registration was created. The disposable server's separate synthetic administrator and app-token preparation remains local-only. The exact startup value and existing root set remained unchanged. Before resuming the original client, the protected Store file sets/digests matched the post-quit baseline. Only the two newly created ordinary synthetic profile directories were moved to their prechecked, absent host sibling quarantines; no protected Store profile was copied, moved or edited.
+**R1 only; R3 restoration remains pending.** No synthetic **GUI** account, GUI credential/Windows-keychain entry or Windows sync-root registration was created. The disposable server's separate synthetic administrator and app-token preparation remains local-only. The exact startup value and existing root set remained unchanged. Before resuming the original client, the protected Store file sets/digests matched the post-quit baseline. Only the two newly created ordinary synthetic profile directories were moved to their prechecked, absent host sibling quarantines; no protected Store profile was copied, moved or edited.
 
 Normal original-package activation succeeded. Follow-up metadata confirmed the original packaged executable, expected existing account/root status and absence of a normal synthetic profile that could shadow it. Normal post-resume application writes are not claimed identical to the frozen pre-resume baseline.
 
@@ -147,6 +155,7 @@ The guest shut down normally. A PowerShell stop-cmdlet error left the two owned 
 
 ## Related Documents
 
+- [Actual R3 graphical component measurements and cleanup status](<stock-windows-gui-live-policy-probe.md>)
 - [Current behavioral W01/W02 contract](<synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract>)
 - [Canonical issue-9 research](<research.md>)
 - [Historical stock CLI evidence, unchanged](<stock-windows-filter-probe.md>)
@@ -160,3 +169,4 @@ The guest shut down normally. A PowerShell stop-cmdlet error left the two owned 
 | 1.0 | 2026-11-08 | Codex (@imp researcher) | Initial untracked entry-only draft: record official binary/source isolation investigation without content execution. |
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Supersede the initial profile barrier with actual fresh unpackaged entry, real fixture preparation, locked-desktop finding and completed restoration; retain W01/W02 as NOT RUN. |
 | 1.2 | 2026-11-08 | Codex (@imp researcher) | Retain the first locked attempt and restoration; add actual unlocked readiness/capture failures with no second client interruption or content execution. |
+| 1.3 | 2026-11-08 | Codex (@imp researcher) | Preserve historical R1/R2 facts; link actual R3 accessibility/handoff and GUI components, late refresh failure and pending restoration; remove image-only prerequisite. |
