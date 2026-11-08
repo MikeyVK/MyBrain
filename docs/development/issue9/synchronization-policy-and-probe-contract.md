@@ -2,8 +2,8 @@
 
 # Synchronization policy decisions and behavioral probe contract
 
-**Status:** RESEARCH CHECKPOINT — owner policy consolidated; W01/W02 components measured, full cases PARTIAL; technical strategy and cleanup open
-**Version:** 1.5
+**Status:** RESEARCH CHECKPOINT — owner policy consolidated; W01/W02 full cases PARTIAL, technical strategy open; owner-directed active fixture retention
+**Version:** 1.6
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -43,7 +43,7 @@ The owner accepted these choices in the discussion culminating in this consolida
 | Owner decisions | The accepted behavior below constrains later probes and Design. |
 | Source/release research | Pinned evidence remains in the [native assessment](native-wizard-update-feasibility.md) and [candidate comparison](windows-sync-candidate-comparison.md). No new platform verification is claimed here. |
 | Executed component control | The [stock Windows CLI report](stock-windows-filter-probe.md) measured manually supplied filters and fresh batch starts only. |
-| Later GUI preparation and measurement | [R1/R2 isolation/readiness history](windows-gui-probe-isolation-assessment.md) remains unchanged in scope. [R3 actual GUI measurements](stock-windows-gui-live-policy-probe.md) then established finite stock hold and external-file activation components using supported accessibility and human handoffs. A later Graph GET returned 401, followed by successful refresh and Graph retries; R3 cleanup is PENDING. |
+| Later GUI preparation and measurement | [R1/R2 isolation/readiness history](windows-gui-probe-isolation-assessment.md) remains unchanged in scope. [R3 actual GUI measurements](stock-windows-gui-live-policy-probe.md) then established finite stock hold and external-file activation components using supported accessibility and human handoffs. A later Graph GET returned 401, followed by successful refresh and Graph retries; the owner now directs active retention of R3 rather than immediate restoration. |
 | Integrated behavioral probes | W01/W02 are **PARTIAL** against their full oracles, with positive bounded stock components. The other twenty cases are **NOT RUN**. No full wizard, effective-revision/interruption/recovery or shared-device acceptance follows. |
 
 ### Accepted scope and integrated intention
@@ -141,9 +141,9 @@ W01/W02 have the bounded coverage below; the other twenty rows remain **NOT RUN*
 | W01 | **PARTIAL** | New/edited/nested held markers stayed local under a pre-established finite stock filter while a permitted GUI edit uploaded; complete bodies and independent readbacks were observed. Full integrated wizard/candidate sharing, service-outage and every claimed path remain unestablished. |
 | W02 | **PARTIAL** | External user-filter replacement took effect while the same GUI lived, without Apply/restart; held/new content uploaded with exact readbacks, first completed round about 18.17 seconds after the write. Explicit effective revision, interruption, uncertain-transition hold and recovery remain unestablished; a later Graph GET returned 401, then refresh POST and Graph retries returned 200. This authentication recovery is distinct from policy-activation recovery. |
 | Other twenty cases | **NOT RUN** | No result is supplied by the bounded stock components. |
-| R3 restoration | **PENDING** | Physical Escape stopped the final UI read after measurement. At 16:37:36 UTC the synthetic GUI/root/helpers still existed, with the original client stopped. |
+| R3 runtime disposition | **OWNER-DIRECTED ACTIVE RETENTION** | The earlier Escape/pending-restoration checkpoint is historical. The owner chose to keep the probe account/root/GUI and backend helpers active and leave the ordinary Store client stopped. A read-only 18:37:28 UTC check found the known processes/listeners and local status 200. Backend state is RAM-only; host restart or QEMU shutdown would lose it. Durable preservation is separate future work; no restoration or new test is claimed. |
 
-The [GUI report](stock-windows-gui-live-policy-probe.md) contains exact versions, fixture states, body/readback counts, observation bounds and cleanup status. The following full oracles are unchanged.
+The [GUI report](stock-windows-gui-live-policy-probe.md) contains exact versions, fixture states, body/readback counts, observation bounds and current retention disposition. The following full oracles are unchanged.
 
 | ID | Probe and controlled variation | Required observation or falsifier | Parameters or technical evidence still needed |
 | --- | --- | --- | --- |
@@ -172,7 +172,7 @@ The [GUI report](stock-windows-gui-live-policy-probe.md) contains exact versions
 
 A first Windows proof may precede mobile implementation. Shared Web/Uppy upload routes retain their separate coverage obligations from the [historical assessment](opencloud-admission-extension-feasibility.md); Web or a custom upload-screen result cannot substitute for the native wizard/hold. No production roots, accounts or live infrastructure belong in these synthetic runs.
 
-The earlier 2026-11-08 [R1/R2 attempts](windows-gui-probe-isolation-assessment.md) established setup/readiness facts only. R3 subsequently used supported accessibility observation and set_value with explicit human native-button/security handoffs; screenshots were not needed for those observations. Before interrupting an ordinary client, confirm both an unlocked session and a supported observable GUI-control route appropriate to the next actions. At a locked desktop, request normal owner unlock. Use bounded supported calls and stop at the desktop-control skill's recovery/interruption boundary; never leave an action behind a Promise.race timeout. These are harness prerequisites, not product policy to stop synchronization when Windows locks. Cleanup after the R3 Escape interruption remains pending.
+The earlier 2026-11-08 [R1/R2 attempts](windows-gui-probe-isolation-assessment.md) established setup/readiness facts only. R3 subsequently used supported accessibility observation and set_value with explicit human native-button/security handoffs; screenshots were not needed for those observations. Before interrupting an ordinary client, confirm both an unlocked session and a supported observable GUI-control route appropriate to the next actions. At a locked desktop, request normal owner unlock. Use bounded supported calls and stop at the desktop-control skill's recovery/interruption boundary; never leave an action behind a Promise.race timeout. These are harness prerequisites, not product policy to stop synchronization when Windows locks. The owner subsequently chose active retention after the R3 Escape interruption; no GUI input was resumed for that decision. Any later stop/restore or new test requires a separate bounded assignment.
 
 The decisive small stock GUI hold and local external-file activation components are now measured separately from the earlier CLI batches. Full W01/W02 acceptance remains open. This contract does not prescribe a queue, central-master store or message broker; integrated candidate feedback, explicit policy state and the remaining enforcement/recovery paths must still be demonstrated.
 
@@ -219,3 +219,4 @@ The maintenance/compatibility choice (supported extension/upstream contract, mai
 | 1.3 | 2026-11-08 | Codex (@imp researcher) | Record unlocked window discovery but failed supported capture/recovery; preserve all NOT RUN oracles and require operable capture before ordinary-client interruption. |
 | 1.4 | 2026-11-08 | Codex (@imp researcher) | Record bounded positive W01/W02 GUI components as PARTIAL full cases, remaining twenty NOT RUN, initial HTTP attribution (corrected in 1.5) and pending cleanup; admit supported accessibility/handoffs without changing oracles. |
 | 1.5 | 2026-11-08 | Codex (@imp researcher) | Correct HTTP sequence attribution to transient Graph 401 followed by successful refresh/retries; preserve full-case PARTIAL and cleanup PENDING without claiming policy-recovery proof. |
+| 1.6 | 2026-11-08 | Codex (@imp researcher) | Record owner-directed active fixture retention, superseding the pending restoration decision; preserve behavioral oracles and disclose volatile backend state. |

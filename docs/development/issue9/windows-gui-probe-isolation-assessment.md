@@ -2,13 +2,13 @@
 
 # Windows GUI probe setup, isolation and host prerequisite
 
-**Status:** HISTORICAL R1/R2 SETUP — later R3 components measured separately; R3 cleanup pending
-**Version:** 1.4
+**Status:** HISTORICAL R1/R2 SETUP — later R3 components measured separately; R3 kept active by owner
+**Version:** 1.5
 **Last Updated:** 2026-11-08
 
 ## Purpose
 
-Preserve the actual R1/R2 preparation, fresh-profile boundary, readiness failures and R1 restoration; link later R3 content measurements and their current pending-restoration boundary.
+Preserve the actual R1/R2 preparation, fresh-profile boundary, readiness failures and R1 restoration; link later R3 content measurements and their current owner-directed active-retention boundary.
 
 ## Scope In
 
@@ -108,11 +108,11 @@ After the application restart, supported native accessibility returned usable cu
 
 The [separate GUI measurement report](stock-windows-gui-live-policy-probe.md) records positive small stock components: pre-established filtering held added/edited/nested unknown content while a permitted edit uploaded; external filter replacement then released held/new files without Apply or restart in the same GUI. Six initial content POSTs totaled 175 bytes with matching positive server readbacks. W01/W02 remain PARTIAL against the full oracles; the other twenty cases remain NOT RUN. A later Graph GET returned 401, followed by a successful refresh POST and successful Graph retries. The raw sequence join does not establish the cause or long-term authentication stability.
 
-Physical Escape stopped the final accessibility read after the summary was written. **R3 restoration is PENDING.** A read-only host check at 16:37:36 UTC still found the same synthetic GUI, original two plus one synthetic registration, absent startup value, new normal profiles and active fixture helpers; the original client was stopped. None of the R1 completed-restoration statements below describes R3.
+Physical Escape stopped the final accessibility read after the summary was written. At the historical 16:37:36 UTC checkpoint, R3 restoration remained pending. The owner subsequently explicitly chose **ACTIVE RETENTION for future tests**: keep the test GUI/account/root, credentials, files/journal, profiles and backend helpers active; leave the ordinary Store client stopped. Read-only host/listener/status checks at 18:37:28 UTC confirmed the retained services and local HTTP 200. No shutdown, move, removal, unregister or original-client resume was performed. The guest /root/.opencloud is on tmpfs and QEMU has no writable disk, so host restart or QEMU shutdown would lose backend state; durable preservation is separate future work. R1 completed restoration below remains historical and does not describe this retained R3 disposition.
 
 ## Questions
 
-The former observation prerequisite was satisfied in R3 by supported accessibility with explicit handoffs. Current open work is verified restoration, the integrated wizard/candidate/shared-policy contract, explicit effective revision and interruption/recovery, and broader rule/platform/VFS/update coverage. These do not reopen accepted product policy.
+The former observation prerequisite was satisfied in R3 by supported accessibility with explicit handoffs. Current operational disposition is owner-directed active retention, with durable backend preservation still separate future work. Technical open work includes the integrated wizard/candidate/shared-policy contract, explicit effective revision and interruption/recovery, and broader rule/platform/VFS/update coverage. These do not reopen accepted product policy.
 
 ## Approved Strategy
 
@@ -133,7 +133,7 @@ No native integration, replacement workflow, topology or maintenance strategy is
 
 ### Recorded outcome
 
-**Historical R1/R2 only.** The following outcomes retain their original attempt scope. Later R3 components and pending cleanup are reported above and in the separate measurement report.
+**Historical R1/R2 only.** The following outcomes retain their original attempt scope. Later R3 components and current active retention are reported above and in the separate measurement report.
 
 | Case | Status | Actual evidence |
 | --- | --- | --- |
@@ -147,7 +147,7 @@ No native integration, replacement workflow, topology or maintenance strategy is
 
 ### Completed restoration
 
-**R1 only; R3 restoration remains pending.** No synthetic **GUI** account, GUI credential/Windows-keychain entry or Windows sync-root registration was created. The disposable server's separate synthetic administrator and app-token preparation remains local-only. The exact startup value and existing root set remained unchanged. Before resuming the original client, the protected Store file sets/digests matched the post-quit baseline. Only the two newly created ordinary synthetic profile directories were moved to their prechecked, absent host sibling quarantines; no protected Store profile was copied, moved or edited.
+**R1 only; R3 is now kept active by owner decision.** No synthetic **GUI** account, GUI credential/Windows-keychain entry or Windows sync-root registration was created. The disposable server's separate synthetic administrator and app-token preparation remains local-only. The exact startup value and existing root set remained unchanged. Before resuming the original client, the protected Store file sets/digests matched the post-quit baseline. Only the two newly created ordinary synthetic profile directories were moved to their prechecked, absent host sibling quarantines; no protected Store profile was copied, moved or edited.
 
 Normal original-package activation succeeded. Follow-up metadata confirmed the original packaged executable, expected existing account/root status and absence of a normal synthetic profile that could shadow it. Normal post-resume application writes are not claimed identical to the frozen pre-resume baseline.
 
@@ -171,3 +171,4 @@ The guest shut down normally. A PowerShell stop-cmdlet error left the two owned 
 | 1.2 | 2026-11-08 | Codex (@imp researcher) | Retain the first locked attempt and restoration; add actual unlocked readiness/capture failures with no second client interruption or content execution. |
 | 1.3 | 2026-11-08 | Codex (@imp researcher) | Preserve historical R1/R2 facts; link actual R3 accessibility/handoff and GUI components, initial HTTP attribution (corrected in 1.4) and pending restoration; remove image-only prerequisite. |
 | 1.4 | 2026-11-08 | Codex (@imp researcher) | Correct QA's HTTP attribution finding: Graph GET 401, refresh POST and subsequent Graph GETs 200; preserve R1/R2 history and R3 pending restoration. |
+| 1.5 | 2026-11-08 | Codex (@imp researcher) | Preserve historical restoration checkpoints and record the owner's later active-retention decision, read-only readiness and RAM-only backend limitation. |

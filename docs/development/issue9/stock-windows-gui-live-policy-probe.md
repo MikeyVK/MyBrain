@@ -2,8 +2,8 @@
 
 # Stock Windows GUI hold and live external filter measurement
 
-**Status:** RESEARCH MEASUREMENT — bounded GUI components observed; cleanup and independent review pending
-**Version:** 1.1
+**Status:** RESEARCH MEASUREMENT — bounded GUI components observed; owner-directed active retention
+**Version:** 1.2
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -26,7 +26,7 @@ Earlier CLI batches and GUI preparation did not prove a persistent graphical cli
 
 - Distinguish measured stock GUI components from the full W01/W02 behavioral contracts.
 - Retain exact request-body and independent server-readback evidence without publishing private runtime material.
-- Keep incomplete cleanup, transient authentication response/recovery and remaining coverage visible.
+- Keep operational retention, durability limits, transient authentication response/recovery and remaining coverage visible.
 
 ## Background
 
@@ -114,13 +114,19 @@ The server readbacks are independent of local file existence and GUI success tex
 
 After the summary and W02-end record were written, the final native accessibility read reported a physical Escape stop. No later GUI automation was issued in that turn. The measurements above had already completed. That final GUI snapshot did not complete.
 
-**Cleanup/restoration is PENDING at this document checkpoint.** The last verified runtime still had the synthetic GUI/account/root and fixture processes active, with the original client stopped. Account/credential/root cleanup, preservation of closed journals, quarantine of the new normal profile, protected Store pre-resume verification, original package resumption and fixture shutdown are not yet verified. A read-only host check at **16:37:36 UTC** confirmed the same sole synthetic GUI, original two plus one synthetic registration, absent OpenCloud startup value, new normal profile parents and the three known fixture helpers still active; the original packaged GUI was absent. A later explicitly authorized cleanup continuation must record its actual outcome. This report does not claim a restored host or completed review.
+The earlier checkpoint was **cleanup/restoration PENDING**: at 16:37:36 UTC the same synthetic GUI/account/root, new normal profile and fixture helpers remained active, the original client was stopped, the startup value was absent, and the two original plus one synthetic registrations remained. No completed restoration was claimed.
 
-Raw journals, captures, protocol versions, readbacks, synthetic credentials and host-specific preservation metadata remain ignored/local-only. The local evidence index retains the fresh-entry checkpoint and now indexes measurement-summary.json, measurement-stages.jsonl, per-case/readback artifacts and the explicit pending-cleanup snapshot. Neither raw credentials nor machine/account/root identities belong in Git, issue text or attachments.
+The owner subsequently explicitly chose **ACTIVE RETENTION for future tests**, with the ordinary Store client left stopped because it was not needed. This supersedes that pending restoration decision. Keep the existing probe GUI, account, credentials, root, files, journal, profile/cache, QEMU/backend, observer and bootstrap active; no quit, move, deletion, unregister, ordinary-client restart, power or autostart change was performed for this decision.
+
+A bounded read-only check at **18:37:28 UTC** confirmed the known GUI/QEMU/helper launchers, loopback listeners and an HTTP 200 local status response reporting OpenCloud 9.0.0. The observer/bootstrap listener processes were verified children of their known Python launchers. This was retained-service status evidence, not another behavioral test; the frozen measurement interval and results above are unchanged.
+
+**The backend is RAM-only.** The retained QEMU command has no writable disk image, and guest filesystem metadata identifies /, /root and /root/.opencloud as tmpfs. Host restart or QEMU shutdown would lose that backend state. Durable export/preservation is separate future work; keeping the current processes active does not establish restart durability. Test files and evidence remain on the host, and the extra synthetic registration is retained deliberately. No restoration or full baseline cleanup is claimed; any later stop, park, restore or new test requires its own bounded assignment.
+
+Raw journals, captures, protocol versions, readbacks, synthetic credentials and host-specific preservation metadata remain ignored/local-only. The local evidence index retains the fresh-entry checkpoint and now indexes measurement-summary.json, measurement-stages.jsonl, per-case/readback artifacts and the historical pending-cleanup snapshot and current owner-directed active-retention disposition. Neither raw credentials nor machine/account/root identities belong in Git, issue text or attachments.
 
 ## Questions
 
-- Complete the explicitly authorized restoration and verify its actual outcome.
+- Scope durable backend preservation separately before a future host restart or QEMU shutdown; the current owner decision keeps the fixture active.
 - Determine explicit effective-revision, uncertain-activation, interruption/recovery and maintained integration/update contracts before claiming full W02 or selecting a strategy.
 - Establish the integrated candidate/wizard/MyBrain behavior and broader platform/VFS/rule coverage before claiming full W01.
 
@@ -130,7 +136,7 @@ No native integration, fork, replacement workflow or maintenance strategy is sel
 
 ## Expected Results
 
-W01 and W02 remain PARTIAL against the full current behavioral contract. Their recorded small stock components have positive runtime evidence. The other twenty cases remain NOT RUN. Cleanup and independent review are pending.
+W01 and W02 remain PARTIAL against the full current behavioral contract. Their recorded small stock components have positive runtime evidence. The other twenty cases remain NOT RUN. The owner-directed runtime disposition is active retention; no full-contract completion or phase acceptance follows.
 
 ## Related Documents
 
@@ -145,3 +151,4 @@ W01 and W02 remain PARTIAL against the full current behavioral contract. Their r
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-08 | Codex (@imp researcher) | Record actual stock GUI hold/external activation, complete body/readback counts, initial authentication-response attribution (corrected in 1.1) and pending restoration without claiming full W01/W02. |
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Correct the independent-QA HTTP attribution finding: S117 Graph GET 401, S121 refresh POST 200 and S122/S123 Graph retries 200; preserve raw/aggregate evidence and bounded PARTIAL/PENDING status. |
+| 1.2 | 2026-11-08 | Codex (@imp researcher) | Record the owner's keep-active decision, superseding pending restoration while preserving its history; disclose RAM-only backend and unchanged bounded measurements. |

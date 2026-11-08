@@ -2,8 +2,8 @@
 
 # Integrated native wizard and local–cloud rule coordination
 
-**Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts, cleanup and strategy remain open
-**Version:** 1.10
+**Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts/strategy open, fixture kept active by owner
+**Version:** 1.11
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -12,7 +12,7 @@ Investigate an integrated native-app wizard and a practical local/cloud route th
 
 ## Scope In
 
-Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; accepted personal draft/activation, device/group, bulk, shared admitted-location inventory/history and presentation behavior; offline/shared rule records and reconciliation; options, synthetic behavioral probe contracts, the bounded stock CLI and graphical hold/external-activation measurements, their isolation and pending restoration.
+Evidence-led interaction and responsibility boundaries; browser/OpenCloud reuse; local discovery and enforcement gaps; operational candidate metadata; accepted personal draft/activation, device/group, bulk, shared admitted-location inventory/history and presentation behavior; offline/shared rule records and reconciliation; options, synthetic behavioral probe contracts, the bounded stock CLI and graphical hold/external-activation measurements, their isolation and owner-directed active retention.
 
 ## Scope Out
 
@@ -62,7 +62,7 @@ R3 used supported native accessibility observation and set_value, owner-operated
 
 Six complete initial file-content POSTs totaled 175 bytes and six positive server readbacks matched. The two held-path readbacks during W01 returned 404. A later Graph GET returned 401; the sequence-joined capture then shows a successful refresh POST and successful Graph retries without agent repair. The initial 401 cause and long-term authentication stability are not established. These are positive bounded stock components, with **W01 and W02 PARTIAL against their full contracts** and the other twenty cases NOT RUN. No integrated candidate wizard/MyBrain flow, shared policy/revision acknowledgement, interrupted activation or recovery was established.
 
-The final accessibility read was stopped by physical Escape after the measurement summary was written. **R3 cleanup/restoration remains PENDING**; its synthetic GUI/root and fixture helpers were still active in a read-only host check at 16:37:36 UTC, with the original client stopped. The startup value was absent and the original two registrations plus one synthetic registration remained. R1 restoration must not be confused with R3 completion. Raw credentials, host paths, identities and captures remain local-only. Supported observable accessibility with explicit handoffs is a valid GUI-control route; screenshots are not the sole prerequisite.
+Physical Escape stopped the final accessibility read after the measurement summary was written. At the historical 16:37:36 UTC checkpoint, R3 restoration was pending and the original client was stopped. The owner then explicitly chose **ACTIVE RETENTION for future tests**, leaving the ordinary Store client stopped because it was not needed. A read-only 18:37:28 UTC check confirmed the retained GUI/QEMU/helpers, loopback listeners and local status HTTP 200. Account, credentials, root, files, journal, profile/cache and backend remain active; no stop/move/deletion/unregister/resume was performed. The backend is RAM-only: /root/.opencloud is on tmpfs and QEMU has no writable disk; host restart or QEMU shutdown would lose that state. Durable preservation is separate future work. This is neither completed baseline restoration nor a new measurement. Raw private runtime material remains local-only; supported accessibility with explicit handoffs remains a valid observation route.
 
 ### Local rule authorship, intended reach and shared application
 
@@ -214,7 +214,7 @@ This document combines source evidence, the Windows-first comparison, behavioral
 
 ### Proposed decisive experiment
 
-The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) preserves this anchor. W01/W02 now have positive bounded GUI components and remain PARTIAL against their full oracles; the other twenty cases remain NOT RUN. The report separates complete initial bodies/readbacks, finite filter limits, the transient Graph 401, successful refresh/retries and pending cleanup from full native/shared-policy acceptance.
+The detailed [current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) preserves this anchor. W01/W02 now have positive bounded GUI components and remain PARTIAL against their full oracles; the other twenty cases remain NOT RUN. The report separates complete initial bodies/readbacks, finite filter limits, the transient Graph 401, successful refresh/retries and the current active-retention disposition from full native/shared-policy acceptance.
 
 The contract also covers the accepted normal draft/Apply workflow and alternatives, real running work under all three finalization choices, group inheritance/device exceptions/group contradictions, whole-offering and cumulative guards across actions, once-approved continuing flow versus new scope, beginner comprehension, retention, interrupted/retried/versioned work and platform/update boundaries. The revised cases now test the accepted resolutions, including bounded job consent, independent continuation, recovery/takeover, and shared rule/location/history records. A single focused I01 case covers new inventory/history/cleanup obligations; explicit test parameters do not become product defaults.
 
@@ -262,3 +262,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.8 | 2026-11-08 | Codex (@imp researcher) | Record the later UNLOCKED readiness attempt and concrete capture failures before any new fixture/client interruption; GUI content probes remain NOT RUN. |
 | 1.9 | 2026-11-08 | Codex (@imp researcher) | Record actual bounded GUI hold/external activation, initial HTTP attribution (corrected in 1.10) and pending restoration; preserve historical attempts and full-contract limits. |
 | 1.10 | 2026-11-08 | Codex (@imp researcher) | Correct the QA-identified HTTP attribution using unique sequences: Graph GET 401 followed by refresh/retry 200; retain measured scope and pending restoration. |
+| 1.11 | 2026-11-08 | Codex (@imp researcher) | Record owner-directed active retention instead of immediate restoration, current read-only readiness and RAM-only backend limits; keep measurements and historical checkpoints unchanged. |
