@@ -2,8 +2,8 @@
 
 # Integrated native wizard and local–cloud rule coordination
 
-**Status:** RESEARCH CHECKPOINT — CLI component evidence and isolated GUI setup recorded; GUI content probes await unlocked desktop
-**Version:** 1.7
+**Status:** RESEARCH CHECKPOINT — CLI component evidence and isolated GUI setup recorded; GUI content probes await operable desktop capture
+**Version:** 1.8
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -58,7 +58,7 @@ An offline-saved deny filter was reread by a fresh batch after reconnect, preser
 
 The owner next requested actual W01/W02 GUI measurements on 2026-11-08. The [GUI setup and isolation report](windows-gui-probe-isolation-assessment.md) records a real disposable OpenCloud server/observer, the unchanged official Windows GUI and completed reversible restoration. Actual copied-process checks established unpackaged execution, a fresh zero-account/root profile, matching protected Store-profile hashes and unchanged startup/root metadata before account connection.
 
-The desktop was subsequently confirmed **locked** through a read-only WTS session flag. No targetable connected GUI, account/root setup, positive GUI upload/readback or content-hold/external-activation measurement completed. W01/W02 remain **NOT RUN**; setup traffic with no file body is not a successful zero-content hold. The earlier untracked profile-entry blocker is superseded by the demonstrated fresh-profile boundary. Normal Windows unlock and a bounded continuation are the next host prerequisites, not a new synchronization-policy choice.
+The desktop was subsequently confirmed **locked** through a read-only WTS session flag. No targetable connected GUI, account/root setup, positive GUI upload/readback or content-hold/external-activation measurement completed. W01/W02 remain **NOT RUN**; setup traffic with no file body is not a successful zero-content hold. The earlier untracked profile-entry blocker is superseded by the demonstrated fresh-profile boundary. The later owner-unlocked readiness attempt confirmed WTS UNLOCKED and found the original OpenCloud window, but screenshot capture and its one supported recovery returned time-out errors. That attempt stopped before any ordinary-client interruption, backend or profile setup. An operable supported GUI capture is now the immediate host prerequisite, not a new synchronization-policy choice.
 
 The original client was normally resumed, synthetic ordinary profiles quarantined after exact-path checks, and all owned fixture processes/listeners stopped. No private source, personal credential, global trust change or production server was used. The source and observer limits, setup deviations and actual restoration evidence are retained separately from unexecuted content oracles.
 
@@ -256,3 +256,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.5 | 2026-11-07 | Codex (@imp researcher) | Consolidate accepted personal/group/draft/bulk/presentation policy in a focused companion; update canonical summaries and probe anchors, retaining measured evidence and pending strategy status. |
 | 1.6 | 2026-11-08 | Codex (@imp researcher) | Record resolved Q1–Q5, shared scoped location/rule/history behavior and recovery/consent choices; align the 22 unexecuted probe cases and separate deferred parameters from technical strategy. |
 | 1.7 | 2026-11-08 | Codex (@imp researcher) | Record actual isolated GUI/backend preparation, locked-desktop prerequisite and restored host state; retain W01/W02 and content controls as NOT RUN. |
+| 1.8 | 2026-11-08 | Codex (@imp researcher) | Record the later UNLOCKED readiness attempt and concrete capture failures before any new fixture/client interruption; GUI content probes remain NOT RUN. |

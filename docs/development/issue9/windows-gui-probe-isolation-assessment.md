@@ -2,8 +2,8 @@
 
 # Windows GUI probe setup, isolation and host prerequisite
 
-**Status:** SETUP MEASURED — W01/W02 NOT RUN; Windows desktop locked
-**Version:** 1.1
+**Status:** SETUP MEASURED — W01/W02 NOT RUN; later unlocked desktop capture failed
+**Version:** 1.2
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -84,6 +84,18 @@ A read-only WTSQuerySessionInformationW query for WTSInfoEx checked the returned
 
 The observed locked desktop is a concrete unmet execution prerequisite. The evidence does not attribute every earlier launch/window symptom solely to that lock or prove that unlocking will resolve all later setup steps. The owner must unlock Windows normally before a new bounded continuation can verify actual GUI operability. No password is requested in chat and no authentication or safety barrier is bypassed.
 
+### Later unlocked-desktop readiness attempt
+
+After the owner reported normal Windows unlock, a second bounded continuation checked the interactive session **before any client stop or backend start**. WTSInfoEx returned UNLOCKED. Normal original-package --show activation succeeded, and Computer Use list_windows returned the original OpenCloud status window. Read-only window inventory therefore worked; this alone did not prove that the screen could be captured or operated.
+
+An accessibility-only get_window_state request, submitted with an explicit 20-second node-tool timeout, produced no usable state before coordinated interruption. The JavaScript kernel was reset before further actions. A fresh read-only session check still returned UNLOCKED and confirmed the original client remained running, without any probe listener.
+
+A screenshot-only state request then returned the concrete error **“FrameArrived timed out: timed out waiting on channel”**. The one recovery attempt refreshed the returned window selection and requested supported window activation/capture; it returned **“window capture timed out: timed out waiting on channel”**. That error does not establish which recovery substep completed. These later calls used explicit node-tool timeouts and short-yield outer execution, so their responses could be monitored without leaving a background action behind a racing timeout.
+
+Windows automation stopped at the skill's recovery boundary, and the JavaScript kernel was reset. A final read-only check still confirmed UNLOCKED, the original installed client running, no ordinary synthetic profile directories and no probe listeners. No backend, synthetic GUI profile, account/root, file or transfer was created in this second attempt. No restoration stop/resume was necessary because the ordinary client was never stopped.
+
+This second attempt resolves the former locked-session prerequisite but exposes a separate **Computer Use capture failure**. It does not establish a defect in OpenCloud synchronization, an impossible native hold, a policy-activation result or a general failure of every desktop-control route. The original W01/W02 tests still require an operable supported GUI capture/control surface before their isolated fixture can resume.
+
 ### Observer and content-proof boundary
 
 The unchanged observer described in the [historical CLI measurement](stock-windows-filter-probe.md#observation-and-quality-limits) was reused with fresh records. It captures complete Content-Length bodies before forwarding, including initial upload POST bodies, and does not log Authorization headers. Unsupported transfer framing or bodies beyond its bounded size invalidate a zero-content inference.
@@ -92,7 +104,7 @@ A later content run must establish a positive **GUI** upload and independent ser
 
 ## Questions
 
-The immediate missing host prerequisite is a normally unlocked, operable Windows desktop followed by Co's bounded resumption. This does not reopen accepted product policy.
+The latest attempt confirmed a normally unlocked Windows desktop but could not obtain a supported operable Computer Use capture. Resolving that host-control prerequisite, then verifying it before ordinary-client interruption, is necessary for bounded resumption. This does not reopen accepted product policy.
 
 Account setup, fresh credential/root identity, scoped startup/root restoration and actual GUI positive-control coverage must still pass after that prerequisite is available. There is no evidence yet for a live external policy-activation seam, native candidate wizard or before-content hold.
 
@@ -119,7 +131,7 @@ No native integration, replacement workflow, topology or maintenance strategy is
 | --- | --- | --- |
 | Real loopback backend/observer readiness | **Observed** | Successful initialization and status/Graph preflight; synthetic setup traffic only. |
 | Fresh unpackaged no-account profile entry | **Observed** | Actual process/package/user/config/hash/root-set checks completed before account connection. |
-| Operable connected GUI/root | **NOT ESTABLISHED** | No targetable wizard completed; Windows session subsequently confirmed locked. No account or sync root connected. |
+| Operable connected GUI/root | **NOT ESTABLISHED** | First attempt confirmed a locked session. Later UNLOCKED preflight found the original status window but capture and its one recovery failed before any test fixture/client interruption. No account or sync root connected. |
 | Positive GUI upload/readback | **NOT RUN** | No file control, content-bearing upload, readback or content-coverage measurement. |
 | W01 — hold before first transfer | **NOT RUN — desktop/account/control prerequisites unmet** | No watcher/queue/VFS/content-hold result; neither PASS nor FAIL inferred. |
 | W02 — external changed-policy activation while GUI runs | **NOT RUN — desktop/account/control prerequisites unmet** | No external activation or manual-Apply control result. |
@@ -147,3 +159,4 @@ The guest shut down normally. A PowerShell stop-cmdlet error left the two owned 
 | --- | --- | --- | --- |
 | 1.0 | 2026-11-08 | Codex (@imp researcher) | Initial untracked entry-only draft: record official binary/source isolation investigation without content execution. |
 | 1.1 | 2026-11-08 | Codex (@imp researcher) | Supersede the initial profile barrier with actual fresh unpackaged entry, real fixture preparation, locked-desktop finding and completed restoration; retain W01/W02 as NOT RUN. |
+| 1.2 | 2026-11-08 | Codex (@imp researcher) | Retain the first locked attempt and restoration; add actual unlocked readiness/capture failures with no second client interruption or content execution. |
