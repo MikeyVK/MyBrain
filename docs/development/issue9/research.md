@@ -3,7 +3,7 @@
 # Integrated native wizard and local–cloud rule coordination
 
 **Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts/strategy open, fixture kept active by owner
-**Version:** 1.12
+**Version:** 1.13
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -69,6 +69,12 @@ Physical Escape stopped the final accessibility read after the measurement summa
 The owner then requested autonomous tests while using the PC. The [R4 background report](stock-windows-gui-background-probes.md) records finite extension/folder/nested/rename/move filtering in the same retained GUI, one failed sharing-sensitive trigger and one bounded retry with actual running propagation. All 64 offered files existed before the stricter write; 59 complete-body capture timestamps followed that write and the admitted batch finished. A later file was held while an outside control uploaded. Earlier sampled local/server copies remained under narrowed policy, supplying a bounded P01 component.
 
 A separately declared 120-second filter-only window showed no held upload despite connectivity activity. After the single planned root control edit, the held file uploaded with its saved hash. This is finite timing evidence, not a universal trigger or effective-revision guarantee. The report preserves the S1178 capture gap, diagnostic failures, complete indexed body accounting and readback provenance. W01/W02/P01 remain PARTIAL, other nineteen cases NOT RUN. No UI/input/activation, restart, browser/auth interaction or process stop occurred; empty-filter baseline and owner-directed RAM-only active retention remain in place.
+
+### Filter-loss and normal-restart continuation
+
+The owner subsequently allowed desktop control. The [R5 report](stock-windows-gui-filter-loss-restart-probes.md) records that native accessibility observation worked but the bounded screenshot, indexed-input and keyboard attempts did not establish operable pause/editor controls. A separate native-app tool, after correcting its Windows argument shape, returned accessibility state but failed to activate the captured window for its one keyboard trial. Idle/running GUI pause, editor Cancel/OK and pause persistence therefore remain unestablished rather than product failures.
+
+Independent file/filter cases did run in the actual GUI. Preserving the user filter under a fresh sibling made real sync rounds fail and kept the pending control untransferred; exact restoration followed by a later successful round recovered it. One normal GUI restart retained account/root/journal and the nine-byte filter: a new allowed control uploaded while a new excluded file stayed local. The final empty filter released the two held R5 files with exact readbacks. Six file POSTs totaled 200 bytes; three separate GET transport errors and all intermediate observations are disclosed. The protected Store baseline, original registrations and absent startup value remained intact; the ordinary client stayed stopped and RAM helpers remained active. Full W01/W02/P01 remain PARTIAL, nineteen cases NOT RUN; no effective-revision, upgrade or full wizard claim follows.
 
 ### Local rule authorship, intended reach and shared application
 
@@ -246,6 +252,7 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 - [Stock Windows filter probe and measurements](<stock-windows-filter-probe.md>)
 - [Stock Windows GUI hold and external activation](<stock-windows-gui-live-policy-probe.md>)
 - [Background GUI filtering, running work and activation window](<stock-windows-gui-background-probes.md>)
+- [GUI filter-loss and retained-policy restart probes](<stock-windows-gui-filter-loss-restart-probes.md>)
 - [Windows GUI setup, isolation and desktop prerequisite](<windows-gui-probe-isolation-assessment.md>)
 - [Windows synchronization candidate comparison](<windows-sync-candidate-comparison.md>)
 - [Native wizard integration and update feasibility](<native-wizard-update-feasibility.md>)
@@ -271,3 +278,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.10 | 2026-11-08 | Codex (@imp researcher) | Correct the QA-identified HTTP attribution using unique sequences: Graph GET 401 followed by refresh/retry 200; retain measured scope and pending restoration. |
 | 1.11 | 2026-11-08 | Codex (@imp researcher) | Record owner-directed active retention instead of immediate restoration, current read-only readiness and RAM-only backend limits; keep measurements and historical checkpoints unchanged. |
 | 1.12 | 2026-11-08 | Codex (@imp researcher) | Record R4 background filtering/running-work/retention and fixed-window activation evidence; mark W01/W02/P01 PARTIAL, other nineteen NOT RUN, preserving R3 history and active retention. |
+| 1.13 | 2026-11-08 | Codex (@imp researcher) | Record R5 missing-filter error/restoration, retained-policy normal restart and GUI-operability limits; preserve partial coverage, error evidence and active retention. |

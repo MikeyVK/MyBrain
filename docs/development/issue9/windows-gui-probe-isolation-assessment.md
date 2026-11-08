@@ -2,8 +2,8 @@
 
 # Windows GUI probe setup, isolation and host prerequisite
 
-**Status:** HISTORICAL R1/R2 SETUP — later R3 components measured separately; R3 kept active by owner
-**Version:** 1.6
+**Status:** HISTORICAL R1/R2 SETUP — later GUI components measured separately; fixture kept active by owner
+**Version:** 1.7
 **Last Updated:** 2026-11-08
 
 ## Purpose
@@ -114,6 +114,10 @@ Physical Escape stopped the final accessibility read after the summary was writt
 
 The [R4 report](stock-windows-gui-background-probes.md) records separately authorized synthetic background file/filter tests without GUI input, activation, browser/auth interaction or process changes while the owner used the PC. The same retained GUI/account/root/journal and helpers continued. Finite filtering, running admitted propagation, later hold, sampled copy retention and a fixed 120-second policy-only observation are measured with explicit instrumentation/coverage limits. Current W01/W02/P01 are PARTIAL; the other nineteen cases remain NOT RUN. The final empty test filter and positive readbacks were retained, with the same known processes/listeners at 19:40:14 UTC. R1/R2 restoration and readiness history above is unchanged; RAM-only active retention continues.
 
+### Later R5 GUI-control and restart continuation
+
+The [R5 report](stock-windows-gui-filter-loss-restart-probes.md) records renewed owner screen-control authority and actual supported-control limits, not a blanket claim that all native routes are impossible. A missing user filter caused observed sync errors; exact restoration recovered the permitted control. One normal restart of only the copied GUI retained account, root, journal and policy, with new allowed/held readbacks. Its initial shutdown deadline was missed before later normal exit; no force kill occurred. All RAM helpers stayed running. Final empty-filter readbacks, original Store digests/root registrations and startup absence were verified. Pause/editor and pause-state persistence remain unestablished. Historical R1/R2/R3/R4 facts and RAM-only active-retention limits remain intact.
+
 ## Questions
 
 The former observation prerequisite was satisfied in R3 by supported accessibility with explicit handoffs. Current operational disposition is owner-directed active retention, with durable backend preservation still separate future work. Technical open work includes the integrated wizard/candidate/shared-policy contract, explicit effective revision and interruption/recovery, and broader rule/platform/VFS/update coverage. These do not reopen accepted product policy.
@@ -177,3 +181,4 @@ The guest shut down normally. A PowerShell stop-cmdlet error left the two owned 
 | 1.4 | 2026-11-08 | Codex (@imp researcher) | Correct QA's HTTP attribution finding: Graph GET 401, refresh POST and subsequent Graph GETs 200; preserve R1/R2 history and R3 pending restoration. |
 | 1.5 | 2026-11-08 | Codex (@imp researcher) | Preserve historical restoration checkpoints and record the owner's later active-retention decision, read-only readiness and RAM-only backend limitation. |
 | 1.6 | 2026-11-08 | Codex (@imp researcher) | Link separately authorized background-only R4 evidence and current partial retention coverage; preserve R1/R2/R3 historical facts and active volatile fixture disposition. |
+| 1.7 | 2026-11-08 | Codex (@imp researcher) | Link R5 supported-control limits, missing-filter recovery and normal retained-policy restart; preserve original isolation history and final active baseline. |
