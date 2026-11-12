@@ -129,7 +129,7 @@ The [Help Net Security article](https://www.helpnetsecurity.com/2026/11/12/dagst
 
 ### Change surface
 
-This record changes public cross-project research and README navigation only. Existing issue-6 research/design/operations and ADR 0001 were reviewed as context and remain unchanged. No application code, tests, configuration, agent protocol, template package, enforcement rule or workflow-state artifact is changed. Future research/design may use this report as an evidence index; it does not complete issue 9 Research or authorize a phase transition.
+This record changes public cross-project research and README navigation only. Existing issue-6 research/design/operations and ADR 0001 were reviewed as context and remain unchanged. No application code, tests, configuration, agent protocol, template package or enforcement rule is changed. Future research/design may use this report as an evidence index; it does not complete issue 9 Research or authorize a phase transition.
 
 ## Questions
 
