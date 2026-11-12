@@ -21,6 +21,7 @@ application stack, hosting and model processing remain research questions.
 | [OpenCloud admission assessment](docs/development/issue9/opencloud-admission-extension-feasibility.md) | Source research; runtime experiments remain outstanding. |
 | [Portable deployment](setup/deployment/README.md) | Screened Windows x64 package build, target setup and verification. |
 | [Public research baseline](docs/research/public/research-baseline.pdf) | Privacy-screened concepts, open questions and synthetic evaluation cases. |
+| [Processing coordination research](docs/research/public/processing-orchestration-responsibilities.md) | Reusable capabilities and MyBrain responsibilities, with a sourced Dagster example and technology selection deferred. |
 | [Repository structure](#repository-structure) | Locations for maintained documents and development tooling. |
 | [Working agreements](#working-agreements) | Naming, source handling and publication boundaries. |
 | [Git conventions](#git-conventions) | Issues, branches, commits and reviews. |
