@@ -3,7 +3,7 @@
 # Integrated native wizard and local–cloud rule coordination
 
 **Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts/strategy open, fixture kept active by owner
-**Version:** 1.14
+**Version:** 1.15
 **Last Updated:** 2026-11-13
 
 ## Purpose
@@ -45,6 +45,10 @@ The [native integration and update assessment](native-wizard-update-feasibility.
 The owner next prioritized realizing the wizard and rules on Windows and asked whether existing applications fit issue 9 better before starting Design. The [Windows synchronization candidate comparison](windows-sync-candidate-comparison.md) reuses the earlier platform shortlist only within this issue's synchronization/admission scope. It compares the OpenCloud baseline, Nextcloud, Seafile Community, Syncthing and rclone, including the distinct native Rclone UI application. The MyBrain knowledge, wiki, AI and accounting layers are excluded. Seafile's earlier AI/metadata dependency finding does not disqualify its separate Community sync path.
 
 No ready application was established to implement the complete integrated wizard. Conditional first challengers are externally controlled Syncthing for device/configuration reuse if a topology change is acceptable, or Rclone UI plus a controlled rclone protocol route if OpenCloud retention is important. These reduce different parts of the custom work; neither has passed the admission, device or upgrade proof. Nextcloud/Seafile remain useful comparisons without a demonstrated smaller complete gap. No backend, engine or client strategy is selected. A first Windows-only proof can precede mobile implementation, whose continuity costs remain visible.
+
+### Synchronization engines and service contracts
+
+The owner requested an extensive investigation of reusable open-source synchronization cores with independently developed clients and server storage. The [core and contract comparison](open-source-synchronization-cores-and-contracts.md) records a source-backed longlist, focused candidates, important security and licence limits, and equivalent unexecuted synthetic tests. SharpSync is a provisional first contract-test candidate, not an accepted technology; no selected candidate has demonstrated the full admission and synchronization behavior.
 
 ### Independent Windows client and NAS service comparison
 
@@ -284,3 +288,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.12 | 2026-11-08 | Codex (@imp researcher) | Record R4 background filtering/running-work/retention and fixed-window activation evidence; mark W01/W02/P01 PARTIAL, other nineteen NOT RUN, preserving R3 history and active retention. |
 | 1.13 | 2026-11-08 | Codex (@imp researcher) | Record R5 missing-filter error/restoration, retained-policy normal restart and GUI-operability limits; preserve partial coverage, error evidence and active retention. |
 | 1.14 | 2026-11-13 | Codex (@imp researcher) | Link a Windows-client and NAS-service feasibility comparison; retain existing strategy and runtime evidence boundaries. |
+| 1.15 | 2026-11-13 | Codex (@imp researcher) | Link source-backed synchronization-core comparison and unexecuted candidate probes; no technology decision. |
