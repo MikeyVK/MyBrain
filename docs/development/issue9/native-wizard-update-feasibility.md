@@ -3,8 +3,8 @@
 # Integrated native wizard and update feasibility
 
 **Status:** RESEARCH CHECKPOINT — source evidence; native integration and update proofs pending  
-**Version:** 1.3  
-**Last Updated:** 2026-11-08
+**Version:** 1.4<br>
+**Last Updated:** 2026-11-13
 
 ## Purpose
 
@@ -84,6 +84,51 @@ Android's [update contract](https://developer.android.com/google/play/app-update
 
 Retained-copy semantics need explicit proof. The inspected iOS manual-import cancellation removes local import copies; this does not establish deletion of the original source, but existing Cancel cannot simply be equated to Keep locally or Wait. Android's manual path records a MOVE local-behavior value while passing COPY to its subsequent upload use case; the actual retention outcome needs a trial rather than inference from labels. No wizard exit, narrowing rule or failed upload may silently destroy the only retained copy.
 
+## Shared web wizard: presentation alternatives and local policy
+
+This investigation, inspected on 2026-11-13, addresses the owner's proposed direction: a separate MyBrain policy-management component, a shared web-based wizard and the smallest practical client changes. It compares presentation routes without selecting one. The previously accepted requirement is one integrated client experience including the MyBrain decision; a standalone browser is an alternative for evaluation and would require explicit reconsideration if it replaced that experience. Neither a shared screen nor an external policy manager establishes that an unchanged client can hold an upload.
+
+### What the source actually shows
+
+| Surface | Pinned observation | Limit |
+| --- | --- | --- |
+| Windows desktop | Desktop v4.0.0 provides [openBrowser](<https://github.com/opencloud-eu/desktop/blob/v4.0.0/src/gui/guiutility.cpp>) using the desktop's external URL handler. | This helper does not establish a policy handoff, an approval barrier or a built-in embedded-web wizard. [Qt WebView](<https://doc.qt.io/qt-6/qtwebview-index.html>) offers a QML web view with Windows backend options, but integration with the current desktop UI remains unproved. |
+| Android | The pinned [privacy-policy activity](<https://github.com/opencloud-eu/android/blob/cf6d451c713182d2962c22d6bbcb7659825fed75/opencloudApp/src/main/java/eu/opencloud/android/presentation/settings/privacypolicy/PrivacyPolicyActivity.kt>) creates an Android WebView for an unrelated screen. | An in-app web view exists in inspected source; this is not a demonstrated supported extension, policy bridge or bundled offline wizard. It is not evidence about the installed app. |
+| iOS | The pinned [client web-app controller](<https://github.com/opencloud-eu/ios/blob/c958854e1c3e695552f383de3f401cac41753d1c/OpenCloudAppShared/Client/Actions/Implementations/ClientWebAppViewController.swift>) creates a WKWebView and explicitly uses a nonpersistent website data store. A separate [file viewer](<https://github.com/opencloud-eu/ios/blob/c958854e1c3e695552f383de3f401cac41753d1c/OpenCloud/Client/Viewer/WebView/WebViewDisplayViewController.swift>) loads local HTML. | These are unrelated existing surfaces, not a proven plug-in point or policy wizard. Nonpersistent web data must not be assumed to retain a login, offline assets or pending decisions. |
+
+The Android and iOS source examples demonstrate platform embedding in those snapshots, not that they can safely host the proposed wizard unchanged. The target installed versions and the minimum supported integration seam remain to be established.
+
+### Presentation and maintenance comparison
+
+| Candidate | User experience and boundary | Maintenance and unresolved evidence |
+| --- | --- | --- |
+| Separate full browser | The app hands a pending decision to the default browser and needs a reliable return to the originating task. On mobile the app switch may be disruptive; whether it is acceptable requires a user trial. | Reuses an existing desktop helper but requires an authenticated, scoped handoff and return, expiry and recovery. A separate browser by itself does not satisfy the agreed in-client experience. |
+| Browser-owned surface opened from the app | [Android Custom Tabs](<https://developer.android.com/develop/ui/views/layout/webapps/overview-of-android-custom-tabs>) and [iOS SFSafariViewController](<https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller>) can present browser content in an app-associated surface. They are distinct from an app-owned web view and from the authentication flow. | Exact browser/session behavior, return to the pending task and available integration differ by platform and configuration. Browser state or login sharing must not be assumed. Mobile usability and native-flow acceptance are hypotheses to test. |
+| App-owned embedded web view | An owned client can present shared web content within its own navigation. Existing unrelated Android/iOS views show this is technically plausible in their inspected source; a native, narrowly scoped communication boundary would still have to connect policy and pending work. | Client changes, web/native bridge, accessibility, navigation, security and releases need maintenance. On Windows, assess Qt WebView integration and its possible WebView2 or Qt WebEngine backends rather than assuming either is present. |
+
+A system browser or in-app web view does not automatically share the client login or cookies. [ASWebAuthenticationSession](<https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession>) is an authentication facility, not evidence that an arbitrary content view inherits its session. Establish platform-specific authentication and return behavior with a proof; do not put reusable credentials in URLs. Android restricts [background activity starts](<https://developer.android.com/guide/components/activities/secure-bal>), so unknown work may need to wait for a permitted foreground interaction. Rules already approved for the affected work need not generate another wizard prompt.
+
+The OpenCloud source and platform APIs do not establish an independently installable wizard extension. If upstream does not provide and maintain a suitable contract, minimizing native changes still entails maintaining, rebuilding, signing and distributing changed clients as described above. On Windows, [WebView2 requires a runtime](<https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution>); [Qt WebEngine deployment](<https://doc.qt.io/qt-6/qtwebengine-deploying.html>) includes its own runtime components. The owner's open-source requirement makes the precise runtime, redistribution and licensing model material: [Qt describes its available licensing and third-party components](<https://doc.qt.io/qt-6.8/qtwebengine-licensing.html>). Mobile system web views likewise need distribution and dependency assessment. No engine, licence conclusion or measured footprint is selected here.
+
+### Offline policy and the actual control boundary
+
+A page served only by the remote policy service cannot be assumed usable while disconnected. Offline creation or editing requires locally available wizard assets, locally available permitted device/folder knowledge and policy state, and an appropriate local authorization and policy-update channel. [Android's local WebView content guidance](<https://developer.android.com/develop/ui/views/layout/webapps/load-local-content>) demonstrates one platform capability, not an implementation of those other requirements. Bundling UI assets may require an app update to change them; caching alone does not guarantee a usable or current offline interface. Cross-platform availability and safe interaction between separate browsers, local policy and a client remain open.
+
+Offline choices are based on last-known information, marked as such. On reconnect, compare confirmed local and shared changes: demonstrably independent changes without conflict or bulk warning may merge automatically; uncertain or conflicting involved work waits for the owner. Distinguish intended policy, delivered policy, applied policy and actual file status, including for offline devices. A policy decision includes the MyBrain staging choice in the same wizard; no extra later decision is introduced.
+
+The proposed management component describes and distributes rules; each claimed native transfer route still needs an enforcement boundary that holds unknown or unapproved content **before its first content byte**, including initial upload requests, retries, background/automatic jobs and platform extensions. Known approved rules can proceed under the agreed safety and reconciliation checks. The existence of a browser, web view, local cache or policy API does not prove this guarantee. Privacy of filenames and other metadata is a separate boundary to investigate.
+
+An embedded view's bridge must expose only narrowly authorized operations and restrict navigation/origin and frame exposure. [Android warns](<https://developer.android.com/privacy-and-security/risks/insecure-webview-native-bridges>) that JavaScript interfaces can expose native methods to all frames; platform-specific design and review are needed. For either presentation route, do not expose unrestricted filesystem operations, client secrets or permanent credentials to page content. The safe handoff, pending-work identity, user cancellation, expiry and recovery are unproved contract questions, not a completed design.
+
+### Focused synthetic proofs
+
+These are proposed proofs, not additional completed tests or a change to the existing case ledger:
+
+1. For each candidate surface, open one synthetic grouped decision from the client, include MyBrain and device choices in the same flow, and return the result to the exact pending task after dismissal, restart and expired authorization. Observe usability, keyboard/accessibility, navigation and task restoration on actual Windows and mobile clients.
+2. With the server disconnected, create and revise a local rule using only available UI and previously known permitted data; reconnect, verify an independent merge and separately an uncertain or bulk-triggering change that waits. Confirm no silently stale device state is presented as current.
+3. Observe all creation requests and transfer paths before and after approval. An unknown file, including a background/retry case, must send no content byte until authorized. A known approved class proceeds without another prompt; changes during approval and rule updates must not silently bypass the hold.
+4. Compare two actual upstream versions and intended signed distribution for each claimed host. Verify web assets, local state, auth and pending work survive upgrade or remain safely held. Document tested implementation size, compatibility, open-source/runtime dependencies and real maintenance effort rather than inferring them from source.
+
 ## All-device knowledge is an additional unproved contract
 
 The required device list must represent named owner-registered devices, including offline devices, their supported availability modes, rule targets and application feedback. Tokens and login sessions are not that authoritative inventory.
@@ -141,3 +186,4 @@ Before Design, evidence must support the acceptable maintenance/compatibility ch
 | 1.1 | 2026-11-05 | Codex (@imp researcher) | Link accepted offline/local/shared policy distinctions and the canonical unexecuted reconciliation probe contract. |
 | 1.2 | 2026-11-07 | Codex (@imp researcher) | Link the current accepted personal/group/activation/bulk/presentation policy and remaining questions; retain pinned integration/update findings unchanged. |
 | 1.3 | 2026-11-08 | Codex (@imp researcher) | Align current interpretation with resolved Q1–Q5 and durable shared admitted-location/rule/history behavior; retain pinned source findings and pending technical strategy. |
+| 1.4 | 2026-11-13 | Codex (@imp researcher) | Compare browser-owned and embedded shared wizard presentation, offline policy requirements, security and focused unexecuted proofs. |
