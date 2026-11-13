@@ -3,8 +3,8 @@
 # Integrated native wizard and local–cloud rule coordination
 
 **Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts/strategy open, fixture kept active by owner
-**Version:** 1.13
-**Last Updated:** 2026-11-08
+**Version:** 1.14
+**Last Updated:** 2026-11-13
 
 ## Purpose
 
@@ -45,6 +45,10 @@ The [native integration and update assessment](native-wizard-update-feasibility.
 The owner next prioritized realizing the wizard and rules on Windows and asked whether existing applications fit issue 9 better before starting Design. The [Windows synchronization candidate comparison](windows-sync-candidate-comparison.md) reuses the earlier platform shortlist only within this issue's synchronization/admission scope. It compares the OpenCloud baseline, Nextcloud, Seafile Community, Syncthing and rclone, including the distinct native Rclone UI application. The MyBrain knowledge, wiki, AI and accounting layers are excluded. Seafile's earlier AI/metadata dependency finding does not disqualify its separate Community sync path.
 
 No ready application was established to implement the complete integrated wizard. Conditional first challengers are externally controlled Syncthing for device/configuration reuse if a topology change is acceptable, or Rclone UI plus a controlled rclone protocol route if OpenCloud retention is important. These reduce different parts of the custom work; neither has passed the admission, device or upgrade proof. Nextcloud/Seafile remain useful comparisons without a demonstrated smaller complete gap. No backend, engine or client strategy is selected. A first Windows-only proof can precede mobile implementation, whose continuity costs remain visible.
+
+### Independent Windows client and NAS service comparison
+
+The owner requested a comparison of an independently built Windows client and NAS service with OpenCloud adaptation. The [feasibility assessment](independent-windows-nas-sync-feasibility.md) compares equivalent accepted behavior, open-source candidate components, integration and lifecycle costs, and proposes a bounded synthetic first-byte test. It selects no architecture or technology. Existing stock-client tests are not proof of a complete independent client or the full integrated wizard.
 
 ### First stock Windows runtime measurement
 
@@ -279,3 +283,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.11 | 2026-11-08 | Codex (@imp researcher) | Record owner-directed active retention instead of immediate restoration, current read-only readiness and RAM-only backend limits; keep measurements and historical checkpoints unchanged. |
 | 1.12 | 2026-11-08 | Codex (@imp researcher) | Record R4 background filtering/running-work/retention and fixed-window activation evidence; mark W01/W02/P01 PARTIAL, other nineteen NOT RUN, preserving R3 history and active retention. |
 | 1.13 | 2026-11-08 | Codex (@imp researcher) | Record R5 missing-filter error/restoration, retained-policy normal restart and GUI-operability limits; preserve partial coverage, error evidence and active retention. |
+| 1.14 | 2026-11-13 | Codex (@imp researcher) | Link a Windows-client and NAS-service feasibility comparison; retain existing strategy and runtime evidence boundaries. |
