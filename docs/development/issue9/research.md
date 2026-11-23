@@ -2,13 +2,43 @@
 
 # Integrated native wizard and local–cloud rule coordination
 
-**Status:** RESEARCH CHECKPOINT — CLI and bounded GUI components measured; full contracts/strategy open, fixture kept active by owner
-**Version:** 1.15
-**Last Updated:** 2026-11-13
+**Status:** RESEARCH CHECKPOINT — bounded Windows measurements and source comparisons recorded. Full behavioral coverage and technology selection remain open.
+**Version:** 1.16
+**Last Updated:** 2026-11-23
 
 ## Purpose
 
 Investigate an integrated native-app wizard and a practical local/cloud route that help the owner establish synchronization and MyBrain intake rules together, with Windows first and an existing-application comparison before Design.
+
+## Evidence guide
+
+**What the owner wants.** A new file in a connected folder can stay on the originating device while the owner decides where it belongs. One wizard covers storage on the NAS, distribution to selected devices or groups, and a separate choice about MyBrain intake. The owner can save the choice as a rule. Limited inventory information can be shared while file contents are held. [Policy and behavioral contract](synchronization-policy-and-probe-contract.md)
+
+| Question | Where to start | What the evidence supports |
+| --- | --- | --- |
+| Which decisions belong to the owner? | [Accepted policy and presentation](#accepted-policy-and-presentation-checkpoint) and [inventory, history and offline rules](synchronization-policy-and-probe-contract.md) | One active place to manage policy, several syncing devices, group rules with visible exceptions, offline drafts, reconciliation and action-specific bulk approval. |
+| What did the stock Windows client actually do? | [CLI filter experiment](stock-windows-filter-probe.md), [graphical hold and release](stock-windows-gui-live-policy-probe.md), [running transfers and filter-only window](stock-windows-gui-background-probes.md), [missing filter and normal restart](stock-windows-gui-filter-loss-restart-probes.md) | The tested rules held particular files while a permitted control transferred. The running GUI later released held files. When a rule narrowed during a batch, all 64 files in that batch arrived. A later file stayed local. An external filter edit alone produced no release during one 120-second observation. |
+| What could we reuse? | [OpenCloud extension surfaces](opencloud-admission-extension-feasibility.md), [native UI and update paths](native-wizard-update-feasibility.md), [alternative applications](windows-sync-candidate-comparison.md), [independent client and NAS](independent-windows-nas-sync-feasibility.md), [synchronization cores](open-source-synchronization-cores-and-contracts.md) | OpenCloud supplies an existing client and server. A custom client could own admission before sending bytes. Reusing an engine might reduce transport and recovery work. Comparative effort is qualitative. |
+| What would qualify a candidate? | [Candidate safety and open-source requirements](#candidate-safety-and-open-source-requirements), [dependency audit](../../research/public/opencloud-sovereignty-and-dependency-audit.md), [candidate benchmark](open-source-synchronization-cores-and-contracts.md#consistent-synthetic-benchmark-and-acceptance-gates) | Source inspection identifies controls to verify. Exact builds, first-byte enforcement and recovery still need isolated tests. |
+| Where can work resume? | [Current behavioral probe contract](synchronization-policy-and-probe-contract.md#current-behavioral-probe-contract) and [fixture preservation](#fixture-preservation-on-9-november) | W01 (hold before transfer), W02 (activate changed policy while running) and P01 (retain existing copies) each have **partial** evidence. The other **19 of 22** cases have not run. |
+
+### Candidate safety and open-source requirements
+
+The source reviews distinguish a library that offers replaceable storage (SharpSync), a mature peer-protocol implementation (Syncthing), and complete client/server products (OpenCloud and Seafile Community). CubSync provides an early storage interface. Its release documents an unencrypted, unauthenticated LAN transport. The candidates remain research options. A component qualifying on licensing or having an encrypted transport establishes only that specific property. [Core comparison](open-source-synchronization-cores-and-contracts.md)
+
+Three questions decide whether a candidate can handle personal documents:
+
+1. Does the client verify the intended recipient and scope its credentials and file contents to the approved destination?
+2. Does failed, interrupted or out-of-date approval hold the affected file? A change to its content between approval and execution must be detected. Retrying after reconnection must respect the same limits.
+3. Can interrupted operations, conflicts and deletions be recovered without losing retained versions? A backup has to survive a tested restore.
+
+These are acceptance criteria for synthetic tests. Security findings from source review do not establish the condition of an installed NAS or the safety of a release. The application, its libraries and required services must be open source. Windows, iOS and DSM are accepted host platforms. Inventory the exact source and binary dependencies, check any mandatory external services, and measure the candidate on representative hardware before making the platform decision. [Independent-client assessment](independent-windows-nas-sync-feasibility.md) and [sovereignty and dependency audit](../../research/public/opencloud-sovereignty-and-dependency-audit.md)
+
+### Fixture preservation on 9 November
+
+On 8 November 2026 the live test server held its data in memory. On 9 November the server process was stopped for a consistent backup. The host retained a server-state archive. Its reported SHA-256 matched the archive verification record and the listing contained the required subtrees. The original OpenCloud server process was then replaced by a process using the same binary, arguments, environment and working directory, with the original data in place. The same graphical client reconnected. The original space identity matched. Three synthetic files used in the R5 tests (two formerly held files and the final control) each returned HTTP 200 with matching pre- and post-restart SHA-256 values. [R5 fixtures and control results](stock-windows-gui-filter-loss-restart-probes.md#final-baseline-and-retained-state)
+
+The archive was inspected without extraction. Restoring from it on a cold VM or another machine remains untested. A separate Windows control check on 9 November still failed to capture a usable frame after re-enabling the desktop-control capability. It added no synchronization measurements. These are dated observations. This consolidation did not inspect current processes or rerun the fixture. The Git reports preserve the protocols, controls, results and limitations. The archive, client journals, credentials and machine-specific recovery inputs stay local.
 
 ## Scope In
 
@@ -70,7 +100,7 @@ R3 used supported native accessibility observation and set_value, owner-operated
 
 Six complete initial file-content POSTs totaled 175 bytes and six positive server readbacks matched. The two held-path readbacks during W01 returned 404. A later Graph GET returned 401; the sequence-joined capture then shows a successful refresh POST and successful Graph retries without agent repair. The initial 401 cause and long-term authentication stability are not established. These are positive bounded stock components, with **W01 and W02 PARTIAL against their full contracts** and, at the end of R3, the other twenty cases NOT RUN. No integrated candidate wizard/MyBrain flow, shared policy/revision acknowledgement, interrupted activation or recovery was established.
 
-Physical Escape stopped the final accessibility read after the measurement summary was written. At the historical 16:37:36 UTC checkpoint, R3 restoration was pending and the original client was stopped. The owner then explicitly chose **ACTIVE RETENTION for future tests**, leaving the ordinary Store client stopped because it was not needed. A read-only 18:37:28 UTC check confirmed the retained GUI/QEMU/helpers, loopback listeners and local status HTTP 200. Account, credentials, root, files, journal, profile/cache and backend remain active; no stop/move/deletion/unregister/resume was performed. The backend is RAM-only: /root/.opencloud is on tmpfs and QEMU has no writable disk; host restart or QEMU shutdown would lose that state. Durable preservation is separate future work. This is neither completed baseline restoration nor a new measurement. Raw private runtime material remains local-only; supported accessibility with explicit handoffs remains a valid observation route.
+Physical Escape stopped the final accessibility read after the measurement summary was written. At the historical 16:37:36 UTC checkpoint, R3 restoration was pending and the original client was stopped. The owner then explicitly chose **ACTIVE RETENTION for future tests**, leaving the ordinary Store client stopped because it was not needed. A read-only 18:37:28 UTC check confirmed the retained GUI/QEMU/helpers, loopback listeners and local status HTTP 200. At that checkpoint the account, root, files, journal, profile and backend were retained. The guest used RAM-backed storage and had no writable VM disk. A host restart or VM shutdown would lose the live guest state. The [9 November preservation result](#fixture-preservation-on-9-november) records the subsequent server archive and service restart. This is neither completed baseline restoration nor a new measurement. Raw private runtime material remains local-only; supported accessibility with explicit handoffs remains a valid observation route.
 
 ### Background continuation without desktop input
 
@@ -289,3 +319,4 @@ Use the [settled behavioral baseline and deferred-parameter ledger](synchronizat
 | 1.13 | 2026-11-08 | Codex (@imp researcher) | Record R5 missing-filter error/restoration, retained-policy normal restart and GUI-operability limits; preserve partial coverage, error evidence and active retention. |
 | 1.14 | 2026-11-13 | Codex (@imp researcher) | Link a Windows-client and NAS-service feasibility comparison; retain existing strategy and runtime evidence boundaries. |
 | 1.15 | 2026-11-13 | Codex (@imp researcher) | Link source-backed synchronization-core comparison and unexecuted candidate probes; no technology decision. |
+| 1.16 | 2026-11-23 | Codex (@imp researcher) | Consolidate decisions, candidate safety questions, Windows measurements, the 9 November preservation result and outstanding evidence. |

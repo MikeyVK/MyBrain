@@ -18,7 +18,7 @@ application stack, hosting and model processing remain research questions.
 | [Open-source knowledge-core candidates](docs/development/issue6/open-source-knowledge-core-candidates.md) | Application-focused comparison of claim registration, context, history and reusable knowledge components. |
 | [OpenCloud–Wikibase gap assessment](docs/development/issue6/opencloud-wikibase-gap-analysis.md) | Reuse boundaries and proposed falsification tests. |
 | [OpenCloud–Wikibase trial design](docs/development/issue6/opencloud-wikibase-trial-design.md) | Proposed synthetic architecture and trial oracles. |
-| [OpenCloud admission assessment](docs/development/issue9/opencloud-admission-extension-feasibility.md) | Source research; runtime experiments remain outstanding. |
+| [Issue 9 synchronization research](docs/development/issue9/research.md#evidence-guide) | Owner policy, measured Windows behavior, open-source alternatives, safety questions and outstanding tests. |
 | [Portable deployment](setup/deployment/README.md) | Screened Windows x64 package build, target setup and verification. |
 | [Public research baseline](docs/research/public/research-baseline.pdf) | Privacy-screened concepts, open questions and synthetic evaluation cases. |
 | [Processing coordination research](docs/research/public/processing-orchestration-responsibilities.md) | Reusable capabilities and MyBrain responsibilities, with a sourced Dagster example and technology selection deferred. |
