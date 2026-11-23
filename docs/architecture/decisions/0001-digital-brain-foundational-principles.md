@@ -3,8 +3,8 @@
 # Digital brain foundational principles
 
 **Status:** accepted  
-**Version:** 1.12  
-**Last Updated:** 2026-10-28
+**Version:** 1.13  
+**Last Updated:** 2026-11-23
 
 ## Purpose
 
@@ -12,7 +12,7 @@ Record the owner's accepted conceptual principles for MyBrain so that subsequent
 
 ## Scope In
 
-Conceptual requirements for information, meaning, history, exclusive personal ownership and owner control, preservation, destruction, connection, intake, identity, transfer packages, description contracts, validity, traceable retrieval, generated context and label origin, retrieval responses, access revocation, scoped completeness, usability, uncertainty of description applications, universal registrability, the storage/contract responsibility boundary, and enduring identity distinct from historical records and current views.
+Conceptual requirements for information, meaning, history, exclusive personal ownership and owner control, preservation, destruction, connection, intake, identity, transfer packages, description contracts, validity, traceable retrieval, generated context and label origin, retrieval responses, access revocation, scoped completeness, usability, uncertainty of description applications, universal registrability, the storage/contract responsibility boundary, enduring identity, historical records, current views and the content independence of the core.
 
 ## Scope Out
 
@@ -376,6 +376,14 @@ A later stage may add bounded disclosure or access routes. The owner determines 
 
 Rights per entity are not a planned subsequent phase or target architecture. Adopting such a model would require explicit owner reconsideration. This refines the earlier P13/P30 access discussion and the historical row-level-security candidate without selecting or prohibiting a particular internal security mechanism. The revocation, retention and already-disclosed-information distinctions in P13 and P30 remain applicable. Concrete route boundaries and enforcement remain open.
 
+### P40 Content-independent core behavior
+
+When existing operations can express a change in content meaning or owner policy, change only the versioned definition or contract. The same implementation must be able to apply both versions to the same identified input and produce the outcome each version prescribes. A recorded outcome remains attributable to the input and version actually used. Publishing a revision does not retroactively change the earlier outcome or its applicability. [Generic contracts](#p11-generic-versioned-contracts) and [historical records](#p36-enduring-identity-historical-records-and-current-views-are-distinct)
+
+This applies to algorithms, core schemas and defaults, storage, synchronization and contract execution. A required field, fixed set of statuses or silent default can encode domain knowledge just as readily as a conditional in code. A protocol adapter can implement a wire format, integrity check or transport error. Its handling of those technical facts must leave the owner's interpretation and policy to the applicable definition or contract. [Storage and operational responsibilities](#p35-storage-and-operational-contract-responsibilities-are-distinct)
+
+If a definition needs a genuinely new technical operation, explain what the existing operations cannot express. Specify the new operation's inputs, results and failure behavior in terms that remain meaningful across domains.
+
 ## Rationale
 
 Preservation keeps future interpretation possible even when current understanding is incomplete. Distinct sources, statements and computational functions prevent convenient representations from silently becoming originals or accepted truth. Stable identities and versioned reference frames make historical meaning understandable while allowing correction and change. Owner-controlled destruction remains possible because preservation by default does not remove the owner's authority over retained information.
@@ -448,3 +456,4 @@ No implementation or operational action follows automatically from this conceptu
 | 1.10 | 2026-10-26 | Codex (recording owner decisions) | Add P37: version history as the foundation, coherent metadata sets with distinct meanings, richer narrative context and assignment-specific confidence without selecting a temporal or scoring mechanism. |
 | 1.11 | 2026-10-26 | Codex (recording owner decisions) | Add P38: lifecycle metadata remains with the same registration beyond intake, and staging is a working view; preserve version history, operational boundaries and explicit destruction authority. |
 | 1.12 | 2026-10-28 | Codex (recording owner decisions) | Add P39 and refine P13/P30: exclusive personal ownership, global owner access before optional bounded disclosure, with no planned per-entity multi-party rights phase; retain scoped revocation and internal security controls. |
+| 1.13 | 2026-11-23 | Codex (recording owner decisions) | Add P40 to govern changes in content meaning and owner policy, their historical interpretation and the justification for new technical operations. |

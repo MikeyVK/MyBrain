@@ -201,6 +201,18 @@ successful tool envelope, empty selection, clean Git status or healthy MCP start
 does not establish quality readiness. Future policy changes require an explicit
 owner decision, reviewed portable sources and fresh evidence for affected boundaries.
 
+### Reviewing content independence
+
+Apply [P40](docs/architecture/decisions/0001-digital-brain-foundational-principles.md#p40-content-independent-core-behavior) to work that changes how MyBrain represents, transports or applies content meaning or owner policy. Use the existing issue acceptance criteria, evidence and independent review for the affected phase.
+
+| Role | Responsibility and evidence |
+| --- | --- |
+| Co | Name the affected public behavior and its boundary in the acceptance criteria. Specify a neutral synthetic input, two definition or contract versions, the expected outcomes and how an earlier result can be traced. If the work proposes a new technical operation, request its domain-independent justification. |
+| Imp | For a design, walk the example through the proposed interfaces and identify the implementation evidence still due. For executable behavior, exercise the normal public entry point with the same implementation revision and pinned input under both versions. Record expected and observed outcomes, the versions used and how the earlier record remains independently retrievable. For storage or transport, show that both versions and their references survive the operation while the contract consumer applies the interpretation. |
+| Independent QA | Inspect the affected design or code and schema, including defaults, allowed values and adapter boundaries. Independently check the design walkthrough or reproduce the behavior for the exact revision and verify its historical references. At an existing applicable review boundary, return NOGO if domain knowledge has leaked into the core or required evidence is missing. Import lists and keyword checks alone cannot establish behavior. |
+
+A small example is a fixed record containing the number 5. A contract using “at least 4” matches it. A second version using “at least 6” does not. An earlier recorded match still identifies the first version. Choose an equivalent example appropriate to the actual public operation.
+
 ## Workspace setup
 
 The repository is [MikeyVK/MyBrain](https://github.com/MikeyVK/MyBrain).
